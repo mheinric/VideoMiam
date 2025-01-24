@@ -1,0 +1,2331 @@
+{
+    "kind": "youtube#playlistItemListResponse",
+    "etag": "gXTIcNlZXaYXWwald10MDNv_B9Y",
+    "nextPageToken": "EAAafVBUOkNESWlFREJHUmprNE1FRXdNamcxUVVJMU1qRW9BVWpRcG9xWmtvU0xBMUFCV2pnaVEyaG9WbFpZUlhSUFNFSkRWRlV3ZWxOVVVYZFZWM2g1WVVVd05WSllhRmxUYkVWVFJFRnFTREpNYVRoQ2FFTkJNV0ZYUkVGUkln",
+    "items": [
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "Px2RlMt7eNFBLFjf7-1q1rq7ikY",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkVtaVgwQVdUMFJ3",
+            "snippet": {
+                "publishedAt": "2025-01-20T10:58:12Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Elon Musk : le Héros du peuple [Ne nous fâchons pas]",
+                "description": "Elon Musk, vu comme un héros des libertés individuelles par une partie non négligeable de la population, en voilà une idée sur laquelle tout le monde a envie de s’engueuler ! On regarde ?\n\n« Ne nous fâchons pas ! » – Un format sur les idées qui énervent tout le monde.\n#paradoxes  #fascination #chaos \n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/EmiX0AWT0Rw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/EmiX0AWT0Rw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/EmiX0AWT0Rw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/EmiX0AWT0Rw/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 0,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "EmiX0AWT0Rw"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "EmiX0AWT0Rw",
+                "videoPublishedAt": "2025-01-20T10:58:12Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "wy5koN5g3Fec5P8BpJwukIFkeIQ",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLlpyaHNROU55NnRj",
+            "snippet": {
+                "publishedAt": "2025-01-19T10:05:15Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Ils veulent ma peau ! Les fumiers [Les Bullshiteurs] Ludo archéo Ep03",
+                "description": "C'est l'escalade. Alors qu'il s'apprêtait à renverser les gouvernements avec un film montrant la vérité, Ludo est brutalement agressé par des agents du système. Désormais sa vie est en jeu. Allez-vous le laisser tomber ?\n\n#danger #Jedérange #Oskour\n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ZrhsQ9Ny6tc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ZrhsQ9Ny6tc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ZrhsQ9Ny6tc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/ZrhsQ9Ny6tc/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 1,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "ZrhsQ9Ny6tc"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "ZrhsQ9Ny6tc",
+                "videoPublishedAt": "2025-01-19T10:05:15Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "WvZkBsSIKRHn1ofHmmUER2W99QA",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLlVRWWhQcnRqVE13",
+            "snippet": {
+                "publishedAt": "2025-01-15T21:25:42Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "La NATURE n'a rien demandé ! [TenL144] Annabelle KREMER-LECOINTRE",
+                "description": "Dans le langage courant, mais aussi dans les documentaires et jusque dans les enseignements ou les articles de science nous nous permettons des tournures de phrase, des images, des raccourcis, des métaphores plaisantes qui injectent dans la nature, sur le vivant des représentations qui nous obstruent la vue et retardent notre compréhension des choses.\nC'est le propos du livre \"Démystifier le Vivant\" de mon invitée Annabelle KREMER-LECOINTRE\n\n\n#langage #comprendre #vivant \n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/UQYhPrtjTMw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/UQYhPrtjTMw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/UQYhPrtjTMw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/UQYhPrtjTMw/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 2,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "UQYhPrtjTMw"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "UQYhPrtjTMw",
+                "videoPublishedAt": "2025-01-15T21:25:42Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "VkBgSMTIdH2M22sBmWA5uTCMAxo",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLjZzY1NpSzlEajZn",
+            "snippet": {
+                "publishedAt": "2025-01-12T10:41:04Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Le chakra caché des milliardaires [Les Bullshiteurs] Donatien Ep04",
+                "description": "Seul Donatien, grâce à sa profonde connaissance des arcanes subtiles des corps énergétiques, pouvait vous révéler ce secret incroyable !\n\n#secret #abondance #réussite \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/6scSiK9Dj6g/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/6scSiK9Dj6g/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/6scSiK9Dj6g/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/6scSiK9Dj6g/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 3,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "6scSiK9Dj6g"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "6scSiK9Dj6g",
+                "videoPublishedAt": "2025-01-12T10:41:04Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "I8mMQVqQvRYYEIxbmQunWvsyVlI",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLk4xa1pJYU9ock93",
+            "snippet": {
+                "publishedAt": "2025-01-09T16:30:27Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "La banalité des MIRACLES [Vite Fait]",
+                "description": "Rien n'est plus rare qu'un évènement impossible, et pourtant rien n'est plus banal qu'un miracle ou qu'une histoire prétendument inexplicable.\nLa loi de Littlewood nous rappelle que l'improbable se produit constamment. Et dans le domaine du probable, nous ne devrions jamais négliger la propension humaine à croire en des choses imaginaires.\n\n#incroyable #probabilité #parcimonie\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/N1kZIaOhrOw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/N1kZIaOhrOw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/N1kZIaOhrOw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/N1kZIaOhrOw/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 4,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "N1kZIaOhrOw"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "N1kZIaOhrOw",
+                "videoPublishedAt": "2025-01-09T16:30:27Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "8xbhs23WL5YQQ4NF3oAKroncMeU",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLnQ2OHkyRGV1czNz",
+            "snippet": {
+                "publishedAt": "2025-01-05T09:52:44Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Ma fabuleuse DÉCOUVERTE [Les Bullshiteurs] Baptiste Ep 04",
+                "description": "Les relations entre hommes et femmes obéissent à des lois immuable qu'il faut étudier avec soin pour les comprendre et les restituer à un public ébahi. Baptiste possède la sagesse et le courage de faire des découvertes qu'il partage avec nous.\n\n\nPlaylist des Bullshiteurs : https://www.youtube.com/watch?v=Urt1Cn_0BH0&list=PLceYkF8JBqYSSCBjSjYo_z46hbrKSZYnU&ab_channel=LaTroncheenBiais\n\n\n#théorie #relationship #avantages \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/t68y2Deus3s/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/t68y2Deus3s/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/t68y2Deus3s/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/t68y2Deus3s/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 5,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "t68y2Deus3s"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "t68y2Deus3s",
+                "videoPublishedAt": "2025-01-05T09:52:44Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "FzXMvhIVBQSUYwRe_7k6ps72kVU",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLlVVS1VVckF5cWxV",
+            "snippet": {
+                "publishedAt": "2025-01-03T10:33:01Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Il était une fois \"la cancel culture\"",
+                "description": "Il est insupportable d'avoir l'impression qu'on porte atteinte à notre liberté. La mode est aux cris d'orfraie du genre \"'on peut plus rien dire\" face aux critiques qui ont l'outrecuidance de demander à ceux qui parlent d'assumer la responsabilité de ce qu'ils disent. Et en retour, bizarrement les mêmes applaudissent à la censure de certains livres. Il serait sage d'en revenir à ce qu'est et ce que n'est pas cette \"cancel culture\".\n\n\n#censure #responsabilité #panique \n\n_________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/UUKUUrAyqlU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/UUKUUrAyqlU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/UUKUUrAyqlU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/UUKUUrAyqlU/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 6,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "UUKUUrAyqlU"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "UUKUUrAyqlU",
+                "videoPublishedAt": "2025-01-03T10:33:01Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "4IzUsxgCjBIrz95VYlr52zDd2sE",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLm5kazJYQVpya2pR",
+            "snippet": {
+                "publishedAt": "2025-01-02T16:21:17Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "L’esprit critique : ça sert à quoi ?  [Nuit Zététique  2024]",
+                "description": "Table ronde d'ouverture de la Nuit Zététique 2024\nInvités : Henri BROCH — Jean-Michel ABRASSART — Vincent FLIBUSTIER — Arthur HENNES.\n\nParmi celles et ceux qui font la promotion de l'esprit critique, les styles divergent, ainsi que les motivations, les moyens, les angles d'approche, les sensibilités et les priorités. Toutes peuvent-elles coexister ?\n\nLa deuxième Table ronde (et les autres bientôt) est disponible sur la chaine de l'ASTEC https://youtu.be/hcM6AbQdn74\n\n#communauté #cohesion #priorités \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ndk2XAZrkjQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ndk2XAZrkjQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ndk2XAZrkjQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/ndk2XAZrkjQ/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 7,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "ndk2XAZrkjQ"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "ndk2XAZrkjQ",
+                "videoPublishedAt": "2025-01-02T16:21:17Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "HuXM-cC1b2DpGWXzC3AmZlTCb44",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLk9XUXVfMTdIaUFr",
+            "snippet": {
+                "publishedAt": "2024-12-30T06:34:12Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Faites vos courses quantiques [Les Bullshiteurs] Donatien Ep05",
+                "description": "Utiliser la physique quantique pour faire vos courses, c'est un gain de temps et d'argent assuré. Donatien peut vous former à cette technique révolutionnaire !\n\nPlaylist des Bullshiteurs : https://www.youtube.com/watch?v=Urt1Cn_0BH0&list=PLceYkF8JBqYSSCBjSjYo_z46hbrKSZYnU&ab_channel=LaTroncheenBiais\n\n#économie #budget #scientifique \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/OWQu_17HiAk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/OWQu_17HiAk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/OWQu_17HiAk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/OWQu_17HiAk/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 8,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "OWQu_17HiAk"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "OWQu_17HiAk",
+                "videoPublishedAt": "2024-12-30T06:34:12Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "3LseNPuf4TCvfOfEM3FcxO-bDAw",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkNOQWg2U0dLX3J3",
+            "snippet": {
+                "publishedAt": "2024-12-28T10:11:21Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Covid19 - Le grand mea culpa de la zététique !?",
+                "description": "Alors que s'achève 2024, peut-être est-il temps d'une mise à jour dûment sourcée sur le COVID-19 concernant son origine, l'efficacité des vaccins et leur sûreté.\n\nVous trouverez les sources dans ce billet de blog qui revient sur l'essentiel de la vidéo : https://menace-theoriste.fr/covid19-le-grand-mea-culpa-de-la-zetetique/\n\n#pandémie #mensonge #erreurs \n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/CNAh6SGK_rw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/CNAh6SGK_rw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/CNAh6SGK_rw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/CNAh6SGK_rw/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 9,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "CNAh6SGK_rw"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "CNAh6SGK_rw",
+                "videoPublishedAt": "2024-12-28T10:11:21Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "StUko4PabrSt-K_FNfkKEmnltG8",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkx4eWNhT1A1cnhF",
+            "snippet": {
+                "publishedAt": "2024-12-26T12:04:11Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Le Principe de Syracuse",
+                "description": "Une petite formule facile à retenir pour contribuer à se poser des questions dans les situation où c'est franchement utile.\n\nA voir aussi, la Conjecture du Golden Gate sur l'imposture : https://www.youtube.com/watch?v=uQB8wxiFYIk&ab_channel=LaTroncheenBiais\n\n#croyance #respect #distinction",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/LxycaOP5rxE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/LxycaOP5rxE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/LxycaOP5rxE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/LxycaOP5rxE/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 10,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "LxycaOP5rxE"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "LxycaOP5rxE",
+                "videoPublishedAt": "2024-12-26T12:04:11Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "KEwxOrVmse4OWLvVA31iLv8zy-I",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLk0tWjdDdmItT0dN",
+            "snippet": {
+                "publishedAt": "2024-12-25T07:53:24Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Les Bullshiteurs - Coulisses de la nouvelle série de la TeB",
+                "description": "La gallerie des bullshiteurs est une occasion de voir en quoi les discours des baratineurs-chercheurs de vérité - pseudo-experts se ressemblent alors qu'ils ont l'air a priori d'aller dans des sens bien distincts.\nEntrez dans les coulisses d'une série qui va peut-être quelque part ! Sauf si je vous bullshite.\n\n#baratin #baliverne #caricature\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/M-Z7Cvb-OGM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/M-Z7Cvb-OGM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/M-Z7Cvb-OGM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/M-Z7Cvb-OGM/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 11,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "M-Z7Cvb-OGM"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "M-Z7Cvb-OGM",
+                "videoPublishedAt": "2024-12-25T07:53:24Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "qehaxlfkrrlXGPLA1aK9ZSE6kp4",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLnZHSENkVmY3YUxn",
+            "snippet": {
+                "publishedAt": "2024-12-22T08:40:42Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Les ennemis de la VÉRITÉ ! [Les Bullshiteurs] Ludo Ep02",
+                "description": "Ils cherchent à l'intimider. Ils le traquent. Mais Ludo est résilient, et il peut compter sur les éclaireurs qui le suivent avec dévotion et savent qu'il est sage d'investir leur économies dans ses projets.\n\n#résistance #vérité #canapasdeprix\n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vGHCdVf7aLg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vGHCdVf7aLg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vGHCdVf7aLg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/vGHCdVf7aLg/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 12,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "vGHCdVf7aLg"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "vGHCdVf7aLg",
+                "videoPublishedAt": "2024-12-22T08:40:42Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "CmW2vDtKS3lNhh5F4pNbPp1dz58",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLm1HYnRnaHllamhn",
+            "snippet": {
+                "publishedAt": "2024-12-18T20:53:43Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "L'étude Raoult rétractée était-elle truquée ? [Edition Spéciale]",
+                "description": "Au bout de 1610 jours, l'étude qui a fait du protocole Raoult une hypothèse scientifique âprement discutée en pleine crise sanitaire, est rétractée sur décision du journal. Parmi les critères, des manquements à l'éthique dont il est désormais établi qu'ils sont quotidiens dans l'équipe de Raoult. Mais en plus de cela : les test PCR qui établissent si un malade est guéri ou pas auraient été trafiqués.\nEmission spéciale avec des observateurs de l'affaire depuis ses débuts qui nous expliqueront en détail les problèmes et le long processus qui aboutit à l'invalidation totale de cette étude cité des milliers de fois dans la littérature.\n\nPlus d'infos : https://menace-theoriste.fr/retracted-chloproquine-covid19-et-mauvais-science/\nJe vous traduis la notice de rétractation de cet article ici : https://youtu.be/UVDl9RHf_ok\n\nPétition citoyenne mentionnée en toute fin d'émission : https://docs.google.com/forms/u/0/d/e/1FAIpQLScHgsteaMvdasV3Yl3YSysFGVgk3c31eZtQQytkd3lY89VtYQ/formResponse\n\n#scandale #intégrité #crisesanitaire \n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/mGbtghyejhg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/mGbtghyejhg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/mGbtghyejhg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/mGbtghyejhg/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 13,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "mGbtghyejhg"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "mGbtghyejhg",
+                "videoPublishedAt": "2024-12-18T20:53:43Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "CjFAZSZoYQo3xDvzTqZRZK4nEps",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLjRLbW5WdDhNMDBz",
+            "snippet": {
+                "publishedAt": "2024-12-17T21:36:26Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Rêves d'Apocalypse [Tenl 143]",
+                "description": "Netflix récidive  avec la saison 2 de Ancient Apocalypse (À l’aube de notre histoire) où le journaliste Graham Hancock, pourfendeur de l’archéologie dans ses best-sellers depuis 30 ans, livre sa vision fantasmée d’une civilisation perdue lors de la fin du dernier âge glaciaire, il y a 12000 ans, une véritable Atlantide internationale dont les historiens ne voudraient pas entendre parler.La « méthode » de Graham Hancock n’a rien de nouveau, et si elle ‘marche’ auprès du public c’est parce qu’il s’agit ni plus ni moins que de mythologie, un mode de narration du monde qui a accompagné l’humain depuis des millénaires. Discussion avec l’anthropologue, préhistorien et spécialiste des mythologie, Jean-Loïc le Quellec.\n\nLa saison 1 est critiquée ici : https://www.youtube.com/watch?v=pUpTPaouP6c \n#archeology #mythology #netflix \n\n\nPour me suivre sur BlueSky : https://bsky.app/profile/acermendax.bsky.social\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/4KmnVt8M00s/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/4KmnVt8M00s/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/4KmnVt8M00s/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/4KmnVt8M00s/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 14,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "4KmnVt8M00s"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "4KmnVt8M00s",
+                "videoPublishedAt": "2024-12-17T21:36:26Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "F97umZN3196phcx-17MTtWHTUBY",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLlVWRGw5UkhmX29r",
+            "snippet": {
+                "publishedAt": "2024-12-17T13:03:49Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Scandale - L'étude rétractée de Didier Raoult (Hydroxychloroquine)",
+                "description": "Scandale scientifique. Voici les explications données par Elsevier et l’International Journal of Antimicrobial agents concernant la rétractation survenue tout à l’heure de l’étude Gautret et al 2020, et qui constituait le premier argument scientifique en faveur du protocole Raoult. \nEn cause : le non respect des règles d’éthique... et même de fortes suspicions de trucage des résultats.\n\nSource\nhttps://www.sciencedirect.com/science/article/pii/S0924857920300996?via%3Dihub\n\nPlus d'info mercredi soir lors d'une émission en directe spéciale avec des invités qui ont suivi l'affaire de très près.\n\n#fraude #retraction #pandémie  \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/UVDl9RHf_ok/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/UVDl9RHf_ok/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/UVDl9RHf_ok/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/UVDl9RHf_ok/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 15,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "UVDl9RHf_ok"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "UVDl9RHf_ok",
+                "videoPublishedAt": "2024-12-17T13:03:49Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "-bvKzwI2lNXs9n_gX8sHbx-swjQ",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkRVSjZERHpUMzk4",
+            "snippet": {
+                "publishedAt": "2024-12-15T10:17:24Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Qui sont les GÉANTS mystérieux du passé ? [Les Bullshiteurs] Ludo Ep01",
+                "description": "Nos ancêtres ont un message pour nous, mais cette vérité du fond des âges est occultée par un système corrompu. Et Ludo est celui qui ose faire dérailler le train du mensonge. Rejoignez-le dans sa quête, si vous avez des espèces, c'est idéal !\n\nPlaylist des Bullshiteurs : https://www.youtube.com/watch?v=Urt1Cn_0BH0&list=PLceYkF8JBqYSSCBjSjYo_z46hbrKSZYnU&ab_channel=LaTroncheenBiais\n\n\n#archeology #fraude #giant \n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/DUJ6DDzT398/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/DUJ6DDzT398/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/DUJ6DDzT398/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/DUJ6DDzT398/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 16,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "DUJ6DDzT398"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "DUJ6DDzT398",
+                "videoPublishedAt": "2024-12-15T10:17:24Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "zqqMaVcOFlSUpSIMJAlwM4Zy1Aw",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLlNKaGp6M0kwdWlR",
+            "snippet": {
+                "publishedAt": "2024-12-12T21:37:10Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "DEBRIEF - Débat sur Dieu et le Coran (Timera vs Acermendax)",
+                "description": "Juste après la rediffusion du débat organisé lundi 9 décembre, je reçois en direct quelques apostats et férus de débats théologiques pour apporter une analyse critique et enrichir l'échange avec leurs connaissances.\nUne occasion d'apprendre à mieux débattre.\nPour voir le débat, c'est ici : https://youtu.be/7nBXrXCRrlQ \n\n#critique #argumentation #dialogue \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/SJhjz3I0uiQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/SJhjz3I0uiQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/SJhjz3I0uiQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/SJhjz3I0uiQ/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 17,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "SJhjz3I0uiQ"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "SJhjz3I0uiQ",
+                "videoPublishedAt": "2024-12-12T21:37:10Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "AvWbrU08AGw6M6BDXA6qC_29BwQ",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLjduQlhyWENScmxR",
+            "snippet": {
+                "publishedAt": "2024-12-12T16:30:06Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Un univers sans créateur ? Le coran est-il \"divin\" ? Débat avec Ousmane TIMERA",
+                "description": "Conversations en deux temps avec un penseur de l'Islam qui défend la position que l'univers ne peut pas exister sans un créateur, puis l'idée que le coran est de nature divine. J'essaie de défendre une posture naturaliste / rationaliste / sceptique : ces termes-étiquettes n'étant ni équivalents ni, peut-être, totalement adaptés à mon discours.\n\nDébat organisé sur le discord R.P.M.P (Religion Philosophie Métaphysique Politique).\n\nTexte de mon intervention introductive au débat : https://menace-theoriste.fr/un-univers-sans-createur-est-il-possible-debat-avec-ousmane-timera/\nPour accompagner la deuxième partie du débat : https://menace-theoriste.fr/le-coran-est-il-divin/\n\nLe débrief de ce débat avec des apostats et des spécialistes es débats (a)théologiques c'est ici : https://www.youtube.com/live/SJhjz3I0uiQ\n\nLe discord RPMP se trouve là : https://discord.gg/rpmp-1210621153429954590\n\n\n\n#religion #rationalité #preuve \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/7nBXrXCRrlQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/7nBXrXCRrlQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/7nBXrXCRrlQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/7nBXrXCRrlQ/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 18,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "7nBXrXCRrlQ"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "7nBXrXCRrlQ",
+                "videoPublishedAt": "2024-12-12T16:30:06Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "w86Wb2CLpZm9RitjGAIlGxTzQ0s",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLlFiTGQ4NWpGU2xv",
+            "snippet": {
+                "publishedAt": "2024-12-10T15:56:57Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Le terrible secret de l'allopathie [Vite Fait]",
+                "description": "De nombreuses personnes ont recours à des Pratiques de Soin Non Conventionnelles pour des raisons qui leur appartiennent. Très souvent elles choisissent de les défendre au nom des graves défaut de l'allopathie qui soignerait mal. Mais ce mot pourrait se retourner contre eux, on le comprend quand on le connait bien.\n\n\n#santé #croyance #argument\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/QbLd85jFSlo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/QbLd85jFSlo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/QbLd85jFSlo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/QbLd85jFSlo/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 19,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "QbLd85jFSlo"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "QbLd85jFSlo",
+                "videoPublishedAt": "2024-12-10T15:56:57Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "uDqbNQEkUSPgiIt27171X6zrwv4",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLjRjT2xfOUdMYzE0",
+            "snippet": {
+                "publishedAt": "2024-12-09T12:09:01Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Infowars aux enchères : Coup de théâtre ! [Zet'NEWS]",
+                "description": "Alex Jones, la crapule complotiste ultime, sévèrement condamnée par la justice, a dû vendre le site Infowars, véhicule extrémiste des pires paniques, propagandes et arnaques. S’ensuit un coup de génie puis u coup de théâtre. En bonus : Elon Musk, une fois de plus, entend imposer sa loi.\n\nExtrait de l'émission Ca Coule de Source N°22 que vous pouvez regarder ici : https://www.youtube.com/live/MPou_x4RBcs\n\n\nAbonnez-vous à la News Letter de la TeB : https://menace-theoriste.fr/inscription-newzet/\n\n\nRessources :\nhttps://www.radiofrance.fr/mouv/podcasts/culture-internet/culture-internet-du-lundi-02-decembre-2024-5903772\nhttps://www.msn.com/fr-fr/finance/autres/elon-musk-tente-d-emp%C3%AAcher-the-onion-d-acqu%C3%A9rir-le-compte-d-infowars-sur-x/ar-AA1uVZNb \n\n\n#conspidinguo #justice #ironie\n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/4cOl_9GLc14/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/4cOl_9GLc14/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/4cOl_9GLc14/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/4cOl_9GLc14/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 20,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "4cOl_9GLc14"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "4cOl_9GLc14",
+                "videoPublishedAt": "2024-12-09T12:09:01Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "Hg5asRNFUJNHLq9moV39lBX5hy0",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLk16QTJIWHFGcGpN",
+            "snippet": {
+                "publishedAt": "2024-12-08T10:27:26Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "L'hygiène de votre Aura [Les Bullshiteurs] Donatien Ep03",
+                "description": "Pour lutter contre les constantes agressions du monde et aider votre aura à briller de toute son intensité, agrémentez votre routine care d'un tout nouveau produit venu des confins de la sagesse des énergies subtiles. Avec MystyClear Energy™, revivez !\nDonatien l'énergéticien ne s'épargnera aucun effort pour vous amener avec lui dans les méandres du bullshit !\n\n#ChakraDesAisselles #acheter #vite \n\n\nPlaylist des Bullshiteurs : https://www.youtube.com/watch?v=Urt1Cn_0BH0&list=PLceYkF8JBqYSSCBjSjYo_z46hbrKSZYnU&ab_channel=LaTroncheenBiais\n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/MzA2HXqFpjM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/MzA2HXqFpjM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/MzA2HXqFpjM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/MzA2HXqFpjM/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 21,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "MzA2HXqFpjM"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "MzA2HXqFpjM",
+                "videoPublishedAt": "2024-12-08T10:27:26Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "tOjS1Ve_4FnnT8eNbkgCfVInF8Y",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLi13SXBiSVQ4bVI0",
+            "snippet": {
+                "publishedAt": "2024-12-06T11:15:36Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Les magouilles de Xavier Azalbert [Zet'NEWS]",
+                "description": "L’heureux propriétaire du blog complotiste poussant sur le cadavre de feu le journal France-Soir n’est pas millionnaire sans raison. Il sait attirer l’argent, et profiter d’une crise sanitaire ne lui fait pas peur.\n\nExtrait de l'émission Ca Coule de Source N°22 que vous pouvez regarder ici : https://www.youtube.com/live/MPou_x4RBcs\n\n\nAbonnez-vous à la News Letter de la TeB : https://menace-theoriste.fr/inscription-newzet/\n\n\nRessources :\nhttps://www.lepoint.fr/sante/exclusif-le-juteux-business-bresilien-de-complotistes-antivax-francais-27-10-2024-2573797_40.php \nhttps://www.conspiracywatch.info/financement-public-et-guerilla-judiciaire-la-strategie-controversee-de-francesoir-et-bon-sens.html\n\n\n#brevet #pognon #crisesanitaire \n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/-wIpbIT8mR4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/-wIpbIT8mR4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/-wIpbIT8mR4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/-wIpbIT8mR4/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 22,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "-wIpbIT8mR4"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "-wIpbIT8mR4",
+                "videoPublishedAt": "2024-12-06T11:15:36Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "dSXZJ0wuwzwWmM2BKTq-FlCz-c0",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLklRTEVGTTVYQ2lF",
+            "snippet": {
+                "publishedAt": "2024-12-05T10:37:54Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Arrêtez de dire de la m%# §e sur le climat !! [Zet'NEWS]",
+                "description": "Le toutologue télévicole Onfray dégoise son ignorance décomplexée sur CNews, mais prie encore la respectable Société de géographie sombre dans le climatodénialisme à un point tel que ses membres commencent à démissionner. Pauvre science !\n\nExtrait de l'émission Ca Coule de Source N°22 que vous pouvez regarder ici : https://www.youtube.com/live/MPou_x4RBcs\n\n\nAbonnez-vous à la News Letter de la TeB : https://menace-theoriste.fr/inscription-newzet/\n\n\nRessources :\nhttps://www.lemonde.fr/planete/article/2024/11/29/la-societe-de-geographie-accusee-de-climatoscepticisme-c-est-une-lame-de-fond_6420902_3244.html \n\n#climat #géographie #antiscience\n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/IQLEFM5XCiE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/IQLEFM5XCiE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/IQLEFM5XCiE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/IQLEFM5XCiE/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 23,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "IQLEFM5XCiE"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "IQLEFM5XCiE",
+                "videoPublishedAt": "2024-12-05T10:37:54Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "89CHSD_y_aauVtpfMr6Dn_vhKSA",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLjVWLTkwZUJ1UVZj",
+            "snippet": {
+                "publishedAt": "2024-12-04T10:18:07Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Raoult Aggro Darwin -01- Les faits alternatifs [TdF 10.1]",
+                "description": "Didier Raoult annonce que son dernier livre va révolutionner l'évolution. Il propose une nouvelle théorie, car \"Darwin (...) c'est tout faux, ce truc\".\nPremière étape : vérifier les allégations concernant l'état du monde et de la science. Didier Raoult multiplie les dingueries en histoire, démographie, linguistique, psychologie... et sur les religions. Comment croire qu'il puisse proposer une théorie valide sur cette base ?\n\n\n#théorie #évolution #imposture \nMon livre  \"'L'ironie de l'évolution\" : https://www.chez-mon-libraire.fr/ebook/9782021311679-l-ironie-de-l-evolution-thomas-c-durand/ \nPour me suivre sur Bluesky : https://bsky.app/profile/acermendax.bsky.social\n\n00:00 Introduction\n6:55 -1- Une théorie révolutionnaire ?\n19:22 -2- Sciences historiques\n38:39 -3- Démographie\n47:27 -4- Linguistique\n54:55 -5- Psychologie\n1:17:42 -6- Religion\n1:27:22 L'art de la citation\n1:30:12 Première conclusion\n\n_________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/5V-90eBuQVc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/5V-90eBuQVc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/5V-90eBuQVc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/5V-90eBuQVc/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/5V-90eBuQVc/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 24,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "5V-90eBuQVc"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "5V-90eBuQVc",
+                "videoPublishedAt": "2024-12-04T10:18:07Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "oYBbeivMBgnCR_3EbV-O02lm3p4",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLk1Qb3VfeDRSQmNz",
+            "snippet": {
+                "publishedAt": "2024-12-02T21:38:10Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Ils ne croient pas que les virus existent [CCdS 22]",
+                "description": "Magazine de l'esprit critique 2.0.\nRevue des contenus de la sphère Sceptique —Entretien — Analyse de l’actualité.\n\nL’invité sera Laurent FOIRY, auteur de « Les Faux savants - plongée au cœur du complotisme scientifique ».\nPour comprendre la dynamique au sein des groupes numériques où la dénégation des sciences est au service de discours alternatifs et d’ambitions personnelles.\n\n\n#antivax #confiance #réseauxsociaux \nS'inscrire à la New'Zet : https://menace-theoriste.fr/inscription-newzet/\nLes liens des vidéos présentées sont disponible dans ce numéro de la News'Zet : https://newz.menace-theoriste.fr/nl3/ch6yTxW_MbIqNC0Y24UDbA\nPour me suivre sur BlueSky : https://bsky.app/profile/acermendax.bsky.social\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/MPou_x4RBcs/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/MPou_x4RBcs/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/MPou_x4RBcs/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/MPou_x4RBcs/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 25,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "MPou_x4RBcs"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "MPou_x4RBcs",
+                "videoPublishedAt": "2024-12-02T21:38:10Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "yuaJpsw8ht0P3BEXJXGbNQmsGGw",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLmlxak9LQVpPeEQ0",
+            "snippet": {
+                "publishedAt": "2024-12-01T10:19:19Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Les vertus du mépris [Les Bullshiteurs] Baptiste Ep03",
+                "description": "Seul un vrai Mâle Alpha peut mépriser une femme comme elle le mérite, comme elle le désire au fond d'elle même. Avec Baptiste, initie-toi aux règles principales qui doivent structurer tes relations avec elles.\n\n#stratégie #succès #amour \n\nEpisode 1 : https://www.youtube.com/watch?v=Urt1Cn_0BH0\nEpisode 2 : https://youtu.be/38s2RHPnP4c\nPlaylist des Bullshiteurs : https://www.youtube.com/watch?v=Urt1Cn_0BH0&list=PLceYkF8JBqYSSCBjSjYo_z46hbrKSZYnU&ab_channel=LaTroncheenBiais\n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/iqjOKAZOxD4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/iqjOKAZOxD4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/iqjOKAZOxD4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/iqjOKAZOxD4/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 26,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "iqjOKAZOxD4"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "iqjOKAZOxD4",
+                "videoPublishedAt": "2024-12-01T10:19:19Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "rIWhb4qZC7C4UL_E3CWXmg8oAk0",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkVhR2Q2Tnk3ZmtF",
+            "snippet": {
+                "publishedAt": "2024-11-27T22:57:21Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Et si les IA prenaient le contrôle ? [TenL 142]",
+                "description": "Les programmes superhumains, c’est-à-dire meilleurs que la totalité des humains sur une ou plusieurs taches, sont désormais parmi nous. S’ils sont mal programmés (mal alignés) il devient impossible de prévoir leurs actions. Alors si ces actions sont néfastes, saurons-nous les empêcher ?\nLes invités : Charbel Segerie et Amaury Lorin, du Centre français pour la Sécurité de l'IA (CeSIA)\n\n#alignement #ias #controle \nLe site du CeSIA www.securité-ia.fr / Son discord : https://discord.gg/KjZHTyGWjQ\n\nMe suivre sur BlueSky : https://bsky.app/profile/acermendax.bsky.social\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/EaGd6Ny7fkE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/EaGd6Ny7fkE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/EaGd6Ny7fkE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/EaGd6Ny7fkE/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 27,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "EaGd6Ny7fkE"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "EaGd6Ny7fkE",
+                "videoPublishedAt": "2024-11-27T22:57:21Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "gDlD28ujFm10BDYUcQlXzMW35Ik",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkhtVlhzQWJDVW1z",
+            "snippet": {
+                "publishedAt": "2024-11-24T10:19:52Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "La 5G pollue votre âme [Les Bullshiteurs] Donatien Ep02",
+                "description": "Ils veulent affaiblir vos capacités spirituelles ! Heureusement Donatien l'énergéticien dispose de la solution. L'Aurashield™ peut vous protéger. Vite !\n\n\n#protection #électromagnétique #solution \n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/HmVXsAbCUms/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/HmVXsAbCUms/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/HmVXsAbCUms/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/HmVXsAbCUms/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 28,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "HmVXsAbCUms"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "HmVXsAbCUms",
+                "videoPublishedAt": "2024-11-24T10:19:52Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "gDd84OGd51azjE9x--oZ0lzhXZg",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkRuZ1cyLTB4c0NR",
+            "snippet": {
+                "publishedAt": "2024-11-18T10:33:55Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Université de Marseille  : le rapport caché - et accablant",
+                "description": "Certains réclament un Nuremberg 2.0, la condamnation des scientifiques, des médecins, des vulgarisateurs, au nom du Code de Nuremberg. L'ironie est que ce code a débouché sur des règles éthiques qui ont été violées par l'IHU Méditerranée et conduisent à des rétractations en série des publications de Didier Raoult. C'est bien le procès de Nuremberg qui est à l'origine des règles rappelées dans un rapport indépendant commandé par l'Université de Marseille puis soigneusement escamoté, alors que sa publication au public était de mise.\nScandale, scandale, scandale.\n\nLien pour lire le fameux rapport : https://ihu-correction.com/documents/Ethical-expertise-papers-from-IHU-Marseille.pdf\nFabrice Franck dans Ca Coule de Source en 2023 : https://www.youtube.com/live/FMRq9IOs1C0?feature=shared&t=1176 \nSur Twitter/X, Fabrice Franck résume le rapport :  https://x.com/LockedFab/status/1858072127171162381 \n\n\n00:00 Contexte\n10:20 L'histoire rocambolesque du rapport caché\n26:29 Que dit le rapport ?\n34:17 Conclusions du rapport\n40:06 Ma conclusion.\n\n\n#raoult #nuremberg #intégrité \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/DngW2-0xsCQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/DngW2-0xsCQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/DngW2-0xsCQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/DngW2-0xsCQ/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 29,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "DngW2-0xsCQ"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "DngW2-0xsCQ",
+                "videoPublishedAt": "2024-11-18T10:33:55Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "JLm_KtXqSy7-1Bnw3kGTRAQ_CDg",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLnpPeVduNVZTQ1lr",
+            "snippet": {
+                "publishedAt": "2024-11-17T10:15:12Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Energéticien sérieux et diplômé [Les Bullshiteurs] Donatien Ep01",
+                "description": "Travailler avec les dimensions subtiles, les niveaux vibratoires et les ondes scalaires, ça demande une formation très pointue. Donatien vous aide grâce à sa longue expertise. Le Bullshit est puissant autour de lui.\n\n\n#energy #healing #vibration\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/zOyWn5VSCYk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/zOyWn5VSCYk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/zOyWn5VSCYk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/zOyWn5VSCYk/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 30,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "zOyWn5VSCYk"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "zOyWn5VSCYk",
+                "videoPublishedAt": "2024-11-17T10:15:12Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "xVAbNhtWcQRDklZlfIQx_S0Pge8",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLjM4czJSSFBuUDRj",
+            "snippet": {
+                "publishedAt": "2024-11-10T10:28:08Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Les vraies lois de la NATURE [Les Bullshiteurs] Baptiste Ep02",
+                "description": "L'influenceur de la masculinité ultime te fait bénéficier de la sagesse de l'Alphatude. La nature est de ton côté si tu es du sien.\nTu n'es pas à la hauteur, mais tu peux le devenir. Viens, mec !\n\nEpisode 1 : https://www.youtube.com/watch?v=Urt1Cn_0BH0\n\n#masculinity  #toxique #influenceur \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/38s2RHPnP4c/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/38s2RHPnP4c/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/38s2RHPnP4c/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/38s2RHPnP4c/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 31,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "38s2RHPnP4c"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "38s2RHPnP4c",
+                "videoPublishedAt": "2024-11-10T10:28:08Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "blJ_HmaqO5rBQooi2u_nfycVNpA",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkpGMEtfdE1HNTFR",
+            "snippet": {
+                "publishedAt": "2024-11-08T10:53:54Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Je ne suis PAS là pour vous faire PLAISIR. Déso",
+                "description": "Au bout de 10 ans, il y a certaines choses sur la zététique qui méritent d'être dites. Certains malentendus persistent, même si je suis certain que beaucoup d'entre vous ont déjà bien compris, je vais quand même le dire.\n\n#confiance #autodéfense #reflexe \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/JF0K_tMG51Q/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/JF0K_tMG51Q/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/JF0K_tMG51Q/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/JF0K_tMG51Q/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 32,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "JF0K_tMG51Q"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "JF0K_tMG51Q",
+                "videoPublishedAt": "2024-11-08T10:53:54Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "N0cO0TrXOKFe0gpMDlG-O4Aephs",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLnNEUVN3NXJZT3lN",
+            "snippet": {
+                "publishedAt": "2024-11-06T10:49:35Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "COVID - Les morts du protocole Raoult [Une étude rétractée ?]",
+                "description": "Un article scientifique qui estimait à 17 000 le nombre de décès potentiellement liés à l'utilisation de l'hydroxychloroquine pendant la première vague de COVID-19 a été rétracté en aout, suite à une campagne de critiques menée par des partisans de l'hydroxychloroquine.\nAnalysons les enjeux scientifiques et éthiques soulevés par cette affaire, avec la lecture d’un billet récapitulatif publié par l’équipe de Retraction Watch.\n\nLien vers l’article : https://retractionwatch.com/2024/11/01/how-an-article-estimating-deaths-from-hydroxychloroquine-use-came-to-be-retracted/#more-130306\nVidéo avec Jean-Christophe LEGA : https://www.youtube.com/watch?v=rzBobfXsp9U \n\n\n#elsevier #retractionwatch #procureurdelarépublique\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/sDQSw5rYOyM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/sDQSw5rYOyM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/sDQSw5rYOyM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/sDQSw5rYOyM/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 33,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "sDQSw5rYOyM"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "sDQSw5rYOyM",
+                "videoPublishedAt": "2024-11-06T10:49:35Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "8ivwAvt4JMtf34SCi7pd7oHxwRM",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLnZoMm5rejB2WFJV",
+            "snippet": {
+                "publishedAt": "2024-11-05T10:35:25Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Le Syndrome du Sauveur [Vite Fait]",
+                "description": "Le zététicien (et en particulier celui qui jouit d'un peu de renommée) est-il condamné à sombrer dans une attitude de chevalier blanc où il se vit comme le personnage héroïque d'une saga qui implique des méchants à abattre et toujours plus de victimes à sauver ? Le syndrome du sauveur n'est pas une fatalité si on prend l'habitude de questionner ses attitudes en même temps que ses croyances.\n\n\n#messie #humilité #posture\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vh2nkz0vXRU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vh2nkz0vXRU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vh2nkz0vXRU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/vh2nkz0vXRU/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 34,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "vh2nkz0vXRU"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "vh2nkz0vXRU",
+                "videoPublishedAt": "2024-11-05T10:35:25Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "PkGv0NYYDQKhF4GIHREHr-akjeo",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLlVydDFDbl8wQkgw",
+            "snippet": {
+                "publishedAt": "2024-11-03T11:27:24Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Découvre le Mâle Alpha [Les Bullshiteurs] Baptiste Ep01",
+                "description": "Baptiste est un influenceur séduction top niveau de l'Alphatude, autrement dit : un Bullshiteur !\nEs-tu prêt pour son enseignement ?\nPour ça, il te faut découvrir le concept de Mâle Alpha.\n\nEpisode 2 : https://www.youtube.com/watch?v=38s2RHPnP4c&ab_channel=LaTroncheenBiais\nPlaylist des Bullshiteurs : https://www.youtube.com/watch?v=Urt1Cn_0BH0&list=PLceYkF8JBqYSSCBjSjYo_z46hbrKSZYnU&ab_channel=LaTroncheenBiais\n\n#masculinity  #toxique #touteressemblance\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Urt1Cn_0BH0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Urt1Cn_0BH0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Urt1Cn_0BH0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/Urt1Cn_0BH0/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 35,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "Urt1Cn_0BH0"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "Urt1Cn_0BH0",
+                "videoPublishedAt": "2024-11-03T11:27:24Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "-qMIyFUWvXmcbSOjVlC2yaoRTxg",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLmZaWVhnd1dwMUtV",
+            "snippet": {
+                "publishedAt": "2024-11-02T06:17:05Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "NUIT Zététique 2024",
+                "description": "PROGRAMME DE LA NUIT :\n\n18h30 - À quoi sert l’esprit critique ?\nHenri Broch (distanciel), Jean-Michel Abrassart, Vincent Flibustier, Arthur Hennes, présenté par Acermendax et Vled Tapas\n\n20h00 - Les publics vulnérables\nStéphanie De Vanssay, Blind Vador, Marie Deaucourt, présenté par Vled Tapas\n\n21h00 - Laïcité : vivre dans des croyances différentes\nAlain Policar, Sacha Sydoryk, Thierry Dewier, présenté par Acermendax\n\n22h00 - Les grands classiques (OVNIs, paranormal...)\nAlexis Seydoux, Frédéric Courtade, Jean-Jacques Ingremeau, Jean-Michel Abrassart, présenté par Acermendax\n\n23h00 - Les dérives en santé\nCora the Midwife, Nicolas Dritsch, Docteur Daria (distanciel), présenté par Fantine\n\n00h00 - Notre usage des réseaux sociaux\nJean-Lou Fourquet, Sylvain Rozier, Florence Dellerie, Clemzy (Science Squad), présenté par Acermendax\n\n01h00     Les échecs de la zététique\nVincent Flibustier, Benoit Judde, Yannis «Khiox» Vassiliadis, présenté par Acermendax\n\n02h00 - Les nouveaux gourous\nBenoit Judde, Mathieu Porzio, Peter Barrett, Rémi Rabouan, présenté par Acermendax et Yannis «Khiox» Vassiliadis\n\n03h00 - Et dans 10 ans ? Visions du futur\nTous les invités encore debout, présenté par Acermendax\n\n- \n\nSoutenez l'événement sur helloasso : https://www.helloasso.com/associations/association-pour-la-science-et-la-transmission-de-l-esprit-critique/collectes/la-nuit-zetetique-2024\n\nParticiper au quizz entre les tables rondes : https://audience.ahaslides.com/ASTEC\n\n#rationnalisme #scepticisme ##sciences\n______\nLa Nuit Zététique est entièrement financée par vos dons \nhttps://www.helloasso.com/associations/association-pour-la-science-et-la-transmission-de-l-esprit-critique/collectes/la-nuit-zetetique-2024",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/fZYXgwWp1KU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/fZYXgwWp1KU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/fZYXgwWp1KU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/fZYXgwWp1KU/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/fZYXgwWp1KU/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 36,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "fZYXgwWp1KU"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "fZYXgwWp1KU",
+                "videoPublishedAt": "2024-11-02T06:17:05Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "4oN7IwTx1HNiYckMsk5K4F3BfV4",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkxjNDl5MnljUThJ",
+            "snippet": {
+                "publishedAt": "2024-10-29T21:31:34Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Les frontières de la MORT [TenL 141]",
+                "description": "Mourir est un processus, l’extinction des fonctions dont émergent notre personne réclame du temps et se déroule à travers une cascade d’évènement physiologiques étroitement étudiés. Les chercheurs se rapprochent toujours plus de la trace d’activité biologique cérébrale qui marque le point de bascule, l’instant M de la mort. Mais à ce jour cette frontière demeure élusive, floue. Et rien ne nous certifie que tous les cerveaux meurent de la même manière. \nFaisons le point sur les savoirs et les doutes avec le Pr Stéphane CHARPIER, de l'Institut du Cerveau, auteur de « La science de la résurrection ».\n\n#cerveau #resurrection #mortalité \n\nLe livre du Pr Charpier : https://www.chez-mon-libraire.fr/livre/9782081503335-la-science-de-la-resurrection-ils-ont-repousse-les-frontieres-de-la-mort-stephane-charpier/\nMe suivre sur BlueSky : https://bsky.app/profile/acermendax.bsky.social\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Lc49y2ycQ8I/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Lc49y2ycQ8I/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Lc49y2ycQ8I/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/Lc49y2ycQ8I/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 37,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "Lc49y2ycQ8I"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "Lc49y2ycQ8I",
+                "videoPublishedAt": "2024-10-29T21:31:34Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "8ewl8QBitlqny1XLACaGE3OXrEg",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLmt2UEYyOE8xeldj",
+            "snippet": {
+                "publishedAt": "2024-10-27T18:23:48Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Biorésonance, diapasons et ovnis au salon du PARANORMAL 2024",
+                "description": "Les salons du paranormal mélangent cristaux, médiums, survivalistes, voyantes, pseudothérapeutes et soi-disant experts de phénomènes étranges, comme les ovnis.\nVenez avec moi à la rencontre des discours qu'on y rencontre !\n\n#ufologie #diagnostic #bizarre \n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/kvPF28O1zWc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/kvPF28O1zWc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/kvPF28O1zWc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/kvPF28O1zWc/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 38,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "kvPF28O1zWc"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "kvPF28O1zWc",
+                "videoPublishedAt": "2024-10-27T18:23:48Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "glwk3OmBiVi2JEoY0JoXEwNSRZI",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLm8wNjdQNlp2bktr",
+            "snippet": {
+                "publishedAt": "2024-10-16T10:05:30Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Faut-il penser par soi-même ? [Vite Fait]",
+                "description": "Penser \"par soi-même\", faire \"ses propres recherches\" : voilà ce qu'il faudrait faire pour ne pas se faire avoir, pour trouver la vérité, pour être un meilleur penseur.?\nDerrière ces injonctions à la méfiance, loin d'être en terrain solide, on se trouve dans le domaine de \"l'individualisme épistémique\" qui est l'un des mirages les plus séduisants pour qui cherche à être un penseur critique. je vous dis pourquoi c'est dangereux. Vite Fait !\n\nCes notions sont beaucoup plus développées dans le chapitre 4 de \"L'esprit critique pour les nuls\" (https://www.chez-mon-libraire.fr/ebook/9782412072202-l-esprit-critique-pour-les-nuls-thomas-c-durand/)\n\n#méfiance #epistemology #sagacité\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/o067P6ZvnKk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/o067P6ZvnKk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/o067P6ZvnKk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/o067P6ZvnKk/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 39,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "o067P6ZvnKk"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "o067P6ZvnKk",
+                "videoPublishedAt": "2024-10-16T10:05:30Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "HOvQgBMtXD1Vxk9s0T1aLbD8Yn0",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLlBERmtva2d0QzNn",
+            "snippet": {
+                "publishedAt": "2024-10-15T09:48:31Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Les Origines du covid19 : nouvelle étude !  [Zet'NEWS]",
+                "description": "À travers les rumeurs, les fake news et les impostures, il y en a qui travaillent.\nUne étude publiée dans le journal Cell a réalisé un criblage métagénomique des échantillons des débuts de la pandémie : le pangolin est innocenté. D'autres suspects sont sur la sellette...\n\n• L'étude est ici : https://www.cell.com/cell/fulltext/S0092-8674(24)00901-2\n• Billet du CNRS en offre un résumé : https://www.cnrs.fr/fr/presse/covid-19-identification-des-especes-animales-lorigine-possible-de-la-pandemie \n\nExtrait du Magazine Ca Coule de Source n°21 du 3 octobre 2024\nhttps://www.youtube.com/live/ynror-09Ays\n\n\n#recherche #génomique #pandemie \n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais\n▲ Abonnez-vous à la NEWS'Zet : https://menace-theoriste.fr/inscription-newzet/",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/PDFkokgtC3g/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/PDFkokgtC3g/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/PDFkokgtC3g/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/PDFkokgtC3g/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 40,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "PDFkokgtC3g"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "PDFkokgtC3g",
+                "videoPublishedAt": "2024-10-15T09:48:31Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "rQL4CLOHUjm6wR9PPc2OxyBQ2qs",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLjNjMW0ya1BRY3BF",
+            "snippet": {
+                "publishedAt": "2024-10-10T10:35:08Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Idriss Aberkane aurait-il peur ? [Zet'NEWS]",
+                "description": "Alors que les premières décisions de justice commencent à fleurir et à contrarier les narratifs complotistes, un petit détail sur la chaîne de l'hyper-imposteur Idriss Aberkane nous indique-t-il qu'un peu d'angoisse se glisse sous ses rodomontades ?\n\n\nExtrait du Magazine Ca Coule de Source n°21 du 3 octobre 2024\nhttps://www.youtube.com/live/ynror-09Ays\n\nRessources\nhttps://www.youtube.com/watch?v=A4S6ROtccsc&ab_channel=LaTroncheenBiais \nhttps://youtu.be/E2VoFFUFWaY\nhttps://www.youtube.com/watch?v=RYZFz4LYttE\n\n\n#Harcèlement #FactAndFurious #complosphère\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais\n▲ Abonnez-vous à la NEWS'Zet : https://menace-theoriste.fr/inscription-newzet/",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/3c1m2kPQcpE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/3c1m2kPQcpE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/3c1m2kPQcpE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/3c1m2kPQcpE/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 41,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "3c1m2kPQcpE"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "3c1m2kPQcpE",
+                "videoPublishedAt": "2024-10-10T10:35:08Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "dMH-peLTbYAAHpYEZGVtoRfjF-4",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkNWcGhaa1pBLU13",
+            "snippet": {
+                "publishedAt": "2024-10-09T20:36:17Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Quitter sa religion [La Tronche est à VOUS]",
+                "description": "Au cours d’une vie, notre regard sur le monde est amené à changer, parfois drastiquement. Certains d’entre nous entrent dans une croyance, en quittent une autre, et cela peut bouleverser leur existence. \nCe soir la parole est donnée à celles et ceux qui ont quitté une religion, une fois, une croyance partagée dans le surnaturel. Ils sont invités à nous éclairer sur le parcours de la décroyance, les étapes, les ressentis, les conséquences, les angoisses et/ou la libération\nEn fil rouge, nous serons accompagnés de Claire MAXIMOVA, ancienne carmélite devenue athée dont le sacerdoce, douloureux a été marqué par un viol dont elle accuse un prêtre (le procès est en cours). Elle est l’autrice de « La tyrannie du silence »\n\nCe format de vidéo est pour VOUS, il vous suffit de nous rejoindre sur le discord AGORATRONCHE qui sera ouvert la veille de l‘émission pour nous expliquer en deux ou trois phrases la teneur du témoignage que vous voulez partager. Un lien sera fourni ici même.\n\n\n\n#croyance #liberation #apostasy  \nPour me suivre sur BlueSky : https://bsky.app/profile/acermendax.bsky.social\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/CVphZkZA-Mw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/CVphZkZA-Mw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/CVphZkZA-Mw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/CVphZkZA-Mw/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 42,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "CVphZkZA-Mw"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "CVphZkZA-Mw",
+                "videoPublishedAt": "2024-10-09T20:36:17Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "93D2GjPtR-aGQr4ToE3MHllrAhs",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLk1rbGctMHdpT2FF",
+            "snippet": {
+                "publishedAt": "2024-10-07T09:45:55Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Le Ministre Patrick Hetzel, ennemi des sciences [Zet'NEWS]",
+                "description": "Le tout nouveau ministre de l'Enseignement supérieur et de la Recherche, Patrick Hetzel a derrière lui un parcours semé de prises de positions obscurantistes et anti-science. Comme ça ne suffisait pas, son cabinet a voulu censurer Wikipédia. Démission ?\n\nExtrait du Magazine Ca Coule de Source n°21 du 3 octobre 2024\nhttps://www.youtube.com/live/ynror-09Ays\n\n#censure #obscurantisme #démission \n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais\n▲ Abonnez-vous à la NEWS'Zet : https://menace-theoriste.fr/inscription-newzet/",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Mklg-0wiOaE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Mklg-0wiOaE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Mklg-0wiOaE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/Mklg-0wiOaE/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 43,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "Mklg-0wiOaE"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "Mklg-0wiOaE",
+                "videoPublishedAt": "2024-10-07T09:45:55Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "Sw_cEHihb0wvruVRpH3x1DbdVis",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLkNXVDVkSDhUTmpj",
+            "snippet": {
+                "publishedAt": "2024-10-07T09:45:40Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Annonce - les REC de Bastia",
+                "description": "Les Rencontres de l'Esprit Critique de Toulouse deviennent itinérantes avec un premier évènement à BASTIA les 18 et 19 octobre.\nJ'y serai. Vled également.\nEt vous ?\n\nRenseignements et réservations à cette adresse (c'est gratuit !)\nhttps://emaho.typeform.com/to/IU5cFEyG",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/CWT5dH8TNjc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/CWT5dH8TNjc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/CWT5dH8TNjc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/CWT5dH8TNjc/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 44,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "CWT5dH8TNjc"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "CWT5dH8TNjc",
+                "videoPublishedAt": "2024-10-07T09:45:40Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "oqJEIj26cGCLpoDter3fBVpd2_s",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLk93S3FjaEtvOHQ0",
+            "snippet": {
+                "publishedAt": "2024-10-05T09:43:01Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Didier Raoult sanctionné !  [Zet'NEWS]",
+                "description": "L'ordre des médecins a fait appel du blâme reçu par le professeur en décembre 2021. La nouvelle décision est beaucoup plus sévère !\nLa profession dit en toutes lettres que Didier Raoult est un charlatan.\n\n\nExtrait du Magazine Ca Coule de Source n°21 du 3 octobre 2024\nhttps://www.youtube.com/live/ynror-09Ays\n\n\n#charlatan #hydroxychloroquine #sanction\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais\n▲ Abonnez-vous à la NEWS'Zet : https://menace-theoriste.fr/inscription-newzet/",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/OwKqchKo8t4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/OwKqchKo8t4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/OwKqchKo8t4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/OwKqchKo8t4/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 45,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "OwKqchKo8t4"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "OwKqchKo8t4",
+                "videoPublishedAt": "2024-10-05T09:43:01Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "K5kWtXfmSZEr3mksV5JFNIkH7TM",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLnpCUzB1TDRMYXdv",
+            "snippet": {
+                "publishedAt": "2024-10-04T10:28:50Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "David Lefrancois : le coach strikes back  [Zet'NEWS]",
+                "description": "Imposteur, arnaqueur, le faux neuropsychologue David LEFRANCOIS, réfugié à Dubaï, lance un nouveau site et veut effacer ses traces.\nLa Tronche en Biais a reçu un Strike ➜ vidéo supprimée. Plus grave, la chaine @survolteLaChaine est en sursis, elle pourrait disparaître dans les prochains jours à cause d'un abus du système de plainte pour atteinte aux droits d'auteur.\n\nC'est l'occasion de rappeler le lourd et sale dossier de David LEFRANCOIS.\n\n\nExtrait du Magazine Ca Coule de Source n°21 du 3 octobre 2024\nhttps://www.youtube.com/live/ynror-09Ays\n\n\n#arnaque #attaque #neuropsychologie\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais\n▲ Abonnez-vous à la NEWS'Zet : https://menace-theoriste.fr/inscription-newzet/",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/zBS0uL4Lawo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/zBS0uL4Lawo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/zBS0uL4Lawo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/zBS0uL4Lawo/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 46,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "zBS0uL4Lawo"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "zBS0uL4Lawo",
+                "videoPublishedAt": "2024-10-04T10:28:50Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "WM9ODVQMmV95E7MnGhjx1x_lskY",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLnlucm9yLTA5QXlz",
+            "snippet": {
+                "publishedAt": "2024-10-03T19:46:47Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Ca Coule de Source Numéro 21",
+                "description": "Magazine de l'esprit critique 2.0.\nRevue des productions de la sphère sceptique + analyse de l'actualité \n\nC'est le 21e numéro. Nous allons passer en revue des productions intéressante de la communauté rationaliste et je vais vous proposer des analyses de faits d'actualité. Je garderai un œil sur le chat pour répondre aux questions pertinentes ;)\n\n\n#revue #scepticisme #rationalisme\n\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ynror-09Ays/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ynror-09Ays/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ynror-09Ays/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/ynror-09Ays/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 47,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "ynror-09Ays"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "ynror-09Ays",
+                "videoPublishedAt": "2024-10-03T19:46:47Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "flYpIF_ALBubDapDQpWAoL5Kd7A",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLk9ncjNnR0RnME9V",
+            "snippet": {
+                "publishedAt": "2024-10-02T23:59:08Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Annonce Nuit Zététique 2024 - Collecte ASTEC",
+                "description": "Nuit zététique #3 + TeB #10ans\n\nLe 1er novembre 2024, l'ASTEC organise un évènement en public. Une collecte est ouverte pour assurer le financement d'une soirée qui sera essentiellement préparée par des bénévoles de l'association.\n\nJ'ai le rôle de responsable éditorial de cette édition que je co-animerai avec plusieurs membres de l'ASTEC, dont Vled Tapas, Fantine et Yannis...\n\nS'il vous plait, merci d'envisager de donner quelques euros pour que l'on puisse prendre en charge les frais de déplacement des invités, régler les diverses factures, envisager des montées en gamme, et même, idéalement, d'installer ce rendez-vous de façon pérenne dans notre calendrier.\n\nVous serez les bienvenus à Nancy pour assister en vrai à ces rencontres ; nous tenons à la gratuité pour que l'argent ne soit un obstacle pour personne. Celles et ceux qui ont les moyens de financer seront nos héros.\n\nVoici le lien de la collecte entièrement gérée par l'ASTEC (avec quelques contreparties pas si mal en fait).\n\nSi nous dépassons un certain palier, je me suis engagé à finir la soirée déguisé en \"Mendax-la-marionnette\". J'assumerai.\n\nhttps://www.helloasso.com/associations/association-pour-la-science-et-la-transmission-de-l-esprit-critique/collectes/la-nuit-zetetique-2024",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Ogr3gGDg0OU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Ogr3gGDg0OU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Ogr3gGDg0OU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/Ogr3gGDg0OU/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/Ogr3gGDg0OU/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 48,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "Ogr3gGDg0OU"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "Ogr3gGDg0OU",
+                "videoPublishedAt": "2024-10-02T23:59:08Z"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "TGZ1nRPN0Stm1oY3B7i_uaw7tbo",
+            "id": "VVVxLThwQk1NM0k0MFFscmhNOUV4WEpRLjg0RHY0Mkl3R3cw",
+            "snippet": {
+                "publishedAt": "2024-09-28T08:32:19Z",
+                "channelId": "UCq-8pBMM3I40QlrhM9ExXJQ",
+                "title": "Faut-il en finir avec l'Arbre du Vivant ?",
+                "description": "Depuis quelques milliards d’années le vivant prospère sur Terre, et nous restons ignorants de la plupart des détails de l’histoire. Pour représenter ce que nous croyons savoir, nous nous aidons de schéma, de figures, et notamment du fameux « arbre du vivant » qui ne peut qu’échouer à rendre compte de la complexité du réel. Le temps est-il venu de révolutionner tout ça ?\n\nC'est l'occasion de s'interroger sur les prétentions d'un livre que Didier Raoult vient de sortir... Mais ça, j'y reviendrai bien plus en détail dans une autre vidéo.\n\n#évolution #science #revolution \n\nLe script de la vidéo, avec ses sources, est disponible sur La Menace Théoriste : https://menace-theoriste.fr/de-larbre-du-vivant-vers-les-reseaux-phylogenetiques-une-revolution/\n________\nMerci beaucoup à ceux qui soutiennent déjà le travail de la Tronche en Biais via les plateformes de financement : \n▲ Ulule : https://fr.ulule.com/la-tronche-en-biais/?\n▲ Patreon : https://www.patreon.com/TroncheBiais?fan_landing=true\n▲ Tipeee : https://fr.tipeee.com/la-tronche-en-biais",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/84Dv42IwGw0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/84Dv42IwGw0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/84Dv42IwGw0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/84Dv42IwGw0/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/84Dv42IwGw0/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "La Tronche en Biais",
+                "playlistId": "UUq-8pBMM3I40QlrhM9ExXJQ",
+                "position": 49,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "84Dv42IwGw0"
+                },
+                "videoOwnerChannelTitle": "La Tronche en Biais",
+                "videoOwnerChannelId": "UCq-8pBMM3I40QlrhM9ExXJQ"
+            },
+            "contentDetails": {
+                "videoId": "84Dv42IwGw0",
+                "videoPublishedAt": "2024-09-28T08:32:19Z"
+            }
+        }
+    ],
+    "pageInfo": {
+        "totalResults": 731,
+        "resultsPerPage": 50
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "express": "^4.21.2",
+    "node-schedule": "^2.1.1",
+    "tinyduration": "^3.4.1"
+  }
+}

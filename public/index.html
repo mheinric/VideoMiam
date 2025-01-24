@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8"/>
+	<script src='/videomiam/dist/sql-wasm.js'></script>
+	<title>Video miam</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<div id="pageBar">
+	<button id="videoPageButton">Videos</button>
+	<button id="subscriptionPageButton" title="Subscriptions">Subs</button>
+</div>
+<div id="videoPage" class="page">
+	<h1>Watch list</h1>
+	<input id="videoFilter" type="text" placeholder="Filter..." autocomplete="off">
+	<div id="videoList">
+	</div>
+</div>
+<div id="subscriptionPage" class="page">
+	<h1>Subscriptions</h1>
+	<input id="subscriptionIdInput" type="text" placeholder="Channel ID" autocomplete="off"> <button id="addSubscriptionButton">Add</button>
+	<div id="subscriptionList"></div>
+</div>
+<div id="channelPage" class="page">
+	<h1>PUT NAME HERE</h1>
+	<div id="channelVideoList">
+	</div>
+</div>
+
+<style>
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	padding: 0; 
+	margin: 0;
+}
+
+h1 {
+	text-align: center;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+}
+
+#pageBar {
+	position: fixed; 
+	top: 0; 
+	left: 0; 
+	width: 4em; 
+	height: 100vh;
+	background-color: rgb(126, 207, 142);
+	display: flex; 
+	flex-direction: column;
+	align-items: center;
+	padding-top: 2em;
+}
+
+#pageBar button {
+	color: black;
+	font-weight: bold;
+	background-color: rgb(74, 163, 93);
+	margin-top: 1em; 
+	border: none; 
+	border-radius: 0.5em;
+	width: 3.5em;
+	padding: 1em 0em;
+	cursor: pointer;
+}
+
+#pageBar button:hover {
+	background-color: rgb(37, 119, 55);
+	color: rgb(0, 0, 0);
+}
+
+.page {
+	margin-left: 4em;
+	padding: 1em;
+}
+
+/* Video style */
+
+#videoList {
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+.vid {
+	position: relative;
+	flex-grow: 0; 
+	flex-shrink: 0;
+	background-color: rgb(167, 212, 177); 
+	border-radius: 1em; 
+	padding: 1em; 
+	margin: 1em;
+	width: 11em;
+}
+
+.vid.hidden {
+	display: none;
+}
+
+.vid.vidSeen {
+	background-color: rgb(163, 163, 163); 
+}
+
+.vid img {
+	width: 9em;
+	cursor: pointer;
+}
+
+.vid img:hover {
+	filter: brightness(50%);
+}
+
+.vid h2 {
+	font-size: small;
+	font-weight: normal;
+}
+
+.vid h3 {
+	font-size: smaller;
+	margin: 0;
+}
+
+.timeLabel {
+	color: white; 
+	font-size: x-small;
+	background-color: black;
+	position: absolute; 
+	top: 9.6em;
+	right: 1.6em;
+	padding: 0.25em;
+}
+
+/* Channel videos style (needs style above also) */
+#channelVideoList {
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+
+/* Subscriptions style */
+
+#subscriptionList {
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+.sub {
+	flex-grow: 0; 
+	flex-shrink: 0;
+	background-color: rgb(167, 212, 177); 
+	border-radius: 1em; 
+	padding: 1em; 
+	margin: 1em;
+	width: 9em;
+}
+
+.sub img {
+	width: 7em;
+}
+
+.sub h2 {
+	font-size: small;
+}
+
+.externalLink {
+	background-image: url(externalLink.svg);
+	background-position: center right;
+    background-repeat: no-repeat;
+	padding: 0.5em;
+  	margin-left: 0.25em;
+}
+
+</style>
+</body>
+<script>
+const videoPage = document.getElementById("videoPage");
+const videoList = document.getElementById("videoList");
+const subscriptionPage = document.getElementById("subscriptionPage");
+const subscriptionList = document.getElementById("subscriptionList");
+const channelPage = document.getElementById("channelPage");
+const channelVideoList = document.getElementById("channelVideoList");
+
+const allPages = [videoPage, subscriptionPage, channelPage];
+
+const sqlPromise = initSqlJs({
+		locateFile: file => `/videomiam/dist/${file}`
+	});
+var db = null; 
+
+function parseResult(sqlResult) {
+	if (sqlResult.length == 0) 
+	{
+		return [];
+	}
+	sqlResult = sqlResult[0];
+	const res = [];
+	for (var sqlRow of sqlResult.values) {
+		const row = {};
+		for (var i in sqlResult.columns) {
+			row[sqlResult.columns[i]] = sqlRow[i];
+		}
+		res.push(row);
+	}
+	return res;
+}
+
+function getChannelInfos(channelId) {
+	return parseResult(db.exec(`SELECT * FROM Subscriptions WHERE Id = ${channelId};`))[0];
+}
+
+function formatTime(timeSec) {
+	var result = "";
+	if (timeSec > 60 * 60) {
+		result += Math.round(timeSec / 60 / 60) + ":";
+		timeSec = timeSec % (60 * 60);
+	}
+	result += Math.round(timeSec / 60) + ":" + (timeSec % 60);
+	return result; 
+}
+
+async function sendRequest(path, params) {
+	const res = await fetch(path, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(params)
+	}).then(response => response.json());
+	if (res.status != "OK") {
+		console.log(res);
+	}
+	return res;
+}
+
+document.getElementById("videoPageButton").onclick = () => {
+	for (page of allPages) {
+		page.style.display = "none";
+	}
+	videoPage.style.display = null;
+};
+
+document.getElementById("subscriptionPageButton").onclick = () => {
+	for (page of allPages) {
+		page.style.display = "none";
+	}
+	subscriptionPage.style.display = null;
+};
+
+/////////// Videos page        ////////////
+async function loadVideos(targetDiv = null, query = null) {
+	if (!targetDiv) {
+		targetDiv = videoList; 
+	}
+	if (!query) {
+		query = "SELECT * FROM Videos WHERE Viewed = FALSE;";
+	}
+	targetDiv.innerHTML = "";
+	const allVideos = parseResult(db.exec(query));
+	for (var video of allVideos) {
+		if (video.UploadDate) {
+			video.UploadDate = new Date(video.UploadDate);
+		}
+	}
+	//Put more recent videos first
+	allVideos.sort((v1, v2) => v2.UploadDate - v1.UploadDate );
+	for (var video of allVideos) {
+		const videoDiv = document.createElement("div"); 
+		videoDiv.classList.add("vid");
+		if (video.Viewed) {
+			videoDiv.classList.add("vidSeen");
+		}
+		const chanInfo = getChannelInfos(video.SubscriptionId);
+		const chanTitle = document.createElement("h3"); 
+		chanTitle.textContent = chanInfo.Title;
+		videoDiv.appendChild(chanTitle);
+
+		const vidImg = document.createElement("img"); 
+		vidImg.src = video.ThumbnailURL;
+		vidImg.onclick = async () => {
+			window.open("https://youtube.com/watch?v=" + vidData.YoutubeId, '_blank').focus();
+			await sendRequest("/videomiam/markViewed", {
+				id: vidData.Id, 
+				viewed: true,
+				viewDate: new Date().toISOString(),
+			})
+			await reloadDB();
+		}
+		videoDiv.appendChild(vidImg);
+
+		const timeLabel = document.createElement("span"); 
+		timeLabel.classList.add("timeLabel");
+		timeLabel.textContent = formatTime(video.DurationSec);
+		videoDiv.appendChild(timeLabel);
+
+		const vidTitle = document.createElement("h2");
+		vidTitle.textContent = video.Title;
+		videoDiv.appendChild(vidTitle);
+		const vidData = video; 
+
+
+		const toggleSeenButton = document.createElement("button");
+		toggleSeenButton.textContent = "Toggle seeen"; 
+		toggleSeenButton.classList.add("toggleSeen"); 
+		toggleSeenButton.onclick = async () => {
+			await sendRequest("/videomiam/markViewed", {
+				id: vidData.Id, 
+				viewed: !vidData.Viewed,
+				viewDate: null,
+			});
+			vidData.Viewed = !vidData.Viewed; 
+			videoDiv.classList.toggle("vidSeen");
+		};
+		videoDiv.appendChild(toggleSeenButton);
+
+		videoDiv.setAttribute("videoId", video.Id);
+		videoDiv.setAttribute("videoTitle", video.Title);
+		targetDiv.appendChild(videoDiv);
+	}
+}
+
+document.getElementById("videoFilter").addEventListener("input", (event) => {
+	const filter = document.getElementById("videoFilter").value;
+	for (var videoDiv of videoList.children) {
+		if (filter.length > 0 && !videoDiv.getAttribute("videoTitle").includes(filter)) {
+			videoDiv.classList.add("hidden");
+		} else {
+			videoDiv.classList.remove("hidden");
+		}
+	}
+});
+
+/////////// Subscriptions page ////////////
+document.getElementById("addSubscriptionButton").onclick = async () => {
+	await sendRequest("/videomiam/addSubscription", {
+		channelId : document.getElementById("subscriptionIdInput").value,
+	});
+};
+
+async function loadSubscriptions() {
+	subscriptionList.innerHTML = "";
+	for (var sub of parseResult(db.exec("SELECT * FROM Subscriptions"))) {
+		const subDiv = document.createElement("div"); 
+		subDiv.classList.add("sub");
+		const subImg = document.createElement("img"); 
+		subImg.src = sub.IconURL;
+		subDiv.appendChild(subImg);
+		const subTitle = document.createElement("h2");
+		subTitle.textContent = sub.Title + " ";
+		const link = document.createElement("a"); 
+		link.classList.add("externalLink");
+		link.href = `https://www.youtube.com/channel/${sub.YoutubeId}`;
+		link.target = "_blank";
+		subTitle.appendChild(link);		
+		subDiv.appendChild(subTitle);
+
+		const vidListButton = document.createElement("button"); 
+		vidListButton.classList.add("vidList");
+		vidListButton.textContent = "List";
+		const subInfo = sub;
+		vidListButton.onclick = async () => {
+			document.querySelector("#channelPage h1").textContent = subInfo.Title;
+			for (page of allPages) {
+				page.style.display = "none";
+			}
+			channelPage.style.display = null;
+			await loadVideos(channelVideoList, `SELECT * FROM Videos WHERE SubscriptionId = ${subInfo.Id}`);
+		}
+		subDiv.appendChild(vidListButton);
+		
+
+		subscriptionList.appendChild(subDiv);
+	}
+}
+
+async function reloadDB() {
+	const dataPromise = fetch("/videomiam/data.db").then(res => res.arrayBuffer());
+	const [SQL, buf] = await Promise.all([sqlPromise, dataPromise]);
+	db = new SQL.Database(new Uint8Array(buf));
+
+	await loadVideos();
+	await loadSubscriptions();
+}
+
+async function main() {
+	document.getElementById("videoPageButton").click();
+	await reloadDB();
+}
+
+main();
+
+</script>
+</html>
