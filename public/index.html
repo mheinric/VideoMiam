@@ -135,7 +135,7 @@ h1 {
 }
 
 .toggleSeen {
-	background-image: url(img/notViewed.svg);
+	background-image: url(img/eyeClosed.svg);
 	font-size: smaller;
 	background-color: transparent;
 	background-position: center left;
@@ -153,7 +153,7 @@ h1 {
 }
 
 .vid.vidSeen .toggleSeen {
-	background-image: url(img/viewed.svg) ;
+	background-image: url(img/eyeOpened.svg) ;
 }
 
 .vid.vidSeen .toggleSeen::after {
@@ -204,7 +204,7 @@ h1 {
 
 .markFav {
 	display: none;
-	background-image: url(img/emptyStar.svg);
+	background-image: url(img/starEmpty.svg);
 	background-color: transparent;
 	height: 1.5em;
 	width: 1.5em;
@@ -220,16 +220,30 @@ h1 {
 
 .sub.favSub .markFav {
 	display: block;
-	background-image: url(img/filledStar.svg);
+	background-image: url(img/starFilled.svg);
 }
 
-.sub:hover .markFav {
+.sub:hover .markFav,
+.markFav:hover {
 	display: block;
 }
 
 .sub .markFav:hover {
-	display: block;
-	background-image: url(img/hoverStar.svg);
+	background-image: url(img/starHover.svg);
+}
+
+.sub .markFav:active {
+	background-image: url(img/starPressed.svg);
+}
+
+/* When clicking the button from selected to unselected, we swap the two images around */
+.sub.favSub .markFav:hover {
+	background-image: url(img/starPressed.svg);
+}
+
+
+.sub.favSub .markFav:active {
+	background-image: url(img/starHover.svg);
 }
 
 </style>
