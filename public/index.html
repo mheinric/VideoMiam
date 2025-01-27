@@ -134,6 +134,33 @@ h1 {
 	padding: 0.25em;
 }
 
+.toggleSeen {
+	background-image: url(not-viewed.svg);
+	font-size: smaller;
+	background-color: transparent;
+	background-position: center left;
+	background-repeat: no-repeat;
+	background-size: auto 80%;
+	border: none;
+	padding-left: 2.8em;
+	cursor: pointer;
+	position: absolute;
+	bottom: 0.3em;
+}
+
+.toggleSeen::after {
+	content: "Not viewed";
+}
+
+.vid.vidSeen .toggleSeen {
+	background-image: url(viewed.svg) ;
+}
+
+.vid.vidSeen .toggleSeen::after {
+	content: "Viewed";
+}
+
+
 /* Channel videos style (needs style above also) */
 #channelVideoList {
 	display: flex; 
@@ -303,7 +330,6 @@ async function loadVideos(targetDiv = null, query = null) {
 
 
 		const toggleSeenButton = document.createElement("button");
-		toggleSeenButton.textContent = "Toggle seeen"; 
 		toggleSeenButton.classList.add("toggleSeen"); 
 		toggleSeenButton.onclick = async () => {
 			await sendRequest("/videomiam/markViewed", {

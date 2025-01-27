@@ -29,11 +29,11 @@ I have the MVP I think. Now to add some features which would be nice:
     X Being able to easily mark as seen/unseen the videos from a channel
     X Have a style for videos which have already been seen
     X Display the duration of each video
-    - Remove shorts
-    - Support for playlists
+    X Remove shorts
+    X Nicer buttons
     - Implement a preference system to move up videos from channels we look at more frequently
+    - Support for playlists
     - Filter short/long videos 
-    - Nicer buttons
     - Display the icon of the channel above each video
     - Deal with duplicates
     - Make it easy to deploy
