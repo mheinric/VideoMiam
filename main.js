@@ -26,6 +26,10 @@ app.post('/videomiam/addSubscription', async (req, res) => {
     for (var videoInfo of await yt.getPlaylistVideos(playlistId, true)) {
         //TODO: handle better if viewed or not.
         //TODO: make sure video does not exist yet
+        if (videoInfo.videoInfo.additionalDetails.duration < 3 * 60) {
+            //Skip already viewed videos
+            continue;
+        }
         await db.addVideo(videoInfo.contentDetails.videoId, videoInfo.snippet.title, videoInfo.additionalDetails.duration, 
             videoInfo.snippet.description, videoInfo.snippet.publishedAt, videoInfo.snippet.thumbnails.medium.url, 
             channelId, false);
@@ -56,7 +60,7 @@ schedule.scheduleJob('0 17 * * *', async () => {
         console.log(`Checking new videos for ${sub.Title}`);
         const channelInfo = await yt.getChannelInfos(sub.YoutubeId);
         for (var videoInfo of await yt.getPlaylistVideos(channelInfo.contentDetails.relatedPlaylists.uploads)) {
-            if (!await db.hasVideo(videoInfo.contentDetails.videoId)) {
+            if (videoInfo.additionalDetails.duration > 3 * 60 && !await db.hasVideo(videoInfo.contentDetails.videoId)) {
                 //TODO: refactor with addSubscription
                 await db.addVideo(videoInfo.contentDetails.videoId, videoInfo.snippet.title, videoInfo.additionalDetails.duration, 
                     videoInfo.snippet.description, videoInfo.snippet.publishedAt, videoInfo.snippet.thumbnails.medium.url, 
