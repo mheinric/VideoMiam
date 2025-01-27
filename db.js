@@ -48,6 +48,11 @@ async function setViewed(videoId, viewed, viewDate) {
     markViewedStatement.run(viewed * 1, viewDate != null ? viewDate.toISOString() : null, videoId);
 }
 
+const markFavStatement = db.prepare("UPDATE Subscriptions SET IsFavorite = ? WHERE Id = ?")
+async function setChannelFavorite(channelId, favorite) {
+    markFavStatement.run(favorite * 1, channelId);
+}
+
 module.exports = {
     clearDB,
     addSubscription, 
@@ -58,4 +63,5 @@ module.exports = {
     hasVideo,
     addVideo, 
     setViewed,
+    setChannelFavorite,
 }

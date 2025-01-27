@@ -135,7 +135,7 @@ h1 {
 }
 
 .toggleSeen {
-	background-image: url(not-viewed.svg);
+	background-image: url(img/notViewed.svg);
 	font-size: smaller;
 	background-color: transparent;
 	background-position: center left;
@@ -153,7 +153,7 @@ h1 {
 }
 
 .vid.vidSeen .toggleSeen {
-	background-image: url(viewed.svg) ;
+	background-image: url(img/viewed.svg) ;
 }
 
 .vid.vidSeen .toggleSeen::after {
@@ -176,6 +176,7 @@ h1 {
 }
 
 .sub {
+	position: relative;
 	flex-grow: 0; 
 	flex-shrink: 0;
 	background-color: rgb(167, 212, 177); 
@@ -194,11 +195,41 @@ h1 {
 }
 
 .externalLink {
-	background-image: url(externalLink.svg);
+	background-image: url(img/externalLink.svg);
 	background-position: center right;
     background-repeat: no-repeat;
 	padding: 0.5em;
   	margin-left: 0.25em;
+}
+
+.markFav {
+	display: none;
+	background-image: url(img/emptyStar.svg);
+	background-color: transparent;
+	height: 1.5em;
+	width: 1.5em;
+	background-position: center;
+    background-repeat: no-repeat;
+	background-size: 100%;
+	border: none;
+	position: absolute;
+	top: -0.5em; 
+	right: -0.5em;
+	cursor: pointer;
+}
+
+.sub.favSub .markFav {
+	display: block;
+	background-image: url(img/filledStar.svg);
+}
+
+.sub:hover .markFav {
+	display: block;
+}
+
+.sub .markFav:hover {
+	display: block;
+	background-image: url(img/hoverStar.svg);
 }
 
 </style>
@@ -282,8 +313,10 @@ async function loadVideos(targetDiv = null, query = null) {
 	if (!targetDiv) {
 		targetDiv = videoList; 
 	}
+	var showVFavOnly = false;
 	if (!query) {
 		query = "SELECT * FROM Videos WHERE Viewed = FALSE;";
+		showFavOnly = true;
 	}
 	targetDiv.innerHTML = "";
 	const allVideos = parseResult(db.exec(query));
@@ -295,12 +328,15 @@ async function loadVideos(targetDiv = null, query = null) {
 	//Put more recent videos first
 	allVideos.sort((v1, v2) => v2.UploadDate - v1.UploadDate );
 	for (var video of allVideos) {
+		const chanInfo = getChannelInfos(video.SubscriptionId);
+		if (showFavOnly && !chanInfo.IsFavorite) {
+			continue;
+		}
 		const videoDiv = document.createElement("div"); 
 		videoDiv.classList.add("vid");
 		if (video.Viewed) {
 			videoDiv.classList.add("vidSeen");
 		}
-		const chanInfo = getChannelInfos(video.SubscriptionId);
 		const chanTitle = document.createElement("h3"); 
 		chanTitle.textContent = chanInfo.Title;
 		videoDiv.appendChild(chanTitle);
@@ -371,6 +407,9 @@ async function loadSubscriptions() {
 	for (var sub of parseResult(db.exec("SELECT * FROM Subscriptions"))) {
 		const subDiv = document.createElement("div"); 
 		subDiv.classList.add("sub");
+		if (sub.IsFavorite) {
+			subDiv.classList.add("favSub");
+		}
 		const subImg = document.createElement("img"); 
 		subImg.src = sub.IconURL;
 		subDiv.appendChild(subImg);
@@ -396,7 +435,18 @@ async function loadSubscriptions() {
 			await loadVideos(channelVideoList, `SELECT * FROM Videos WHERE SubscriptionId = ${subInfo.Id}`);
 		}
 		subDiv.appendChild(vidListButton);
-		
+
+		const markFavButton = document.createElement("button");
+		markFavButton.classList.add("markFav");
+		markFavButton.onclick = async () => {
+			await sendRequest("/videomiam/markFavorite", {
+				id: subInfo.Id, 
+				favorite: !subInfo.IsFavorite,
+			});
+			subInfo.IsFavorite = !subInfo.IsFavorite;
+			subDiv.classList.toggle("favSub");
+		}
+		subDiv.appendChild(markFavButton);
 
 		subscriptionList.appendChild(subDiv);
 	}

@@ -48,6 +48,17 @@ app.post("/videomiam/markViewed", async (req, res) => {
     console.log(`Marking video ${req.body.id} as viewed=${req.body.viewed}`);
     await db.setViewed(req.body.id, req.body.viewed, req.body.viewDate != null ? new Date(req.body.viewDate) : null);
     res.send({ status: "OK"});
+});
+
+app.post("/videomiam/markFavorite", async (req, res) => {
+    if (typeof req.body.id == 'undefined' || typeof req.body.favorite == 'undefined') {
+        console.log("markFavorite: Invalid input");
+        res.status(400).send({status: "Invalid"});
+        return; 
+    }
+    console.log(`Marking channel ${req.body.id} as favorite=${req.body.favorite}`);
+    await db.setChannelFavorite(req.body.id, req.body.favorite);
+    res.send({ status: "OK" });
 })
 
 // Catch-all route for other requests

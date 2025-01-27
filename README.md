@@ -31,12 +31,13 @@ I have the MVP I think. Now to add some features which would be nice:
     X Display the duration of each video
     X Remove shorts
     X Nicer buttons
-    - Implement a preference system to move up videos from channels we look at more frequently
+    X Implement a preference system to move up videos from channels we look at more frequently
     - Support for playlists
+    - Make links for moving between the different pages instead of modifying the DOM directly.
     - Filter short/long videos 
     - Display the icon of the channel above each video
     - Deal with duplicates
-    - Make it easy to deploy
+    X Make it easy to deploy
     - Button to indicate that you are not interested by a video
     - Button to show already viewed videos (not sure that is necessary)
     - Ability to have several separate lists (not for this version)

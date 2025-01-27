@@ -3,7 +3,8 @@ CREATE TABLE Subscriptions (
     YoutubeId CHAR(64) NOT NULL UNIQUE,
     Kind CHAR(16) NOT NULL CHECK( Kind IN ('Playlist','Channel') ),
     Title TEXT NOT NULL,
-    IconURL TEXT NOT NULL
+    IconURL TEXT NOT NULL,
+    IsFavorite BOOLEAN NOT NULL DEFAULT FALSE,
 );
 
 CREATE TABLE Videos (
@@ -19,3 +20,11 @@ CREATE TABLE Videos (
     ViewDate TEXT,
     FOREIGN KEY(SubscriptionId) REFERENCES Subscriptions(Id)
 );
+
+
+/**
+CHANGELOG: Adding Subscriptions.IsFavorite
+ALTER TABLE Subscriptions ADD IsFavorite BOOLEAN NOT NULL DEFAULT FALSE;
+
+
+**/
