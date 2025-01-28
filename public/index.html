@@ -327,7 +327,7 @@ async function loadVideos(targetDiv = null, query = null) {
 	if (!targetDiv) {
 		targetDiv = videoList; 
 	}
-	var showVFavOnly = false;
+	var showFavOnly = false;
 	if (!query) {
 		query = "SELECT * FROM Videos WHERE Viewed = FALSE;";
 		showFavOnly = true;
