@@ -69,7 +69,14 @@ async function getChannelInfos(channelId) {
     return queryRes.items[0];
 }
 
+async function getPlaylistInfos(playlistId) {
+    //TODO error handling
+    const queryRes = await query(`https://www.googleapis.com/youtube/v3/playlists?id=${playlistId}&part=snippet,contentDetails`);
+    return queryRes.items[0];
+}
+
 module.exports = {
     getChannelInfos,
+    getPlaylistInfos,
     getPlaylistVideos
 }

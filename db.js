@@ -24,14 +24,14 @@ async function removeSubscription(id) {
     //TODO: sql queries
 }
 
+const isSubStatement = db.prepare("SELECT COUNT(*) AS Result FROM Subscriptions WHERE YoutubeId = ?");
 async function isSubscribedTo(youtubeId) {
-    //Check if we are subscribed to the channel/playlist
-    //TODO: sql query
+    return isSubStatement.get(youtubeId).Result != 0;
 }
 
 const containsVideoStatement = db.prepare("SELECT COUNT(*) AS Result FROM Videos WHERE YoutubeId = ?");
 async function hasVideo(youtubeId) {
-    return containsVideoStatement.get(youtubeId).Result;
+    return containsVideoStatement.get(youtubeId).Result != 0;
 }
 
 const addVideoStatement = db.prepare("INSERT INTO Videos (YoutubeId, Title, DurationSec, Details, UploadDate, ThumbnailURL, SubscriptionId, Viewed, ViewDate) " +
