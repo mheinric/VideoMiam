@@ -105,23 +105,41 @@ h1 {
 	background-color: rgb(163, 163, 163); 
 }
 
-.vid img {
+.vid .vidIcon {
 	width: 9em;
 	cursor: pointer;
 }
 
-.vid img:hover {
+.vid .vidIcon:hover {
 	filter: brightness(50%);
 }
 
 .vid h2 {
 	font-size: small;
 	font-weight: normal;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+}
+
+#channelPage .vid h3 {
+	/*Don't display the name of the channel on the video card if you are already on the page 
+	  of a specific channel*/
+	display: none;
 }
 
 .vid h3 {
 	font-size: smaller;
 	margin: 0;
+	margin-bottom: 0.5em;
+}
+
+.vid h3 img {
+	border-radius: 50%;
+	float: left;
+	margin-right: 0.25em;
 }
 
 .timeLabel {
@@ -353,9 +371,15 @@ async function loadVideos(targetDiv = null, query = null) {
 		}
 		const chanTitle = document.createElement("h3"); 
 		chanTitle.textContent = chanInfo.Title;
+		const channelIcon = document.createElement("img");
+		channelIcon.src = chanInfo.IconURL;
+		channelIcon.width = 20;
+		channelIcon.height = 20
+		chanTitle.insertBefore(channelIcon, chanTitle.firstChild);
 		videoDiv.appendChild(chanTitle);
 
 		const vidImg = document.createElement("img"); 
+		vidImg.classList.add("vidIcon");
 		vidImg.src = video.ThumbnailURL;
 		vidImg.onclick = async () => {
 			window.open("https://youtube.com/watch?v=" + vidData.YoutubeId, '_blank').focus();
@@ -375,6 +399,7 @@ async function loadVideos(targetDiv = null, query = null) {
 
 		const vidTitle = document.createElement("h2");
 		vidTitle.textContent = video.Title;
+		vidTitle.title = video.Title;
 		videoDiv.appendChild(vidTitle);
 		const vidData = video; 
 
