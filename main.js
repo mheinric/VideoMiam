@@ -86,7 +86,7 @@ app.use((req, res) => {
     res.status(404).send({ status: "Not Found" });
 });
 
-schedule.scheduleJob('0 17 * * *', async () => {
+async function retrieveData() {
     for (var sub of await db.getAllSubscriptions()) {
         console.log(`Checking new videos for ${sub.Title}`);
         var playlistId = null; 
@@ -110,11 +110,13 @@ schedule.scheduleJob('0 17 * * *', async () => {
             }
         }
     }
-});
+}
+
+schedule.scheduleJob('0 17 * * *', retrieveData);
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
     console.log(`Serving at port ${PORT}`);
+    await retrieveData();
     db.getAllSubscriptions();
-    //db.clearDB();
 });
