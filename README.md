@@ -36,6 +36,7 @@ I have the MVP I think. Now to add some features which would be nice:
    - [X] Implement a preference system to move up videos from channels we look at more frequently
    - [X] Support for playlists
    - [X] Make it easy to deploy
+   - [ ] Mark the video as viewed in the UI when we click on the icon to view it.
    - [ ] Make links for moving between the different pages instead of modifying the DOM directly.
    - [ ] Show feedback when adding a new subscription
    - [ ] Filter short/long videos 

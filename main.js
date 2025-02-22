@@ -7,7 +7,6 @@ const PORT = 8741;
 
 app.use(express.json());
 app.use('/videomiam', express.static(__dirname + '/public'));
-app.use('/favicon.ico', express.static(__dirname + '/public/favicon.ico'));
 
 app.post('/videomiam/addSubscription', async (req, res) => {
     if (!req.body.channelId) {
