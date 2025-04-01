@@ -19,6 +19,11 @@ async function addSubscription(youtubeId, kind, title, iconURL) {
     return res.lastInsertRowid;
 }
 
+const updateIconStatement = db.prepare("UPDATE Subscriptions SET IconURL = ? WHERE YoutubeId = ?");
+async function updateSubscriptionIcon(youtubeId, iconUrl) {
+    updateIconStatement.run(iconUrl, youtubeId); 
+}
+
 async function removeSubscription(id) {
     //Should also remove all videos associated with this subscription
     //TODO: sql queries
@@ -56,6 +61,7 @@ async function setChannelFavorite(channelId, favorite) {
 module.exports = {
     clearDB,
     addSubscription, 
+    updateSubscriptionIcon,
     getAllSubscriptions, 
     removeSubscription, 
     isSubscribedTo, 

@@ -4,6 +4,7 @@ const db = require('./db.js');
 const yt = require('./yt.js');
 const app = express();
 const PORT = 8741;
+const enableSMSNotifs = true;
 
 app.use(express.json());
 app.use('/videomiam', express.static(__dirname + '/public'));
@@ -85,27 +86,47 @@ app.use((req, res) => {
     res.status(404).send({ status: "Not Found" });
 });
 
+async function sendSMS(msg) {
+    const res = await fetch("https://smsapi.free-mobile.fr/sendmsg?user=17879914&pass=EEMcXR0NrUaKbi&msg=" + encodeURIComponent(msg));
+    if (res.status != 200) {
+        console.log("Failed to send SMS"); 
+        console.log(res);
+    }
+}
+
 async function retrieveData() {
     for (var sub of await db.getAllSubscriptions()) {
-        console.log(`Checking new videos for ${sub.Title}`);
-        var playlistId = null; 
-        if (sub.Kind == "Channel") {
-            const channelInfo = await yt.getChannelInfos(sub.YoutubeId);
-            playlistId = channelInfo.contentDetails.relatedPlaylists.uploads
-        } else if (sub.Kind == "Playlist") {
-            playlistId = sub.YoutubeId;
-        } else {
-            console.log(`Skipping unknown subscription type ${sub.Kind} for subscription ${sub.Id}`);
-            continue;
-        }
-        
-        for (var videoInfo of await yt.getPlaylistVideos(playlistId)) {
-            if (videoInfo.additionalDetails.duration > 3 * 60 && !await db.hasVideo(videoInfo.contentDetails.videoId)) {
-                //TODO: refactor with addSubscription
-                await db.addVideo(videoInfo.contentDetails.videoId, videoInfo.snippet.title, videoInfo.additionalDetails.duration, 
-                    videoInfo.snippet.description, videoInfo.snippet.publishedAt, videoInfo.snippet.thumbnails.medium.url, 
-                    sub.Id, false);
-                console.log(`Adding video ${videoInfo.snippet.title}`);
+        try {
+            console.log(`Checking new videos for ${sub.Title}`);
+            var playlistId = null; 
+            if (sub.Kind == "Channel") {
+                const channelInfo = await yt.getChannelInfos(sub.YoutubeId);
+                playlistId = channelInfo.contentDetails.relatedPlaylists.uploads
+                await db.updateSubscriptionIcon(sub.YoutubeId, channelInfo.snippet.thumbnails.medium.url);
+            } else if (sub.Kind == "Playlist") {
+                playlistId = sub.YoutubeId;
+                const playlistInfo = await yt.getPlaylistInfos(playlistId); 
+                await db.updateSubscriptionIcon(playlistId, playlistInfo.snippet.thumbnails.medium.url);
+            } else {
+                console.log(`Skipping unknown subscription type ${sub.Kind} for subscription ${sub.Id}`);
+                continue;
+            }
+
+            for (var videoInfo of await yt.getPlaylistVideos(playlistId)) {
+                if (videoInfo.additionalDetails.duration > 3 * 60 && !await db.hasVideo(videoInfo.contentDetails.videoId)) {
+                    //TODO: refactor with addSubscription
+                    await db.addVideo(videoInfo.contentDetails.videoId, videoInfo.snippet.title, videoInfo.additionalDetails.duration, 
+                        videoInfo.snippet.description, videoInfo.snippet.publishedAt, videoInfo.snippet.thumbnails.medium.url, 
+                        sub.Id, false);
+                    console.log(`Adding video ${videoInfo.snippet.title}`);
+                }
+            }
+        } catch(e) {
+            console.log(`Failed to retrieve infos for subscription ${sub.Title}`); 
+            console.log(e);
+            if (enableSMSNotifs)
+            {
+                await sendSMS(`Failed to retrieve infos for ${sub.Title}`);
             }
         }
     }

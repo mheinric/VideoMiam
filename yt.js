@@ -6,7 +6,10 @@ const API_KEY = "AIzaSyAwzHlyo4ujKVi63uYHz-AV3APaBpegW-w";
 async function query(url) {
     console.log(`Sending request to ${url}`);
     const res = await fetch(url + "&key=" + API_KEY);
-    return await res.json(); //TODO: error handling
+    const resJson = await res.json(); 
+    //console.log("Result:"); 
+    //console.log(JSON.stringify(resJson));
+    return resJson; //TODO: error handling
 }
 
 function parseDuration(durationStr) {
@@ -28,7 +31,8 @@ function parseDuration(durationStr) {
 // List the 50 most recent videos of a playlist
 async function getPlaylistVideos(playlistId, all=false, nextPage = null) {
     const nextPagePart = nextPage ? `&pageToken=${nextPage}` : ""; 
-    const res = await query(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=${playlistId}${nextPagePart}`);
+    const res = await query(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails,status&maxResults=50&playlistId=${playlistId}${nextPagePart}`);
+    res.items = res.items.filter((item) => item.status.privacyStatus == "public");
     for (var video of res.items) {
         video.snippet.publishedAt = new Date(video.snippet.publishedAt);
     }

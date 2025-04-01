@@ -144,12 +144,13 @@ h1 {
 
 .timeLabel {
 	color: white; 
-	font-size: x-small;
+	font-size: small;
+	font-family: monospace;
 	background-color: black;
-	position: absolute; 
-	top: 9.6em;
-	right: 1.6em;
-	padding: 0.25em;
+	float: right;
+	position: relative; 
+	top:-1.9em;
+	padding: 0.1em 0.25em;
 }
 
 .toggleSeen {
@@ -206,6 +207,24 @@ h1 {
 
 .sub img {
 	width: 7em;
+}
+
+.subImgDiv {
+	position: relative;
+}
+
+.listIcon {
+	display: none; 
+}
+
+.subImgDiv:hover .listIcon {
+	display: block;
+	position: absolute;
+  	top: 0em;
+	float: right;
+	cursor: pointer;
+	height: 100%;
+	background-color: #00000099;
 }
 
 .sub h2 {
@@ -308,7 +327,7 @@ function formatTime(timeSec) {
 		result += Math.round(timeSec / 60 / 60) + ":";
 		timeSec = timeSec % (60 * 60);
 	}
-	result += Math.round(timeSec / 60) + ":" + (timeSec % 60);
+	result += String(Math.round(timeSec / 60)).padStart(2, '0') + ":" + String(timeSec % 60).padStart(2, '0');
 	return result; 
 }
 
@@ -449,9 +468,19 @@ async function loadSubscriptions() {
 		if (sub.IsFavorite) {
 			subDiv.classList.add("favSub");
 		}
+
+		const imgDiv = document.createElement("div"); 
+		imgDiv.classList.add("subImgDiv");
 		const subImg = document.createElement("img"); 
 		subImg.src = sub.IconURL;
-		subDiv.appendChild(subImg);
+		subImg.classList.add("subIcon");
+		imgDiv.appendChild(subImg);
+		const listIconImg = document.createElement("img");
+		listIconImg.src = "/videomiam/img/list.svg";
+		listIconImg.classList.add("listIcon");
+		imgDiv.appendChild(listIconImg);
+		subDiv.appendChild(imgDiv)
+
 		const subTitle = document.createElement("h2");
 		subTitle.textContent = sub.Title + " ";
 		const link = document.createElement("a"); 
@@ -460,12 +489,8 @@ async function loadSubscriptions() {
 		link.target = "_blank";
 		subTitle.appendChild(link);		
 		subDiv.appendChild(subTitle);
-
-		const vidListButton = document.createElement("button"); 
-		vidListButton.classList.add("vidList");
-		vidListButton.textContent = "List";
 		const subInfo = sub;
-		vidListButton.onclick = async () => {
+		subImg.onclick = async () => {
 			document.querySelector("#channelPage h1").textContent = subInfo.Title;
 			for (page of allPages) {
 				page.style.display = "none";
@@ -473,7 +498,6 @@ async function loadSubscriptions() {
 			channelPage.style.display = null;
 			await loadVideos(channelVideoList, `SELECT * FROM Videos WHERE SubscriptionId = ${subInfo.Id}`);
 		}
-		subDiv.appendChild(vidListButton);
 
 		const markFavButton = document.createElement("button");
 		markFavButton.classList.add("markFav");
