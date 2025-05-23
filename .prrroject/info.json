@@ -1,1 +1,15 @@
-{"version": "0.0.2", "id": "vm", "tasks": {}, "current_task": null}
+{
+    "version": "0.0.2",
+    "id": "vm",
+    "tasks": {
+        "0": {
+            "id": "0",
+            "title": "Button to filter videos that were already seen",
+            "description": "When we display all the videos of a channel, it would be nice to have a button that allows filtering to display only the videos that we haven't seen yet.",
+            "done": false,
+            "createdAt": "2025-05-23T16:40:40.500914+00:00",
+            "finishedAt": null
+        }
+    },
+    "current_task": "0"
+}
