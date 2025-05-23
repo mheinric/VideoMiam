@@ -25,6 +25,7 @@
 </div>
 <div id="channelPage" class="page">
 	<h1>PUT NAME HERE</h1>
+	<input id="channelDisplayNewOnly" type="checkbox"></input><label for="channelDisplayNewOnly">New videos only</label>
 	<div id="channelVideoList">
 	</div>
 </div>
@@ -300,6 +301,7 @@ const subscriptionPage = document.getElementById("subscriptionPage");
 const subscriptionList = document.getElementById("subscriptionList");
 const channelPage = document.getElementById("channelPage");
 const channelVideoList = document.getElementById("channelVideoList");
+const channelDisplayNewOnly = document.getElementById("channelDisplayNewOnly");
 
 const allPages = [videoPage, subscriptionPage, channelPage];
 
@@ -307,6 +309,8 @@ const sqlPromise = initSqlJs({
 		locateFile: file => `/videomiam/dist/${file}`
 	});
 var db = null; 
+
+var currentChannelInfo = null;
 
 function parseResult(sqlResult) {
 	if (sqlResult.length == 0) 
@@ -504,6 +508,7 @@ async function loadSubscriptions() {
 				page.style.display = "none";
 			}
 			channelPage.style.display = null;
+			currentChannelInfo = subInfo;
 			await loadVideos(channelVideoList, `SELECT * FROM Videos WHERE SubscriptionId = ${subInfo.Id}`);
 		}
 
@@ -520,6 +525,15 @@ async function loadSubscriptions() {
 		subDiv.appendChild(markFavButton);
 
 		subscriptionList.appendChild(subDiv);
+	}
+}
+
+channelDisplayNewOnly.onclick = async function() {
+	if (channelDisplayNewOnly.checked) {
+		await loadVideos(channelVideoList, `SELECT * FROM Videos WHERE SubscriptionId = ${currentChannelInfo.Id} AND Viewed = 0`);
+	}
+	else {
+		await loadVideos(channelVideoList, `SELECT * FROM Videos WHERE SubscriptionId = ${currentChannelInfo.Id}`);
 	}
 }
 

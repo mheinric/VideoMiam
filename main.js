@@ -138,5 +138,4 @@ schedule.scheduleJob('0 17 * * *', retrieveData);
 app.listen(PORT, async () => {
     console.log(`Serving at port ${PORT}`);
     await retrieveData();
-    db.getAllSubscriptions();
 });
