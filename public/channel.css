@@ -1,0 +1,5 @@
+
+#channelVideoList {
+	display: flex; 
+	flex-wrap: wrap;
+}

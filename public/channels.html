@@ -5,9 +5,9 @@
 	<script src='/videomiam/dist/sql-wasm.js'></script>
 	<title>Video miam</title>
 	<link rel="shortcut icon" href="/videomiam/favicon.ico" type="image/x-icon" />
-	<script src="/videomiam/index.js" type="module" defer></script>
+	<script src="/videomiam/channels.js" type="module" defer></script>
 	<link rel="stylesheet" href="/videomiam/common.css" />
-	<link rel="stylesheet" href="/videomiam/index.css" />
+	<link rel="stylesheet" href="/videomiam/channels.css" />
 </head>
 <body>
 <div id="pageBar">
@@ -15,10 +15,10 @@
 	<a id="videoPageButton" href="/videomiam">Videos</a>
 	<a id="subscriptionPageButton" href="/videomiam/channels.html" title="Subscriptions">Subs</a>
 </div>
-<div id="videoPage" class="page">
-	<h1>Watch list</h1>
-	<div id="videoList">
-	</div>
+<div id="subscriptionPage" class="page">
+	<h1>Subscriptions</h1>
+	<input id="subscriptionIdInput" type="text" placeholder="Channel ID" autocomplete="off"> <button id="addSubscriptionButton">Add</button>
+	<div id="subscriptionList"></div>
 </div>
 </body>
 </html>

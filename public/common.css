@@ -1,0 +1,153 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	padding: 0; 
+	margin: 0;
+}
+
+h1 {
+	text-align: center;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+}
+
+#pageBar {
+	position: fixed; 
+	top: 0; 
+	left: 0; 
+	width: 4em; 
+	height: 100vh;
+	background-color: rgb(126, 207, 142);
+	display: flex; 
+	flex-direction: column;
+	align-items: center;
+}
+
+#pageBar a {
+	color: black;
+	font-family: sans;
+	font-weight: bold;
+	text-decoration: none;
+	font-size : small;
+	background-color: rgb(74, 163, 93);
+	margin-top: 1em; 
+	border: none; 
+	border-radius: 0.5em;
+	width: 4em;
+	padding: 1.25em 0em;
+	cursor: pointer;
+	text-align: center;
+}
+
+#pageBar a:hover {
+	background-color: rgb(37, 119, 55);
+	color: rgb(0, 0, 0);
+}
+
+.page {
+	margin-left: 4em;
+	padding: 1em;
+}
+
+/* Video style */
+
+.vid {
+	position: relative;
+	flex-grow: 0; 
+	flex-shrink: 0;
+	background-color: rgb(167, 212, 177); 
+	border-radius: 1em; 
+	padding: 1em; 
+	margin: 0.5em;
+	width: 12em;
+}
+
+.vid.hidden {
+	display: none;
+}
+
+.vid.vidSeen {
+	background-color: rgb(163, 163, 163); 
+}
+
+.vid .vidIcon {
+	width: 10em;
+	cursor: pointer;
+}
+
+.vid .vidIcon:hover {
+	filter: brightness(50%);
+}
+
+.vid h2 {
+	font-size: small;
+	font-weight: normal;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	width: 100%;
+	margin: 0; 
+	margin-bottom: 0.5em;
+}
+
+#channelPage .vid h3 {
+	/*Don't display the name of the channel on the video card if you are already on the page 
+	  of a specific channel*/
+	display: none;
+}
+
+.vid h3 {
+	font-size: smaller;
+	margin: 0;
+	margin-bottom: 0.5em;
+	margin-top: -0.25em; 
+	margin-right: -0.5em; /* A little bit more space for 'Vous avez le Droit '*/
+}
+
+.vid h3 img {
+	border-radius: 50%;
+	float: left;
+	margin-right: 0.25em;
+}
+
+.timeLabel {
+	color: white; 
+	font-size: small;
+	font-family: monospace;
+	background-color: black;
+	float: right;
+	position: relative; 
+	top:-1.9em;
+	padding: 0.1em 0.25em;
+	margin-bottom: -1.9em;
+}
+
+.toggleSeen {
+	background-image: url(/videomiam/img/eyeClosed.svg);
+	font-size: smaller;
+	background-color: transparent;
+	background-position: center left;
+	background-repeat: no-repeat;
+	background-size: auto 80%;
+	border: none;
+	padding-left: 2.8em;
+	cursor: pointer;
+	position: absolute;
+	bottom: 0.3em;
+}
+
+.toggleSeen::after {
+	content: "Not viewed";
+}
+
+.vid.vidSeen .toggleSeen {
+	background-image: url(/videomiam/img/eyeOpened.svg) ;
+}
+
+.vid.vidSeen .toggleSeen::after {
+	content: "Viewed";
+}
