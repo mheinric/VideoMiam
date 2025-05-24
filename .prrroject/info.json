@@ -57,7 +57,15 @@
             "done": true,
             "createdAt": "2025-05-24T20:10:05.884693+00:00",
             "finishedAt": "2025-05-24T20:12:44.873489+00:00"
+        },
+        "7": {
+            "id": "7",
+            "title": "Retrieve data from MAL",
+            "description": "Retrieve the information from MyAnimeList about an anime, and add the data into the database",
+            "done": false,
+            "createdAt": "2025-05-24T20:48:14.429714+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "7"
 }
