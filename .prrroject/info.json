@@ -14,10 +14,10 @@
             "id": "1",
             "title": "Splitting the videos and subs pages into two separate pages",
             "description": "At the moment videomiam is just a single massive page, with all the code and scripts in a single page. \nI need to split this into several pages/script to make it easier to maintain",
-            "done": false,
+            "done": true,
             "createdAt": "2025-05-24T07:40:32.625596+00:00",
-            "finishedAt": null
+            "finishedAt": "2025-05-24T12:11:40.646533+00:00"
         }
     },
-    "current_task": "1"
+    "current_task": null
 }
