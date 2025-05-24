@@ -9,7 +9,15 @@
             "done": true,
             "createdAt": "2025-05-23T16:40:40.500914+00:00",
             "finishedAt": "2025-05-23T17:03:05.426638+00:00"
+        },
+        "1": {
+            "id": "1",
+            "title": "Splitting the videos and subs pages into two separate pages",
+            "description": "At the moment videomiam is just a single massive page, with all the code and scripts in a single page. \nI need to split this into several pages/script to make it easier to maintain",
+            "done": false,
+            "createdAt": "2025-05-24T07:40:32.625596+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "1"
 }
