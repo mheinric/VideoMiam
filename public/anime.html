@@ -5,7 +5,7 @@
 	<script src='/videomiam/dist/sql-wasm.js'></script>
 	<title>Video miam</title>
 	<link rel="shortcut icon" href="/videomiam/favicon.ico" type="image/x-icon" />
-	<script src="/videomiam/channel.js" type="module" defer></script>
+	<script src="/videomiam/anime.js" type="module" defer></script>
 	<link rel="stylesheet" href="/videomiam/common.css" />
 	<link rel="stylesheet" href="/videomiam/anime.css" />
 </head>
@@ -19,8 +19,10 @@
 <div id="animePage" class="page">
 	<h1>Anime</h1>
 	<h2>Recommendations</h2>
-	Coming soon (work in progress).
-	<div id="recommendedAnimeList"></div>
+	<input id="newAnimeField" placeholder="MyAnimeList ID"><button id="newAnimeButton">Add</button>
+	<div id="recommendedAnimeList">
+		Coming soon (work in progress).
+	</div>
 	<h2>Already watched</h2>
 	<div id="watchedAnimeList"></div>
 </div>
