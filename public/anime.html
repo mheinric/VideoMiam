@@ -5,9 +5,9 @@
 	<script src='/videomiam/dist/sql-wasm.js'></script>
 	<title>Video miam</title>
 	<link rel="shortcut icon" href="/videomiam/favicon.ico" type="image/x-icon" />
-	<script src="/videomiam/index.js" type="module" defer></script>
+	<script src="/videomiam/channel.js" type="module" defer></script>
 	<link rel="stylesheet" href="/videomiam/common.css" />
-	<link rel="stylesheet" href="/videomiam/index.css" />
+	<link rel="stylesheet" href="/videomiam/anime.css" />
 </head>
 <body>
 <div id="pageBar">
@@ -16,10 +16,13 @@
 	<a id="subscriptionPageButton" href="/videomiam/channels.html" title="Subscriptions">Subs</a>
 	<a id="animesPageButton" href="/videomiam/anime.html" >Anime</a>
 </div>
-<div id="videoPage" class="page">
-	<h1>Watch list</h1>
-	<div id="videoList">
-	</div>
+<div id="animePage" class="page">
+	<h1>Anime</h1>
+	<h2>Recommendations</h2>
+	Coming soon (work in progress).
+	<div id="recommendedAnimeList"></div>
+	<h2>Already watched</h2>
+	<div id="watchedAnimeList"></div>
 </div>
 </body>
 </html>
