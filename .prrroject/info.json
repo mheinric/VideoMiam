@@ -33,6 +33,14 @@
             "done": false,
             "createdAt": "2025-05-24T19:55:49.813424+00:00",
             "finishedAt": null
+        },
+        "4": {
+            "id": "4",
+            "title": "Add a button to add a new suggested anime",
+            "description": "Add a button in the anime page to allow to enter an url/malID to insert into the database.",
+            "done": false,
+            "createdAt": "2025-05-24T19:58:09.675248+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
