@@ -22,9 +22,9 @@
             "id": "2",
             "title": "Add a new page for displaying a list of anime",
             "description": "Prepare a new page that can display a list of animes. The page can be mostly empty for now",
-            "done": false,
+            "done": true,
             "createdAt": "2025-05-24T19:51:55.374839+00:00",
-            "finishedAt": null
+            "finishedAt": "2025-05-24T20:09:01.963371+00:00"
         },
         "3": {
             "id": "3",
@@ -51,5 +51,5 @@
             "finishedAt": null
         }
     },
-    "current_task": "2"
+    "current_task": null
 }
