@@ -1,5 +1,7 @@
 node_modules
 package-lock.json
 public/data.db
+public/data_init*
+public/db_init*
 public/data.db-journal
 test.json

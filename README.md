@@ -6,10 +6,10 @@ The first step is just to see if it is possible to retrieve the required informa
 
 Okay, so I can list the videos on a channel. Now what do I need?
 A database to store:
-   - [ ] channels I am subscribed to
-   - [ ] playlists I am subscribed to
-   - [ ] all videos retrieved from youtube with: 
-       - [ ] title, description, thumbnail, postDate, url, viewed/notViewed, associated subscription.
+   - [X] channels I am subscribed to
+   - [X] playlists I am subscribed to
+   - [X] all videos retrieved from youtube with: 
+       - [X] title, description, thumbnail, postDate, url, viewed/notViewed, associated subscription.
 A script that every day lists all the suff I am subscribed to, and retrieve the list of recent videos
 Add videos to this list when they are not already present in the database
 Create a webpage that show the list of all the videos I could be interested in.
@@ -36,11 +36,11 @@ I have the MVP I think. Now to add some features which would be nice:
    - [X] Implement a preference system to move up videos from channels we look at more frequently
    - [X] Support for playlists
    - [X] Make it easy to deploy
-   - [ ] Mark the video as viewed in the UI when we click on the icon to view it.
-   - [ ] Make links for moving between the different pages instead of modifying the DOM directly.
+   - [X] Mark the video as viewed in the UI when we click on the icon to view it.
+   - [X] Make links for moving between the different pages instead of modifying the DOM directly.
    - [ ] Show feedback when adding a new subscription
-   - [ ] Filter short/long videos 
-   - [ ] Display the icon of the channel above each video
+   - [X] Filter short/long videos 
+   - [X] Display the icon of the channel above each video
    - [ ] Button to indicate that you are not interested by a video
    - [ ] Button to show already viewed videos (not sure that is necessary)
    - [ ] Ability to have several separate lists (not for this version)
