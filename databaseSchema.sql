@@ -31,7 +31,6 @@ CREATE TABLE Animes (
     NotInterested BOOLEAN NOT NULL,
     ViewDate DATE,
     ThumbnailURL TEXT NOT NULL,
-    UploadDate DATE NOT NULL,
     CurrentStatus CHAR(16) NOT NULL CHECK (CurrentStatus IN ('Completed', 'InProgress', 'Planned')),
     Synopsis TEXT NOT NULL
 );

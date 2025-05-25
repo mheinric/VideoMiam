@@ -2,6 +2,7 @@ const express = require('express');
 const schedule = require('node-schedule');
 const db = require('./db.js');
 const yt = require('./yt.js');
+const mal = require('./mal.js');
 const app = express();
 const PORT = 8741;
 const enableSMSNotifs = true;
@@ -79,7 +80,32 @@ app.post("/videomiam/markFavorite", async (req, res) => {
     console.log(`Marking channel ${req.body.id} as favorite=${req.body.favorite}`);
     await db.setChannelFavorite(req.body.id, req.body.favorite);
     res.send({ status: "OK" });
-})
+});
+
+app.post("/videomiam/addAnime", async (req, res) => {
+    if (!req.body.malId) {
+        console.log("addAnime: Invalid input"); 
+        res.status(400).send({status: "Invalid"});
+        return;
+    }
+    const animeInfo = await mal.getAnimeInfos(req.body.malId);
+    const genres = [];
+    for (var g of animeInfo["genres"]) {
+        genres.push(g["name"]);
+    }
+    var status = "InProgress";
+    if (animeInfo["status"] == "finished_airing") 
+    {
+        status = "Completed";
+    }
+    else if (animeInfo["status"] == "not_yet_aired")
+    {
+        status = "Planned";
+    }
+    await db.addAnime(req.body.malId, animeInfo["title"], animeInfo["num_episodes"], 
+        genres, animeInfo["main_picture"]["large"], status, animeInfo["synopsis"]);
+    console.log(`Added Anime '${animeInfo['title']}' to the database`);
+});
 
 // Catch-all route for other requests
 app.use((req, res) => {

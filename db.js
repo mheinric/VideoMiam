@@ -58,6 +58,12 @@ async function setChannelFavorite(channelId, favorite) {
     markFavStatement.run(favorite * 1, channelId);
 }
 
+const addAnimeStatement = db.prepare("INSERT INTO Animes(MalId, Title, NbEpisodes, Genres, Viewed, NotInterested, ViewDate, ThumbnailURL, CurrentStatus, Synopsis) VALUES (?,?,?,?,?,?,?,?,?,?);")
+async function addAnime(malId, title, nbEpisodes, genres, thumbnailURL, currentStatus, synopsis) {
+    const res = addAnimeStatement.run(malId, title, nbEpisodes, genres.join(","), 0, 0, null, thumbnailURL, currentStatus, synopsis);
+    res.lastInsertRowid
+}
+
 module.exports = {
     clearDB,
     addSubscription, 
@@ -70,4 +76,6 @@ module.exports = {
     addVideo, 
     setViewed,
     setChannelFavorite,
+
+    addAnime,
 }
