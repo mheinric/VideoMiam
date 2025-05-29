@@ -37,6 +37,7 @@ async function populateList(targetDiv, query) {
 			const genreElt = document.createElement("span"); 
 			genreElt.textContent = genre;
 			animeGenres.appendChild(genreElt);
+			animeGenres.appendChild(document.createTextNode(" "));
 		}
 		animeDiv.appendChild(animeGenres);
 
