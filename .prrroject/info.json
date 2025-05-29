@@ -89,7 +89,15 @@
             "done": true,
             "createdAt": "2025-05-29T15:10:00.331201+00:00",
             "finishedAt": "2025-05-29T15:11:17.854126+00:00"
+        },
+        "11": {
+            "id": "11",
+            "title": "Fix style for items",
+            "description": "Fix the style of anime items when there are too many genres",
+            "done": false,
+            "createdAt": "2025-05-29T16:25:41.918278+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "11"
 }
