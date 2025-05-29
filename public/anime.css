@@ -12,10 +12,12 @@ h2 {
 	display: flex; 
 	flex-wrap: wrap;
 	margin-top: 1em;
+	gap: 1em;
+	margin-bottom: 1.5em;
 }
 
 .animeItem {
-	width: 50%;
+	width: calc(50% - 1em);
 	background-color: rgb(126, 207, 142);
 	border-radius: 1em;
 	padding: 1em;
