@@ -73,7 +73,15 @@
             "done": false,
             "createdAt": "2025-05-25T19:49:31.861508+00:00",
             "finishedAt": null
+        },
+        "9": {
+            "id": "9",
+            "title": "Handle the requests to mark an anime as watched/not interested",
+            "description": "There are two buttons for each anime in the list, to indicate that the anime \nwas already watched, or that we are not interested. Write the code to handle these requests",
+            "done": false,
+            "createdAt": "2025-05-29T14:41:13.401711+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "9"
 }
