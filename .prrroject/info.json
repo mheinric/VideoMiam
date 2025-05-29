@@ -78,10 +78,10 @@
             "id": "9",
             "title": "Handle the requests to mark an anime as watched/not interested",
             "description": "There are two buttons for each anime in the list, to indicate that the anime \nwas already watched, or that we are not interested. Write the code to handle these requests",
-            "done": false,
+            "done": true,
             "createdAt": "2025-05-29T14:41:13.401711+00:00",
-            "finishedAt": null
+            "finishedAt": "2025-05-29T15:09:36.185634+00:00"
         }
     },
-    "current_task": "9"
+    "current_task": null
 }
