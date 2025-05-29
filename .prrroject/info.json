@@ -46,9 +46,9 @@
             "id": "5",
             "title": "Display animes from the data",
             "description": "Read the content of the database, and populate the list of animes on the webpage.",
-            "done": false,
+            "done": true,
             "createdAt": "2025-05-24T20:00:44.985603+00:00",
-            "finishedAt": null
+            "finishedAt": "2025-05-29T14:39:18.901838+00:00"
         },
         "6": {
             "id": "6",
@@ -75,5 +75,5 @@
             "finishedAt": null
         }
     },
-    "current_task": "5"
+    "current_task": null
 }
