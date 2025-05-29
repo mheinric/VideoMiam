@@ -61,7 +61,17 @@ async function setChannelFavorite(channelId, favorite) {
 const addAnimeStatement = db.prepare("INSERT INTO Animes(MalId, Title, NbEpisodes, Genres, Viewed, NotInterested, ViewDate, ThumbnailURL, CurrentStatus, Synopsis) VALUES (?,?,?,?,?,?,?,?,?,?);")
 async function addAnime(malId, title, nbEpisodes, genres, thumbnailURL, currentStatus, synopsis) {
     const res = addAnimeStatement.run(malId, title, nbEpisodes, genres.join(","), 0, 0, null, thumbnailURL, currentStatus, synopsis);
-    res.lastInsertRowid
+    return res.lastInsertRowid;
+}
+
+const markAnimeWatchedStatement = db.prepare("UPDATE Animes SET Viewed = ?, ViewDate = ? WHERE Id = ?");
+async function markAnimeViewed(animeId, viewed, viewDate) {
+    markAnimeWatchedStatement.run(viewed * 1, viewDate != null ? viewDate.toISOString() : null, animeId);
+}
+
+const markAnimeInterestStatement = db.prepare("UPDATE Animes SET NotInterested = ? WHERE Id = ?");
+async function markAnimeInterest(animeId, interested) {
+    markAnimeInterestStatement.run(1 - interested * 1, animeId);
 }
 
 module.exports = {
@@ -78,4 +88,6 @@ module.exports = {
     setChannelFavorite,
 
     addAnime,
+    markAnimeViewed,
+    markAnimeInterest
 }

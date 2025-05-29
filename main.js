@@ -105,6 +105,29 @@ app.post("/videomiam/addAnime", async (req, res) => {
     await db.addAnime(req.body.malId, animeInfo["title"], animeInfo["num_episodes"], 
         genres, animeInfo["main_picture"]["large"], status, animeInfo["synopsis"]);
     console.log(`Added Anime '${animeInfo['title']}' to the database`);
+    res.send({ status: "OK" });
+});
+
+app.post("/videomiam/animes/markWatched", async (req, res) => {
+    if (!req.body.id) {
+        console.log("animes/markWatched: Invalid input"); 
+        res.status(400).send({status: "Invalid"});
+        return;
+    }
+    await db.markAnimeViewed(req.body.id, true, new Date());
+    console.log(`Anime ${req.body.id} marked as watched`);
+    res.send({ status: "OK" });
+});
+
+app.post("/videomiam/animes/markNotInterested", async (req, res) => {
+    if (!req.body.id) {
+        console.log("animes/markNotInterested: Invalid input"); 
+        res.status(400).send({status: "Invalid"});
+        return;
+    }
+    await db.markAnimeInterest(req.body.id, false);
+    console.log(`Anime ${req.body.id} marked as not interested`);
+    res.send({ status: "OK" });
 });
 
 // Catch-all route for other requests
