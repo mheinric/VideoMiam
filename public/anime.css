@@ -1,6 +1,54 @@
 
+h1 {
+	margin-bottom: 0em;
+}
+
+h2 {
+	margin-top: 0em;
+}
+
 #recommendedAnimeList, 
 #watchedAnimeList {
 	display: flex; 
 	flex-wrap: wrap;
+	margin-top: 1em;
+}
+
+.animeItem {
+	width: 50%;
+	background-color: rgb(126, 207, 142);
+	border-radius: 1em;
+	padding: 1em;
+}
+
+.animeItem h3 {
+	margin-top : 0em;
+}
+
+.animeItem img {
+	max-height: 15em;
+	float : left;
+	margin: 0em 1em 1em 0em;
+}
+
+.animeItem .genres {
+	margin-bottom: 0.5em;
+}
+
+.animeItem .genres span {
+	background-color: rgb(74, 163, 93);
+	border-radius: 0.4em;
+	padding: 0.25em; 
+	margin-right: 0.5em;
+}
+
+.animeItem .synopsis {
+	font-size: 80%;
+}
+
+.animeItem .buttonsDiv {
+	display: flex; 
+	justify-content: center;
+	margin-top: 0.5em;
+	gap: 1em;
 }
