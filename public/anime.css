@@ -23,6 +23,10 @@ h2 {
 	padding: 1em;
 }
 
+.animeItem.animeImageItem {
+	width: 13em;
+}
+
 .animeItem h3 {
 	margin-top : 0em;
 }
@@ -31,6 +35,10 @@ h2 {
 	max-height: 15em;
 	float : left;
 	margin: 0em 1em 1em 0em;
+}
+
+.animeItem.animeImageItem img {
+	max-width: 11em;
 }
 
 .animeItem .genres {

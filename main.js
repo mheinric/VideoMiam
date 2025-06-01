@@ -185,7 +185,7 @@ schedule.scheduleJob('0 17 * * *', retrieveData);
 
 // Start the server
 app.listen(PORT, async () => {
-    console.log(`Serving at http://localhost:${PORT}`);
+    console.log(`Serving at http://localhost:${PORT}/videomiam`);
     if (process.argv.indexOf("--dev") == -1)
     {
         await retrieveData();
