@@ -107,6 +107,14 @@
             "done": false,
             "createdAt": "2025-06-01T16:17:06.845732+00:00",
             "finishedAt": null
+        },
+        "13": {
+            "id": "13",
+            "title": "Add an 'upcoming' section for animes that have not been released yet (or are currently airing)",
+            "description": "Animes that we haven't seen and that are not completely released should go into a separate section in the Anime page. Same as animes already seen, only the title and picture should be displayed.",
+            "done": false,
+            "createdAt": "2025-06-01T16:19:45.910955+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
