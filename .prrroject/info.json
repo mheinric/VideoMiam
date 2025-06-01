@@ -123,6 +123,14 @@
             "done": false,
             "createdAt": "2025-06-01T16:36:33.739066+00:00",
             "finishedAt": null
+        },
+        "15": {
+            "id": "15",
+            "title": "Update the status of the animes in the database",
+            "description": "Add a method to update the status of the animes in the database by querying MAL.This method should be called once per month.",
+            "done": false,
+            "createdAt": "2025-06-01T17:19:51.255413+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
