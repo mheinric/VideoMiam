@@ -4,6 +4,7 @@ const newAnimeButton = document.getElementById("newAnimeButton");
 const newAnimeField = document.getElementById("newAnimeField");
 const recommendedAnimeList = document.getElementById("recommendedAnimeList");
 const watchedAnimeList = document.getElementById("watchedAnimeList");
+const upcomingAnimeList = document.getElementById("upcomingAnimeList");
 
 newAnimeButton.onclick = async function() {
 	await sendRequest("/videomiam/addAnime", {
@@ -85,7 +86,8 @@ async function populateList(targetDiv, query, imageOnly) {
 }
 
 async function updateAnimeList() {
-	await populateList(recommendedAnimeList, "SELECT * FROM Animes WHERE Viewed = FALSE AND NotInterested = FALSE;", false);
+	await populateList(recommendedAnimeList, "SELECT * FROM Animes WHERE Viewed = FALSE AND NotInterested = FALSE AND CurrentStatus = 'Completed';", false);
+	await populateList(upcomingAnimeList, "SELECT * FROM Animes WHERE Viewed = FALSE AND NotInterested = FALSE AND CurrentStatus != 'Completed';", true);
 	await populateList(watchedAnimeList, "SELECT * FROM Animes WHERE Viewed = TRUE;", true);
 }
 

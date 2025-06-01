@@ -8,7 +8,8 @@ h2 {
 }
 
 #recommendedAnimeList, 
-#watchedAnimeList {
+#watchedAnimeList,
+#upcomingAnimeList {
 	display: flex; 
 	flex-wrap: wrap;
 	margin-top: 1em;
