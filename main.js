@@ -93,15 +93,7 @@ app.post("/videomiam/addAnime", async (req, res) => {
     for (var g of animeInfo["genres"]) {
         genres.push(g["name"]);
     }
-    var status = "InProgress";
-    if (animeInfo["status"] == "finished_airing") 
-    {
-        status = "Completed";
-    }
-    else if (animeInfo["status"] == "not_yet_aired")
-    {
-        status = "Planned";
-    }
+    var status = mal.convertAnimeStatus(animeInfo["status"]);
     await db.addAnime(req.body.malId, animeInfo["title"], animeInfo["num_episodes"], 
         genres, animeInfo["main_picture"]["large"], status, animeInfo["synopsis"]);
     console.log(`Added Anime '${animeInfo['title']}' to the database`);
@@ -143,7 +135,7 @@ async function sendSMS(msg) {
     }
 }
 
-async function retrieveData() {
+async function retrieveYoutubeData() {
     for (var sub of await db.getAllSubscriptions()) {
         try {
             console.log(`Checking new videos for ${sub.Title}`);
@@ -181,13 +173,28 @@ async function retrieveData() {
     }
 }
 
-schedule.scheduleJob('0 17 * * *', retrieveData);
+//Schedule every day at 5pm
+schedule.scheduleJob('0 17 * * *', retrieveYoutubeData);
+
+async function retrieveMALData() {
+    const animes = await db.listViewedAnimes();
+    for (var anime of animes) {
+        console.log(`Updating data for ${anime['Title']}`);
+        const animeData = await mal.getAnimeInfos();
+        const newStatus = mal.convertAnimeStatus(animeData["status"]);
+        await db.updateAnimeStatus(anime.Id, newStatus);
+    }
+}
+
+//schedule ever first of the month at midnight
+schedule.scheduleJob('0 0 1 * *', retrieveMALData);
 
 // Start the server
 app.listen(PORT, async () => {
     console.log(`Serving at http://localhost:${PORT}/videomiam`);
     if (process.argv.indexOf("--dev") == -1)
     {
-        await retrieveData();
+        await retrieveYoutubeData();
+        await retrieveMALData();
     }
 });

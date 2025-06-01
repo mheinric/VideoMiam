@@ -74,6 +74,18 @@ async function markAnimeInterest(animeId, interested) {
     markAnimeInterestStatement.run(1 - interested * 1, animeId);
 }
 
+const listViewedAnimesStatement = db.prepare("SELECT * FROM Animes WHERE Viewed = TRUE");
+async function listViewedAnimes() {
+    return listViewedAnimesStatement.all();
+}
+
+const updateAnimeStatusStatement = db.prepare("UPDATE Animes SET CurrentStatus = ? WHERE Id = ?");
+async function updateAnimeStatus(id, newStatus) {
+    updateAnimeStatusStatement.run(newStatus, id);
+}
+
+
+
 module.exports = {
     clearDB,
     addSubscription, 
@@ -89,5 +101,7 @@ module.exports = {
 
     addAnime,
     markAnimeViewed,
-    markAnimeInterest
+    markAnimeInterest,
+    listViewedAnimes,
+    updateAnimeStatus
 }

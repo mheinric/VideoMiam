@@ -27,6 +27,22 @@ async function getAnimeInfos(animeId) {
     return query(`https://api.myanimelist.net/v2/anime/${animeId}?fields=id,title,main_picture,start_date,end_date,synopsis,media_type,status,genres,num_episodes,start_season,broadcast,source,average_episode_duration,pictures,background,related_anime,studios,statistics`);
 }
 
+function convertAnimeStatus(malStatus) {
+    if (malStatus == "finished_airing") 
+    {
+        return "Completed";
+    }
+    else if (malStatus == "not_yet_aired")
+    {
+        return "Planned";
+    }
+    else 
+    {
+        return "InProgress";
+    }
+}
+
 module.exports = {
-    getAnimeInfos
+    getAnimeInfos,
+    convertAnimeStatus
 }
