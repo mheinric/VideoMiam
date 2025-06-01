@@ -84,6 +84,10 @@ async function updateAnimeStatus(id, newStatus) {
     updateAnimeStatusStatement.run(newStatus, id);
 }
 
+const malAnimeIsPresentStatement = db.prepare("SELECT COUNT(*) AS NbEntries FROM Animes WHERE MalId = ?")
+async function malAnimeIsPresent(malId) {
+    return malAnimeIsPresentStatement.get(malId).NbEntries > 0;
+}
 
 
 module.exports = {
@@ -103,5 +107,6 @@ module.exports = {
     markAnimeViewed,
     markAnimeInterest,
     listViewedAnimes,
-    updateAnimeStatus
+    updateAnimeStatus,
+    malAnimeIsPresent
 }

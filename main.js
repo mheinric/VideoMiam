@@ -82,21 +82,26 @@ app.post("/videomiam/markFavorite", async (req, res) => {
     res.send({ status: "OK" });
 });
 
+async function addAnimeToDatabase(malId) {
+    //TODO: check that the anime does not already exists.
+    const animeInfo = await mal.getAnimeInfos(malId);
+    const genres = [];
+    for (var g of animeInfo["genres"]) {
+        genres.push(g["name"]);
+    }
+    var status = mal.convertAnimeStatus(animeInfo["status"]);
+    await db.addAnime(malId, animeInfo["title"], animeInfo["num_episodes"], 
+        genres, animeInfo["main_picture"]["large"], status, animeInfo["synopsis"]);
+    console.log(`Added Anime '${animeInfo['title']}' to the database`);
+}
+
 app.post("/videomiam/addAnime", async (req, res) => {
     if (!req.body.malId) {
         console.log("addAnime: Invalid input"); 
         res.status(400).send({status: "Invalid"});
         return;
     }
-    const animeInfo = await mal.getAnimeInfos(req.body.malId);
-    const genres = [];
-    for (var g of animeInfo["genres"]) {
-        genres.push(g["name"]);
-    }
-    var status = mal.convertAnimeStatus(animeInfo["status"]);
-    await db.addAnime(req.body.malId, animeInfo["title"], animeInfo["num_episodes"], 
-        genres, animeInfo["main_picture"]["large"], status, animeInfo["synopsis"]);
-    console.log(`Added Anime '${animeInfo['title']}' to the database`);
+    await addAnimeToDatabase(req.body.malId);
     res.send({ status: "OK" });
 });
 
@@ -179,10 +184,25 @@ schedule.scheduleJob('0 17 * * *', retrieveYoutubeData);
 async function retrieveMALData() {
     const animes = await db.listViewedAnimes();
     for (var anime of animes) {
-        console.log(`Updating data for ${anime['Title']}`);
-        const animeData = await mal.getAnimeInfos();
-        const newStatus = mal.convertAnimeStatus(animeData["status"]);
-        await db.updateAnimeStatus(anime.Id, newStatus);
+        try {
+            console.log(`Updating data for ${anime.Title}`);
+            const animeData = await mal.getAnimeInfos(anime.MalId);
+            const newStatus = mal.convertAnimeStatus(animeData["status"]);
+            await db.updateAnimeStatus(anime.Id, newStatus);
+            for (var relatedAnimeData of animeData["related_anime"]) {
+                const animeInDb = await db.malAnimeIsPresent(relatedAnimeData["node"]["id"]);
+                if (!animeInDb) {
+                    await addAnimeToDatabase(relatedAnimeData["node"]["id"]);
+                }
+            }
+        } catch(e) {
+            console.log(`Failed to retrieve infos for Anime ${anime.Title}`); 
+            console.log(e);
+            if (enableSMSNotifs)
+            {
+                await sendSMS(`Failed to retrieve infos for Anime ${anime.Title}`);
+            }
+        }
     }
 }
 
