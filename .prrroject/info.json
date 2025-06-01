@@ -136,10 +136,10 @@
             "id": "16",
             "title": "Add to the database animes related to viewed animes",
             "description": "When updating the anime database, we should add to the database the animes that are related to animes that were already viewed.",
-            "done": false,
+            "done": true,
             "createdAt": "2025-06-01T17:35:31.385119+00:00",
-            "finishedAt": null
+            "finishedAt": "2025-06-01T18:00:03.949817+00:00"
         }
     },
-    "current_task": "16"
+    "current_task": null
 }
