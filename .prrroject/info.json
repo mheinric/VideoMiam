@@ -128,10 +128,10 @@
             "id": "15",
             "title": "Update the status of the animes in the database",
             "description": "Add a method to update the status of the animes in the database by querying MAL.This method should be called once per month.",
-            "done": false,
+            "done": true,
             "createdAt": "2025-06-01T17:19:51.255413+00:00",
-            "finishedAt": null
+            "finishedAt": "2025-06-01T17:34:18.998557+00:00"
         }
     },
-    "current_task": "15"
+    "current_task": null
 }
