@@ -120,9 +120,9 @@
             "id": "14",
             "title": "Transform anime title into a link to MAL pageg",
             "description": "Make it so that the anime title can be clicked and redirects to the MyAnimeList page",
-            "done": false,
+            "done": true,
             "createdAt": "2025-06-01T16:36:33.739066+00:00",
-            "finishedAt": null
+            "finishedAt": "2025-06-02T22:06:32.353258+00:00"
         },
         "15": {
             "id": "15",
@@ -141,5 +141,5 @@
             "finishedAt": "2025-06-01T18:00:03.949817+00:00"
         }
     },
-    "current_task": "14"
+    "current_task": null
 }
