@@ -28,7 +28,10 @@ async function populateList(targetDiv, query, imageOnly) {
 		}
 
 		const animeTitle = document.createElement("h3");
-		animeTitle.textContent = anime.Title;
+		const animeLink = document.createElement("a");
+		animeLink.href = `https://myanimelist.net/anime/${anime.MalId}`;
+		animeLink.textContent = anime.Title;
+		animeTitle.appendChild(animeLink);
 		animeDiv.appendChild(animeTitle);
 
 		const animePicture = document.createElement("img");
