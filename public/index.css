@@ -1,4 +1,5 @@
-#videoList {
+#videoList,
+#recentVideoList {
 	display: flex; 
 	flex-wrap: wrap;
 }
