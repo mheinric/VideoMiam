@@ -163,6 +163,14 @@
             "done": false,
             "createdAt": "2026-02-09T21:19:43.484483+00:00",
             "finishedAt": null
+        },
+        "20": {
+            "id": "20",
+            "title": "Better support for adding channels",
+            "description": "The way to add channels or playlist is very convoluted at the moment. We should be able to add them from their url instead.",
+            "done": false,
+            "createdAt": "2026-02-09T21:20:59.329428+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
