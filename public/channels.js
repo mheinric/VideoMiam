@@ -3,7 +3,7 @@ import {db, parseResult, sendRequest, reloadDB} from "./common.js"
 const subscriptionList = document.getElementById("subscriptionList");
 
 document.getElementById("addSubscriptionButton").onclick = async () => {
-	await sendRequest("/videomiam/addSubscription", {
+	await sendRequest("addSubscription", {
 		channelId : document.getElementById("subscriptionIdInput").value,
 	});
 };
@@ -24,7 +24,7 @@ async function loadSubscriptions() {
 		subImg.classList.add("subIcon");
 		imgDiv.appendChild(subImg);
 		const listIconImg = document.createElement("img");
-		listIconImg.src = "/videomiam/img/list.svg";
+		listIconImg.src = "img/list.svg";
 		listIconImg.classList.add("listIcon");
 		imgDiv.appendChild(listIconImg);
 		subDiv.appendChild(imgDiv)
@@ -39,13 +39,13 @@ async function loadSubscriptions() {
 		subDiv.appendChild(subTitle);
 		const subInfo = sub;
 		subImg.onclick = async () => {
-			window.location = `/videomiam/channel.html?id=${subInfo.Id}`;
+			window.location = `channel.html?id=${subInfo.Id}`;
 		}
 
 		const markFavButton = document.createElement("button");
 		markFavButton.classList.add("markFav");
 		markFavButton.onclick = async () => {
-			await sendRequest("/videomiam/markFavorite", {
+			await sendRequest("markFavorite", {
 				id: subInfo.Id, 
 				favorite: !subInfo.IsFavorite,
 			});

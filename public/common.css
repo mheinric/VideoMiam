@@ -127,7 +127,7 @@ h1 {
 }
 
 .toggleSeen {
-	background-image: url(/videomiam/img/eyeClosed.svg);
+	background-image: url(img/eyeClosed.svg);
 	font-size: smaller;
 	background-color: transparent;
 	background-position: center left;
@@ -145,7 +145,7 @@ h1 {
 }
 
 .vid.vidSeen .toggleSeen {
-	background-image: url(/videomiam/img/eyeOpened.svg) ;
+	background-image: url(img/eyeOpened.svg) ;
 }
 
 .vid.vidSeen .toggleSeen::after {

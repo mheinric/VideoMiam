@@ -1,5 +1,5 @@
 export const sqlPromise = initSqlJs({
-		locateFile: file => `/videomiam/dist/${file}`
+		locateFile: file => `dist/${file}`
 	});
 export var db = null;
 
@@ -49,7 +49,7 @@ export async function sendRequest(path, params) {
 }
 
 export async function reloadDB() {
-	const dataPromise = fetch("/videomiam/data.db").then(res => res.arrayBuffer());
+	const dataPromise = fetch("data.db").then(res => res.arrayBuffer());
 	const [SQL, buf] = await Promise.all([sqlPromise, dataPromise]);
 	db = new SQL.Database(new Uint8Array(buf));
 }
@@ -88,7 +88,7 @@ export async function loadVideos(targetDiv, query, showFavOnly) {
 		vidImg.src = video.ThumbnailURL;
 		vidImg.onclick = async () => {
 			window.open("https://youtube.com/watch?v=" + vidData.YoutubeId, '_blank').focus();
-			await sendRequest("/videomiam/markViewed", {
+			await sendRequest("markViewed", {
 				id: vidData.Id, 
 				viewed: true,
 				viewDate: new Date().toISOString(),
@@ -113,7 +113,7 @@ export async function loadVideos(targetDiv, query, showFavOnly) {
 		const toggleSeenButton = document.createElement("button");
 		toggleSeenButton.classList.add("toggleSeen"); 
 		toggleSeenButton.onclick = async () => {
-			await sendRequest("/videomiam/markViewed", {
+			await sendRequest("markViewed", {
 				id: vidData.Id, 
 				viewed: !vidData.Viewed,
 				viewDate: null,

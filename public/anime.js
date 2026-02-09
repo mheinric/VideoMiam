@@ -7,7 +7,7 @@ const watchedAnimeList = document.getElementById("watchedAnimeList");
 const upcomingAnimeList = document.getElementById("upcomingAnimeList");
 
 newAnimeButton.onclick = async function() {
-	await sendRequest("/videomiam/addAnime", {
+	await sendRequest("addAnime", {
 		malId : newAnimeField.value,
 	});
 	await reloadDB();
@@ -62,7 +62,7 @@ async function populateList(targetDiv, query, imageOnly) {
 			watchedButton.textContent = "Watched";
 			const itemId = anime.Id;
 			watchedButton.onclick = async function() {
-				await sendRequest("/videomiam/animes/markWatched", {
+				await sendRequest("animes/markWatched", {
 					id : itemId,
 				});
 				await reloadDB();
@@ -72,7 +72,7 @@ async function populateList(targetDiv, query, imageOnly) {
 			const notInterestedButton = document.createElement("button");
 			notInterestedButton.textContent = "Not interested";
 			notInterestedButton.onclick = async function() {
-				await sendRequest("/videomiam/animes/markNotInterested", {
+				await sendRequest("animes/markNotInterested", {
 					id : itemId,
 				});
 				await reloadDB();

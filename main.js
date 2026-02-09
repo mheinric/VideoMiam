@@ -11,11 +11,12 @@ import config from './config.js';
 const app = express();
 
 const PORT = config["port"];
+const baseUrl = config["base_url"];
 
 app.use(express.json());
-app.use('/videomiam', express.static(path.resolve(config["dirname"], 'public')));
+app.use(baseUrl, express.static(path.resolve(config["dirname"], 'public')));
 
-app.post('/videomiam/addSubscription', async (req, res) => {
+app.post(baseUrl + '/addSubscription', async (req, res) => {
     if (!req.body.channelId) {
         console.log("addSubscription: Invalid input"); 
         res.status(400).send({status: "Invalid"});
@@ -65,7 +66,7 @@ app.post('/videomiam/addSubscription', async (req, res) => {
     res.send({ status: "OK"});
 });
 
-app.post("/videomiam/markViewed", async (req, res) => {
+app.post(baseUrl + "/markViewed", async (req, res) => {
     if (typeof req.body.id == 'undefined' || typeof req.body.viewed == 'undefined' || typeof req.body.viewDate == 'undefined') {
         console.log("markViewed: Invalid input"); 
         res.status(400).send({status: "Invalid"});
@@ -76,7 +77,7 @@ app.post("/videomiam/markViewed", async (req, res) => {
     res.send({ status: "OK"});
 });
 
-app.post("/videomiam/markFavorite", async (req, res) => {
+app.post(baseUrl + "/markFavorite", async (req, res) => {
     if (typeof req.body.id == 'undefined' || typeof req.body.favorite == 'undefined') {
         console.log("markFavorite: Invalid input");
         res.status(400).send({status: "Invalid"});
@@ -100,7 +101,7 @@ async function addAnimeToDatabase(malId) {
     console.log(`Added Anime '${animeInfo['title']}' to the database`);
 }
 
-app.post("/videomiam/addAnime", async (req, res) => {
+app.post(baseUrl + "/addAnime", async (req, res) => {
     if (!req.body.malId) {
         console.log("addAnime: Invalid input"); 
         res.status(400).send({status: "Invalid"});
@@ -110,7 +111,7 @@ app.post("/videomiam/addAnime", async (req, res) => {
     res.send({ status: "OK" });
 });
 
-app.post("/videomiam/animes/markWatched", async (req, res) => {
+app.post(baseUrl + "/animes/markWatched", async (req, res) => {
     if (!req.body.id) {
         console.log("animes/markWatched: Invalid input"); 
         res.status(400).send({status: "Invalid"});
@@ -121,7 +122,7 @@ app.post("/videomiam/animes/markWatched", async (req, res) => {
     res.send({ status: "OK" });
 });
 
-app.post("/videomiam/animes/markNotInterested", async (req, res) => {
+app.post(baseUrl + "/animes/markNotInterested", async (req, res) => {
     if (!req.body.id) {
         console.log("animes/markNotInterested: Invalid input"); 
         res.status(400).send({status: "Invalid"});
@@ -213,7 +214,7 @@ else
 {
     // Start the server
     app.listen(PORT, async () => {
-        console.log(`Serving at http://localhost:${PORT}/videomiam`);
+        console.log(`Serving at http://localhost:${PORT}${baseUrl}`);
         if (process.argv.indexOf("--dev") == -1)
         {
             await retrieveYoutubeData();

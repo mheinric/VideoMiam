@@ -58,7 +58,7 @@
 }
 
 .externalLink {
-	background-image: url(/videomiam/img/externalLink.svg);
+	background-image: url(img/externalLink.svg);
 	background-position: center right;
     background-repeat: no-repeat;
 	padding: 0.5em;
@@ -67,7 +67,7 @@
 
 .markFav {
 	display: none;
-	background-image: url(/videomiam/img/starEmpty.svg);
+	background-image: url(img/starEmpty.svg);
 	background-color: transparent;
 	height: 1.5em;
 	width: 1.5em;
@@ -83,7 +83,7 @@
 
 .sub.favSub .markFav {
 	display: block;
-	background-image: url(/videomiam/img/starFilled.svg);
+	background-image: url(img/starFilled.svg);
 }
 
 .sub:hover .markFav,
@@ -92,19 +92,19 @@
 }
 
 .sub .markFav:hover {
-	background-image: url(/videomiam/img/starHover.svg);
+	background-image: url(img/starHover.svg);
 }
 
 .sub .markFav:active {
-	background-image: url(/videomiam/img/starPressed.svg);
+	background-image: url(img/starPressed.svg);
 }
 
 /* When clicking the button from selected to unselected, we swap the two images around */
 .sub.favSub .markFav:hover {
-	background-image: url(/videomiam/img/starPressed.svg);
+	background-image: url(img/starPressed.svg);
 }
 
 
 .sub.favSub .markFav:active {
-	background-image: url(/videomiam/img/starHover.svg);
+	background-image: url(img/starHover.svg);
 }
