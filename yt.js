@@ -1,8 +1,7 @@
-const Duration = require("tinyduration");
-const config = require("./config.js");
+import Duration from 'tinyduration';
+import config from './config.js';
 
 const API_KEY = config["youtube_api_key"];
-
 
 async function query(url) {
     console.log(`Sending request to ${url}`);
@@ -30,7 +29,7 @@ function parseDuration(durationStr) {
 }
 
 // List the 50 most recent videos of a playlist
-async function getPlaylistVideos(playlistId, all=false, nextPage = null) {
+export async function getPlaylistVideos(playlistId, all=false, nextPage = null) {
     const nextPagePart = nextPage ? `&pageToken=${nextPage}` : ""; 
     const res = await query(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails,status&maxResults=50&playlistId=${playlistId}${nextPagePart}`);
     res.items = res.items.filter((item) => item.status.privacyStatus == "public");
@@ -60,6 +59,7 @@ async function getPlaylistVideos(playlistId, all=false, nextPage = null) {
 }
 
 // List the 50 most recent videos of a channel, given by channel id.
+//TODO: apparently this is dead code?
 async function channelVideos(channelId) {
     //First retrieve playlist id for uploads of the channel
     const queryRes = await query(`https://www.googleapis.com/youtube/v3/channels?id=${channelId}&part=snippet,contentDetails`);
@@ -68,19 +68,19 @@ async function channelVideos(channelId) {
     return await getPlaylistVideos(playlistId);
 }
 
-async function getChannelInfos(channelId) {
+export async function getChannelInfos(channelId) {
     //TODO error handling
     const queryRes = await query(`https://www.googleapis.com/youtube/v3/channels?id=${channelId}&part=snippet,contentDetails`);
     return queryRes.items[0];
 }
 
-async function getPlaylistInfos(playlistId) {
+export async function getPlaylistInfos(playlistId) {
     //TODO error handling
     const queryRes = await query(`https://www.googleapis.com/youtube/v3/playlists?id=${playlistId}&part=snippet,contentDetails`);
     return queryRes.items[0];
 }
 
-module.exports = {
+export default {
     getChannelInfos,
     getPlaylistInfos,
     getPlaylistVideos

@@ -1,17 +1,19 @@
-const express = require('express');
-const schedule = require('node-schedule');
+import express from 'express';
+import schedule from 'node-schedule';
+import path from 'path'
 
-const db = require('./db.js');
-const yt = require('./yt.js');
-const mal = require('./mal.js');
-const { sendSMS } = require('./notifications.js');
-const config = require('./config.js');
+import db from './db.js';
+import yt from './yt.js';
+import mal from './mal.js';
+import { sendSMS } from './notifications.js';
+import config from './config.js';
+
 const app = express();
 
 const PORT = config["port"];
 
 app.use(express.json());
-app.use('/videomiam', express.static(__dirname + '/public'));
+app.use('/videomiam', express.static(path.resolve(config["dirname"], 'public')));
 
 app.post('/videomiam/addSubscription', async (req, res) => {
     if (!req.body.channelId) {

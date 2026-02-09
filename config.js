@@ -1,8 +1,11 @@
-const yaml = require('yaml');
-const fs = require('fs');
-const path = require('path');
+import yaml from 'yaml';
+import fs from 'fs';
+import path from 'path';
+
+const __dirname = path.resolve();
 
 const file = fs.readFileSync(path.join(__dirname, './config.yaml'), 'utf8');
 const config = yaml.parse(file);
+config["dirname"] = __dirname;
 
-module.exports = config;
+export default config;

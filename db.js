@@ -1,47 +1,46 @@
-const db = require('better-sqlite3')('public/data.db');
+import Database from 'better-sqlite3';
+import path from 'path';
+const db = new Database('public/data.db');
 
-//TODO: put this into a class so that we can have several different dbs.
-//Keep a dict with a cache of the connected dbs.
-
-async function clearDB() {
+export async function clearDB() {
     db.prepare("DELETE FROM Videos").run(); 
     db.prepare("DELETE FROM Subscriptions").run(); 
 }
 
 const listSubStatement = db.prepare("SELECT * FROM Subscriptions");
-async function getAllSubscriptions() {
+export async function getAllSubscriptions() {
     return listSubStatement.all();
 }
 
 const addSubStatement = db.prepare("INSERT INTO Subscriptions(YoutubeId, Kind, Title, IconURL) VALUES (?, ?, ?, ?)");
-async function addSubscription(youtubeId, kind, title, iconURL) {
+export async function addSubscription(youtubeId, kind, title, iconURL) {
     const res = addSubStatement.run(youtubeId, kind, title, iconURL);
     return res.lastInsertRowid;
 }
 
 const updateIconStatement = db.prepare("UPDATE Subscriptions SET IconURL = ? WHERE YoutubeId = ?");
-async function updateSubscriptionIcon(youtubeId, iconUrl) {
+export async function updateSubscriptionIcon(youtubeId, iconUrl) {
     updateIconStatement.run(iconUrl, youtubeId); 
 }
 
-async function removeSubscription(id) {
+export async function removeSubscription(id) {
     //Should also remove all videos associated with this subscription
     //TODO: sql queries
 }
 
 const isSubStatement = db.prepare("SELECT COUNT(*) AS Result FROM Subscriptions WHERE YoutubeId = ?");
-async function isSubscribedTo(youtubeId) {
+export async function isSubscribedTo(youtubeId) {
     return isSubStatement.get(youtubeId).Result != 0;
 }
 
 const containsVideoStatement = db.prepare("SELECT COUNT(*) AS Result FROM Videos WHERE YoutubeId = ?");
-async function hasVideo(youtubeId) {
+export async function hasVideo(youtubeId) {
     return containsVideoStatement.get(youtubeId).Result != 0;
 }
 
 const addVideoStatement = db.prepare("INSERT INTO Videos (YoutubeId, Title, DurationSec, Details, UploadDate, ThumbnailURL, SubscriptionId, Viewed, ViewDate) " +
     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?); ")
-async function addVideo(youtubeId, title, durationSec, details, uploadDate, thumbnailURL, subscriptionId, viewed) {
+export async function addVideo(youtubeId, title, durationSec, details, uploadDate, thumbnailURL, subscriptionId, viewed) {
     // The viewed * 1 is because better-sqlite3 does not handle booleans
     const res = addVideoStatement.run(youtubeId, title, durationSec, details, uploadDate.toISOString(), thumbnailURL, 
         subscriptionId, viewed * 1, null); 
@@ -49,48 +48,47 @@ async function addVideo(youtubeId, title, durationSec, details, uploadDate, thum
 }
 
 const markViewedStatement = db.prepare("UPDATE Videos SET Viewed = ?, ViewDate = ? WHERE Id = ?");
-async function setViewed(videoId, viewed, viewDate) {
+export async function setViewed(videoId, viewed, viewDate) {
     markViewedStatement.run(viewed * 1, viewDate != null ? viewDate.toISOString() : null, videoId);
 }
 
 const markFavStatement = db.prepare("UPDATE Subscriptions SET IsFavorite = ? WHERE Id = ?")
-async function setChannelFavorite(channelId, favorite) {
+export async function setChannelFavorite(channelId, favorite) {
     markFavStatement.run(favorite * 1, channelId);
 }
 
 const addAnimeStatement = db.prepare("INSERT INTO Animes(MalId, Title, NbEpisodes, Genres, Viewed, NotInterested, ViewDate, ThumbnailURL, CurrentStatus, Synopsis) VALUES (?,?,?,?,?,?,?,?,?,?);")
-async function addAnime(malId, title, nbEpisodes, genres, thumbnailURL, currentStatus, synopsis) {
+export async function addAnime(malId, title, nbEpisodes, genres, thumbnailURL, currentStatus, synopsis) {
     const res = addAnimeStatement.run(malId, title, nbEpisodes, genres.join(","), 0, 0, null, thumbnailURL, currentStatus, synopsis);
     return res.lastInsertRowid;
 }
 
 const markAnimeWatchedStatement = db.prepare("UPDATE Animes SET Viewed = ?, ViewDate = ? WHERE Id = ?");
-async function markAnimeViewed(animeId, viewed, viewDate) {
+export async function markAnimeViewed(animeId, viewed, viewDate) {
     markAnimeWatchedStatement.run(viewed * 1, viewDate != null ? viewDate.toISOString() : null, animeId);
 }
 
 const markAnimeInterestStatement = db.prepare("UPDATE Animes SET NotInterested = ? WHERE Id = ?");
-async function markAnimeInterest(animeId, interested) {
+export async function markAnimeInterest(animeId, interested) {
     markAnimeInterestStatement.run(1 - interested * 1, animeId);
 }
 
 const listViewedAnimesStatement = db.prepare("SELECT * FROM Animes WHERE Viewed = TRUE");
-async function listViewedAnimes() {
+export async function listViewedAnimes() {
     return listViewedAnimesStatement.all();
 }
 
 const updateAnimeStatusStatement = db.prepare("UPDATE Animes SET CurrentStatus = ? WHERE Id = ?");
-async function updateAnimeStatus(id, newStatus) {
+export async function updateAnimeStatus(id, newStatus) {
     updateAnimeStatusStatement.run(newStatus, id);
 }
 
 const malAnimeIsPresentStatement = db.prepare("SELECT COUNT(*) AS NbEntries FROM Animes WHERE MalId = ?")
-async function malAnimeIsPresent(malId) {
+export async function malAnimeIsPresent(malId) {
     return malAnimeIsPresentStatement.get(malId).NbEntries > 0;
 }
 
-
-module.exports = {
+export default {
     clearDB,
     addSubscription, 
     updateSubscriptionIcon,

@@ -5,5 +5,6 @@
     "node-schedule": "^2.1.1",
     "tinyduration": "^3.4.1",
     "yaml": "^2.8.2"
-  }
+  },
+  "type": "module"
 }

@@ -1,7 +1,7 @@
 /**
  * Utility function for retrieving data from MyAnimeList
  */
-const config = require("./config.js");
+import config from './config.js';
 
 const CLIENT_ID = config["anime"]["mal_client_id"];
 
@@ -24,11 +24,11 @@ async function query(url) {
     return resJson; //TODO: error handling
 }
 
-async function getAnimeInfos(animeId) {
+export async function getAnimeInfos(animeId) {
     return query(`https://api.myanimelist.net/v2/anime/${animeId}?fields=id,title,main_picture,start_date,end_date,synopsis,media_type,status,genres,num_episodes,start_season,broadcast,source,average_episode_duration,pictures,background,related_anime,studios,statistics`);
 }
 
-function convertAnimeStatus(malStatus) {
+export function convertAnimeStatus(malStatus) {
     if (malStatus == "finished_airing") 
     {
         return "Completed";
@@ -43,7 +43,7 @@ function convertAnimeStatus(malStatus) {
     }
 }
 
-module.exports = {
+export default {
     getAnimeInfos,
     convertAnimeStatus
 }

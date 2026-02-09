@@ -2,12 +2,12 @@
  * This file contains code for notifying the website maintainer when error occurs 
  * (such as failure to retrieve video information, for example)
  */
-const config = require('./config.js');
+import config from './config.js';
 const enableSMS = config["sms"]["enable"]
 const smsUser = config["sms"]["id"]
 const smsPassword = config["sms"]["password"]
 
-async function sendSMS(msg) {
+export async function sendSMS(msg) {
     if (enableSMS) {
         const res = await fetch(`https://smsapi.free-mobile.fr/sendmsg?user=${smsUser}&pass=${smsPassword}&msg=${encodeURIComponent(msg)}`);
         if (res.status != 200) {
@@ -15,8 +15,4 @@ async function sendSMS(msg) {
             console.log(res);
         }
     }
-};
-
-module.exports = {
-    sendSMS
 };
