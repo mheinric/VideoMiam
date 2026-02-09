@@ -200,9 +200,9 @@
             "id": "24",
             "title": "Move to modules",
             "description": "Move the code to use modules and imports instead of require.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-09T21:45:56.710380+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-09T23:09:24.741368+00:00"
         },
         "25": {
             "id": "25",
@@ -213,5 +213,5 @@
             "finishedAt": "2026-02-09T22:41:19.092742+00:00"
         }
     },
-    "current_task": "24"
+    "current_task": null
 }
