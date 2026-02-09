@@ -176,9 +176,9 @@
             "id": "21",
             "title": "Create config file",
             "description": "Create a config.yaml file and put sensitive informations (API keys and such) into it.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-09T21:23:05.089973+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-09T22:04:45.063080+00:00"
         },
         "22": {
             "id": "22",
@@ -213,5 +213,5 @@
             "finishedAt": null
         }
     },
-    "current_task": "21"
+    "current_task": null
 }
