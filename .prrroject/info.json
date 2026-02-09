@@ -179,6 +179,14 @@
             "done": false,
             "createdAt": "2026-02-09T21:23:05.089973+00:00",
             "finishedAt": null
+        },
+        "22": {
+            "id": "22",
+            "title": "Put the anime part behind a feature flag",
+            "description": "The anime part of the website should go behind a feature flag (I don't think I want it for the release version).",
+            "done": false,
+            "createdAt": "2026-02-09T21:24:21.217628+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
