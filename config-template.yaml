@@ -1,0 +1,14 @@
+port: 8741
+base_url: /
+youtube_api_key: "<PUT YOUR KEY HERE>"
+
+# Optional, if you want to activate the anime part of the website:
+anime: 
+  enable: false
+  mal_client_id: null
+
+# If you want to get sms notifications when retrieval fails
+sms_notifs: 
+  enable: false
+  id: null
+  password: null

@@ -4,3 +4,4 @@ public/data_init*
 public/db_init*
 public/data.db-journal
 test.json
+config.yaml

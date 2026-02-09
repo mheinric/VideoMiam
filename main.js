@@ -1,11 +1,16 @@
 const express = require('express');
 const schedule = require('node-schedule');
+
 const db = require('./db.js');
 const yt = require('./yt.js');
 const mal = require('./mal.js');
+const config = require('./config.js')
 const app = express();
-const PORT = 8741;
-const enableSMSNotifs = true;
+
+const PORT = config["port"];
+const enableSMSNotifs = config["sms"]["enable"];
+const smsUser = config["sms"]["id"]; 
+const smsPassword = config["sms"]["password"];
 
 app.use(express.json());
 app.use('/videomiam', express.static(__dirname + '/public'));
@@ -133,7 +138,7 @@ app.use((req, res) => {
 });
 
 async function sendSMS(msg) {
-    const res = await fetch("https://smsapi.free-mobile.fr/sendmsg?user=17879914&pass=EEMcXR0NrUaKbi&msg=" + encodeURIComponent(msg));
+    const res = await fetch(`https://smsapi.free-mobile.fr/sendmsg?user=${smsUser}&pass=${smsPassword}&msg=${encodeURIComponent(msg)}`);
     if (res.status != 200) {
         console.log("Failed to send SMS"); 
         console.log(res);

@@ -1,6 +1,7 @@
 const Duration = require("tinyduration");
+const config = require("./config.js");
 
-const API_KEY = "AIzaSyAwzHlyo4ujKVi63uYHz-AV3APaBpegW-w";
+const API_KEY = config["youtube_api_key"];
 
 
 async function query(url) {

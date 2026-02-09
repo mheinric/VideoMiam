@@ -1,8 +1,9 @@
 /**
  * Utility function for retrieving data from MyAnimeList
  */
+const config = require("./config.js");
 
-const CLIENT_ID = "e298c7a16c4e94fe0f31582f617a051e";
+const CLIENT_ID = config["anime"]["mal_client_id"];
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
