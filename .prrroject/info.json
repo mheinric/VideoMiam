@@ -187,6 +187,14 @@
             "done": false,
             "createdAt": "2026-02-09T21:24:21.217628+00:00",
             "finishedAt": null
+        },
+        "23": {
+            "id": "23",
+            "title": "Support for different base urls",
+            "description": "Support for specifying different base urls when hosting the website",
+            "done": false,
+            "createdAt": "2026-02-09T21:45:28.568873+00:00",
+            "finishedAt": null
         }
     },
     "current_task": "21"
