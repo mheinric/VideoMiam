@@ -4,13 +4,11 @@ const schedule = require('node-schedule');
 const db = require('./db.js');
 const yt = require('./yt.js');
 const mal = require('./mal.js');
-const config = require('./config.js')
+const { sendSMS } = require('./notifications.js');
+const config = require('./config.js');
 const app = express();
 
 const PORT = config["port"];
-const enableSMSNotifs = config["sms"]["enable"];
-const smsUser = config["sms"]["id"]; 
-const smsPassword = config["sms"]["password"];
 
 app.use(express.json());
 app.use('/videomiam', express.static(__dirname + '/public'));
@@ -137,14 +135,6 @@ app.use((req, res) => {
     res.status(404).send({ status: "Not Found" });
 });
 
-async function sendSMS(msg) {
-    const res = await fetch(`https://smsapi.free-mobile.fr/sendmsg?user=${smsUser}&pass=${smsPassword}&msg=${encodeURIComponent(msg)}`);
-    if (res.status != 200) {
-        console.log("Failed to send SMS"); 
-        console.log(res);
-    }
-}
-
 async function retrieveYoutubeData() {
     for (var sub of await db.getAllSubscriptions()) {
         try {
@@ -214,12 +204,18 @@ async function retrieveMALData() {
 //schedule ever first of the month at midnight
 schedule.scheduleJob('0 0 1 * *', retrieveMALData);
 
-// Start the server
-app.listen(PORT, async () => {
-    console.log(`Serving at http://localhost:${PORT}/videomiam`);
-    if (process.argv.indexOf("--dev") == -1)
-    {
-        await retrieveYoutubeData();
-        await retrieveMALData();
-    }
-});
+if (process.argv.indexOf("--test-sms") != -1) {
+    sendSMS("This is a test");
+}
+else 
+{
+    // Start the server
+    app.listen(PORT, async () => {
+        console.log(`Serving at http://localhost:${PORT}/videomiam`);
+        if (process.argv.indexOf("--dev") == -1)
+        {
+            await retrieveYoutubeData();
+            await retrieveMALData();
+        }
+    });
+}
