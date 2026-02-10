@@ -7,7 +7,7 @@ const watchedAnimeList = document.getElementById("watchedAnimeList");
 const upcomingAnimeList = document.getElementById("upcomingAnimeList");
 
 newAnimeButton.onclick = async function() {
-	await sendRequest("addAnime", {
+	await sendRequest("animes/add", {
 		malId : newAnimeField.value,
 	});
 	await reloadDB();

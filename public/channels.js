@@ -3,7 +3,7 @@ import {db, parseResult, sendRequest, reloadDB} from "./common.js"
 const subscriptionList = document.getElementById("subscriptionList");
 
 document.getElementById("addSubscriptionButton").onclick = async () => {
-	await sendRequest("addSubscription", {
+	await sendRequest("subscriptions/add", {
 		channelId : document.getElementById("subscriptionIdInput").value,
 	});
 };
@@ -45,7 +45,7 @@ async function loadSubscriptions() {
 		const markFavButton = document.createElement("button");
 		markFavButton.classList.add("markFav");
 		markFavButton.onclick = async () => {
-			await sendRequest("markFavorite", {
+			await sendRequest("videos/markFavorite", {
 				id: subInfo.Id, 
 				favorite: !subInfo.IsFavorite,
 			});

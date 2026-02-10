@@ -1,142 +1,13 @@
-import express from 'express';
 import schedule from 'node-schedule';
-import path from 'path'
 
 import db from './db.js';
 import yt from './yt.js';
 import mal from './mal.js';
 import { sendSMS } from './notifications.js';
 import config from './config.js';
+import { app, baseUrl } from './routes/all.js';
+import { addAnimeToDatabase } from './routes/animes.js'
 
-const app = express();
-
-const PORT = config["port"];
-const baseUrl = config["base_url"];
-
-app.use(express.json());
-app.use(baseUrl, express.static(path.resolve(config["dirname"], 'public')));
-
-app.post(baseUrl + '/addSubscription', async (req, res) => {
-    if (!req.body.channelId) {
-        console.log("addSubscription: Invalid input"); 
-        res.status(400).send({status: "Invalid"});
-        return;
-    }
-    //TODO: handle subscriptions to playlists
-    //TODO: handle the case where we already have a subscription to the channel.
-    const newSubscription = req.body.channelId;
-    if (await db.isSubscribedTo(newSubscription)) {
-        console.log("addSubscription: Already subscribed to channel/playlist");
-        res.status(400).send({status: "Already subscribed"});
-        return;
-    }
-
-    var playlistId = null;
-    var subId = null;
-    if (newSubscription.startsWith("UC")) {
-        console.log(`Adding subscription to channel ${newSubscription}`);
-        const channelInfo = await yt.getChannelInfos(newSubscription);
-        subId = await db.addSubscription(newSubscription, "Channel", channelInfo.snippet.title, 
-            channelInfo.snippet.thumbnails.medium.url);
-        playlistId = channelInfo.contentDetails.relatedPlaylists.uploads;
-    } else if (newSubscription.startsWith("PL")) {
-        console.log(`Adding subscription to playlist ${newSubscription}`);
-        playlistId = newSubscription;
-        const playlistInfo = await yt.getPlaylistInfos(playlistId);
-        subId = await db.addSubscription(newSubscription, "Playlist", playlistInfo.snippet.title, playlistInfo.snippet.thumbnails.medium.url);
-    } else {
-        console.log(`addSubscription: Invalid subscription id: ${newSubscription}`);
-        res.status(400).send({status: "Invalid ID"});
-        return;
-    }
-
-    for (var videoInfo of await yt.getPlaylistVideos(playlistId, true)) {
-        //TODO: handle better if viewed or not.
-        //TODO: make sure video does not exist yet
-        if (videoInfo.additionalDetails.duration < 3 * 60) {
-            //Skip already viewed videos
-            continue;
-        }
-        await db.addVideo(videoInfo.contentDetails.videoId, videoInfo.snippet.title, videoInfo.additionalDetails.duration, 
-            videoInfo.snippet.description, videoInfo.snippet.publishedAt, videoInfo.snippet.thumbnails.medium.url, 
-            subId, false);
-        console.log(`Adding video ${videoInfo.snippet.title}`); 
-    }
-
-    res.send({ status: "OK"});
-});
-
-app.post(baseUrl + "/markViewed", async (req, res) => {
-    if (typeof req.body.id == 'undefined' || typeof req.body.viewed == 'undefined' || typeof req.body.viewDate == 'undefined') {
-        console.log("markViewed: Invalid input"); 
-        res.status(400).send({status: "Invalid"});
-        return; 
-    }
-    console.log(`Marking video ${req.body.id} as viewed=${req.body.viewed}`);
-    await db.setViewed(req.body.id, req.body.viewed, req.body.viewDate != null ? new Date(req.body.viewDate) : null);
-    res.send({ status: "OK"});
-});
-
-app.post(baseUrl + "/markFavorite", async (req, res) => {
-    if (typeof req.body.id == 'undefined' || typeof req.body.favorite == 'undefined') {
-        console.log("markFavorite: Invalid input");
-        res.status(400).send({status: "Invalid"});
-        return; 
-    }
-    console.log(`Marking channel ${req.body.id} as favorite=${req.body.favorite}`);
-    await db.setChannelFavorite(req.body.id, req.body.favorite);
-    res.send({ status: "OK" });
-});
-
-async function addAnimeToDatabase(malId) {
-    //TODO: check that the anime does not already exists.
-    const animeInfo = await mal.getAnimeInfos(malId);
-    const genres = [];
-    for (var g of animeInfo["genres"]) {
-        genres.push(g["name"]);
-    }
-    var status = mal.convertAnimeStatus(animeInfo["status"]);
-    await db.addAnime(malId, animeInfo["title"], animeInfo["num_episodes"], 
-        genres, animeInfo["main_picture"]["large"], status, animeInfo["synopsis"]);
-    console.log(`Added Anime '${animeInfo['title']}' to the database`);
-}
-
-app.post(baseUrl + "/addAnime", async (req, res) => {
-    if (!req.body.malId) {
-        console.log("addAnime: Invalid input"); 
-        res.status(400).send({status: "Invalid"});
-        return;
-    }
-    await addAnimeToDatabase(req.body.malId);
-    res.send({ status: "OK" });
-});
-
-app.post(baseUrl + "/animes/markWatched", async (req, res) => {
-    if (!req.body.id) {
-        console.log("animes/markWatched: Invalid input"); 
-        res.status(400).send({status: "Invalid"});
-        return;
-    }
-    await db.markAnimeViewed(req.body.id, true, new Date());
-    console.log(`Anime ${req.body.id} marked as watched`);
-    res.send({ status: "OK" });
-});
-
-app.post(baseUrl + "/animes/markNotInterested", async (req, res) => {
-    if (!req.body.id) {
-        console.log("animes/markNotInterested: Invalid input"); 
-        res.status(400).send({status: "Invalid"});
-        return;
-    }
-    await db.markAnimeInterest(req.body.id, false);
-    console.log(`Anime ${req.body.id} marked as not interested`);
-    res.send({ status: "OK" });
-});
-
-// Catch-all route for other requests
-app.use((req, res) => {
-    res.status(404).send({ status: "Not Found" });
-});
 
 async function retrieveYoutubeData() {
     for (var sub of await db.getAllSubscriptions()) {
@@ -212,9 +83,10 @@ if (process.argv.indexOf("--test-sms") != -1) {
 }
 else 
 {
+    let port = config["port"];
     // Start the server
-    app.listen(PORT, async () => {
-        console.log(`Serving at http://localhost:${PORT}${baseUrl}`);
+    app.listen(port, async () => {
+        console.log(`Serving at http://localhost:${port}${baseUrl}`);
         if (process.argv.indexOf("--dev") == -1)
         {
             await retrieveYoutubeData();
