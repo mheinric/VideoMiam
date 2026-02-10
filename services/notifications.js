@@ -2,7 +2,7 @@
  * This file contains code for notifying the website maintainer when error occurs 
  * (such as failure to retrieve video information, for example)
  */
-import config from './config.js';
+import config from '../config.js';
 const enableSMS = config["sms"]["enable"]
 const smsUser = config["sms"]["id"]
 const smsPassword = config["sms"]["password"]

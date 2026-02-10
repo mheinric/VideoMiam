@@ -45,7 +45,7 @@ async function loadSubscriptions() {
 		const markFavButton = document.createElement("button");
 		markFavButton.classList.add("markFav");
 		markFavButton.onclick = async () => {
-			await sendRequest("videos/markFavorite", {
+			await sendRequest("subscriptions/markFavorite", {
 				id: subInfo.Id, 
 				favorite: !subInfo.IsFavorite,
 			});

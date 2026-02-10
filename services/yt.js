@@ -1,5 +1,5 @@
 import Duration from 'tinyduration';
-import config from './config.js';
+import config from '../config.js';
 
 const API_KEY = config["youtube_api_key"];
 

@@ -1,7 +1,7 @@
 /**
  * Utility function for retrieving data from MyAnimeList
  */
-import config from './config.js';
+import config from '../config.js';
 
 const CLIENT_ID = config["anime"]["mal_client_id"];
 
