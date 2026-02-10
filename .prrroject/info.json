@@ -224,10 +224,10 @@
             "id": "27",
             "title": "Code organisation",
             "description": "Modify how the code is organized to follow a standard architecture for a nodejs application",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-10T20:11:10.516629+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-10T23:10:25.035787+00:00"
         }
     },
-    "current_task": "27"
+    "current_task": null
 }
