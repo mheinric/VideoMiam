@@ -211,7 +211,15 @@
             "done": true,
             "createdAt": "2026-02-09T21:51:06.601401+00:00",
             "finishedAt": "2026-02-09T22:41:19.092742+00:00"
+        },
+        "26": {
+            "id": "26",
+            "title": "Split backend routes into several files",
+            "description": "Move the backend endpoints into several files depending on what they act on: videos, subscriptions or animes. Normalize the endpoint names to reflect this.",
+            "done": false,
+            "createdAt": "2026-02-10T19:11:23.046628+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "26"
 }
