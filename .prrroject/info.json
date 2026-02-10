@@ -235,6 +235,14 @@
             "done": false,
             "createdAt": "2026-02-10T23:12:47.784502+00:00",
             "finishedAt": null
+        },
+        "29": {
+            "id": "29",
+            "title": "Add a test harness",
+            "description": "Investigate how to add a test harness that can try out all the requests with various arguments and verify that the behavior is correct.",
+            "done": false,
+            "createdAt": "2026-02-10T23:13:59.427260+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
