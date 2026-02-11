@@ -251,7 +251,15 @@
             "done": true,
             "createdAt": "2026-02-11T19:02:45.996314+00:00",
             "finishedAt": "2026-02-11T19:21:02.037257+00:00"
+        },
+        "31": {
+            "id": "31",
+            "title": "API request for channel videos",
+            "description": "Add an API request for listing all the videos for a given channel",
+            "done": false,
+            "createdAt": "2026-02-11T19:22:10.338569+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "31"
 }
