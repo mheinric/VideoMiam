@@ -256,10 +256,10 @@
             "id": "31",
             "title": "API request for channel videos",
             "description": "Add an API request for listing all the videos for a given channel",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-11T19:22:10.338569+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-11T20:20:42.939801+00:00"
         }
     },
-    "current_task": "31"
+    "current_task": null
 }
