@@ -248,10 +248,10 @@
             "id": "30",
             "title": "API request listing channels",
             "description": "Add an API request server-side that lists all the channels, and use this API on the view.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-11T19:02:45.996314+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-11T19:21:02.037257+00:00"
         }
     },
-    "current_task": "30"
+    "current_task": null
 }
