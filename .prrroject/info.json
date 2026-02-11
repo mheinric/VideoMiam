@@ -144,9 +144,9 @@
             "id": "17",
             "title": "Proper API",
             "description": "Instead of dowloading the data and making the requests on the view, I should have a proper API for this website and handle the requests server-side. This is necessary to allow for multiple users.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-09T21:17:39.781710+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-11T21:05:42.833324+00:00"
         },
         "18": {
             "id": "18",
@@ -261,5 +261,5 @@
             "finishedAt": "2026-02-11T20:20:42.939801+00:00"
         }
     },
-    "current_task": "17"
+    "current_task": null
 }
