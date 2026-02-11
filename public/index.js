@@ -1,12 +1,24 @@
-import {reloadDB, loadVideos} from "./common.js"
+import {sendRequest, insertAllVideos} from "./common.js"
 
 const videoList = document.getElementById("videoList");
 const recentVideoList = document.getElementById("recentVideoList");
 
+async function listRecentVideos(favorites, limit) {
+	let res = await sendRequest("videos/listRecent", {
+		favorites: favorites, 
+		limit: limit
+	}); 
+	if (res.status == "OK") {
+		return res.data;
+	}
+	else {
+		return [];
+	}
+}
+
 async function main() {
-	await reloadDB();
-	await loadVideos(videoList, "SELECT * FROM Videos WHERE Viewed = FALSE;", true);
-	await loadVideos(recentVideoList, "SELECT Videos.* FROM Videos INNER JOIN Subscriptions ON Videos.SubscriptionId = Subscriptions.Id WHERE Viewed = FALSE AND Subscriptions.IsFavorite = FALSE ORDER BY Videos.UploadDate DESC LIMIT 10;");
+	await insertAllVideos(videoList, await listRecentVideos(true, 100)); 
+	await insertAllVideos(recentVideoList, await listRecentVideos(false, 10));
 }
 
 main();

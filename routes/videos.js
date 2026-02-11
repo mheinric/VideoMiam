@@ -4,6 +4,11 @@ import db from '../services/db.js';
 
 const router = express.Router();
 
+router.post("/listRecent", 
+    //TODO input validation
+    async (req, res) => { ok(res, await db.listRecentVideos(req.body.favorites, req.body.limit)); }
+)
+
 router.post("/listForSubscription", 
     //TODO input validation
     async (req, res) => { ok(res, await db.listVideosForSubscription(req.body.channelId, req.body.viewed)); }

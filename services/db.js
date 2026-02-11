@@ -43,8 +43,15 @@ export async function listVideosForSubscription(channelId, viewedCondition) {
     if (viewedCondition === null) {
         return listVideoStatement.all(channelId);
     } else {
-        return listViewedVideoStatement.all(channelId, viewedCondition);
+        // The viewed * 1 is because better-sqlite3 does not handle booleans
+        return listViewedVideoStatement.all(channelId, viewedCondition * 1);
     }
+}
+
+const listRecentVidFavStatement = db.prepare("SELECT Videos.* FROM Videos INNER JOIN Subscriptions ON Videos.SubscriptionId = Subscriptions.Id WHERE Viewed = FALSE AND Subscriptions.IsFavorite = ? ORDER BY Videos.UploadDate DESC LIMIT ?;");
+export async function listRecentVideos(favorites, limit) {
+    // The viewed * 1 is because better-sqlite3 does not handle booleans
+    return listRecentVidFavStatement.all(favorites * 1, limit);
 }
 
 
@@ -93,6 +100,16 @@ export async function listViewedAnimes() {
     return listViewedAnimesStatement.all();
 }
 
+const listUpcomingAnimesStatement = db.prepare("SELECT * FROM Animes WHERE Viewed = FALSE AND CurrentStatus != 'Completed'");
+export async function listUpcomingAnimes() {
+    return listUpcomingAnimesStatement.all();
+}
+
+const listSuggestedAnimesStatement = db.prepare("SELECT * FROM Animes WHERE Viewed = FALSE AND CurrentStatus = 'Completed'");
+export async function listSuggestedAnimes() {
+    return listSuggestedAnimesStatement.all();
+}
+
 const updateAnimeStatusStatement = db.prepare("UPDATE Animes SET CurrentStatus = ? WHERE Id = ?");
 export async function updateAnimeStatus(id, newStatus) {
     updateAnimeStatusStatement.run(newStatus, id);
@@ -113,6 +130,7 @@ export default {
     isSubscribedTo, 
 
     listVideosForSubscription,
+    listRecentVideos,
     hasVideo,
     addVideo, 
     setViewed,
@@ -122,6 +140,8 @@ export default {
     markAnimeViewed,
     markAnimeInterest,
     listViewedAnimes,
+    listUpcomingAnimes,
+    listSuggestedAnimes,
     updateAnimeStatus,
     malAnimeIsPresent
 }

@@ -1,4 +1,4 @@
-import {sendRequest, reloadDB, db, parseResult } from "./common.js"
+import { sendRequest } from "./common.js"
 
 const newAnimeButton = document.getElementById("newAnimeButton");
 const newAnimeField = document.getElementById("newAnimeField");
@@ -10,13 +10,17 @@ newAnimeButton.onclick = async function() {
 	await sendRequest("animes/add", {
 		malId : newAnimeField.value,
 	});
-	await reloadDB();
 	await updateAnimeList();
 };
 
-async function populateList(targetDiv, query, imageOnly) {
+async function populateList(targetDiv, endpoint, imageOnly) {
 	targetDiv.innerHTML = "";
-	const animes = parseResult(db.exec(query));
+	let res = await sendRequest(endpoint, {});
+	if (res.status != "OK") {
+		return;
+	}
+
+	let animes = res.data;
 	
 	for (var anime of animes)
 	{
@@ -65,7 +69,6 @@ async function populateList(targetDiv, query, imageOnly) {
 				await sendRequest("animes/markWatched", {
 					id : itemId,
 				});
-				await reloadDB();
 				await updateAnimeList();
 			}
 	
@@ -75,7 +78,6 @@ async function populateList(targetDiv, query, imageOnly) {
 				await sendRequest("animes/markNotInterested", {
 					id : itemId,
 				});
-				await reloadDB();
 				await updateAnimeList();
 			}
 	
@@ -89,14 +91,9 @@ async function populateList(targetDiv, query, imageOnly) {
 }
 
 async function updateAnimeList() {
-	await populateList(recommendedAnimeList, "SELECT * FROM Animes WHERE Viewed = FALSE AND NotInterested = FALSE AND CurrentStatus = 'Completed';", false);
-	await populateList(upcomingAnimeList, "SELECT * FROM Animes WHERE Viewed = FALSE AND NotInterested = FALSE AND CurrentStatus != 'Completed';", true);
-	await populateList(watchedAnimeList, "SELECT * FROM Animes WHERE Viewed = TRUE;", true);
+	await populateList(recommendedAnimeList, "animes/listSuggested", false);
+	await populateList(upcomingAnimeList, "animes/listUpcoming", true);
+	await populateList(watchedAnimeList, "animes/listViewed", true);
 }
 
-async function main() {
-	await reloadDB();
-	await updateAnimeList();
-}
-
-main();
+updateAnimeList();

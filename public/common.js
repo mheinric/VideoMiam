@@ -1,24 +1,3 @@
-export const sqlPromise = initSqlJs({
-		locateFile: file => `dist/${file}`
-	});
-export var db = null;
-
-export function parseResult(sqlResult) {
-	if (sqlResult.length == 0) 
-	{
-		return [];
-	}
-	sqlResult = sqlResult[0];
-	const res = [];
-	for (var sqlRow of sqlResult.values) {
-		const row = {};
-		for (var i in sqlResult.columns) {
-			row[sqlResult.columns[i]] = sqlRow[i];
-		}
-		res.push(row);
-	}
-	return res;
-}
 
 const channelInfoCache = new Map();
 
@@ -56,12 +35,6 @@ export async function sendRequest(path, params) {
 		console.log(res);
 	}
 	return res;
-}
-
-export async function reloadDB() {
-	const dataPromise = fetch("data.db").then(res => res.arrayBuffer());
-	const [SQL, buf] = await Promise.all([sqlPromise, dataPromise]);
-	db = new SQL.Database(new Uint8Array(buf));
 }
 
 export async function insertAllVideos(targetDiv, videos) {

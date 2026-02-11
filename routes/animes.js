@@ -6,6 +6,18 @@ import db from '../services/db.js';
 
 const router = express.Router();
 
+router.post("/listViewed", 
+    async (req, res) => ok(res, await db.listViewedAnimes())
+)
+
+router.post("/listUpcoming", 
+    async (req, res) => ok(res, await db.listUpcomingAnimes())
+)
+
+router.post("/listSuggested", 
+    async (req, res) => ok(res, await db.listSuggestedAnimes())
+)
+
 router.post("/add", 
     //TODO add input validation
     async (req, res) => { await addAnimeToDatabase(req.body.malId); ok(res); }
