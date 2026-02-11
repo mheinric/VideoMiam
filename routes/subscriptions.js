@@ -12,6 +12,13 @@ router.post('/list',
     }
 );
 
+router.post('/details', 
+    //TODO input validation
+    async (req, res) => {
+        ok(res, await db.getSubscription(req.body.channelId));
+    }
+)
+
 router.post('/add', 
     //TODO input validation
     async (req, res) => { await addSubscription(req.body.channelId); ok(res); }

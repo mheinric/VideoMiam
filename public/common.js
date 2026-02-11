@@ -20,8 +20,18 @@ export function parseResult(sqlResult) {
 	return res;
 }
 
-export function getChannelInfos(channelId) {
-	return parseResult(db.exec(`SELECT * FROM Subscriptions WHERE Id = ${channelId};`))[0];
+const channelInfoCache = new Map();
+
+export async function getChannelInfos(channelId) {
+	if (!channelInfoCache.has(channelId)) {
+		const res = await sendRequest("subscriptions/details", {
+			channelId: channelId
+		});
+		if (res.status == "OK") {
+			channelInfoCache.set(channelId, res.data);
+		}
+	}
+	return channelInfoCache.get(channelId);
 }
 
 export function formatTime(timeSec) {
@@ -54,6 +64,13 @@ export async function reloadDB() {
 	db = new SQL.Database(new Uint8Array(buf));
 }
 
+export async function insertAllVideos(targetDiv, videos) {
+	targetDiv.innerHTML = "";
+	for (let video of videos) {
+		await insertVideo(targetDiv, video);
+	}
+}
+
 export async function loadVideos(targetDiv, query, showFavOnly) {
 	targetDiv.innerHTML = "";
 	const allVideos = parseResult(db.exec(query));
@@ -64,67 +81,76 @@ export async function loadVideos(targetDiv, query, showFavOnly) {
 	}
 	//Put more recent videos first
 	allVideos.sort((v1, v2) => v2.UploadDate - v1.UploadDate );
+
 	for (var video of allVideos) {
-		const chanInfo = getChannelInfos(video.SubscriptionId);
+		const chanInfo = await getChannelInfos(video.SubscriptionId);
 		if (showFavOnly && !chanInfo.IsFavorite) {
 			continue;
 		}
-		const videoDiv = document.createElement("div"); 
-		videoDiv.classList.add("vid");
-		if (video.Viewed) {
-			videoDiv.classList.add("vidSeen");
-		}
-		const chanTitle = document.createElement("h3"); 
-		chanTitle.textContent = chanInfo.Title;
-		const channelIcon = document.createElement("img");
-		channelIcon.src = chanInfo.IconURL;
-		channelIcon.width = 20;
-		channelIcon.height = 20
-		chanTitle.insertBefore(channelIcon, chanTitle.firstChild);
-		videoDiv.appendChild(chanTitle);
-
-		const vidImg = document.createElement("img"); 
-		vidImg.classList.add("vidIcon");
-		vidImg.src = video.ThumbnailURL;
-		vidImg.onclick = async () => {
-			window.open("https://youtube.com/watch?v=" + vidData.YoutubeId, '_blank').focus();
-			await sendRequest("videos/markViewed", {
-				id: vidData.Id, 
-				viewed: true,
-				viewDate: new Date().toISOString(),
-			})
-			await reloadDB();
-			await loadVideos(targetDiv, query, showFavOnly);
-		}
-		videoDiv.appendChild(vidImg);
-
-		const timeLabel = document.createElement("span"); 
-		timeLabel.classList.add("timeLabel");
-		timeLabel.textContent = formatTime(video.DurationSec);
-		videoDiv.appendChild(timeLabel);
-
-		const vidTitle = document.createElement("h2");
-		vidTitle.textContent = video.Title;
-		vidTitle.title = video.Title;
-		videoDiv.appendChild(vidTitle);
-		const vidData = video; 
-
-
-		const toggleSeenButton = document.createElement("button");
-		toggleSeenButton.classList.add("toggleSeen"); 
-		toggleSeenButton.onclick = async () => {
-			await sendRequest("videos/markViewed", {
-				id: vidData.Id, 
-				viewed: !vidData.Viewed,
-				viewDate: null,
-			});
-			vidData.Viewed = !vidData.Viewed; 
-			videoDiv.classList.toggle("vidSeen");
-		};
-		videoDiv.appendChild(toggleSeenButton);
-
-		videoDiv.setAttribute("videoId", video.Id);
-		videoDiv.setAttribute("videoTitle", video.Title);
-		targetDiv.appendChild(videoDiv);
+		await insertVideo(targetDiv, video);
 	}
+}
+
+async function insertVideo(targetDiv, video) {
+	if (video.UploadDate) {
+		video.UploadDate = new Date(video.UploadDate);
+	}
+	const chanInfo = await getChannelInfos(video.SubscriptionId);
+	const videoDiv = document.createElement("div"); 
+	videoDiv.classList.add("vid");
+	if (video.Viewed) {
+		videoDiv.classList.add("vidSeen");
+	}
+	const chanTitle = document.createElement("h3"); 
+	chanTitle.textContent = chanInfo.Title;
+	const channelIcon = document.createElement("img");
+	channelIcon.src = chanInfo.IconURL;
+	channelIcon.width = 20;
+	channelIcon.height = 20
+	chanTitle.insertBefore(channelIcon, chanTitle.firstChild);
+	videoDiv.appendChild(chanTitle);
+
+	const vidImg = document.createElement("img"); 
+	vidImg.classList.add("vidIcon");
+	vidImg.src = video.ThumbnailURL;
+	vidImg.onclick = async () => {
+		window.open("https://youtube.com/watch?v=" + vidData.YoutubeId, '_blank').focus();
+		await sendRequest("videos/markViewed", {
+			id: vidData.Id, 
+			viewed: true,
+			viewDate: new Date().toISOString(),
+		})
+		await reloadDB();
+		await loadVideos(targetDiv, query, showFavOnly);
+	}
+	videoDiv.appendChild(vidImg);
+
+	const timeLabel = document.createElement("span"); 
+	timeLabel.classList.add("timeLabel");
+	timeLabel.textContent = formatTime(video.DurationSec);
+	videoDiv.appendChild(timeLabel);
+
+	const vidTitle = document.createElement("h2");
+	vidTitle.textContent = video.Title;
+	vidTitle.title = video.Title;
+	videoDiv.appendChild(vidTitle);
+	const vidData = video; 
+
+
+	const toggleSeenButton = document.createElement("button");
+	toggleSeenButton.classList.add("toggleSeen"); 
+	toggleSeenButton.onclick = async () => {
+		await sendRequest("videos/markViewed", {
+			id: vidData.Id, 
+			viewed: !vidData.Viewed,
+			viewDate: null,
+		});
+		vidData.Viewed = !vidData.Viewed; 
+		videoDiv.classList.toggle("vidSeen");
+	};
+	videoDiv.appendChild(toggleSeenButton);
+
+	videoDiv.setAttribute("videoId", video.Id);
+	videoDiv.setAttribute("videoTitle", video.Title);
+	targetDiv.appendChild(videoDiv);
 }

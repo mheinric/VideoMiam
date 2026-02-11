@@ -1,5 +1,4 @@
 import Database from 'better-sqlite3';
-import path from 'path';
 const db = new Database('public/data.db');
 
 export async function clearDB() {
@@ -10,6 +9,11 @@ export async function clearDB() {
 const listSubStatement = db.prepare("SELECT * FROM Subscriptions");
 export async function getAllSubscriptions() {
     return listSubStatement.all();
+}
+
+const subDetailsStatement = db.prepare("SELECT * FROM Subscriptions WHERE Id = ?");
+export async function getSubscription(channelId) {
+    return subDetailsStatement.get(channelId);
 }
 
 const addSubStatement = db.prepare("INSERT INTO Subscriptions(YoutubeId, Kind, Title, IconURL) VALUES (?, ?, ?, ?)");
@@ -32,6 +36,17 @@ const isSubStatement = db.prepare("SELECT COUNT(*) AS Result FROM Subscriptions 
 export async function isSubscribedTo(youtubeId) {
     return isSubStatement.get(youtubeId).Result != 0;
 }
+
+const listVideoStatement = db.prepare("SELECT * FROM Videos WHERE SubscriptionId = ? ORDER BY UploadDate DESC");
+const listViewedVideoStatement = db.prepare("SELECT * FROM Videos WHERE SubscriptionId = ? AND Viewed = ? ORDER BY UploadDate DESC");
+export async function listVideosForSubscription(channelId, viewedCondition) {
+    if (viewedCondition === null) {
+        return listVideoStatement.all(channelId);
+    } else {
+        return listViewedVideoStatement.all(channelId, viewedCondition);
+    }
+}
+
 
 const containsVideoStatement = db.prepare("SELECT COUNT(*) AS Result FROM Videos WHERE YoutubeId = ?");
 export async function hasVideo(youtubeId) {
@@ -92,10 +107,12 @@ export default {
     clearDB,
     addSubscription, 
     updateSubscriptionIcon,
+    getSubscription,
     getAllSubscriptions, 
     removeSubscription, 
     isSubscribedTo, 
 
+    listVideosForSubscription,
     hasVideo,
     addVideo, 
     setViewed,

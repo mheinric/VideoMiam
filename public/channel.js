@@ -1,41 +1,36 @@
-import {db, parseResult, loadVideos, reloadDB} from "./common.js"
+import { getChannelInfos, insertAllVideos, sendRequest} from "./common.js"
 
 const channelVideoList = document.getElementById("channelVideoList");
 const channelDisplayNewOnly = document.getElementById("channelDisplayNewOnly");
+const currentChannelId = parseInt(new URLSearchParams(window.location.search).get("id"));
 
-var currentChannelInfo = null;
+async function fetchVideos() {
+	let newVideosOnly = channelDisplayNewOnly.checked;
+	let res = await sendRequest("videos/listForSubscription", {
+		channelId : currentChannelId,
+		viewed : newVideosOnly ? false : null,
+	});
+	if (res.status == "OK") {
+		return res.data;
+	}
+	else {
+		return [];
+	}
+}
 
-async function fetchChannelInfos()
+async function updateChannelInfos()
 {
-	const currentChannelId = new URLSearchParams(window.location.search).get("id");
-
-	for (var sub of parseResult(db.exec("SELECT * FROM Subscriptions"))) {
-		if (sub.Id == currentChannelId)
-		{
-			currentChannelInfo = sub;
-			break;
-		}
-	}
-	if (currentChannelInfo == null)
-	{
-		document.querySelector("h1").textContent = "Channel not found";
-	}
-	document.querySelector("#channelPage h1").textContent = currentChannelInfo.Title;
+	let details = await getChannelInfos(currentChannelId);
+	document.querySelector("#channelPage h1").textContent = details.Title;
 }
 
 channelDisplayNewOnly.onclick = async function() {
-	if (channelDisplayNewOnly.checked) {
-		await loadVideos(channelVideoList, `SELECT * FROM Videos WHERE SubscriptionId = ${currentChannelInfo.Id} AND Viewed = FALSE`);
-	}
-	else {
-		await loadVideos(channelVideoList, `SELECT * FROM Videos WHERE SubscriptionId = ${currentChannelInfo.Id}`);
-	}
+	await insertAllVideos(channelVideoList, await fetchVideos());
 }
 
 async function main() {
-	await reloadDB();
-	await fetchChannelInfos();
-	await loadVideos(channelVideoList, `SELECT * FROM Videos WHERE SubscriptionId = ${currentChannelInfo.Id}`, false);
+	await updateChannelInfos();
+	await insertAllVideos(channelVideoList, await fetchVideos());
 }
 
 main();
