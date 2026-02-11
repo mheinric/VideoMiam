@@ -243,7 +243,15 @@
             "done": false,
             "createdAt": "2026-02-10T23:13:59.427260+00:00",
             "finishedAt": null
+        },
+        "30": {
+            "id": "30",
+            "title": "API request listing channels",
+            "description": "Add an API request server-side that lists all the channels, and use this API on the view.",
+            "done": false,
+            "createdAt": "2026-02-11T19:02:45.996314+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "30"
 }
