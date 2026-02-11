@@ -8,17 +8,17 @@ const router = express.Router();
 
 router.post("/add", 
     //TODO add input validation
-    async (req, res, next) => { await addAnimeToDatabase(req.body.malId); ok(); }
+    async (req, res) => { await addAnimeToDatabase(req.body.malId); ok(res); }
 );
 
 router.post("/markWatched", 
     //TODO add input validation
-    async (req, res, next) => { await db.markAnimeInterest(req.body.id, false); ok(); }
+    async (req, res) => { await db.markAnimeInterest(req.body.id, false); ok(res); }
 );
 
 router.post("/markNotInterested", 
     //TODO add input validation
-    async (req, res, next) => { await db.markAnimeViewed(req.body.id, true, new Date()); next(); ok(); }
+    async (req, res) => { await db.markAnimeViewed(req.body.id, true, new Date()); ok(res); }
     
 );
 

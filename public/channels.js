@@ -1,4 +1,4 @@
-import {db, parseResult, sendRequest, reloadDB} from "./common.js"
+import { sendRequest } from "./common.js"
 
 const subscriptionList = document.getElementById("subscriptionList");
 
@@ -6,11 +6,31 @@ document.getElementById("addSubscriptionButton").onclick = async () => {
 	await sendRequest("subscriptions/add", {
 		channelId : document.getElementById("subscriptionIdInput").value,
 	});
+	//TODO: feedback if the request fails
+	//Reload the list of subscriptions
+	await loadSubscriptions();
 };
 
+/**
+ * Make a request to the server to get a list of all the subscriptions.
+ * @returns The list of all the subscriptions and their details.
+ */
+async function listSubscriptions() {
+	let res = await sendRequest("subscriptions/list", {});
+	if (res.status == "OK") {
+		return res.data;
+	}
+	else {
+		return [];
+	}
+}
+
+/**
+ * Populates the view with the list of subscriptions retrieved from the server.
+ */
 async function loadSubscriptions() {
 	subscriptionList.innerHTML = "";
-	for (var sub of parseResult(db.exec("SELECT * FROM Subscriptions"))) {
+	for (let sub of await listSubscriptions()) {
 		const subDiv = document.createElement("div"); 
 		subDiv.classList.add("sub");
 		if (sub.IsFavorite) {
@@ -58,9 +78,4 @@ async function loadSubscriptions() {
 	}
 }
 
-async function main() {
-	await reloadDB();
-	await loadSubscriptions();
-}
-
-main();
+loadSubscriptions();

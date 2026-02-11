@@ -1,5 +1,12 @@
 
 
-export function ok(req, res) {
-    res.send({ status: "OK" });
+export function ok(res, data = null) {
+    if (data === null)
+    {
+        res.send({ status: "OK" });
+    }
+    else
+    {
+        res.send({ status: "OK", data: data });
+    }
 }
