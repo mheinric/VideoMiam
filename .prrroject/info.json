@@ -267,7 +267,15 @@
             "done": true,
             "createdAt": "2026-02-12T19:31:26.686561+00:00",
             "finishedAt": "2026-02-12T20:36:24.929796+00:00"
+        },
+        "33": {
+            "id": "33",
+            "title": "Create login/register routes",
+            "description": "Add routes for user login and registration",
+            "done": false,
+            "createdAt": "2026-02-12T20:37:11.772945+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "33"
 }
