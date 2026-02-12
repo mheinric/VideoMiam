@@ -12,3 +12,13 @@ sms_notifs:
   enable: false
   id: null
   password: null
+
+# Some configuration relative to password storage
+passwords: 
+  # Number of rounds of the bcrypt algorithm to run for password hashing
+  bcrypt_rounds: 12
+  # Can be set to true (only https), false, or 'auto' (adapts to connection types)
+  secure_cookies: 'auto'
+  # This value is used to sign the session cookies (preventing users from forging
+  # fakes).
+  cookies_secret: "PUT_SECRET_HERE"

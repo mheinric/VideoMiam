@@ -1,0 +1,15 @@
+CREATE TABLE Users (
+    Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    Email CHAR(64) NOT NULL UNIQUE,
+    PasswordHash CHAR(64) NOT NULL,
+);
+CREATE UNIQUE INDEX ON Users(Email);
+
+
+CREATE TABLE UserSubscriptions (
+    UserId INTEGER NOT NULL, 
+    ChannelId INTEGER NOT NULL, 
+    Favorite BOOLEAN NOT NULL,
+    PRIMARY KEY(UserId, ChannelId),
+    FOREIGN KEY(UserId) REFERENCES Users(Id)
+);

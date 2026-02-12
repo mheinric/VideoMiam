@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "better-sqlite3": "^11.8.1",
     "express": "^5.2.1",
+    "express-session": "^1.19.0",
     "node-schedule": "^2.1.1",
     "tinyduration": "^3.4.1",
     "yaml": "^2.8.2"
