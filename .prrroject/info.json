@@ -299,6 +299,14 @@
             "done": false,
             "createdAt": "2026-02-20T15:13:05.059289+00:00",
             "finishedAt": null
+        },
+        "37": {
+            "id": "37",
+            "title": "Move list of subscriptions to user db",
+            "description": "We should store in the user database which channel/playlist a user is subscribed to.",
+            "done": false,
+            "createdAt": "2026-02-20T15:14:51.940960+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
