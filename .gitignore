@@ -1,7 +1,5 @@
 node_modules
-public/data.db
-public/data_init*
-public/db_init*
+data.db
 public/data.db-journal
 test.json
 config.yaml

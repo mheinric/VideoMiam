@@ -1,5 +1,5 @@
 CREATE TABLE Subscriptions (
-    Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    SubscriptionId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     YoutubeId CHAR(64) NOT NULL UNIQUE,
     Kind CHAR(16) NOT NULL CHECK( Kind IN ('Playlist','Channel') ),
     Title TEXT NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE Subscriptions (
 );
 
 CREATE TABLE Videos (
-    Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+    VideoId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
     YoutubeId CHAR(64) NOT NULL UNIQUE, 
     Title TEXT NOT NULL, 
     DurationSec INT NOT NULL,
@@ -18,11 +18,11 @@ CREATE TABLE Videos (
     SubscriptionId INTEGER NOT NULL,
     Viewed BOOLEAN NOT NULL,
     ViewDate TEXT,
-    FOREIGN KEY(SubscriptionId) REFERENCES Subscriptions(Id)
+    FOREIGN KEY(SubscriptionId) REFERENCES Subscriptions(SubscriptionId)
 );
 
 CREATE TABLE Animes (
-    Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+    AnimeId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
     MalId INTEGER NOT NULL, /* Identifier on the MyAnimeList website */
     Title TEXT NOT NULL,
     NbEpisodes INTEGER NOT NULL, 
@@ -38,14 +38,50 @@ CREATE TABLE Animes (
 CREATE TABLE RelatedAnimes (
     FirstId INTEGER NOT NULL, 
     SecondId INTEGER NOT NULL,
-    FOREIGN KEY(FirstId) REFERENCES Animes(Id), 
-    FOREIGN KEY(SecondId) REFERENCES Animes(Id)
+    FOREIGN KEY(FirstId) REFERENCES Animes(AnimeId), 
+    FOREIGN KEY(SecondId) REFERENCES Animes(AnimeId)
 );
 
+
+CREATE TABLE Users (
+    Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    Email CHAR(64) NOT NULL UNIQUE,
+    PasswordHash CHAR(64) NOT NULL
+);
+CREATE UNIQUE INDEX EmailIndex ON Users(Email);
+
+
+CREATE TABLE UserSubscriptions (
+    UserId INTEGER NOT NULL, 
+    ChannelId INTEGER NOT NULL, 
+    Favorite BOOLEAN NOT NULL,
+    PRIMARY KEY(UserId, ChannelId),
+    FOREIGN KEY(UserId) REFERENCES Users(Id)
+);
+
+CREATE TABLE VideoStatus (
+    UserId INTEGER NOT NULL, 
+    VideoId INTEGER NOT NULL, 
+    ViewedStatus CHAR(16) NOT NULL CHECK (ViewedStatus IN ('Viewed', 'NotInterested')),
+    ViewDate DATE,
+    FOREIGN KEY(UserId) REFERENCES Users(Id), 
+    FOREIGN KEY(VideoId) REFERENCES Videos(Id)
+);
+
+CREATE TABLE AnimeStatus (
+    UserId INTEGER NOT NULL, 
+    AnimeId INTEGER NOT NULL, 
+    ViewedStatus CHAR(16) NOT NULL CHECK (ViewedStatus IN ('Viewed', 'NotInterested')),
+    ViewDate DATE,
+    FOREIGN KEY(UserId) REFERENCES Users(Id), 
+    FOREIGN KEY(AnimeId) REFERENCES Animes(Id)
+);
 
 /**
 CHANGELOG: Adding Subscriptions.IsFavorite
 ALTER TABLE Subscriptions ADD IsFavorite BOOLEAN NOT NULL DEFAULT FALSE;
 
 CHANGELOG: Adding tables Animes and Related Animes
+
+CHANGELOG: Adding Users, UserSubscriptions, VideoStatus, AnimeStatus tables
 **/

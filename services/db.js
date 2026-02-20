@@ -1,5 +1,8 @@
 import Database from 'better-sqlite3';
-const db = new Database('public/data.db');
+import bcrypt from 'bcrypt';
+import config from '../config.js'
+
+const db = new Database('data.db');
 
 export async function clearDB() {
     db.prepare("DELETE FROM Videos").run(); 
@@ -120,6 +123,26 @@ export async function malAnimeIsPresent(malId) {
     return malAnimeIsPresentStatement.get(malId).NbEntries > 0;
 }
 
+const addUserStatement = db.prepare("INSERT INTO Users(Email, PasswordHash) VALUES (?, ?)");
+export async function addUser(email, password) {
+    let res = addUserStatement.run(email, await bcrypt.hash(password, config["passwords"]["bcrypt_rounds"]));
+    return res.lastInsertRowid;
+}
+
+const userExistsStatement = db.prepare("SELECT COUNT(*) AS NbEntries FROM Users WHERE Email = ?");
+export async function userExists(email) {
+    return userExistsStatement.get(email).NbEntries > 0;
+}
+
+const checkUserStatement = db.prepare("SELECT * FROM Users WHERE Email = ?")
+export async function checkUserPassword(id, password) {
+    let entries = checkUserStatement.all(id); 
+    if (entries.length == 0 || !await bcrypt.compare(password, entries[0].PasswordHash)) {
+        return null; 
+    }
+    return entries[0].Id;
+}
+
 export default {
     clearDB,
     addSubscription, 
@@ -143,5 +166,9 @@ export default {
     listUpcomingAnimes,
     listSuggestedAnimes,
     updateAnimeStatus,
-    malAnimeIsPresent
+    malAnimeIsPresent,
+
+    addUser,
+    userExists, 
+    checkUserPassword,
 }
