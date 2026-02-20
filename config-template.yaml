@@ -13,6 +13,9 @@ sms_notifs:
   id: null
   password: null
 
+users: 
+  enable: false
+
 # Some configuration relative to password storage
 passwords: 
   # Number of rounds of the bcrypt algorithm to run for password hashing

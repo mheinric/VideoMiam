@@ -1,4 +1,4 @@
-
+import config from './config.js'
 
 export function ok(res, data = null) {
     if (data === null) {
@@ -14,6 +14,12 @@ export function error(res, status, message) {
 }
 
 export function assertAuth(req, res, next) {
+    //If user management is disabled, the website serves a single user.
+    if (!config.users.enable) {
+        req.session.userId = 0; 
+        next();
+        return;
+    }
     if (req.session.userId === undefined) {
         error(res, 401, "You must login first");
     }

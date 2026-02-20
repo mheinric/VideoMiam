@@ -6,6 +6,7 @@ import db from '../services/db.js';
 const router = express.Router();
 
 router.post('/list', 
+    assertAuth,
     async (req, res) => { 
         let chanList = await db.getAllSubscriptions();
         ok(res, chanList)
@@ -13,6 +14,7 @@ router.post('/list',
 );
 
 router.post('/details', 
+    assertAuth,
     //TODO input validation
     async (req, res) => {
         ok(res, await db.getSubscription(req.body.channelId));
@@ -20,10 +22,12 @@ router.post('/details',
 )
 
 router.post('/add', 
+    assertAuth,
     //TODO input validation
     async (req, res) => { await addSubscription(req.body.channelId); ok(res); }
 );
 router.post('/markFavorite', 
+    assertAuth,
     //TODO input validation
     async (req, res) => { await db.setChannelFavorite(req.body.id, req.body.favorite); ok(res);}
 );
