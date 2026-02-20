@@ -1,6 +1,7 @@
 import express from 'express';
 import session from 'express-session';
 import path from 'path';
+import MemoryStore from 'memorystore';
 
 import config from './config.js';
 import animes from './routes/animes.js';
@@ -9,6 +10,7 @@ import videos from './routes/videos.js';
 import user from './routes/user.js'
 
 export const app = express();
+const MemoryStoreInstance = MemoryStore(session);
 
 export const baseUrl = config["base_url"];
 
@@ -16,9 +18,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
     secret: config["passwords"]["cookies_secret"],
-    resave: false, //Not sure what this is about
-    saveUninitialized: false, //Not sure what this is about
-    cookie: { secure: config["passwords"]["secure_cookies"] }
+    resave: false,
+    saveUninitialized: false,
+    cookie: { 
+        secure: config["passwords"]["secure_cookies"], 
+        sameSite: true 
+    },
+    store: new MemoryStoreInstance({
+        checkPeriod: 86400 // Prune expired entries every 24h (in seconds)
+    })
 }));
 app.use(baseUrl, express.static(path.resolve(config["dirname"], 'public')));
 
