@@ -323,7 +323,15 @@
             "done": true,
             "createdAt": "2026-02-20T16:02:15.206548+00:00",
             "finishedAt": "2026-02-20T16:45:02.990405+00:00"
+        },
+        "40": {
+            "id": "40",
+            "title": "Migrate db to user-centric usage",
+            "description": "Some fields in the Videos and Animes tables need to be moved to the new table.",
+            "done": false,
+            "createdAt": "2026-02-20T16:46:03.613442+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "40"
 }
