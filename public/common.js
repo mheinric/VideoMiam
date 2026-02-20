@@ -24,13 +24,18 @@ export function formatTime(timeSec) {
 }
 
 export async function sendRequest(path, params) {
-	const res = await fetch(path, {
+	const response = await fetch(path, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify(params)
-	}).then(response => response.json());
+	});
+	//If user is not logged in, redirect to the login page.
+	if (response.status == 401) {
+		window.location.href = "login.html";
+	}
+	const res = await response.json();
 	if (res.status != "OK") {
 		console.log(res);
 	}
