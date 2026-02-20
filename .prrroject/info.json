@@ -320,10 +320,10 @@
             "id": "39",
             "title": "Merge the two databases",
             "description": "Keeping the two databases separate is going to be a pain to handle, so I'm going to merge them to simplify things.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-20T16:02:15.206548+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-20T16:45:02.990405+00:00"
         }
     },
-    "current_task": "39"
+    "current_task": null
 }
