@@ -275,7 +275,15 @@
             "done": true,
             "createdAt": "2026-02-12T20:37:11.772945+00:00",
             "finishedAt": "2026-02-20T14:57:38.072302+00:00"
+        },
+        "34": {
+            "id": "34",
+            "title": "Automatically redirect if not registered",
+            "description": "When a request fails because you are not registered, we should redirect the user to the login page.",
+            "done": false,
+            "createdAt": "2026-02-20T14:58:10.316366+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "34"
 }
