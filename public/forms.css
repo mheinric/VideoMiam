@@ -1,0 +1,41 @@
+/**
+ * This file contains stylesheets for the login and register forms
+ */
+
+form {
+    margin: 1em auto; 
+    max-width: 25em;
+    background-color: #7ecf8e;
+    border-radius: 2em; 
+    padding: 1em 2em;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-top: 1em;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    width: 13em;
+    display: block;
+    margin: 0 auto; 
+}
+
+form input[type="submit"] {
+    display: block; 
+    margin: 1em auto;
+    font-size: 150%; 
+    font-weight: bold; 
+    background-color: #4aa35d;;
+    border: none; 
+    border-radius: 1em;
+    padding: 1em;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: rgb(37, 119, 55);
+}
+
