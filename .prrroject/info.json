@@ -288,9 +288,9 @@
             "id": "35",
             "title": "Add stylesheet for login and registration pages",
             "description": "",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-20T15:00:19.578673+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-20T15:34:03.272737+00:00"
         },
         "36": {
             "id": "36",
@@ -309,5 +309,5 @@
             "finishedAt": null
         }
     },
-    "current_task": "35"
+    "current_task": null
 }
