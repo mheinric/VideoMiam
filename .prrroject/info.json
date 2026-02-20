@@ -315,7 +315,15 @@
             "done": true,
             "createdAt": "2026-02-20T15:36:29.732785+00:00",
             "finishedAt": "2026-02-20T15:58:06.557918+00:00"
+        },
+        "39": {
+            "id": "39",
+            "title": "Merge the two databases",
+            "description": "Keeping the two databases separate is going to be a pain to handle, so I'm going to merge them to simplify things.",
+            "done": false,
+            "createdAt": "2026-02-20T16:02:15.206548+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "39"
 }
