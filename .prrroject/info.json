@@ -280,9 +280,9 @@
             "id": "34",
             "title": "Automatically redirect if not registered",
             "description": "When a request fails because you are not registered, we should redirect the user to the login page.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-20T14:58:10.316366+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-20T15:03:14.534271+00:00"
         },
         "35": {
             "id": "35",
@@ -293,5 +293,5 @@
             "finishedAt": null
         }
     },
-    "current_task": "34"
+    "current_task": null
 }
