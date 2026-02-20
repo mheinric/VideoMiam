@@ -331,6 +331,14 @@
             "done": false,
             "createdAt": "2026-02-20T16:46:03.613442+00:00",
             "finishedAt": null
+        },
+        "41": {
+            "id": "41",
+            "title": "Support for videos contained in multiple sub",
+            "description": "Add support for having videos in multiple subscription tabs",
+            "done": false,
+            "createdAt": "2026-02-20T18:07:00.269456+00:00",
+            "finishedAt": null
         }
     },
     "current_task": "40"
