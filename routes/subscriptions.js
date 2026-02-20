@@ -1,5 +1,5 @@
 import express from 'express'; 
-import { ok } from '../middlewares.js';
+import { ok, assertAuth } from '../middlewares.js';
 import { addSubscription } from '../services/subscriptions.js';
 import db from '../services/db.js';
 

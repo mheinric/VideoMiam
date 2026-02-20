@@ -26,10 +26,10 @@
      showgrid="false"
      inkscape:snap-global="false"
      inkscape:zoom="0.34796117"
-     inkscape:cx="643.74999"
+     inkscape:cx="620.75892"
      inkscape:cy="454.07365"
-     inkscape:window-width="1366"
-     inkscape:window-height="717"
+     inkscape:window-width="1680"
+     inkscape:window-height="999"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -508,7 +508,7 @@
        style="font-size:16px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect9713)"><tspan
          x="724.18164"
          y="230.43555"
-         id="tspan19705">Show all</tspan></text>
+         id="tspan1153">Show all</tspan></text>
     <g
        id="g13680">
       <g
@@ -574,10 +574,6 @@
            style="fill:none;stroke:#ff3a3b;stroke-width:0.719436;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.201778"
            d="m 37.15798,127.94768 2.914707,-3.83468 m -3.349733,1.15445 3.126871,3.08123"
            sodipodi:nodetypes="cccc" />
-        <path
-           style="fill:none;stroke:#19e421;stroke-width:5.23595;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 33.008909,103.93816 6.434879,7.49429 13.769895,-17.591087"
-           id="path14073" />
       </g>
     </g>
     <g
@@ -642,11 +638,6 @@
          id="path15659"
          style="fill:none;stroke:#ff3a3b;stroke-width:1.319;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.918336"
          d="m 37.15798,127.94768 2.914707,-3.83468 m -3.349733,1.15445 3.126871,3.08123"
-         sodipodi:nodetypes="cccc" />
-      <path
-         id="path19271"
-         style="fill:none;stroke:#ff3a3b;stroke-width:4.10643;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.751005"
-         d="M 27.309328,110.57109 43.946036,88.683315 m -19.119771,6.589427 17.847708,17.587198"
          sodipodi:nodetypes="cccc" />
     </g>
   </g>

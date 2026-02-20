@@ -1,9 +1,9 @@
 CREATE TABLE Users (
     Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     Email CHAR(64) NOT NULL UNIQUE,
-    PasswordHash CHAR(64) NOT NULL,
+    PasswordHash CHAR(64) NOT NULL
 );
-CREATE UNIQUE INDEX ON Users(Email);
+CREATE UNIQUE INDEX EmailIndex ON Users(Email);
 
 
 CREATE TABLE UserSubscriptions (

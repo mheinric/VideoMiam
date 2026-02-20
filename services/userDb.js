@@ -22,8 +22,8 @@ export async function userExists(email) {
 
 const checkUserStatement = db.prepare("SELECT * FROM Users WHERE Email = ?")
 export async function checkUserPassword(id, password) {
-    let entries = checkUserStatement.all(id, password); 
-    if (entries.size == 0 || !await bcrypt.compare(password, entries[0].PasswordHash)) {
+    let entries = checkUserStatement.all(id); 
+    if (entries.length == 0 || !await bcrypt.compare(password, entries[0].PasswordHash)) {
         return null; 
     }
     return entries[0].Id;
