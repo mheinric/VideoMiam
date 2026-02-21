@@ -196,8 +196,27 @@ describe('Videos Management', () => {
       .expect(200);
     expect(res.body.data).toStrictEqual([video1]);
   });
-  
+});
 
+describe('Animes management', () => {
+  const agent = request.agent(app);
+  beforeAll(async () => {
+    await clearDB();
+    await agent
+      .post(`${baseUrl}/users/register`)
+      .send({ email: "test@test.com", password: "test"})
+      .expect('Content-Type', /json/)
+      .expect(200);
+  });
+
+  test('Adding/Listing animes', async () => {
+    await agent
+      .post(`${baseUrl}/animes/add`)
+      .send({ malId: "59978"})
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+  });
 });
 
 describe('Multi-user support', () => {
