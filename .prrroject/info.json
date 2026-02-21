@@ -408,10 +408,10 @@
             "id": "50",
             "title": "Add test for /videos/listRecent",
             "description": "Add some test to verify and then fix the request for recent videos.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T14:11:27.046682+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T14:26:45.843879+00:00"
         }
     },
-    "current_task": "50"
+    "current_task": null
 }
