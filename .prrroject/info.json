@@ -344,9 +344,9 @@
             "id": "42",
             "title": "Fix SQL statements for listing suggested animes",
             "description": "The sql statement for listing suggested animes is broken because we need to add some other statuses like suggested",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-20T18:21:49.981268+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T16:40:58.757708+00:00"
         },
         "43": {
             "id": "43",
@@ -453,5 +453,5 @@
             "finishedAt": "2026-02-21T15:45:18.913319+00:00"
         }
     },
-    "current_task": "42"
+    "current_task": null
 }
