@@ -31,7 +31,7 @@ async function retrieveYoutubeData() {
                     //TODO: refactor with addSubscription
                     await db.addVideo(videoInfo.contentDetails.videoId, videoInfo.snippet.title, videoInfo.additionalDetails.duration, 
                         videoInfo.snippet.description, videoInfo.snippet.publishedAt, videoInfo.snippet.thumbnails.medium.url, 
-                        sub.Id, false);
+                        sub.Id);
                     console.log(`Adding video ${videoInfo.snippet.title}`);
                 }
             }

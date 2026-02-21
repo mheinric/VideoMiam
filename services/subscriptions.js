@@ -43,7 +43,7 @@ export async function addSubscription(youtubeId) {
         }
         await db.addVideo(videoInfo.contentDetails.videoId, videoInfo.snippet.title, videoInfo.additionalDetails.duration, 
             videoInfo.snippet.description, videoInfo.snippet.publishedAt, videoInfo.snippet.thumbnails.medium.url, 
-            subId, false);
+            subId);
         console.log(`Adding video ${videoInfo.snippet.title}`); 
     }
     return subId;

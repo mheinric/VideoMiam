@@ -100,11 +100,11 @@ export async function listVideosForSubscription(channelId, viewedCondition) {
 export async function listRecentVideos(userId, favorites, limit) {
     // The viewed * 1 is because better-sqlite3 does not handle booleans
     return prepare(`
-        SELECT Videos.* 
-        FROM Videos 
+        SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate
+        FROM Videos
             INNER JOIN UserSubscriptions ON Videos.SubscriptionId = UserSubscriptions.ChannelId
             LEFT JOIN VideoStatus ON VideoStatus.VideoId = Videos.Id
-        WHERE ViewedStatus = NULL AND UserSubscriptions.Favorite = ? AND UserSubscriptions.UserId = ?
+        WHERE ViewedStatus IS NULL AND UserSubscriptions.Favorite = ? AND UserSubscriptions.UserId = ?
         ORDER BY Videos.UploadDate DESC LIMIT ?;
     `).all(favorites * 1, userId, limit);
 }
@@ -114,12 +114,12 @@ export async function hasVideo(youtubeId) {
     return prepare("SELECT COUNT(*) AS Result FROM Videos WHERE YoutubeId = ?").get(youtubeId).Result != 0;
 }
 
-export async function addVideo(youtubeId, title, durationSec, details, uploadDate, thumbnailURL, subscriptionId, viewed) {
+export async function addVideo(youtubeId, title, durationSec, details, uploadDate, thumbnailURL, subscriptionId) {
     // The viewed * 1 is because better-sqlite3 does not handle booleans
     return prepare(`
-        INSERT INTO Videos (YoutubeId, Title, DurationSec, Details, UploadDate, ThumbnailURL, SubscriptionId, Viewed, ViewDate) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `).run(youtubeId, title, durationSec, details, uploadDate.toISOString(), thumbnailURL, subscriptionId, viewed * 1, null)
+        INSERT INTO Videos (YoutubeId, Title, DurationSec, Details, UploadDate, ThumbnailURL, SubscriptionId) 
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    `).run(youtubeId, title, durationSec, details, uploadDate.toISOString(), thumbnailURL, subscriptionId)
     .lastInsertRowid; 
 }
 

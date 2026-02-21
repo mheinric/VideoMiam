@@ -131,13 +131,27 @@ describe('Videos Management', () => {
       .expect(200);
   });
 
+  let video1 =
+   {
+     "Details": "",
+     "DurationSec": 2858,
+     "Id": 1,
+     "SubscriptionId": 1,
+     "ThumbnailURL": "https://i.ytimg.com/vi/k062k-gDnRY/mqdefault.jpg",
+     "Title": "Carrier   Get Home   Itis",
+     "UploadDate": "2013-10-19T22:43:57.000Z",
+     "ViewDate": null,
+     "ViewedStatus": null,
+     "YoutubeId": "k062k-gDnRY",
+   };
+
   test('Listing recent videos', async () => {
     let res = await agent
       .post(`${baseUrl}/videos/listRecent`)
       .send({ favorites: false, limit: 10 })
       .expect('Content-Type', /json/)
       .expect(200);
-    expect(res.body.data).toStrictEqual([]);
+    expect(res.body.data).toStrictEqual([video1]);
   });
 
 });
@@ -146,7 +160,7 @@ describe('Multi-user support', () => {
 
   const agent1 = request.agent(app);
   const agent2 = request.agent(app);
-  beforeEach(async () => {
+  beforeAll(async () => {
     await clearDB();
     await agent1
       .post(`${baseUrl}/users/register`)
@@ -158,15 +172,15 @@ describe('Multi-user support', () => {
       .send({ email: "test2@test.com", password: "test"})
       .expect('Content-Type', /json/)
       .expect(200);
-  })
-
-  test('Listing all channels', async () => {
 
     await agent1
       .post(`${baseUrl}/subscriptions/add`)
       .send({ youtubeId: "UCVX13EuI29nIdTjbNfpS7NA" })
       .expect('Content-Type', /json/)
       .expect(200);
+  })
+
+  test('Listing all channels', async () => {
 
     let res = await agent2
       .post(`${baseUrl}/subscriptions/list`)

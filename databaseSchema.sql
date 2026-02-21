@@ -27,8 +27,6 @@ CREATE TABLE Videos (
     UploadDate DATE NOT NULL,
     ThumbnailURL TEXT NOT NULL,
     SubscriptionId INTEGER NOT NULL,
-    Viewed BOOLEAN NOT NULL,
-    ViewDate TEXT,
     FOREIGN KEY(SubscriptionId) REFERENCES Subscriptions(Id)
 );
 
