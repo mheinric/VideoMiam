@@ -49,26 +49,6 @@ export async function insertAllVideos(targetDiv, videos) {
 	}
 }
 
-export async function loadVideos(targetDiv, query, showFavOnly) {
-	targetDiv.innerHTML = "";
-	const allVideos = parseResult(db.exec(query));
-	for (var video of allVideos) {
-		if (video.UploadDate) {
-			video.UploadDate = new Date(video.UploadDate);
-		}
-	}
-	//Put more recent videos first
-	allVideos.sort((v1, v2) => v2.UploadDate - v1.UploadDate );
-
-	for (var video of allVideos) {
-		const chanInfo = await getChannelInfos(video.SubscriptionId);
-		if (showFavOnly && !chanInfo.IsFavorite) {
-			continue;
-		}
-		await insertVideo(targetDiv, video);
-	}
-}
-
 async function insertVideo(targetDiv, video) {
 	if (video.UploadDate) {
 		video.UploadDate = new Date(video.UploadDate);
@@ -98,8 +78,6 @@ async function insertVideo(targetDiv, video) {
 			viewed: true,
 			viewDate: new Date().toISOString(),
 		})
-		await reloadDB();
-		await loadVideos(targetDiv, query, showFavOnly);
 	}
 	videoDiv.appendChild(vidImg);
 
