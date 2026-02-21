@@ -473,6 +473,14 @@
             "done": true,
             "createdAt": "2026-02-21T21:14:02.156971+00:00",
             "finishedAt": "2026-02-21T21:49:42.088321+00:00"
+        },
+        "58": {
+            "id": "58",
+            "title": "Landing page for the multi-user version",
+            "description": "Modify the landing page index.html to show something specific when you are not connected. Probably just a placeholder for now until I design something better.",
+            "done": false,
+            "createdAt": "2026-02-21T22:01:16.860538+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
