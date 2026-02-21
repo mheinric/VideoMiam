@@ -4,7 +4,7 @@ const subscriptionList = document.getElementById("subscriptionList");
 
 document.getElementById("addSubscriptionButton").onclick = async () => {
 	await sendRequest("subscriptions/add", {
-		channelId : document.getElementById("subscriptionIdInput").value,
+		youtubeId : document.getElementById("subscriptionIdInput").value,
 	});
 	//TODO: feedback if the request fails
 	//Reload the list of subscriptions

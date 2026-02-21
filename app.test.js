@@ -57,7 +57,7 @@ describe('Channels management', () => {
 
     await agent
       .post(`${baseUrl}/subscriptions/add`)
-      .send({ channelId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .send({ youtubeId: "UCVX13EuI29nIdTjbNfpS7NA" })
       .expect('Content-Type', /json/)
       .expect(200);
 
@@ -83,6 +83,7 @@ describe('Channels management', () => {
     expect(res.body.data).toStrictEqual({
       IconURL: "https://yt3.ggpht.com/ytc/AIdro_lGAGuCJ-KNiimnVhTYd1ZOk0TY_HHQq973w2MnHow=s240-c-k-c0x00ffffff-no-rj",
       Id: 1,
+      Favorite: 0,
       Kind: "Channel",
       Title: "Test Channel",
       YoutubeId: "UCVX13EuI29nIdTjbNfpS7NA",
@@ -93,7 +94,7 @@ describe('Channels management', () => {
 
     await agent
       .post(`${baseUrl}/subscriptions/add`)
-      .send({ channelId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .send({ youtubeId: "UCVX13EuI29nIdTjbNfpS7NA" })
       .expect('Content-Type', /json/)
       .expect(200);
 
@@ -135,7 +136,7 @@ describe('Multi-user support', () => {
 
     await agent1
       .post(`${baseUrl}/subscriptions/add`)
-      .send({ channelId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .send({ youtubeId: "UCVX13EuI29nIdTjbNfpS7NA" })
       .expect('Content-Type', /json/)
       .expect(200);
 

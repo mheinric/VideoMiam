@@ -17,14 +17,14 @@ router.post('/details',
     assertAuth,
     //TODO input validation
     async (req, res) => {
-        ok(res, await db.getSubscription(req.body.channelId));
+        ok(res, await db.getSubscription(req.body.channelId, req.session.userId));
     }
 )
 
 router.post('/add', 
     assertAuth,
     //TODO input validation
-    async (req, res) => { await subscribeUserTo(req.session.userId, req.body.channelId); ok(res); }
+    async (req, res) => { await subscribeUserTo(req.session.userId, req.body.youtubeId); ok(res); }
 );
 
 router.post('/markFavorite', 
