@@ -74,6 +74,19 @@ describe('Channels management', () => {
       Title: "Test Channel",
       YoutubeId: "UCVX13EuI29nIdTjbNfpS7NA",
     }]);
+
+    res = await agent
+      .post(`${baseUrl}/subscriptions/details`)
+      .send({ channelId: 1})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual({
+      IconURL: "https://yt3.ggpht.com/ytc/AIdro_lGAGuCJ-KNiimnVhTYd1ZOk0TY_HHQq973w2MnHow=s240-c-k-c0x00ffffff-no-rj",
+      Id: 1,
+      Kind: "Channel",
+      Title: "Test Channel",
+      YoutubeId: "UCVX13EuI29nIdTjbNfpS7NA",
+    });
   });
 
   test('Marking channel as favorite', async () => {

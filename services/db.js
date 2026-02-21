@@ -46,8 +46,15 @@ export async function getAllSubscriptions(userId = null) {
     }
 }
 
-export async function getSubscription(channelId) {
-    return prepare("SELECT * FROM Subscriptions WHERE Id = ?").get(channelId);
+export async function getSubscription(channelId, userId = null) {
+    if (userId === null) {
+        return prepare("SELECT * FROM Subscriptions WHERE Id = ?").get(channelId);
+    } else {
+        return prepare(`
+            SELECT Subscriptions.*, UserSubscriptions.Favorite 
+            FROM Subscriptions INNER JOIN UserSubscriptions ON Subscriptions.Id = UserSubscriptions.ChannelId
+            WHERE UserSubscriptions.ChannelId = ? AND UserSubscriptions.UserId = ?`).get(channelId, userId);
+    }
 }
 
 export async function getSubscriptionByYoutubeId(youtubeId) {
