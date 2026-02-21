@@ -481,6 +481,14 @@
             "done": false,
             "createdAt": "2026-02-21T22:01:16.860538+00:00",
             "finishedAt": null
+        },
+        "59": {
+            "id": "59",
+            "title": "Perform task in the background when adding a channel",
+            "description": "Adding a channel can take quite a bit of time since we are importing all the videos. We probably should start a background thread for this so that the request is not left hanging.",
+            "done": false,
+            "createdAt": "2026-02-21T22:04:11.625880+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
