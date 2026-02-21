@@ -443,7 +443,15 @@
             "done": true,
             "createdAt": "2026-02-21T15:15:10.678909+00:00",
             "finishedAt": "2026-02-21T15:30:11.791644+00:00"
+        },
+        "55": {
+            "id": "55",
+            "title": "Add test for animes/add route",
+            "description": "Add test and update the SQL queries for adding new animes to the db",
+            "done": false,
+            "createdAt": "2026-02-21T15:33:17.006220+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "55"
 }
