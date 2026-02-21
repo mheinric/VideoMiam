@@ -84,16 +84,23 @@ export async function subscribeUserTo(userId, channelId) {
     prepare("INSERT INTO UserSubscriptions(UserId, ChannelId, Favorite) VALUES(?, ?, FALSE)").run(userId, channelId);
 }
 
-export async function listVideosForSubscription(channelId, viewedCondition) {
-    if (viewedCondition === null) {
-        return prepare("SELECT * FROM Videos WHERE SubscriptionId = ? ORDER BY UploadDate DESC").all(channelId);
+export async function listVideosForSubscription(userId, channelId, newVideosOnly) {
+    if (!newVideosOnly) {
+        return prepare(`
+            SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate
+            FROM Videos 
+            LEFT JOIN VideoStatus ON Videos.Id = VideoStatus.VideoId
+            WHERE SubscriptionId = ? AND UserId = ?
+            ORDER BY UploadDate DESC`).all(channelId, userId);
     } else {
         // The viewed * 1 is because better-sqlite3 does not handle booleans
         return db.prepare(`
-            SELECT * FROM Videos 
-            WHERE SubscriptionId = ? AND Viewed = ? 
+            SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate
+            FROM Videos 
+            LEFT JOIN VideoStatus ON Videos.Id = VideoStatus.VideoId
+            WHERE SubscriptionId = ? AND UserId = ? AND ViewedStatus IS NULL
             ORDER BY UploadDate DESC
-        `).all(channelId, viewedCondition * 1);
+        `).all(channelId, userId);
     }
 }
 

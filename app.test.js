@@ -145,10 +145,17 @@ describe('Videos Management', () => {
      "YoutubeId": "k062k-gDnRY",
    };
 
-  test('Listing recent videos', async () => {
+  test('Listing videos', async () => {
     let res = await agent
       .post(`${baseUrl}/videos/listRecent`)
       .send({ favorites: false, limit: 10 })
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([video1]);
+
+    res = await agent
+      .post(`${baseUrl}/videos/listForSubscription`)
+      .send({ channelId: 1, viewed: false, limit: 10 })
       .expect('Content-Type', /json/)
       .expect(200);
     expect(res.body.data).toStrictEqual([video1]);

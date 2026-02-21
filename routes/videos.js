@@ -13,7 +13,7 @@ router.post("/listRecent",
 router.post("/listForSubscription", 
     assertAuth,
     //TODO input validation
-    async (req, res) => { ok(res, await db.listVideosForSubscription(req.body.channelId, req.body.viewed)); }
+    async (req, res) => { ok(res, await db.listVideosForSubscription(req.session.userId, req.body.channelId, req.body.viewed)); }
 );
 
 router.post("/markViewed", 
