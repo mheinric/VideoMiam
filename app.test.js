@@ -69,12 +69,33 @@ describe('Channels management', () => {
     expect(res.body.data).toStrictEqual([{
       IconURL: "https://yt3.ggpht.com/ytc/AIdro_lGAGuCJ-KNiimnVhTYd1ZOk0TY_HHQq973w2MnHow=s240-c-k-c0x00ffffff-no-rj",
       Id: 1,
-      IsFavorite: 0,
+      Favorite: 0,
       Kind: "Channel",
       Title: "Test Channel",
       YoutubeId: "UCVX13EuI29nIdTjbNfpS7NA",
     }]);
+  });
 
+  test('Marking channel as favorite', async () => {
+
+    await agent
+      .post(`${baseUrl}/subscriptions/add`)
+      .send({ channelId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    await agent
+      .post(`${baseUrl}/subscriptions/markFavorite`)
+      .send({ channelId: 1, favorite: true })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    let res = await agent
+      .post(`${baseUrl}/subscriptions/list`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data[0].Favorite).toStrictEqual(1);
   });
 
 });

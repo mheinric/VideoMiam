@@ -26,10 +26,11 @@ router.post('/add',
     //TODO input validation
     async (req, res) => { await subscribeUserTo(req.session.userId, req.body.channelId); ok(res); }
 );
+
 router.post('/markFavorite', 
     assertAuth,
     //TODO input validation
-    async (req, res) => { await db.setChannelFavorite(req.body.id, req.body.favorite); ok(res);}
+    async (req, res) => { await db.setChannelFavorite(req.session.userId, req.body.channelId, req.body.favorite); ok(res);}
 );
 
 export default router;

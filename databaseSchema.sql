@@ -15,8 +15,7 @@ CREATE TABLE Subscriptions (
     YoutubeId CHAR(64) NOT NULL UNIQUE,
     Kind CHAR(16) NOT NULL CHECK( Kind IN ('Playlist','Channel') ),
     Title TEXT NOT NULL,
-    IconURL TEXT NOT NULL,
-    IsFavorite BOOLEAN NOT NULL DEFAULT FALSE
+    IconURL TEXT NOT NULL
 );
 
 CREATE TABLE Videos (

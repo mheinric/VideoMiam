@@ -66,7 +66,7 @@ async function loadSubscriptions() {
 		markFavButton.classList.add("markFav");
 		markFavButton.onclick = async () => {
 			await sendRequest("subscriptions/markFavorite", {
-				id: subInfo.Id, 
+				channelId: subInfo.Id, 
 				favorite: !subInfo.IsFavorite,
 			});
 			subInfo.IsFavorite = !subInfo.IsFavorite;

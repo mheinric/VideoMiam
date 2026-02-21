@@ -39,7 +39,7 @@ export async function getAllSubscriptions(userId = null) {
     }
     else {
         return prepare(`
-            SELECT Subscriptions.* 
+            SELECT Subscriptions.*, UserSubscriptions.Favorite
             FROM Subscriptions INNER JOIN UserSubscriptions ON Subscriptions.Id = UserSubscriptions.ChannelId
             WHERE UserId = ?
         `).all(userId);
@@ -118,8 +118,12 @@ export async function setViewed(videoId, viewed, viewDate) {
     prepare("UPDATE Videos SET Viewed = ?, ViewDate = ? WHERE Id = ?").run(viewed * 1, viewDate != null ? viewDate.toISOString() : null, videoId);
 }
 
-export async function setChannelFavorite(channelId, favorite) {
-    prepare("UPDATE Subscriptions SET IsFavorite = ? WHERE Id = ?").run(favorite * 1, channelId);
+export async function setChannelFavorite(userId, channelId, favorite) {
+    prepare(`
+        UPDATE UserSubscriptions 
+        SET Favorite = ? 
+        WHERE UserId = ? AND ChannelId = ?
+    `).run(favorite * 1, userId, channelId);
 }
 
 export async function addAnime(malId, title, nbEpisodes, genres, thumbnailURL, currentStatus, synopsis) {
