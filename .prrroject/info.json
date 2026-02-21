@@ -411,7 +411,15 @@
             "done": true,
             "createdAt": "2026-02-21T14:11:27.046682+00:00",
             "finishedAt": "2026-02-21T14:26:45.843879+00:00"
+        },
+        "51": {
+            "id": "51",
+            "title": "Add test for /videos/listForSubscription",
+            "description": "Add some tests and adapt the SQL statement to work in a multi-user setting.",
+            "done": false,
+            "createdAt": "2026-02-21T14:28:06.716146+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "51"
 }
