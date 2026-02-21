@@ -435,7 +435,15 @@
             "done": true,
             "createdAt": "2026-02-21T15:10:07.582008+00:00",
             "finishedAt": "2026-02-21T15:14:24.867686+00:00"
+        },
+        "54": {
+            "id": "54",
+            "title": "Add test for marking video as viewed",
+            "description": "Add a test and fix the SQL queries for marking a video as viewed",
+            "done": false,
+            "createdAt": "2026-02-21T15:15:10.678909+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "54"
 }
