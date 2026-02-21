@@ -152,9 +152,11 @@
             "id": "18",
             "title": "Add support for multiple users",
             "description": "Need to look at how account creation could look like. I'm honestly not entirely sure.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-09T21:18:52.965497+00:00",
-            "finishedAt": null
+            "finishedAt": null,
+            "cancelled": true,
+            "cancelMessage": "This was implemented by several other tasks (required quite a bit more work than expected)"
         },
         "19": {
             "id": "19",
@@ -473,5 +475,5 @@
             "finishedAt": "2026-02-21T21:49:42.088321+00:00"
         }
     },
-    "current_task": "18"
+    "current_task": null
 }
