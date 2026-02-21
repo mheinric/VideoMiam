@@ -36,9 +36,6 @@ CREATE TABLE Animes (
     Title TEXT NOT NULL,
     NbEpisodes INTEGER NOT NULL, 
     Genres TEXT NOT NULL, /* Comma separated list of items */
-    Viewed BOOLEAN NOT NULL,
-    NotInterested BOOLEAN NOT NULL,
-    ViewDate DATE,
     ThumbnailURL TEXT NOT NULL,
     CurrentStatus CHAR(16) NOT NULL CHECK (CurrentStatus IN ('Completed', 'InProgress', 'Planned')),
     Synopsis TEXT NOT NULL
@@ -79,7 +76,7 @@ CREATE TABLE VideoStatus (
 CREATE TABLE AnimeStatus (
     UserId INTEGER NOT NULL, 
     AnimeId INTEGER NOT NULL, 
-    ViewedStatus CHAR(16) NOT NULL CHECK (ViewedStatus IN ('Viewed', 'NotInterested')),
+    ViewedStatus CHAR(16) NOT NULL CHECK (ViewedStatus IN ('Viewed', 'NotInterested', 'Suggested', 'Interested')),
     ViewDate DATE,
     FOREIGN KEY(UserId) REFERENCES Users(Id), 
     FOREIGN KEY(AnimeId) REFERENCES Animes(Id)
@@ -92,4 +89,17 @@ ALTER TABLE Subscriptions ADD IsFavorite BOOLEAN NOT NULL DEFAULT FALSE;
 CHANGELOG: Adding tables Animes and Related Animes
 
 CHANGELOG: Adding Users, UserSubscriptions, VideoStatus, AnimeStatus tables
+INSERT INTO VideoStatus(UserId, VideoId, ViewedStatus, ViewDate) SELECT 0, Id, 'Viewed', ViewDate FROM Videos WHERE Videos.Viewed = TRUE;
+INSERT INTO UserSubscriptions(UserId, ChannelId, Favorite) SELECT 0, Id, IsFavorite FROM Subscriptions;
+INSERT INTO AnimeStatus(UserId, AnimeId, ViewedStatus, ViewDate) SELECT 0, Id, 'Viewed', ViewDate FROM Animes WHERE Animes.Viewed = TRUE;
+INSERT INTO AnimeStatus(UserId, AnimeId, ViewedStatus, ViewDate) SELECT 0, Id, 'NotInterested', ViewDate FROM Animes WHERE Animes.Viewed = FALSE AND Animes.NotInterested = TRUE;
+INSERT INTO AnimeStatus(UserId, AnimeId, ViewedStatus, ViewDate) SELECT 0, Id, 'Interested', ViewDate FROM Animes WHERE Animes.Viewed = FALSE AND Animes.NotInterested = FALSE;
+
+CHANGELOG: Removal of the Viewed and ViewDate columns for Videos and Anime Tables and IsFavorite for Subscriptions
+ALTER TABLE Videos DROP COLUMN Viewed;
+ALTER TABLE Videos DROP COLUMN ViewDate;
+ALTER TABLE Animes DROP COLUMN Viewed;
+ALTER TABLE Animes DROP COLUMN ViewDate;
+ALTER TABLE Animes DROP COLUMN NotInterested;
+ALTER TABLE Subscriptions DROP COLUMN IsFavorite;
 **/

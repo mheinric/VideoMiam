@@ -8,35 +8,35 @@ const router = express.Router();
 
 router.post("/listViewed", 
     assertAuth,
-    async (req, res) => ok(res, await db.listViewedAnimes())
+    async (req, res) => ok(res, await db.listViewedAnimes(req.session.userId))
 )
 
 router.post("/listUpcoming",
     assertAuth, 
-    async (req, res) => ok(res, await db.listUpcomingAnimes())
+    async (req, res) => ok(res, await db.listUpcomingAnimes(req.session.userId))
 )
 
 router.post("/listSuggested", 
     assertAuth,
-    async (req, res) => ok(res, await db.listSuggestedAnimes())
+    async (req, res) => ok(res, await db.listSuggestedAnimes(req.session.userId))
 )
 
 router.post("/add", 
     assertAuth,
     //TODO add input validation
-    async (req, res) => { await addAnimeToDatabase(req.body.malId); ok(res); }
+    async (req, res) => { await addAnimeToDatabase(req.session.userId, req.body.malId); ok(res); }
 );
 
 router.post("/markWatched", 
     assertAuth,
     //TODO add input validation
-    async (req, res) => { await db.markAnimeInterest(req.body.id, false); ok(res); }
+    async (req, res) => { await db.markAnimeViewed(req.body.id, true, new Date()); ok(res); }
 );
 
 router.post("/markNotInterested", 
     assertAuth,
     //TODO add input validation
-    async (req, res) => { await db.markAnimeViewed(req.body.id, true, new Date()); ok(res); }
+    async (req, res) => { await db.markAnimeInterest(req.body.id, false); ok(res); }
     
 );
 

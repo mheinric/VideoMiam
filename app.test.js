@@ -209,12 +209,42 @@ describe('Animes management', () => {
       .expect(200);
   });
 
+  //Note: this is not complete 
+  let animeInfo = {
+    Id: 1, 
+    MalId: 5997, 
+    NbEpisodes: 52, 
+    ThumbnailURL: "https://cdn.myanimelist.net/images/anime/9/84054l.jpg",
+    Title: "Sabu to Ichi Torimono Hikae",
+    ViewDate: null, 
+    ViewedStatus: 'Interested',
+    CurrentStatus: "Completed"
+  };
+
   test('Adding/Listing animes', async () => {
     await agent
       .post(`${baseUrl}/animes/add`)
-      .send({ malId: "59978"})
+      .send({ malId: "5997"})
       .expect('Content-Type', /json/)
       .expect(200);
+
+    let res = await agent
+      .post(`${baseUrl}/animes/listViewed`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([]);
+
+    res = await agent
+      .post(`${baseUrl}/animes/listSuggested`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data.length).toStrictEqual(1); 
+    //Note: don't compare the synopsis because it's too long to write here in the code. 
+    animeInfo.Synopsis = res.body.data[0].Synopsis;
+    animeInfo.Genres = res.body.data[0].Genres;
+    expect(res.body.data).toStrictEqual([animeInfo]);
 
   });
 });

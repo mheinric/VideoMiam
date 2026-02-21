@@ -8,6 +8,7 @@ import animes from './routes/animes.js';
 import subscriptions from './routes/subscriptions.js';
 import videos from './routes/videos.js';
 import user from './routes/users.js'
+import { errorHandler } from './middlewares.js';
 
 export const app = express();
 const MemoryStoreInstance = MemoryStore(session);
@@ -39,6 +40,9 @@ app.use(baseUrl + "/users", user);
 app.use((req, res) => {
     res.status(404).send({ status: "Not Found" });
 });
+
+//Error handler
+app.use(errorHandler);
 
 export default app;
 

@@ -9,7 +9,11 @@ export function ok(res, data = null) {
     }
 }
 
-export function error(res, status, message) {
+export function error(res, status, message, errorObj) {
+    errorObj = errorObj || message;
+    if (status == 500) {
+        console.error(errorObj);
+    }
     res.status(status).send({ status: "Error", data: message });
 }
 
@@ -26,4 +30,12 @@ export function assertAuth(req, res, next) {
     else {
         next()
     }
+}
+
+export function errorHandler (err, req, res, next) {
+  if (res.headersSent) {
+    console.error(err);
+    return next(err)
+  }
+  error(res, 500, "Internal error", err);
 }

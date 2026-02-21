@@ -158,8 +158,8 @@ export async function setChannelFavorite(userId, channelId, favorite) {
 
 export async function addAnime(malId, title, nbEpisodes, genres, thumbnailURL, currentStatus, synopsis) {
     return prepare(`
-        INSERT INTO Animes(MalId, Title, NbEpisodes, Genres, Viewed, NotInterested, ViewDate, ThumbnailURL, CurrentStatus, Synopsis) VALUES (?,?,?,?,?,?,?,?,?,?)
-    `).run(malId, title, nbEpisodes, genres.join(","), 0, 0, null, thumbnailURL, currentStatus, synopsis)
+        INSERT INTO Animes(MalId, Title, NbEpisodes, Genres, ThumbnailURL, CurrentStatus, Synopsis) VALUES (?,?,?,?,?,?,?)
+    `).run(malId, title, nbEpisodes, genres.join(","), thumbnailURL, currentStatus, synopsis)
     .lastInsertRowid;
 }
 
@@ -172,16 +172,34 @@ export async function markAnimeInterest(animeId, interested) {
     prepare("UPDATE Animes SET NotInterested = ? WHERE Id = ?").run(1 - interested * 1, animeId);
 }
 
-export async function listViewedAnimes() {
-    return prepare("SELECT * FROM Animes WHERE Viewed = TRUE").all();
+export async function listViewedAnimes(userId) {
+    return prepare(`
+        SELECT Animes.*, AnimeStatus.ViewedStatus, AnimeStatus.ViewDate 
+        FROM Animes 
+        INNER JOIN 
+            (SELECT * FROM AnimeStatus WHERE UserId = ?) AS AnimeStatus 
+            ON Animes.Id = AnimeStatus.AnimeId
+        WHERE ViewedStatus = 'Viewed'`).all(userId);
 }
 
-export async function listUpcomingAnimes() {
-    return prepare("SELECT * FROM Animes WHERE Viewed = FALSE AND CurrentStatus != 'Completed'").all();
+export async function listUpcomingAnimes(userId) {
+    return prepare(`
+        SELECT Animes.*, AnimeStatus.ViewedStatus, AnimeStatus.ViewDate 
+        FROM Animes 
+        INNER JOIN 
+            (SELECT * FROM AnimeStatus WHERE UserId = ?) AS AnimeStatus 
+            ON Animes.Id = AnimeStatus.AnimeId
+        WHERE ViewedStatus = 'Interested' AND CurrentStatus != 'Completed`).all(userId);
 }
 
-export async function listSuggestedAnimes() {
-    return prepare("SELECT * FROM Animes WHERE Viewed = FALSE AND CurrentStatus = 'Completed'").all();
+export async function listSuggestedAnimes(userId) {
+    return prepare(`
+        SELECT Animes.*, AnimeStatus.ViewedStatus, AnimeStatus.ViewDate 
+        FROM Animes 
+        INNER JOIN 
+            (SELECT * FROM AnimeStatus WHERE UserId = ?) AS AnimeStatus 
+            ON Animes.Id = AnimeStatus.AnimeId
+        WHERE ViewedStatus = 'Interested' AND CurrentStatus = 'Completed'`).all(userId);
 }
 
 export async function updateAnimeStatus(id, newStatus) {
@@ -190,6 +208,13 @@ export async function updateAnimeStatus(id, newStatus) {
 
 export async function malAnimeIsPresent(malId) {
     return prepare("SELECT COUNT(*) AS NbEntries FROM Animes WHERE MalId = ?").get(malId).NbEntries > 0;
+}
+
+export async function markUserInterestedInAnime(animeId, userId) {
+    return prepare(`
+        INSERT INTO AnimeStatus(AnimeId, UserId, ViewedStatus)
+        VALUES (?, ?, 'Interested');
+    `).run(animeId, userId);
 }
 
 export async function addUser(email, password) {
@@ -234,6 +259,7 @@ export default {
     listSuggestedAnimes,
     updateAnimeStatus,
     malAnimeIsPresent,
+    markUserInterestedInAnime,
 
     addUser,
     userExists, 
