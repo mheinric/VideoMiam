@@ -419,6 +419,14 @@
             "done": false,
             "createdAt": "2026-02-21T14:28:06.716146+00:00",
             "finishedAt": null
+        },
+        "52": {
+            "id": "52",
+            "title": "Fixing the /videos/listRecent request",
+            "description": "The request returns an empty list when it shouldn't.",
+            "done": false,
+            "createdAt": "2026-02-21T14:29:17.526693+00:00",
+            "finishedAt": null
         }
     },
     "current_task": "51"
