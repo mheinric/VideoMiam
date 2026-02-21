@@ -453,7 +453,15 @@
             "done": true,
             "createdAt": "2026-02-21T15:33:17.006220+00:00",
             "finishedAt": "2026-02-21T15:45:18.913319+00:00"
+        },
+        "56": {
+            "id": "56",
+            "title": "Add test for marking anime as viewed/not interested",
+            "description": "Also update the sql queries accordingly.",
+            "done": false,
+            "createdAt": "2026-02-21T16:42:37.222589+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "56"
 }
