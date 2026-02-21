@@ -1,5 +1,5 @@
 node_modules
-data.db
+data*.db
 public/data.db-journal
 test.json
 config.yaml

@@ -25,7 +25,7 @@ router.post("/login",
         const password = req.body.password; 
         const userId = await db.checkUserPassword(email, password);
         if (userId === null) {
-            error(res, 408, "Invalid email/password"); //TODO: arbitrary error code
+            error(res, 401, "Invalid email/password");
             return;
         }
         req.session.userId = userId;

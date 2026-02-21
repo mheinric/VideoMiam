@@ -9,5 +9,12 @@
     "tinyduration": "^3.4.1",
     "yaml": "^2.8.2"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "supertest": "^7.2.2",
+    "vitest": "^4.0.18"
+  },
+  "scripts": {
+    "test": "vitest"
+  }
 }

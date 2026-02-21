@@ -1,12 +1,25 @@
+import fs from 'node:fs';
 import Database from 'better-sqlite3';
 import bcrypt from 'bcrypt';
 import config from '../config.js'
 
+const dbExists = fs.existsSync('data.db');
 const db = new Database('data.db');
+if (!dbExists) {
+    db.exec(fs.readFileSync('databaseSchema.sql', 'utf-8'));
+}
 
 export async function clearDB() {
-    db.prepare("DELETE FROM Videos").run(); 
-    db.prepare("DELETE FROM Subscriptions").run(); 
+    db.exec(`
+        DELETE FROM Subscriptions;
+        DELETE FROM Videos;
+        DELETE FROM Animes;
+        DELETE FROM RelatedAnimes;
+        DELETE FROM Users;
+        DELETE FROM UserSubscriptions;
+        DELETE FROM VideoStatus;
+        DELETE FROM AnimeStatus;
+    `);
 }
 
 const listSubStatement = db.prepare("SELECT * FROM Subscriptions");

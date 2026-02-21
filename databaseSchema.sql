@@ -1,5 +1,6 @@
+DROP TABLE IF EXISTS Subscriptions;
 CREATE TABLE Subscriptions (
-    SubscriptionId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     YoutubeId CHAR(64) NOT NULL UNIQUE,
     Kind CHAR(16) NOT NULL CHECK( Kind IN ('Playlist','Channel') ),
     Title TEXT NOT NULL,
@@ -7,8 +8,9 @@ CREATE TABLE Subscriptions (
     IsFavorite BOOLEAN NOT NULL DEFAULT FALSE
 );
 
+DROP TABLE IF EXISTS Videos;
 CREATE TABLE Videos (
-    VideoId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+    Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
     YoutubeId CHAR(64) NOT NULL UNIQUE, 
     Title TEXT NOT NULL, 
     DurationSec INT NOT NULL,
@@ -18,11 +20,12 @@ CREATE TABLE Videos (
     SubscriptionId INTEGER NOT NULL,
     Viewed BOOLEAN NOT NULL,
     ViewDate TEXT,
-    FOREIGN KEY(SubscriptionId) REFERENCES Subscriptions(SubscriptionId)
+    FOREIGN KEY(SubscriptionId) REFERENCES Subscriptions(Id)
 );
 
+DROP TABLE IF EXISTS Animes;
 CREATE TABLE Animes (
-    AnimeId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+    Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
     MalId INTEGER NOT NULL, /* Identifier on the MyAnimeList website */
     Title TEXT NOT NULL,
     NbEpisodes INTEGER NOT NULL, 
@@ -35,14 +38,15 @@ CREATE TABLE Animes (
     Synopsis TEXT NOT NULL
 );
 
+DROP TABLE IF EXISTS RelatedAnimes;
 CREATE TABLE RelatedAnimes (
     FirstId INTEGER NOT NULL, 
     SecondId INTEGER NOT NULL,
-    FOREIGN KEY(FirstId) REFERENCES Animes(AnimeId), 
-    FOREIGN KEY(SecondId) REFERENCES Animes(AnimeId)
+    FOREIGN KEY(FirstId) REFERENCES Animes(Id), 
+    FOREIGN KEY(SecondId) REFERENCES Animes(Id)
 );
 
-
+DROP TABLE IF EXISTS Users;
 CREATE TABLE Users (
     Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     Email CHAR(64) NOT NULL UNIQUE,
@@ -51,6 +55,7 @@ CREATE TABLE Users (
 CREATE UNIQUE INDEX EmailIndex ON Users(Email);
 
 
+DROP TABLE IF EXISTS UserSubscriptions;
 CREATE TABLE UserSubscriptions (
     UserId INTEGER NOT NULL, 
     ChannelId INTEGER NOT NULL, 
@@ -59,6 +64,7 @@ CREATE TABLE UserSubscriptions (
     FOREIGN KEY(UserId) REFERENCES Users(Id)
 );
 
+DROP TABLE IF EXISTS VideoStatus;
 CREATE TABLE VideoStatus (
     UserId INTEGER NOT NULL, 
     VideoId INTEGER NOT NULL, 
@@ -68,6 +74,7 @@ CREATE TABLE VideoStatus (
     FOREIGN KEY(VideoId) REFERENCES Videos(Id)
 );
 
+DROP TABLE IF EXISTS AnimeStatus;
 CREATE TABLE AnimeStatus (
     UserId INTEGER NOT NULL, 
     AnimeId INTEGER NOT NULL, 
