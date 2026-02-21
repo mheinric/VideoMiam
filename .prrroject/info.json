@@ -376,9 +376,9 @@
             "id": "46",
             "title": "Test marking as favorite",
             "description": "Add a test for marking a channel as favorite",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T13:23:44.316733+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T13:42:12.071952+00:00"
         },
         "47": {
             "id": "47",
@@ -397,5 +397,5 @@
             "finishedAt": null
         }
     },
-    "current_task": "46"
+    "current_task": null
 }
