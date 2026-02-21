@@ -432,10 +432,10 @@
             "id": "53",
             "title": "Fix List for sub",
             "description": "There are issues in the sql statements, in particular regarding the UserId filter",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T15:10:07.582008+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T15:14:24.867686+00:00"
         }
     },
-    "current_task": "53"
+    "current_task": null
 }
