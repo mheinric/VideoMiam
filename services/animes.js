@@ -11,6 +11,6 @@ export async function addAnimeToDatabase(userId, malId) {
     var status = mal.convertAnimeStatus(animeInfo["status"]);
     let animeId = await db.addAnime(malId, animeInfo["title"], animeInfo["num_episodes"], 
         genres, animeInfo["main_picture"]["large"], status, animeInfo["synopsis"]);
-    await db.markUserInterestedInAnime(animeId, userId);
+    await db.markAnimeInterest(userId, animeId, true);
     console.log(`Added Anime '${animeInfo['title']}' to the database`);
 }

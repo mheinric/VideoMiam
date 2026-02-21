@@ -214,7 +214,6 @@ describe('Animes management', () => {
     Id: 1, 
     MalId: 5997, 
     NbEpisodes: 52, 
-    ThumbnailURL: "https://cdn.myanimelist.net/images/anime/9/84054l.jpg",
     Title: "Sabu to Ichi Torimono Hikae",
     ViewDate: null, 
     ViewedStatus: 'Interested',
@@ -241,10 +240,55 @@ describe('Animes management', () => {
       .expect('Content-Type', /json/)
       .expect(200);
     expect(res.body.data.length).toStrictEqual(1); 
-    //Note: don't compare the synopsis because it's too long to write here in the code. 
+    //Note: don't compare the synopsis and genre because it's too long to write here in the code. 
     animeInfo.Synopsis = res.body.data[0].Synopsis;
     animeInfo.Genres = res.body.data[0].Genres;
+    //Apparently the service does not always return the same ThumbnailURL.
+    animeInfo.ThumbnailURL = res.body.data[0].ThumbnailURL;
     expect(res.body.data).toStrictEqual([animeInfo]);
+
+    await agent
+      .post(`${baseUrl}/animes/markWatched`)
+      .send({ animeId: 1})
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    res = await agent
+      .post(`${baseUrl}/animes/listViewed`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data.length).toStrictEqual(1);
+    animeInfo.ViewedStatus = 'Viewed';
+    animeInfo.ViewDate = res.body.data[0].ViewDate;
+    expect(res.body.data).toStrictEqual([animeInfo]);
+
+    res = await agent
+      .post(`${baseUrl}/animes/listSuggested`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([]);
+
+    await agent
+      .post(`${baseUrl}/animes/markNotInterested`)
+      .send({ animeId: 1})
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    res = await agent
+      .post(`${baseUrl}/animes/listViewed`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([]);
+
+    res = await agent
+      .post(`${baseUrl}/animes/listSuggested`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([]);
 
   });
 });

@@ -67,7 +67,7 @@ async function populateList(targetDiv, endpoint, imageOnly) {
 			const itemId = anime.Id;
 			watchedButton.onclick = async function() {
 				await sendRequest("animes/markWatched", {
-					id : itemId,
+					animeId : itemId,
 				});
 				await updateAnimeList();
 			}
@@ -76,7 +76,7 @@ async function populateList(targetDiv, endpoint, imageOnly) {
 			notInterestedButton.textContent = "Not interested";
 			notInterestedButton.onclick = async function() {
 				await sendRequest("animes/markNotInterested", {
-					id : itemId,
+					animeId : itemId,
 				});
 				await updateAnimeList();
 			}

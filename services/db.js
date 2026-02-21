@@ -163,13 +163,20 @@ export async function addAnime(malId, title, nbEpisodes, genres, thumbnailURL, c
     .lastInsertRowid;
 }
 
-export async function markAnimeViewed(animeId, viewed, viewDate) {
-    prepare("UPDATE Animes SET Viewed = ?, ViewDate = ? WHERE Id = ?")
-        .run(viewed * 1, viewDate != null ? viewDate.toISOString() : null, animeId);
+export async function markAnimeViewed(userId, animeId, viewed, viewDate) {
+    prepare("DELETE FROM AnimeStatus WHERE UserId = ? AND AnimeId = ?").run(userId, animeId);
+    prepare(`
+        INSERT INTO AnimeStatus(UserId, AnimeId, ViewedStatus, ViewDate) 
+        VALUES (?, ?, ?, ?)`)
+        .run(userId, animeId, viewed ? 'Viewed' : 'Interested', viewDate != null ? viewDate.toISOString() : null);
 }
 
-export async function markAnimeInterest(animeId, interested) {
-    prepare("UPDATE Animes SET NotInterested = ? WHERE Id = ?").run(1 - interested * 1, animeId);
+export async function markAnimeInterest(userId, animeId, interested) {
+    prepare("DELETE FROM AnimeStatus WHERE UserId = ? AND AnimeId = ?").run(userId, animeId);
+    prepare(`
+        INSERT INTO AnimeStatus(UserId, AnimeId, ViewedStatus, ViewDate) 
+        VALUES (?, ?, ?, ?)`)
+        .run(userId, animeId, interested ? 'Interested' : 'NotInterested', null);
 }
 
 export async function listViewedAnimes(userId) {
@@ -208,13 +215,6 @@ export async function updateAnimeStatus(id, newStatus) {
 
 export async function malAnimeIsPresent(malId) {
     return prepare("SELECT COUNT(*) AS NbEntries FROM Animes WHERE MalId = ?").get(malId).NbEntries > 0;
-}
-
-export async function markUserInterestedInAnime(animeId, userId) {
-    return prepare(`
-        INSERT INTO AnimeStatus(AnimeId, UserId, ViewedStatus)
-        VALUES (?, ?, 'Interested');
-    `).run(animeId, userId);
 }
 
 export async function addUser(email, password) {
@@ -259,7 +259,6 @@ export default {
     listSuggestedAnimes,
     updateAnimeStatus,
     malAnimeIsPresent,
-    markUserInterestedInAnime,
 
     addUser,
     userExists, 

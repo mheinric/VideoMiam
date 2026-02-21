@@ -30,13 +30,13 @@ router.post("/add",
 router.post("/markWatched", 
     assertAuth,
     //TODO add input validation
-    async (req, res) => { await db.markAnimeViewed(req.body.id, true, new Date()); ok(res); }
+    async (req, res) => { await db.markAnimeViewed(req.session.userId, req.body.animeId, true, new Date()); ok(res); }
 );
 
 router.post("/markNotInterested", 
     assertAuth,
     //TODO add input validation
-    async (req, res) => { await db.markAnimeInterest(req.body.id, false); ok(res); }
+    async (req, res) => { await db.markAnimeInterest(req.session.userId, req.body.animeId, false); ok(res); }
     
 );
 
