@@ -1,4 +1,4 @@
-import { describe, test, beforeEach, expect } from 'vitest';
+import { describe, test, beforeEach, beforeAll, expect } from 'vitest';
 import request from 'supertest';
 import app from './app.js';
 import config from './config.js';
@@ -110,6 +110,34 @@ describe('Channels management', () => {
       .expect('Content-Type', /json/)
       .expect(200);
     expect(res.body.data[0].Favorite).toStrictEqual(1);
+  });
+
+});
+
+describe('Videos Management', () => {
+
+  const agent = request.agent(app);
+  beforeAll(async () => {
+    await clearDB();
+    await agent
+      .post(`${baseUrl}/users/register`)
+      .send({ email: "test@test.com", password: "test"})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    await agent
+      .post(`${baseUrl}/subscriptions/add`)
+      .send({ youtubeId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .expect('Content-Type', /json/)
+      .expect(200);
+  });
+
+  test('Listing recent videos', async () => {
+    let res = await agent
+      .post(`${baseUrl}/videos/listRecent`)
+      .send({ favorites: false, limit: 10 })
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([]);
   });
 
 });

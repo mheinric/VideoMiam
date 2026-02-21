@@ -97,14 +97,16 @@ export async function listVideosForSubscription(channelId, viewedCondition) {
     }
 }
 
-export async function listRecentVideos(favorites, limit) {
+export async function listRecentVideos(userId, favorites, limit) {
     // The viewed * 1 is because better-sqlite3 does not handle booleans
     return prepare(`
         SELECT Videos.* 
-        FROM Videos INNER JOIN Subscriptions ON Videos.SubscriptionId = Subscriptions.Id 
-        WHERE Viewed = FALSE AND Subscriptions.IsFavorite = ? 
+        FROM Videos 
+            INNER JOIN UserSubscriptions ON Videos.SubscriptionId = UserSubscriptions.ChannelId
+            LEFT JOIN VideoStatus ON VideoStatus.VideoId = Videos.Id
+        WHERE ViewedStatus = NULL AND UserSubscriptions.Favorite = ? AND UserSubscriptions.UserId = ?
         ORDER BY Videos.UploadDate DESC LIMIT ?;
-    `).all(favorites * 1, limit);
+    `).all(favorites * 1, userId, limit);
 }
 
 

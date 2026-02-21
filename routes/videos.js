@@ -7,7 +7,7 @@ const router = express.Router();
 router.post("/listRecent", 
     assertAuth,
     //TODO input validation
-    async (req, res) => { ok(res, await db.listRecentVideos(req.body.favorites, req.body.limit)); }
+    async (req, res) => { ok(res, await db.listRecentVideos(req.session.userId, req.body.favorites, req.body.limit)); }
 )
 
 router.post("/listForSubscription", 
