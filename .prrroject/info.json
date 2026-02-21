@@ -360,10 +360,10 @@
             "id": "44",
             "title": "Subscription list depend on current user",
             "description": "Make it so that the list of channels a user is subscribed to depends on the current logged user.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T12:43:04.428886+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T13:02:38.393423+00:00"
         }
     },
-    "current_task": "44"
+    "current_task": null
 }
