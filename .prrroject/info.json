@@ -347,6 +347,14 @@
             "done": false,
             "createdAt": "2026-02-20T18:21:49.981268+00:00",
             "finishedAt": null
+        },
+        "43": {
+            "id": "43",
+            "title": "Test api endpoints requiring auth",
+            "description": "Add some test on at least one endpoint that requires authentification",
+            "done": false,
+            "createdAt": "2026-02-21T12:19:29.747280+00:00",
+            "finishedAt": null
         }
     },
     "current_task": "40"
