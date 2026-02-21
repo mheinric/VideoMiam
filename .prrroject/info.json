@@ -368,10 +368,10 @@
             "id": "45",
             "title": "Refactor a little bit the code in db.js",
             "description": "Add a function to automatically cache prepared statements to avoid having to define variables each time.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T13:04:44.871020+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T13:21:08.057158+00:00"
         }
     },
-    "current_task": "45"
+    "current_task": null
 }
