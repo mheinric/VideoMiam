@@ -384,9 +384,9 @@
             "id": "47",
             "title": "Fix arg of subscriptions/add route",
             "description": "The subscription/add route should take a youtubeId as argument, and not a channelId.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T13:26:36.979101+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T14:08:01.445215+00:00"
         },
         "48": {
             "id": "48",
@@ -405,5 +405,5 @@
             "finishedAt": "2026-02-21T13:48:54.368510+00:00"
         }
     },
-    "current_task": "47"
+    "current_task": null
 }
