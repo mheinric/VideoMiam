@@ -330,7 +330,8 @@
             "description": "Some fields in the Videos and Animes tables need to be moved to the new table.",
             "done": false,
             "createdAt": "2026-02-20T16:46:03.613442+00:00",
-            "finishedAt": null
+            "finishedAt": null,
+            "current_diff_id": "40"
         },
         "41": {
             "id": "41",
@@ -349,5 +350,5 @@
             "finishedAt": null
         }
     },
-    "current_task": "40"
+    "current_task": "29"
 }
