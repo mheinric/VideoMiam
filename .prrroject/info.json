@@ -363,7 +363,15 @@
             "done": true,
             "createdAt": "2026-02-21T12:43:04.428886+00:00",
             "finishedAt": "2026-02-21T13:02:38.393423+00:00"
+        },
+        "45": {
+            "id": "45",
+            "title": "Refactor a little bit the code in db.js",
+            "description": "Add a function to automatically cache prepared statements to avoid having to define variables each time.",
+            "done": false,
+            "createdAt": "2026-02-21T13:04:44.871020+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "45"
 }
