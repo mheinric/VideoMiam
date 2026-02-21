@@ -392,9 +392,9 @@
             "id": "48",
             "title": "Rename route /user to /users for consistency",
             "description": "",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T13:26:58.174390+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T14:10:04.204880+00:00"
         },
         "49": {
             "id": "49",
@@ -405,5 +405,5 @@
             "finishedAt": "2026-02-21T13:48:54.368510+00:00"
         }
     },
-    "current_task": "48"
+    "current_task": null
 }
