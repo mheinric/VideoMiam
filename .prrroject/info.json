@@ -395,7 +395,15 @@
             "done": false,
             "createdAt": "2026-02-21T13:26:58.174390+00:00",
             "finishedAt": null
+        },
+        "49": {
+            "id": "49",
+            "title": "Testing subscriptions/details route",
+            "description": "",
+            "done": false,
+            "createdAt": "2026-02-21T13:43:53.576758+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "49"
 }
