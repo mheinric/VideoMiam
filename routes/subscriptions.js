@@ -1,6 +1,6 @@
 import express from 'express'; 
 import { ok, assertAuth } from '../middlewares.js';
-import { addSubscription } from '../services/subscriptions.js';
+import { subscribeUserTo } from '../services/subscriptions.js';
 import db from '../services/db.js';
 
 const router = express.Router();
@@ -8,7 +8,7 @@ const router = express.Router();
 router.post('/list', 
     assertAuth,
     async (req, res) => { 
-        let chanList = await db.getAllSubscriptions();
+        let chanList = await db.getAllSubscriptions(req.session.userId);
         ok(res, chanList)
     }
 );
@@ -24,7 +24,7 @@ router.post('/details',
 router.post('/add', 
     assertAuth,
     //TODO input validation
-    async (req, res) => { await addSubscription(req.body.channelId); ok(res); }
+    async (req, res) => { await subscribeUserTo(req.session.userId, req.body.channelId); ok(res); }
 );
 router.post('/markFavorite', 
     assertAuth,

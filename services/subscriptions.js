@@ -1,6 +1,17 @@
 import db from '../services/db.js';
 import yt from '../services/yt.js';
 
+export async function subscribeUserTo(userId, newSubscription) {
+    let subId = null;
+    if (!await db.isSubscribedTo(newSubscription)) {
+        subId = await addSubscription(newSubscription);
+    }
+    else {
+        subId = await db.getSubscriptionByYoutubeId(newSubscirption).Id;
+    }
+    await db.subscribeUserTo(userId, subId);
+}
+
 export async function addSubscription(newSubscription) {
     if (await db.isSubscribedTo(newSubscription)) {
         throw { status: 400, details: "Already subscribed to channel/playlist" };
@@ -35,4 +46,5 @@ export async function addSubscription(newSubscription) {
             subId, false);
         console.log(`Adding video ${videoInfo.snippet.title}`); 
     }
+    return subId;
 }

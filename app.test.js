@@ -78,3 +78,40 @@ describe('Channels management', () => {
   });
 
 });
+
+describe('Multi-user support', () => {
+
+  const agent1 = request.agent(app);
+  const agent2 = request.agent(app);
+  beforeEach(async () => {
+    await clearDB();
+    await agent1
+      .post(`${baseUrl}/user/register`)
+      .send({ email: "test@test.com", password: "test"})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    await agent2
+      .post(`${baseUrl}/user/register`)
+      .send({ email: "test2@test.com", password: "test"})
+      .expect('Content-Type', /json/)
+      .expect(200);
+  })
+
+  test('Listing all channels', async () => {
+
+    await agent1
+      .post(`${baseUrl}/subscriptions/add`)
+      .send({ channelId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    let res = await agent2
+      .post(`${baseUrl}/subscriptions/list`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([]);
+
+  });
+
+});

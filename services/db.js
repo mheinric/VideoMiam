@@ -26,13 +26,27 @@ export async function clearDB() {
 }
 
 const listSubStatement = db.prepare("SELECT * FROM Subscriptions");
-export async function getAllSubscriptions() {
-    return listSubStatement.all();
+const listSubByUserStatement = db.prepare(`
+    SELECT Subscriptions.* 
+    FROM Subscriptions INNER JOIN UserSubscriptions ON Subscriptions.Id = UserSubscriptions.ChannelId
+    WHERE UserId = ?`);
+export async function getAllSubscriptions(userId = null) {
+    if (userId === null) {
+        return listSubStatement.all();
+    }
+    else {
+        return listSubByUserStatement.all(userId);
+    }
 }
 
 const subDetailsStatement = db.prepare("SELECT * FROM Subscriptions WHERE Id = ?");
 export async function getSubscription(channelId) {
     return subDetailsStatement.get(channelId);
+}
+
+const subDetailsByYoutubeIdStatement = db.prepare("SELECT * FROM Subscriptions WHERE YoutubeId = ?");
+export async function getSubscriptionByYoutubeId(youtubeId) {
+    return subDetailsByYoutubeIdStatement.get(youtubeId);
 }
 
 const addSubStatement = db.prepare("INSERT INTO Subscriptions(YoutubeId, Kind, Title, IconURL) VALUES (?, ?, ?, ?)");
@@ -54,6 +68,11 @@ export async function removeSubscription(id) {
 const isSubStatement = db.prepare("SELECT COUNT(*) AS Result FROM Subscriptions WHERE YoutubeId = ?");
 export async function isSubscribedTo(youtubeId) {
     return isSubStatement.get(youtubeId).Result != 0;
+}
+
+const subscribeUserToStatement = db.prepare("INSERT INTO UserSubscriptions(UserId, ChannelId, Favorite) VALUES(?, ?, FALSE)")
+export async function subscribeUserTo(userId, channelId) {
+    subscribeUserToStatement.run(userId, channelId);
 }
 
 const listVideoStatement = db.prepare("SELECT * FROM Videos WHERE SubscriptionId = ? ORDER BY UploadDate DESC");
@@ -167,6 +186,7 @@ export default {
     getAllSubscriptions, 
     removeSubscription, 
     isSubscribedTo, 
+    subscribeUserTo,
 
     listVideosForSubscription,
     listRecentVideos,
