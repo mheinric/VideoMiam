@@ -1,4 +1,15 @@
+
+/* Note: remove tables in reverse order of creation to avoid FOREIGN KEY contraint issues*/
+DROP TABLE IF EXISTS AnimeStatus;
+DROP TABLE IF EXISTS VideoStatus;
+DROP TABLE IF EXISTS UserSubscriptions;
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS RelatedAnimes;
+DROP TABLE IF EXISTS Animes;
+DROP TABLE IF EXISTS Videos;
 DROP TABLE IF EXISTS Subscriptions;
+
+
 CREATE TABLE Subscriptions (
     Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     YoutubeId CHAR(64) NOT NULL UNIQUE,
@@ -8,7 +19,6 @@ CREATE TABLE Subscriptions (
     IsFavorite BOOLEAN NOT NULL DEFAULT FALSE
 );
 
-DROP TABLE IF EXISTS Videos;
 CREATE TABLE Videos (
     Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
     YoutubeId CHAR(64) NOT NULL UNIQUE, 
@@ -23,7 +33,6 @@ CREATE TABLE Videos (
     FOREIGN KEY(SubscriptionId) REFERENCES Subscriptions(Id)
 );
 
-DROP TABLE IF EXISTS Animes;
 CREATE TABLE Animes (
     Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
     MalId INTEGER NOT NULL, /* Identifier on the MyAnimeList website */
@@ -38,7 +47,6 @@ CREATE TABLE Animes (
     Synopsis TEXT NOT NULL
 );
 
-DROP TABLE IF EXISTS RelatedAnimes;
 CREATE TABLE RelatedAnimes (
     FirstId INTEGER NOT NULL, 
     SecondId INTEGER NOT NULL,
@@ -46,7 +54,6 @@ CREATE TABLE RelatedAnimes (
     FOREIGN KEY(SecondId) REFERENCES Animes(Id)
 );
 
-DROP TABLE IF EXISTS Users;
 CREATE TABLE Users (
     Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     Email CHAR(64) NOT NULL UNIQUE,
@@ -55,7 +62,6 @@ CREATE TABLE Users (
 CREATE UNIQUE INDEX EmailIndex ON Users(Email);
 
 
-DROP TABLE IF EXISTS UserSubscriptions;
 CREATE TABLE UserSubscriptions (
     UserId INTEGER NOT NULL, 
     ChannelId INTEGER NOT NULL, 
@@ -64,7 +70,6 @@ CREATE TABLE UserSubscriptions (
     FOREIGN KEY(UserId) REFERENCES Users(Id)
 );
 
-DROP TABLE IF EXISTS VideoStatus;
 CREATE TABLE VideoStatus (
     UserId INTEGER NOT NULL, 
     VideoId INTEGER NOT NULL, 
@@ -74,7 +79,6 @@ CREATE TABLE VideoStatus (
     FOREIGN KEY(VideoId) REFERENCES Videos(Id)
 );
 
-DROP TABLE IF EXISTS AnimeStatus;
 CREATE TABLE AnimeStatus (
     UserId INTEGER NOT NULL, 
     AnimeId INTEGER NOT NULL, 

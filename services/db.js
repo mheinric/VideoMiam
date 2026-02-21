@@ -10,15 +10,18 @@ if (!dbExists) {
 }
 
 export async function clearDB() {
+    //Note: be careful of order to account for foreign key dependencies.
+    //Note: also delete elements from sqlite_sequence to restart id numbering from 0.
     db.exec(`
-        DELETE FROM Subscriptions;
-        DELETE FROM Videos;
-        DELETE FROM Animes;
-        DELETE FROM RelatedAnimes;
-        DELETE FROM Users;
-        DELETE FROM UserSubscriptions;
-        DELETE FROM VideoStatus;
         DELETE FROM AnimeStatus;
+        DELETE FROM VideoStatus;
+        DELETE FROM UserSubscriptions;
+        DELETE FROM Users;
+        DELETE FROM RelatedAnimes;
+        DELETE FROM Animes;
+        DELETE FROM Videos;
+        DELETE FROM Subscriptions;
+        DELETE FROM sqlite_sequence;
     `);
 }
 

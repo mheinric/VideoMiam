@@ -1,4 +1,4 @@
-import { describe, test, beforeEach } from 'vitest';
+import { describe, test, beforeEach, expect } from 'vitest';
 import request from 'supertest';
 import app from './app.js';
 import config from './config.js';
@@ -33,4 +33,48 @@ describe('User management', () => {
       .expect('Content-Type', /json/)
       .expect(401);
   });
+});
+
+describe('Channels management', () => {
+
+  const agent = request.agent(app);
+  beforeEach(async () => {
+    await clearDB();
+    await agent
+      .post(`${baseUrl}/user/register`)
+      .send({ email: "test@test.com", password: "test"})
+      .expect('Content-Type', /json/)
+      .expect(200);
+  })
+
+  test('Listing all channels', async () => {
+    let res = await agent
+      .post(`${baseUrl}/subscriptions/list`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([]);
+
+    await agent
+      .post(`${baseUrl}/subscriptions/add`)
+      .send({ channelId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    res = await agent
+      .post(`${baseUrl}/subscriptions/list`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([{
+      IconURL: "https://yt3.ggpht.com/ytc/AIdro_lGAGuCJ-KNiimnVhTYd1ZOk0TY_HHQq973w2MnHow=s240-c-k-c0x00ffffff-no-rj",
+      Id: 1,
+      IsFavorite: 0,
+      Kind: "Channel",
+      Title: "Test Channel",
+      YoutubeId: "UCVX13EuI29nIdTjbNfpS7NA",
+    }]);
+
+  });
+
 });
