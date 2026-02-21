@@ -2,7 +2,7 @@
 import { sendSMS } from './services/notifications.js';
 import config from './config.js';
 import { app, baseUrl } from './app.js';
-import { retrieveYoutubeData } from './jobs.js';
+import './jobs.js'; //Setup the cron jobs to update the DB daily.
 
 
 if (process.argv.indexOf("--test-sms") != -1) {
@@ -14,6 +14,6 @@ else
     // Start the server
     app.listen(port, async () => {
         console.log(`Serving at http://localhost:${port}${baseUrl}`);
-        await retrieveYoutubeData();
+
     });
 }
