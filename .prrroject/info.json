@@ -416,9 +416,9 @@
             "id": "51",
             "title": "Add test for /videos/listForSubscription",
             "description": "Add some tests and adapt the SQL statement to work in a multi-user setting.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T14:28:06.716146+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T15:07:44.575483+00:00"
         },
         "52": {
             "id": "52",
@@ -429,5 +429,5 @@
             "finishedAt": "2026-02-21T14:40:36.949613+00:00"
         }
     },
-    "current_task": "51"
+    "current_task": null
 }
