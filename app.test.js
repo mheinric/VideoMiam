@@ -14,13 +14,13 @@ describe('User management', () => {
 
   test('Trying to login after registering', async () => {
     await request(app)
-      .post(`${baseUrl}/user/register`)
+      .post(`${baseUrl}/users/register`)
       .send({ email: "test@test.com", password: "test"})
       .expect('Content-Type', /json/)
       .expect(200);
 
     await request(app)
-      .post(`${baseUrl}/user/login`)
+      .post(`${baseUrl}/users/login`)
       .send({ email: "test@test.com", password: "test"})
       .expect('Content-Type', /json/)
       .expect(200);
@@ -28,7 +28,7 @@ describe('User management', () => {
 
   test('Trying to login with incorrect email/password', async () => {
     await request(app)
-      .post(`${baseUrl}/user/login`)
+      .post(`${baseUrl}/users/login`)
       .send({ email: "test@test.com", password: "test"})
       .expect('Content-Type', /json/)
       .expect(401);
@@ -41,7 +41,7 @@ describe('Channels management', () => {
   beforeEach(async () => {
     await clearDB();
     await agent
-      .post(`${baseUrl}/user/register`)
+      .post(`${baseUrl}/users/register`)
       .send({ email: "test@test.com", password: "test"})
       .expect('Content-Type', /json/)
       .expect(200);
@@ -121,12 +121,12 @@ describe('Multi-user support', () => {
   beforeEach(async () => {
     await clearDB();
     await agent1
-      .post(`${baseUrl}/user/register`)
+      .post(`${baseUrl}/users/register`)
       .send({ email: "test@test.com", password: "test"})
       .expect('Content-Type', /json/)
       .expect(200);
     await agent2
-      .post(`${baseUrl}/user/register`)
+      .post(`${baseUrl}/users/register`)
       .send({ email: "test2@test.com", password: "test"})
       .expect('Content-Type', /json/)
       .expect(200);

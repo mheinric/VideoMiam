@@ -7,7 +7,7 @@ import config from './config.js';
 import animes from './routes/animes.js';
 import subscriptions from './routes/subscriptions.js';
 import videos from './routes/videos.js';
-import user from './routes/user.js'
+import user from './routes/users.js'
 
 export const app = express();
 const MemoryStoreInstance = MemoryStore(session);
@@ -33,7 +33,7 @@ app.use(baseUrl, express.static(path.resolve(config["dirname"], 'public')));
 app.use(baseUrl + "/animes", animes);
 app.use(baseUrl + "/subscriptions", subscriptions);
 app.use(baseUrl + "/videos", videos);
-app.use(baseUrl + "/user", user);
+app.use(baseUrl + "/users", user);
 
 // Catch-all route for other requests
 app.use((req, res) => {
