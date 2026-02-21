@@ -56,7 +56,7 @@ async function insertVideo(targetDiv, video) {
 	const chanInfo = await getChannelInfos(video.SubscriptionId);
 	const videoDiv = document.createElement("div"); 
 	videoDiv.classList.add("vid");
-	if (video.Viewed) {
+	if (video.ViewedStatus == 'Viewed') {
 		videoDiv.classList.add("vidSeen");
 	}
 	const chanTitle = document.createElement("h3"); 
@@ -98,10 +98,10 @@ async function insertVideo(targetDiv, video) {
 	toggleSeenButton.onclick = async () => {
 		await sendRequest("videos/markViewed", {
 			videoId: vidData.Id, 
-			viewed: !vidData.Viewed,
+			viewed: !(vidData.ViewedStatus == 'Viewed'),
 			viewDate: null,
 		});
-		vidData.Viewed = !vidData.Viewed; 
+		vidData.ViewedStatus = vidData.ViewedStatus == 'Viewed' ? null : 'Viewed'; 
 		videoDiv.classList.toggle("vidSeen");
 	};
 	videoDiv.appendChild(toggleSeenButton);

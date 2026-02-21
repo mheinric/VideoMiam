@@ -8,7 +8,7 @@ import { sendSMS } from './services/notifications.js';
 import { addAnimeToDatabase } from './services/animes.js'
 
 
-async function retrieveYoutubeData() {
+export async function retrieveYoutubeData() {
     for (var sub of await db.getAllSubscriptions()) {
         try {
             console.log(`Checking new videos for ${sub.Title}`);
@@ -35,7 +35,7 @@ async function retrieveYoutubeData() {
                     console.log(`Adding video ${videoInfo.snippet.title}`);
                 }
             }
-        } catch(e) {
+        } catch (e) {
             console.log(`Failed to retrieve infos for subscription ${sub.Title}`); 
             console.log(e);
             if (enableSMSNotifs)
@@ -49,7 +49,7 @@ async function retrieveYoutubeData() {
 //Schedule every day at 5pm
 schedule.scheduleJob('0 17 * * *', retrieveYoutubeData);
 
-async function retrieveMALData() {
+export async function retrieveMALData() {
     const animes = await db.listViewedAnimes();
     for (var anime of animes) {
         try {

@@ -196,7 +196,7 @@ export async function listUpcomingAnimes(userId) {
         INNER JOIN 
             (SELECT * FROM AnimeStatus WHERE UserId = ?) AS AnimeStatus 
             ON Animes.Id = AnimeStatus.AnimeId
-        WHERE ViewedStatus = 'Interested' AND CurrentStatus != 'Completed`).all(userId);
+        WHERE ViewedStatus = 'Interested' AND CurrentStatus != 'Completed'`).all(userId);
 }
 
 export async function listSuggestedAnimes(userId) {

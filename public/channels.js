@@ -33,7 +33,7 @@ async function loadSubscriptions() {
 	for (let sub of await listSubscriptions()) {
 		const subDiv = document.createElement("div"); 
 		subDiv.classList.add("sub");
-		if (sub.IsFavorite) {
+		if (sub.Favorite) {
 			subDiv.classList.add("favSub");
 		}
 
@@ -67,9 +67,9 @@ async function loadSubscriptions() {
 		markFavButton.onclick = async () => {
 			await sendRequest("subscriptions/markFavorite", {
 				channelId: subInfo.Id, 
-				favorite: !subInfo.IsFavorite,
+				favorite: !subInfo.Favorite,
 			});
-			subInfo.IsFavorite = !subInfo.IsFavorite;
+			subInfo.Favorite = !subInfo.Favorite;
 			subDiv.classList.toggle("favSub");
 		}
 		subDiv.appendChild(markFavButton);
