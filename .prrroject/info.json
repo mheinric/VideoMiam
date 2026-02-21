@@ -400,10 +400,10 @@
             "id": "49",
             "title": "Testing subscriptions/details route",
             "description": "",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T13:43:53.576758+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T13:48:54.368510+00:00"
         }
     },
-    "current_task": "49"
+    "current_task": null
 }
