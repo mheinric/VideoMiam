@@ -424,10 +424,10 @@
             "id": "52",
             "title": "Fixing the /videos/listRecent request",
             "description": "The request returns an empty list when it shouldn't.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T14:29:17.526693+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-21T14:40:36.949613+00:00"
         }
     },
-    "current_task": "52"
+    "current_task": null
 }
