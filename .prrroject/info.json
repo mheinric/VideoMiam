@@ -355,7 +355,15 @@
             "done": true,
             "createdAt": "2026-02-21T12:19:29.747280+00:00",
             "finishedAt": "2026-02-21T12:42:16.210299+00:00"
+        },
+        "44": {
+            "id": "44",
+            "title": "Subscription list depend on current user",
+            "description": "Make it so that the list of channels a user is subscribed to depends on the current logged user.",
+            "done": false,
+            "createdAt": "2026-02-21T12:43:04.428886+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "44"
 }
