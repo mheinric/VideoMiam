@@ -330,9 +330,11 @@
             "id": "40",
             "title": "Migrate db to user-centric usage",
             "description": "Some fields in the Videos and Animes tables need to be moved to the new table.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-20T16:46:03.613442+00:00",
-            "finishedAt": null
+            "finishedAt": null,
+            "cancelled": true,
+            "cancelMessage": "Done by previous tasks"
         },
         "41": {
             "id": "41",
@@ -463,5 +465,5 @@
             "finishedAt": "2026-02-21T17:02:55.773010+00:00"
         }
     },
-    "current_task": "40"
+    "current_task": null
 }
