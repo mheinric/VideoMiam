@@ -8,7 +8,7 @@ async function fetchVideos() {
 	let newVideosOnly = channelDisplayNewOnly.checked;
 	let res = await sendRequest("videos/listForSubscription", {
 		channelId : currentChannelId,
-		viewed : newVideosOnly ? false : null,
+		newVideosOnly : newVideosOnly,
 	});
 	if (res.status == "OK") {
 		return res.data;

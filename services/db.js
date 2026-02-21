@@ -133,8 +133,19 @@ export async function addVideo(youtubeId, title, durationSec, details, uploadDat
     .lastInsertRowid; 
 }
 
-export async function setViewed(videoId, viewed, viewDate) {
-    prepare("UPDATE Videos SET Viewed = ?, ViewDate = ? WHERE Id = ?").run(viewed * 1, viewDate != null ? viewDate.toISOString() : null, videoId);
+export async function setViewed(userId, videoId, viewed, viewDate) {
+    if (viewed) {
+        prepare(`
+            INSERT INTO VideoStatus(UserId, VideoId, ViewedStatus, ViewDate)
+            VALUES (?, ?, 'Viewed', ?)
+        `).run(userId, videoId, viewDate != null ? viewDate.toISOString() : null);
+    } 
+    else {
+        prepare(`
+            DELETE FROM VideoStatus
+            WHERE UserId = ? AND VideoId = ?
+        `).run(userId, videoId);
+    }
 }
 
 export async function setChannelFavorite(userId, channelId, favorite) {

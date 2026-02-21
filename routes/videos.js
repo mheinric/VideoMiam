@@ -13,12 +13,12 @@ router.post("/listRecent",
 router.post("/listForSubscription", 
     assertAuth,
     //TODO input validation
-    async (req, res) => { ok(res, await db.listVideosForSubscription(req.session.userId, req.body.channelId, req.body.viewed)); }
+    async (req, res) => { ok(res, await db.listVideosForSubscription(req.session.userId, req.body.channelId, req.body.newVideosOnly)); }
 );
 
 router.post("/markViewed", 
     assertAuth,
-    async (req, res) => { await db.setViewed(req.body.id, req.body.viewed, req.body.viewDate != null ? new Date(req.body.viewDate) : null); ok(res); }
+    async (req, res) => { await db.setViewed(req.session.userId, req.body.videoId, req.body.viewed, req.body.viewDate != null ? new Date(req.body.viewDate) : null); ok(res); }
 );
 
 export default router;

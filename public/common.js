@@ -74,7 +74,7 @@ async function insertVideo(targetDiv, video) {
 	vidImg.onclick = async () => {
 		window.open("https://youtube.com/watch?v=" + vidData.YoutubeId, '_blank').focus();
 		await sendRequest("videos/markViewed", {
-			id: vidData.Id, 
+			videoId: vidData.Id, 
 			viewed: true,
 			viewDate: new Date().toISOString(),
 		})
@@ -97,7 +97,7 @@ async function insertVideo(targetDiv, video) {
 	toggleSeenButton.classList.add("toggleSeen"); 
 	toggleSeenButton.onclick = async () => {
 		await sendRequest("videos/markViewed", {
-			id: vidData.Id, 
+			videoId: vidData.Id, 
 			viewed: !vidData.Viewed,
 			viewDate: null,
 		});

@@ -144,6 +144,9 @@ describe('Videos Management', () => {
      "ViewedStatus": null,
      "YoutubeId": "k062k-gDnRY",
    };
+  let video1Viewed = JSON.parse(JSON.stringify(video1));
+  video1Viewed.ViewedStatus = 'Viewed';
+  video1Viewed.ViewDate = '2025-01-01T00:00:00.000Z';
 
   test('Listing videos', async () => {
     let res = await agent
@@ -155,11 +158,45 @@ describe('Videos Management', () => {
 
     res = await agent
       .post(`${baseUrl}/videos/listForSubscription`)
-      .send({ channelId: 1, viewed: false, limit: 10 })
+      .send({ channelId: 1, newVideosOnly: false })
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([video1]);
+
+    await agent
+      .post(`${baseUrl}/videos/markViewed`)
+      .send({ videoId: 1, viewed: true, viewDate : new Date("2025-01-01").toISOString() })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    res = await agent
+      .post(`${baseUrl}/videos/listForSubscription`)
+      .send({ channelId: 1, newVideosOnly: true })
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([]);
+
+    res = await agent
+      .post(`${baseUrl}/videos/listForSubscription`)
+      .send({ channelId: 1, newVideosOnly: false })
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([video1Viewed]);
+
+    await agent
+      .post(`${baseUrl}/videos/markViewed`)
+      .send({ videoId: 1, viewed: false, viewDate : null })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    res = await agent
+      .post(`${baseUrl}/videos/listForSubscription`)
+      .send({ channelId: 1, newVideosOnly: true })
       .expect('Content-Type', /json/)
       .expect(200);
     expect(res.body.data).toStrictEqual([video1]);
   });
+  
 
 });
 
