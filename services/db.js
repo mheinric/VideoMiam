@@ -89,18 +89,21 @@ export async function listVideosForSubscription(userId, channelId, newVideosOnly
         return prepare(`
             SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate
             FROM Videos 
-            LEFT JOIN VideoStatus ON Videos.Id = VideoStatus.VideoId
-            WHERE SubscriptionId = ? AND UserId = ?
-            ORDER BY UploadDate DESC`).all(channelId, userId);
+            LEFT JOIN 
+                (SELECT * FROM VideoStatus WHERE UserId = ?) AS VideoStatus 
+                ON Videos.Id = VideoStatus.VideoId
+            WHERE SubscriptionId = ?
+            ORDER BY UploadDate DESC`).all(userId, channelId);
     } else {
-        // The viewed * 1 is because better-sqlite3 does not handle booleans
         return db.prepare(`
             SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate
             FROM Videos 
-            LEFT JOIN VideoStatus ON Videos.Id = VideoStatus.VideoId
-            WHERE SubscriptionId = ? AND UserId = ? AND ViewedStatus IS NULL
+            LEFT JOIN 
+                (SELECT * FROM VideoStatus WHERE UserId = ?) AS VideoStatus 
+                ON Videos.Id = VideoStatus.VideoId
+            WHERE SubscriptionId = ? AND ViewedStatus IS NULL
             ORDER BY UploadDate DESC
-        `).all(channelId, userId);
+        `).all(userId, channelId);
     }
 }
 
