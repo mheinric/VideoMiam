@@ -478,9 +478,9 @@
             "id": "58",
             "title": "Landing page for the multi-user version",
             "description": "Modify the landing page index.html to show something specific when you are not connected. Probably just a placeholder for now until I design something better.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-02-21T22:01:16.860538+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-02-22T15:57:32.949028+00:00"
         },
         "59": {
             "id": "59",
@@ -491,5 +491,5 @@
             "finishedAt": null
         }
     },
-    "current_task": "58"
+    "current_task": null
 }
