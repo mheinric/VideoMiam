@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import express from 'express';
 import session from 'express-session';
 import path from 'path';
@@ -29,6 +30,15 @@ app.use(session({
         checkPeriod: 86400 // Prune expired entries every 24h (in seconds)
     })
 }));
+
+app.get(baseUrl + "/index.html", (req, res) => {
+    if (req.session.userId && config["users"]["enable"]) {
+        res.send(fs.readFileSync(path.resolve(config["dirname"], 'public', 'index.html'), 'utf-8'))
+    } else {
+        res.send(fs.readFileSync(path.resolve(config["dirname"], 'public', 'landingPage.html'), 'utf-8'))
+    }
+})
+
 app.use(baseUrl, express.static(path.resolve(config["dirname"], 'public')));
 
 app.use(baseUrl + "/animes", animes);
