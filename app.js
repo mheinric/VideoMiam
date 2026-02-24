@@ -33,9 +33,9 @@ app.use(session({
 
 app.get(baseUrl + "/index.html", (req, res) => {
     if (req.session.userId && config["users"]["enable"]) {
-        res.send(fs.readFileSync(path.resolve(config["dirname"], 'public', 'index.html'), 'utf-8'))
-    } else {
         res.send(fs.readFileSync(path.resolve(config["dirname"], 'public', 'landingPage.html'), 'utf-8'))
+    } else {
+        res.send(fs.readFileSync(path.resolve(config["dirname"], 'public', 'index.html'), 'utf-8'))
     }
 })
 

@@ -7,6 +7,10 @@ const dbExists = fs.existsSync('data.db');
 const db = new Database('data.db');
 if (!dbExists) {
     db.exec(fs.readFileSync('databaseSchema.sql', 'utf-8'));
+    if (!config["users"]["enable"]) 
+    {
+        db.exec("INSERT INTO Users(Id, Email, PasswordHash) VALUES (0, '', '')");
+    }
 }
 
 const statementCache = new Map();
