@@ -93,7 +93,8 @@ async function insertVideo(targetDiv, video) {
 			videoId: vidData.Id, 
 			viewed: true,
 			viewDate: new Date().toISOString(),
-		})
+		});
+		videoDiv.classList.add("vidSeen");
 	}
 	videoDiv.appendChild(vidImg);
 
