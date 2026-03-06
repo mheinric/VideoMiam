@@ -518,10 +518,10 @@
             "id": "63",
             "title": "Implement design for the channels page",
             "description": "",
-            "done": false,
+            "done": true,
             "createdAt": "2026-03-06T20:44:38.064191+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-03-06T21:01:03.039745+00:00"
         }
     },
-    "current_task": "63"
+    "current_task": null
 }
