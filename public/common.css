@@ -170,6 +170,7 @@ html, body {
 	left: -1.3em;
 	width: 3em;
 	height: 3em;
+	object-fit: cover;
 	border: 1px solid black;
 	border-radius: 50%;
 	box-shadow: 0.2em 0.2em #00000077;
