@@ -497,7 +497,15 @@
             "done": true,
             "createdAt": "2026-03-06T13:41:26.234751+00:00",
             "finishedAt": "2026-03-06T16:26:28.675535+00:00"
+        },
+        "61": {
+            "id": "61",
+            "title": "Modify video cards to match the new design",
+            "description": "The video cards a little bit everywhere need to be updated to match the new design for the website",
+            "done": false,
+            "createdAt": "2026-03-06T16:27:16.677932+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "61"
 }
