@@ -13,6 +13,24 @@ export async function getChannelInfos(channelId) {
 	return channelInfoCache.get(channelId);
 }
 
+/**
+ * Make a request to the server to get a list of all the subscriptions.
+ * @returns The list of all the subscriptions and their details.
+ */
+export async function listChannels() {
+	let res = await sendRequest("subscriptions/list", {});
+	if (res.status == "OK") {
+		for (let item of res.data) 
+		{
+			channelInfoCache.set(item.Id, item);
+		}
+		return res.data;
+	}
+	else {
+		return [];
+	}
+}
+
 export function formatTime(timeSec) {
 	var result = "";
 	if (timeSec > 60 * 60) {
@@ -110,3 +128,27 @@ async function insertVideo(targetDiv, video) {
 	videoDiv.setAttribute("videoTitle", video.Title);
 	targetDiv.appendChild(videoDiv);
 }
+
+async function initChannelList() {
+
+	const chanDiv = document.getElementById("channelShortcuts"); 
+	if (!chanDiv)
+	{
+		return;
+	}
+	let channels = await listChannels(); 
+	for (let chanInfo of channels) 
+	{
+		for (let i = 0; i < 10; i++)
+		{
+		const channelIcon = document.createElement("img");
+		channelIcon.src = chanInfo.IconURL;
+		const link = document.createElement("a");
+		link.href = `channel.html?id=${chanInfo.Id}`;
+		link.appendChild(channelIcon);
+		chanDiv.appendChild(link);
+		}
+	}
+}
+
+initChannelList();

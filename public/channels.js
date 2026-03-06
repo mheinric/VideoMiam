@@ -1,4 +1,4 @@
-import { sendRequest } from "./common.js"
+import { sendRequest, listChannels } from "./common.js"
 
 const subscriptionList = document.getElementById("subscriptionList");
 
@@ -12,25 +12,11 @@ document.getElementById("addSubscriptionButton").onclick = async () => {
 };
 
 /**
- * Make a request to the server to get a list of all the subscriptions.
- * @returns The list of all the subscriptions and their details.
- */
-async function listSubscriptions() {
-	let res = await sendRequest("subscriptions/list", {});
-	if (res.status == "OK") {
-		return res.data;
-	}
-	else {
-		return [];
-	}
-}
-
-/**
  * Populates the view with the list of subscriptions retrieved from the server.
  */
 async function loadSubscriptions() {
 	subscriptionList.innerHTML = "";
-	for (let sub of await listSubscriptions()) {
+	for (let sub of await listChannels()) {
 		const subDiv = document.createElement("div"); 
 		subDiv.classList.add("sub");
 		if (sub.Favorite) {
