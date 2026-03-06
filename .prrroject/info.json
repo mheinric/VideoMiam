@@ -489,7 +489,15 @@
             "done": false,
             "createdAt": "2026-02-21T22:04:11.625880+00:00",
             "finishedAt": null
+        },
+        "60": {
+            "id": "60",
+            "title": "Design for navigation bar",
+            "description": "Update the code to make the navigation bar match the design files",
+            "done": false,
+            "createdAt": "2026-03-06T13:41:26.234751+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "60"
 }
