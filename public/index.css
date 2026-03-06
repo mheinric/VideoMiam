@@ -1,3 +1,32 @@
+h1 {
+	border-bottom: 1px solid #333;
+	padding-left: 0.5em;
+	margin-bottom: 0em;
+}
+
+#favoritesTitle:before,
+#favoritesTitle:after {
+	display: inline-block;
+	content: "";
+	width: 1em;
+	height: 1em;
+	background-image: url(./img/favTitleStar.svg);
+	background-size: cover;
+	margin: 0 0.25em;
+	vertical-align: -0.1em;
+}
+
+#recentTitle:before {
+	display: inline-block;
+	content: "";
+	width: 1em;
+	height: 1em;
+	background-image: url(./img/recentClock.svg);
+	background-size: cover;
+	margin: 0 0.25em;
+	vertical-align: -0.1em;
+}
+
 #videoList,
 #recentVideoList {
 	display: flex; 
@@ -8,103 +37,4 @@
 #channelVideoList {
 	display: flex; 
 	flex-wrap: wrap;
-}
-
-
-/* Subscriptions style */
-
-#subscriptionList {
-	display: flex; 
-	flex-wrap: wrap;
-}
-
-.sub {
-	position: relative;
-	flex-grow: 0; 
-	flex-shrink: 0;
-	background-color: rgb(167, 212, 177); 
-	border-radius: 1em; 
-	padding: 1em; 
-	margin: 1em;
-	width: 9em;
-}
-
-.sub img {
-	width: 7em;
-}
-
-.subImgDiv {
-	position: relative;
-	cursor: pointer;
-}
-
-.listIcon {
-	display: none; 
-	pointer-events: none;
-}
-
-.subImgDiv:hover .listIcon {
-	display: block;
-	position: absolute;
-  	top: 0em;
-	float: right;
-	height: 100%;
-	background-color: #00000099;
-}
-
-.sub h2 {
-	font-size: small;
-	margin-bottom: 0;
-}
-
-.externalLink {
-	background-image: url(img/externalLink.svg);
-	background-position: center right;
-    background-repeat: no-repeat;
-	padding: 0.5em;
-  	margin-left: 0.25em;
-}
-
-.markFav {
-	display: none;
-	background-image: url(img/starEmpty.svg);
-	background-color: transparent;
-	height: 1.5em;
-	width: 1.5em;
-	background-position: center;
-    background-repeat: no-repeat;
-	background-size: 100%;
-	border: none;
-	position: absolute;
-	top: -0.5em; 
-	right: -0.5em;
-	cursor: pointer;
-}
-
-.sub.favSub .markFav {
-	display: block;
-	background-image: url(img/starFilled.svg);
-}
-
-.sub:hover .markFav,
-.markFav:hover {
-	display: block;
-}
-
-.sub .markFav:hover {
-	background-image: url(img/starHover.svg);
-}
-
-.sub .markFav:active {
-	background-image: url(img/starPressed.svg);
-}
-
-/* When clicking the button from selected to unselected, we swap the two images around */
-.sub.favSub .markFav:hover {
-	background-image: url(img/starPressed.svg);
-}
-
-
-.sub.favSub .markFav:active {
-	background-image: url(img/starHover.svg);
 }

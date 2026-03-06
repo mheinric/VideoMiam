@@ -81,8 +81,6 @@ async function insertVideo(targetDiv, video) {
 	chanTitle.textContent = chanInfo.Title;
 	const channelIcon = document.createElement("img");
 	channelIcon.src = chanInfo.IconURL;
-	channelIcon.width = 20;
-	channelIcon.height = 20
 	chanTitle.insertBefore(channelIcon, chanTitle.firstChild);
 	videoDiv.appendChild(chanTitle);
 
@@ -122,7 +120,10 @@ async function insertVideo(targetDiv, video) {
 		vidData.ViewedStatus = vidData.ViewedStatus == 'Viewed' ? null : 'Viewed'; 
 		videoDiv.classList.toggle("vidSeen");
 	};
-	videoDiv.appendChild(toggleSeenButton);
+	const buttonsDiv = document.createElement("div"); 
+	buttonsDiv.classList.add("buttonsDiv"); 
+	buttonsDiv.appendChild(toggleSeenButton);
+	videoDiv.appendChild(buttonsDiv);
 
 	videoDiv.setAttribute("videoId", video.Id);
 	videoDiv.setAttribute("videoTitle", video.Title);
@@ -139,15 +140,12 @@ async function initChannelList() {
 	let channels = await listChannels(); 
 	for (let chanInfo of channels) 
 	{
-		for (let i = 0; i < 10; i++)
-		{
 		const channelIcon = document.createElement("img");
 		channelIcon.src = chanInfo.IconURL;
 		const link = document.createElement("a");
 		link.href = `channel.html?id=${chanInfo.Id}`;
 		link.appendChild(channelIcon);
 		chanDiv.appendChild(link);
-		}
 	}
 }
 
