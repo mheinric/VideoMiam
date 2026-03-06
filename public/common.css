@@ -153,19 +153,25 @@ html, body {
 
 .vid h3 {
 	font-size: smaller;
-	margin: -0.25em -0.5em 0.5em 0;
+	margin-bottom: 0;
 	position: relative; 
-	left: -1.1em;
+	padding-left: 2em;
+	height: 2.5em;
+  	line-height: 1.25em;
+	display: flex;
+  	align-items: center;
 }
 
 .vid h3 img {
-	border-radius: 50%;
+	float: left;
 	margin-right: 0.25em;
-	position: relative;
-	top: 1.7em;
-	left: -0.2em;
+	position: absolute;
+	top: 0.3em;
+	left: -1.3em;
 	width: 3em;
+	height: 3em;
 	border: 1px solid black;
+	border-radius: 50%;
 	box-shadow: 0.2em 0.2em #00000077;
 	z-index: 2;
 }
