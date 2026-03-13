@@ -534,9 +534,9 @@
             "id": "65",
             "title": "Better UI for videos",
             "description": "The button indicating that a video has already been seen should be on the video instead of below (display it only when the mouse hovers when it is not active)",
-            "done": false,
+            "done": true,
             "createdAt": "2026-03-13T14:17:56.032783+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-03-13T14:45:38.234892+00:00"
         },
         "66": {
             "id": "66",
@@ -547,5 +547,5 @@
             "finishedAt": null
         }
     },
-    "current_task": "65"
+    "current_task": null
 }
