@@ -529,7 +529,15 @@
             "done": true,
             "createdAt": "2026-03-06T21:49:07.702848+00:00",
             "finishedAt": "2026-03-06T21:49:21.921152+00:00"
+        },
+        "65": {
+            "id": "65",
+            "title": "Better UI for videos",
+            "description": "The button indicating that a video has already been seen should be on the video instead of below (display it only when the mouse hovers when it is not active)",
+            "done": false,
+            "createdAt": "2026-03-13T14:17:56.032783+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "65"
 }
