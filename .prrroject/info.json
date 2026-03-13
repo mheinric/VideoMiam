@@ -550,10 +550,10 @@
             "id": "67",
             "title": "UI for the channel page",
             "description": "The title of the channel should be put centered, and we should add the icon of the channel as well to the left of the title",
-            "done": false,
+            "done": true,
             "createdAt": "2026-03-13T14:52:07.909375+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-03-13T15:12:26.491034+00:00"
         }
     },
-    "current_task": "67"
+    "current_task": null
 }
