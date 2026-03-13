@@ -71,7 +71,7 @@ async function insertVideo(targetDiv, video) {
 	if (video.UploadDate) {
 		video.UploadDate = new Date(video.UploadDate);
 	}
-	const chanInfo = await getChannelInfos(video.SubscriptionId);
+	const chanInfo = await getChannelInfos(video.ChannelId);
 	const videoDiv = document.createElement("div"); 
 	videoDiv.classList.add("vid");
 	if (video.ViewedStatus == 'Viewed') {

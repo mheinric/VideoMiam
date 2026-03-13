@@ -136,7 +136,7 @@ describe('Videos Management', () => {
      "Details": "",
      "DurationSec": 2858,
      "Id": 1,
-     "SubscriptionId": 1,
+     "ChannelId": 1,
      "ThumbnailURL": "https://i.ytimg.com/vi/k062k-gDnRY/mqdefault.jpg",
      "Title": "Carrier   Get Home   Itis",
      "UploadDate": "2013-10-19T22:43:57.000Z",

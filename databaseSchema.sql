@@ -25,9 +25,14 @@ CREATE TABLE Videos (
     DurationSec INT NOT NULL,
     Details TEXT NOT NULL,
     UploadDate DATE NOT NULL,
-    ThumbnailURL TEXT NOT NULL,
-    SubscriptionId INTEGER NOT NULL,
-    FOREIGN KEY(SubscriptionId) REFERENCES Subscriptions(Id)
+    ThumbnailURL TEXT NOT NULL
+);
+
+CREATE TABLE ChannelVideos (
+    VideoId INTEGER NOT NULL, 
+    ChannelId INTEGER NOT NULL,
+    FOREIGN KEY(VideoId) REFERENCES Videos(Id)
+    FOREIGN KEY(ChannelId) REFERENCES Subscriptions(Id)
 );
 
 CREATE TABLE Animes (
@@ -102,4 +107,35 @@ ALTER TABLE Animes DROP COLUMN Viewed;
 ALTER TABLE Animes DROP COLUMN ViewDate;
 ALTER TABLE Animes DROP COLUMN NotInterested;
 ALTER TABLE Subscriptions DROP COLUMN IsFavorite;
+
+CHANGELOG: Storing the list of videos contained in a specific channel as a separate table ChannelVideos
+CREATE TABLE ChannelVideos (
+    VideoId INTEGER NOT NULL, 
+    ChannelId INTEGER NOT NULL,
+    FOREIGN KEY(VideoId) REFERENCES Videos(Id)
+    FOREIGN KEY(ChannelId) REFERENCES Subscriptions(Id)
+);
+INSERT INTO ChannelVideos SELECT Videos.Id, Subscriptions.Id FROM Videos INNER JOIN Subscriptions ON Videos.SubscriptionId = Subscriptions.Id;
+
+-- SQLITE does not support droping constraints yet, so we need to create a new table, copy its content, drop the old one, and finally rename it.
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE Videos2 (
+    Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+    YoutubeId CHAR(64) NOT NULL UNIQUE, 
+    Title TEXT NOT NULL, 
+    DurationSec INT NOT NULL,
+    Details TEXT NOT NULL,
+    UploadDate DATE NOT NULL,
+    ThumbnailURL TEXT NOT NULL
+);
+INSERT INTO Videos2 SELECT Id, YoutubeId, Title, DurationSec, Details, UploadDate, ThumbnailURL FROM Videos;
+DROP TABLE Videos;
+ALTER TABLE Videos2 RENAME TO Videos;
+PRAGMA foreign_key_check;
+COMMIT TRANSACTION;
+PRAGMA foreign_keys=ON;
+
+
+
 **/

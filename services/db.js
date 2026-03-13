@@ -31,6 +31,7 @@ export async function clearDB() {
         DELETE FROM Users;
         DELETE FROM RelatedAnimes;
         DELETE FROM Animes;
+        DELETE FROM ChannelVideos;
         DELETE FROM Videos;
         DELETE FROM Subscriptions;
         DELETE FROM sqlite_sequence;
@@ -91,21 +92,23 @@ export async function subscribeUserTo(userId, channelId) {
 export async function listVideosForSubscription(userId, channelId, newVideosOnly) {
     if (!newVideosOnly) {
         return prepare(`
-            SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate
+            SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate, ChannelVideos.ChannelId
             FROM Videos 
             LEFT JOIN 
                 (SELECT * FROM VideoStatus WHERE UserId = ?) AS VideoStatus 
                 ON Videos.Id = VideoStatus.VideoId
-            WHERE SubscriptionId = ?
+            LEFT JOIN ChannelVideos ON Videos.Id = ChannelVideos.VideoId
+            WHERE ChannelId = ?
             ORDER BY UploadDate DESC`).all(userId, channelId);
     } else {
         return db.prepare(`
-            SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate
+            SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate, ChannelVideos.ChannelId
             FROM Videos 
             LEFT JOIN 
                 (SELECT * FROM VideoStatus WHERE UserId = ?) AS VideoStatus 
                 ON Videos.Id = VideoStatus.VideoId
-            WHERE SubscriptionId = ? AND ViewedStatus IS NULL
+            LEFT JOIN ChannelVideos ON Videos.Id = ChannelVideos.VideoId
+            WHERE ChannelId = ? AND ViewedStatus IS NULL
             ORDER BY UploadDate DESC
         `).all(userId, channelId);
     }
@@ -114,9 +117,10 @@ export async function listVideosForSubscription(userId, channelId, newVideosOnly
 export async function listRecentVideos(userId, favorites, limit) {
     // The viewed * 1 is because better-sqlite3 does not handle booleans
     return prepare(`
-        SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate
+        SELECT Videos.*, VideoStatus.ViewedStatus, VideoStatus.ViewDate, ChannelVideos.ChannelId
         FROM Videos
-            INNER JOIN UserSubscriptions ON Videos.SubscriptionId = UserSubscriptions.ChannelId
+            INNER JOIN ChannelVideos ON Videos.Id = ChannelVideos.VideoId
+            INNER JOIN UserSubscriptions ON ChannelVideos.ChannelId = UserSubscriptions.ChannelId
             LEFT JOIN VideoStatus ON VideoStatus.VideoId = Videos.Id
         WHERE ViewedStatus IS NULL AND UserSubscriptions.Favorite = ? AND UserSubscriptions.UserId = ?
         ORDER BY Videos.UploadDate DESC LIMIT ?;
@@ -129,12 +133,13 @@ export async function hasVideo(youtubeId) {
 }
 
 export async function addVideo(youtubeId, title, durationSec, details, uploadDate, thumbnailURL, subscriptionId) {
-    // The viewed * 1 is because better-sqlite3 does not handle booleans
-    return prepare(`
-        INSERT INTO Videos (YoutubeId, Title, DurationSec, Details, UploadDate, ThumbnailURL, SubscriptionId) 
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-    `).run(youtubeId, title, durationSec, details, uploadDate.toISOString(), thumbnailURL, subscriptionId)
+    let res =  prepare(`
+        INSERT INTO Videos (YoutubeId, Title, DurationSec, Details, UploadDate, ThumbnailURL) 
+        VALUES (?, ?, ?, ?, ?, ?)
+    `).run(youtubeId, title, durationSec, details, uploadDate.toISOString(), thumbnailURL)
     .lastInsertRowid; 
+    prepare(`INSERT INTO ChannelVideos(VideoId, ChannelId) VALUES (?, ?)`).run(res, subscriptionId);
+    return res;
 }
 
 export async function setViewed(userId, videoId, viewed, viewDate) {
