@@ -537,6 +537,14 @@
             "done": false,
             "createdAt": "2026-03-13T14:17:56.032783+00:00",
             "finishedAt": null
+        },
+        "66": {
+            "id": "66",
+            "title": "Minor fixes in VideoMiam icon",
+            "description": "The text on the icon is not quite centered correctly. We should also make the main icon clickable.",
+            "done": false,
+            "createdAt": "2026-03-13T14:19:23.958718+00:00",
+            "finishedAt": null
         }
     },
     "current_task": "65"
