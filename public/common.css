@@ -27,6 +27,10 @@ html, body {
 	margin-bottom: 1em;
 }
 
+#pageBar a {
+	cursor: pointer;
+}
+
 #pageBar .mainMenuItem {
 	color: black;
 	font-size: 125%;
@@ -35,7 +39,6 @@ html, body {
 	font-weight: bold;
 	text-decoration: none;
 	border: none; 
-	cursor: pointer;
 	text-align: center;
 	padding: 0.5em;
 }
