@@ -561,6 +561,14 @@
             "done": false,
             "createdAt": "2026-03-13T16:22:04.756376+00:00",
             "finishedAt": null
+        },
+        "69": {
+            "id": "69",
+            "title": "Better style for button hinding seen videos",
+            "description": "The button to hide/show the videos that you have already seen should be nicer. Check out the design to see if there was something there.",
+            "done": false,
+            "createdAt": "2026-03-13T16:48:55.058189+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
