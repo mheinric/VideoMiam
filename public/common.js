@@ -103,14 +103,8 @@ async function insertVideo(targetDiv, video) {
 	timeLabel.textContent = formatTime(video.DurationSec);
 	videoDiv.appendChild(timeLabel);
 
-	const vidTitle = document.createElement("h2");
-	vidTitle.textContent = video.Title;
-	vidTitle.title = video.Title;
-	videoDiv.appendChild(vidTitle);
-	const vidData = video; 
-
-
 	const toggleSeenButton = document.createElement("button");
+	toggleSeenButton.title = "Mark as Seen/Unseen";
 	toggleSeenButton.classList.add("toggleSeen"); 
 	toggleSeenButton.onclick = async () => {
 		await sendRequest("videos/markViewed", {
@@ -121,10 +115,13 @@ async function insertVideo(targetDiv, video) {
 		vidData.ViewedStatus = vidData.ViewedStatus == 'Viewed' ? null : 'Viewed'; 
 		videoDiv.classList.toggle("vidSeen");
 	};
-	const buttonsDiv = document.createElement("div"); 
-	buttonsDiv.classList.add("buttonsDiv"); 
-	buttonsDiv.appendChild(toggleSeenButton);
-	videoDiv.appendChild(buttonsDiv);
+	videoDiv.appendChild(toggleSeenButton);
+
+	const vidTitle = document.createElement("h2");
+	vidTitle.textContent = video.Title;
+	vidTitle.title = video.Title;
+	videoDiv.appendChild(vidTitle);
+	const vidData = video; 
 
 	videoDiv.setAttribute("videoId", video.Id);
 	videoDiv.setAttribute("videoTitle", video.Title);

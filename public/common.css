@@ -113,7 +113,7 @@ html, body {
 	position: relative;
 	flex-grow: 0; 
 	flex-shrink: 0;
-	padding: 0em 1em; 
+	padding: 0em 1em 1em 1em; 
 	margin: 0 0.5em;
 	width: 12em;
 }
@@ -212,7 +212,10 @@ html, body {
 }
 
 .toggleSeen {
-	background-image: url(img/notseen.svg);
+	background-image: url(img/seen.svg);
+	position: absolute;
+	top: 8.7em;
+	left: 0.7em;
 	font-size: smaller;
 	background-color: transparent;
 	background-position: center left;
@@ -220,12 +223,25 @@ html, body {
 	background-size: contain;
 	border: none;
 	cursor: pointer;
-	height: 2em; 
+	height: 2em;
 	width: 2em;
 	margin: 0 auto;
+	opacity: 0;
 }
 
-.vid.vidSeen .toggleSeen,
-.toggleSeen:hover {
-	background-image: url(img/seen.svg) ;
+#channelPage .toggleSeen {
+	top: 5.3em;
+	left: 0.7em;
+}
+
+.vid:hover .toggleSeen {
+	opacity: 0.5;
+}
+
+.vid .toggleSeen:hover {
+	opacity: 0.75;
+}
+
+.vid.vidSeen .toggleSeen {
+	opacity: 1;
 }
