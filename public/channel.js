@@ -20,8 +20,12 @@ async function fetchVideos() {
 
 async function updateChannelInfos()
 {
+	let titleElt = document.querySelector("#channelPage h1");
 	let details = await getChannelInfos(currentChannelId);
-	document.querySelector("#channelPage h1").textContent = details.Title;
+	titleElt.textContent = details.Title;
+	let icon = document.createElement("img");
+	icon.src = details.IconURL;
+	titleElt.insertBefore(icon, titleElt.firstChild);
 }
 
 channelDisplayNewOnly.onclick = async function() {
