@@ -577,6 +577,14 @@
             "done": false,
             "createdAt": "2026-03-14T11:56:19.655518+00:00",
             "finishedAt": null
+        },
+        "71": {
+            "id": "71",
+            "title": "Add Primary key constraint to ChannelVideos table",
+            "description": "I forgot to add a primary key constraint (to avoid duplicates) in the ChannelVideos table.",
+            "done": false,
+            "createdAt": "2026-03-14T12:11:03.533316+00:00",
+            "finishedAt": null
         }
     },
     "current_task": "70"
