@@ -569,7 +569,15 @@
             "done": false,
             "createdAt": "2026-03-13T16:48:55.058189+00:00",
             "finishedAt": null
+        },
+        "70": {
+            "id": "70",
+            "title": "Support for SSO",
+            "description": "Add support for sign-in with google. We will need that anyway if we want to import the subscribed channels from the user.",
+            "done": false,
+            "createdAt": "2026-03-14T11:56:19.655518+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "70"
 }
