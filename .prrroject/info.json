@@ -585,7 +585,15 @@
             "done": false,
             "createdAt": "2026-03-14T12:11:03.533316+00:00",
             "finishedAt": null
+        },
+        "72": {
+            "id": "72",
+            "title": "Adding videos takes too much time",
+            "description": "It seem to take quite a bit of time for adding a subscription, and it seems that most of the time spent on db insertions, which seems weird?",
+            "done": false,
+            "createdAt": "2026-03-17T19:33:47.949027+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "72"
 }
