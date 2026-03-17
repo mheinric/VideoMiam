@@ -1,7 +1,28 @@
 import db from '../services/db.js';
 import yt from '../services/yt.js';
 
-export async function subscribeUserTo(userId, youtubeId) {
+export async function subscribeUserTo(userId, channelURL) {
+    let youtubeId = channelURL; 
+    if (!channelURL.startsWith("UC") && !channelURL.startsWith("PL")) {
+        //The input is probably an url to a youtube page. Try to fetch the id for this page
+        const urlObj = new URL(channelURL);
+        if (urlObj.searchParams.get("list")) {
+            youtubeId = urlObj.searchParams.get("list");
+        }
+        else {
+            //We are dealing with a channel
+            let pathElts = urlObj.pathname.split("/");
+            youtubeId = pathElts[1];
+            if (youtubeId == "channel") {
+                youtubeId = pathElts[2];
+            }
+            if (youtubeId.includes("@")) {
+                //This is a channel handle, we need to resolve it to the id
+                youtubeId = await yt.resolveChannelHandle(youtubeId);
+            }
+        }
+    }
+
     let subId = null;
     if (!await db.isSubscribedTo(youtubeId)) {
         subId = await addSubscription(youtubeId);

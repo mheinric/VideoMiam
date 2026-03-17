@@ -47,6 +47,28 @@ describe('Channels management', () => {
       .expect(200);
   })
 
+  test('Adding Channel',  { timeout: 25_000 }, async () => {
+    await agent
+      .post(`${baseUrl}/subscriptions/add`)
+      .send({ channelURL: "https://www.youtube.com/@TheCluelessArtist/videos" })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    let res = await agent
+      .post(`${baseUrl}/subscriptions/list`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([{
+      IconURL: "https://yt3.ggpht.com/ytc/AIdro_lU3_Mh4HXeFGcFYPMKQk7g8UqogH09pFfFDi-iU7sJUA=s240-c-k-c0x00ffffff-no-rj",
+      Id: 1,
+      Favorite: 0,
+      Kind: "Channel",
+      Title: "The Clueless Artist",
+      YoutubeId: "UCEDnuAYbW27MhDJQKqIUKlg",
+    }]);
+  });
+
   test('Listing all channels', async () => {
     let res = await agent
       .post(`${baseUrl}/subscriptions/list`)
@@ -57,7 +79,7 @@ describe('Channels management', () => {
 
     await agent
       .post(`${baseUrl}/subscriptions/add`)
-      .send({ youtubeId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .send({ channelURL: "UCVX13EuI29nIdTjbNfpS7NA" })
       .expect('Content-Type', /json/)
       .expect(200);
 
@@ -94,7 +116,7 @@ describe('Channels management', () => {
 
     await agent
       .post(`${baseUrl}/subscriptions/add`)
-      .send({ youtubeId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .send({ channelURL: "UCVX13EuI29nIdTjbNfpS7NA" })
       .expect('Content-Type', /json/)
       .expect(200);
 
@@ -126,7 +148,7 @@ describe('Videos Management', () => {
       .expect(200);
     await agent
       .post(`${baseUrl}/subscriptions/add`)
-      .send({ youtubeId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .send({ channelURL: "UCVX13EuI29nIdTjbNfpS7NA" })
       .expect('Content-Type', /json/)
       .expect(200);
   });
@@ -312,7 +334,7 @@ describe('Multi-user support', () => {
 
     await agent1
       .post(`${baseUrl}/subscriptions/add`)
-      .send({ youtubeId: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .send({ channelURL: "UCVX13EuI29nIdTjbNfpS7NA" })
       .expect('Content-Type', /json/)
       .expect(200);
   })

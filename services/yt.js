@@ -80,8 +80,15 @@ export async function getPlaylistInfos(playlistId) {
     return queryRes.items[0];
 }
 
+export async function resolveChannelHandle(channelHandle) {
+    //TODO error handling
+    const queryRes = await query(`https://www.googleapis.com/youtube/v3/channels?forHandle=${channelHandle}`)
+    return queryRes.items[0].id;
+}
+
 export default {
     getChannelInfos,
     getPlaylistInfos,
-    getPlaylistVideos
+    getPlaylistVideos,
+    resolveChannelHandle
 }

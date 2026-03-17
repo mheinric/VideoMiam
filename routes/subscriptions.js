@@ -24,7 +24,7 @@ router.post('/details',
 router.post('/add', 
     assertAuth,
     //TODO input validation
-    async (req, res) => { await subscribeUserTo(req.session.userId, req.body.youtubeId); ok(res); }
+    async (req, res) => { await subscribeUserTo(req.session.userId, req.body.channelURL); ok(res); }
 );
 
 router.post('/markFavorite', 

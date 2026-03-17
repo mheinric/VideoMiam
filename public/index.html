@@ -14,14 +14,23 @@
 	<a id="videoPageButton" class="mainMenuItem" href="index.html">Home</a>
 	<a id="subscriptionPageButton" class="mainMenuItem" href="channels.html" title="Subscriptions">Channels</a>
 	<div id="channelShortcuts"></div>
-	<a id="animesPageButton" class="mainMenuItem" href="anime.html" >Animes</a>
+	<a id="animesPageButton" class="mainMenuItem" href="anime.html">Animes</a>
 </div>
 <div id="videoPage" class="page">
+	<button id="addChannelButton">Add</button>
 	<h1 id="favoritesTitle">Favorites</h2>
 	<div id="videoList">
 	</div>
 	<h1 id="recentTitle">Recent</h2>
 	<div id="recentVideoList">
+	</div>
+</div>
+<div id="addChannelOverlay">
+	<div id="addChannelPopup">
+		<h3>Add a new channel</h3>
+		URL: <input id="addChannelURL" placeholder="ex: https://youtube.com/@MrPhi" autocomplete="off"><br>
+
+		<button id="addChannelAddButton">Add</button> <button id="addChannelCancelButton">Cancel</button>
 	</div>
 </div>
 </body>

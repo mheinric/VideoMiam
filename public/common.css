@@ -104,10 +104,119 @@ html, body {
 	filter: brightness(50%);
 }
 
+#addChannelButton {
+	position: absolute;
+	top: -0.5em;
+	right: calc(max(5em, 25%));
+	padding: 0.5em;
+	border: none; 
+	background-color: transparent;
+	cursor: pointer;
+	text-decoration: underline;
+	font-size: 115%;
+	text-align: right;
+}
+
+#addChannelButton:after {
+	content: "";
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	background-image: url(img/add.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	vertical-align: middle;
+}
+
+#addChannelButton:hover {
+	font-weight: bold;
+	filter: brightness(80%);
+}
+
+#addChannelOverlay {
+	display: none;
+	position: fixed; 
+	top: 0; 
+	left: 0;
+	width: 100vw; 
+	height: 100vh; 
+	z-index: 2;
+	background-color: #E1E1E175;
+}
+
+#addChannelPopup {
+	margin-top: calc(50vh - 10em);
+	margin-left: calc(50vw - 10em);
+	width: 20em; 
+	height: 10em; 
+	border-radius: 1em;
+	padding: 1em;
+	box-shadow: 0.2em 0.2em #00000077; 
+	border: 1px solid black;
+	background-color: white;
+	text-align: center;
+}
+
+#addChannelURL {
+	width: calc(100% - 5em);
+}
+
+#addChannelAddButton,
+#addChannelCancelButton {
+	padding: 0.5em; 
+	margin-top:1em;
+	margin-right: 1.5em;
+	margin-left: 1.5em;
+	border: none; 
+	border-radius: 1em;
+	cursor: pointer;
+	border: 1px solid black;
+	width: 7em;
+}
+
+#addChannelAddButton {
+	background-color: #7cff71;
+}
+
+#addChannelCancelButton {
+	background-color: #ff5e5e;
+}
+
+#addChannelAddButton:hover,
+#addChannelCancelButton:hover {
+	filter: brightness(80%);
+}
+
+#addChannelAddButton:before,
+#addChannelCancelButton:before
+ {
+	content: "";
+	display: inline-block;
+	margin-right: 0.5em;
+	width: 1.5em;
+	height: 1.5em;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	vertical-align: -0.4em;
+}
+
+#addChannelAddButton:before {
+	background-image: url(img/add.svg);
+}
+
+#addChannelCancelButton:before {
+	background-image: url(img/cancel.svg);
+}
+
+
 .page {
+	position: relative;
 	margin-left: 15em;
 	padding: 0em 1em;
 	font-family: Arial, Helvetica, sans-serif;
+	min-width: 30em;
 }
 
 /* Video style */

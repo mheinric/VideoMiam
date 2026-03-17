@@ -17,9 +17,18 @@
 	<a id="animesPageButton" class="mainMenuItem" href="anime.html" >Animes</a>
 </div>
 <div id="channelPage" class="page">
+	<button id="addChannelButton">Add</button>
 	<h1></h1>
 	<input id="channelDisplayNewOnly" type="checkbox" autocomplete="off"></input><label for="channelDisplayNewOnly">New videos only</label>
 	<div id="channelVideoList">
+	</div>
+</div>
+<div id="addChannelOverlay">
+	<div id="addChannelPopup">
+		<h3>Add a new channel</h3>
+		URL: <input id="addChannelURL" placeholder="ex: https://youtube.com/@MrPhi" autocomplete="off"><br>
+
+		<button id="addChannelAddButton">Add</button> <button id="addChannelCancelButton">Cancel</button>
 	</div>
 </div>
 </body>
