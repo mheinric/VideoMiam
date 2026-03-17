@@ -47,7 +47,7 @@ describe('Channels management', () => {
       .expect(200);
   })
 
-  test('Adding Channel',  { timeout: 25_000 }, async () => {
+  test('Adding Channel', async () => {
     await agent
       .post(`${baseUrl}/subscriptions/add`)
       .send({ channelURL: "https://www.youtube.com/@TheCluelessArtist/videos" })

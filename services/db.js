@@ -12,6 +12,7 @@ if (!dbExists) {
         db.exec("INSERT INTO Users(Id, Email, PasswordHash) VALUES (0, '', '')");
     }
 }
+db.pragma('journal_mode = WAL'); //This allows for more efficient writes (but sqlite generates additional auxiliary files)
 
 const statementCache = new Map();
 function prepare(statement) {
