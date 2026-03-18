@@ -128,6 +128,16 @@ async function insertVideo(targetDiv, video) {
 	targetDiv.appendChild(videoDiv);
 }
 
+async function showAnimeButton() {
+	let res = await sendRequest("features", {});
+	console.log(res);
+	if (res.data.anime) {
+		document.getElementById("animesPageButton").style.display = "initial";
+	}
+}
+
+showAnimeButton();
+
 async function initChannelList() {
 
 	const chanDiv = document.getElementById("channelShortcuts"); 
