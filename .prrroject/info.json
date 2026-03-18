@@ -593,7 +593,15 @@
             "done": true,
             "createdAt": "2026-03-17T19:33:47.949027+00:00",
             "finishedAt": "2026-03-17T19:46:46.829704+00:00"
+        },
+        "73": {
+            "id": "73",
+            "title": "Modify path for landing page",
+            "description": "The landing page should be at /index.html, while the video page should be at /videos.html",
+            "done": false,
+            "createdAt": "2026-03-18T20:47:54.979975+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "73"
 }
