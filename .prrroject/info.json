@@ -609,7 +609,15 @@
             "done": false,
             "createdAt": "2026-03-18T21:04:46.583723+00:00",
             "finishedAt": null
+        },
+        "75": {
+            "id": "75",
+            "title": "Fix stylesheet for the login/register pages",
+            "description": "There are some deprecated pages there",
+            "done": false,
+            "createdAt": "2026-03-18T21:10:07.978425+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "75"
 }
