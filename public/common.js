@@ -130,7 +130,6 @@ async function insertVideo(targetDiv, video) {
 
 async function showAnimeButton() {
 	let res = await sendRequest("features", {});
-	console.log(res);
 	if (res.data.anime) {
 		document.getElementById("animesPageButton").style.display = "initial";
 	}
