@@ -1,0 +1,40 @@
+h1 {
+	border-bottom: 1px solid #333;
+	padding-left: 0.5em;
+	margin-bottom: 0em;
+}
+
+#favoritesTitle:before,
+#favoritesTitle:after {
+	display: inline-block;
+	content: "";
+	width: 1em;
+	height: 1em;
+	background-image: url(./img/favTitleStar.svg);
+	background-size: cover;
+	margin: 0 0.25em;
+	vertical-align: -0.1em;
+}
+
+#recentTitle:before {
+	display: inline-block;
+	content: "";
+	width: 1em;
+	height: 1em;
+	background-image: url(./img/recentClock.svg);
+	background-size: cover;
+	margin: 0 0.25em;
+	vertical-align: -0.1em;
+}
+
+#videoList,
+#recentVideoList {
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+/* Channel videos style (needs style above also) */
+#channelVideoList {
+	display: flex; 
+	flex-wrap: wrap;
+}

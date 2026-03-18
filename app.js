@@ -31,13 +31,19 @@ app.use(session({
     })
 }));
 
+app.get(baseUrl + "/", (req, res) => {
+    //Note we redirect instead of serving the page directly because the / address does 
+    //not work nicely with the relative paths that we use inside the html pages
+    res.redirect(baseUrl + "/index.html");
+});
 app.get(baseUrl + "/index.html", (req, res) => {
-    if (req.session.userId && config["users"]["enable"]) {
-        res.send(fs.readFileSync(path.resolve(config["dirname"], 'public', 'landingPage.html'), 'utf-8'))
+    if (req.session.userId || !config["users"]["enable"]) {
+        //If we are logged in, redirect directly to the videos page
+        res.redirect(baseUrl + "/videos.html");
     } else {
         res.send(fs.readFileSync(path.resolve(config["dirname"], 'public', 'index.html'), 'utf-8'))
     }
-})
+});
 
 app.use(baseUrl, express.static(path.resolve(config["dirname"], 'public')));
 

@@ -1,24 +1,13 @@
-import {sendRequest, insertAllVideos} from "./common.js"
 
-const videoList = document.getElementById("videoList");
-const recentVideoList = document.getElementById("recentVideoList");
-
-async function listRecentVideos(favorites, limit) {
-	let res = await sendRequest("videos/listRecent", {
-		favorites: favorites, 
-		limit: limit
-	}); 
-	if (res.status == "OK") {
-		return res.data;
-	}
-	else {
-		return [];
-	}
+const footnotesDiv = document.querySelector("footer");
+let index = 0;
+for (var footnoteLink of document.querySelectorAll("a.footnoteRef")) {
+	index += 1;
+	let footnotePar = document.createElement("p");
+	footnotePar.innerHTML = `<a href='#footnote-source-${index}'>↑</a> [${index}] ` + footnoteLink.innerHTML;
+	footnoteLink.innerHTML = `[${index}]`;
+	footnotePar.id = `footnote-${index}`;
+	footnoteLink.href = `#footnote-${index}`;
+	footnoteLink.id = `footnote-source-${index}`;
+	footnotesDiv.appendChild(footnotePar);
 }
-
-async function main() {
-	await insertAllVideos(videoList, await listRecentVideos(true, 100)); 
-	await insertAllVideos(recentVideoList, await listRecentVideos(false, 10));
-}
-
-main();

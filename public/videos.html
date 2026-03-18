@@ -4,9 +4,9 @@
 	<meta charset="utf8"/>
 	<title>Video miam</title>
 	<link rel="shortcut icon" href="videomiam.svg" type="image/x-icon" />
-	<script src="channels.js" type="module" defer></script>
+	<script src="videos.js" type="module" defer></script>
 	<link rel="stylesheet" href="common.css" />
-	<link rel="stylesheet" href="channels.css" />
+	<link rel="stylesheet" href="videos.css" />
 </head>
 <body>
 <div id="pageBar">
@@ -14,12 +14,16 @@
 	<a id="videoPageButton" class="mainMenuItem" href="videos.html">Home</a>
 	<a id="subscriptionPageButton" class="mainMenuItem" href="channels.html" title="Subscriptions">Channels</a>
 	<div id="channelShortcuts"></div>
-	<a id="animesPageButton" class="mainMenuItem" href="anime.html" >Animes</a>
+	<a id="animesPageButton" class="mainMenuItem" href="anime.html">Animes</a>
 </div>
-<div id="subscriptionPage" class="page">
+<div id="videoPage" class="page">
 	<button id="addChannelButton">Add</button>
-	<h1>Channels</h1>
-	<div id="subscriptionList"></div>
+	<h1 id="favoritesTitle">Favorites</h2>
+	<div id="videoList">
+	</div>
+	<h1 id="recentTitle">Recent</h2>
+	<div id="recentVideoList">
+	</div>
 </div>
 <div id="addChannelOverlay">
 	<div id="addChannelPopup">

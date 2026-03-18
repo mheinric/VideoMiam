@@ -1,40 +1,205 @@
+
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+	padding: 0; 
+	margin: 0;
+	background-color: #ffefe1;
+}
+
+
+body {
+	padding: 2em 0 0 0;
+	max-width: 50em;
+	margin: 0 auto;
+	background-color: white;
+	position: relative;
+	box-shadow: 0px 0px 20px #00000063;
+}
+
 h1 {
-	border-bottom: 1px solid #333;
-	padding-left: 0.5em;
-	margin-bottom: 0em;
+	margin-top: 0;
+	text-align: center;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
 }
 
-#favoritesTitle:before,
-#favoritesTitle:after {
+h1:before {
+	content:"";
+	background-image:url(./videomiam.svg);
+	background-size: 3em 3em;
 	display: inline-block;
-	content: "";
-	width: 1em;
-	height: 1em;
-	background-image: url(./img/favTitleStar.svg);
-	background-size: cover;
-	margin: 0 0.25em;
-	vertical-align: -0.1em;
+	width: 3em;
+	height: 3em;
+	vertical-align: middle;
 }
 
-#recentTitle:before {
+#loginButton, #registerButton {
+	position: absolute;
+	top: 0; 
+	border-radius: 0 0 0.5em 0.5em;
+	border: 1px solid black; 
+	border-top: none;
+	height: 2em;
+	cursor: pointer;
+}
+
+#loginButton {
+	right: 1em;
+	width: 5em;
+	background-color: #c9ffb5;
+}
+
+#loginButton:hover {
+	background-color: #89ff53;
+}
+
+#registerButton {
+	right: 7em;
+	width: 5em;
+	background-color: #ffe6b5;
+}
+
+#registerButton:hover {
+	background-color: #ffc553;
+}
+
+.footnoteRef {
+	vertical-align: super;
+	font-size: 50%;
+}
+
+.subtitle {
+	text-align: center;
+	font-style: italic;
+	background-color: transparent;
+}
+
+#getStartedLink,
+#tryItNowLink {
+	display: block;
+	width: max-content;
+	margin: 0 auto;
+	border: 1px solid black;
+	border-radius: 15px;
+	background-color: #ffbd3b; 
+	padding: 0.8em; 
+	font-size: 140%;
+	font-weight: bold;
+	cursor: pointer;
+	margin-bottom: 1em;
+	text-decoration: none;
+	color: black;
+}
+
+#getStartedLink:hover,
+#tryItNowLink:hover {
+	background-color: #f77400; 
+}
+
+.section {
+	padding: 1em 2em;
+	margin: 0;
+}
+
+.section:nth-child(even) {
+	background-color: #ddf2d3;
+}
+
+.section:nth-child(odd) {
+	background-color: white;
+}
+
+.section h2 {
+	margin-top: 0em;
+	margin-left: 3em;
+}
+
+.whyList {
+	list-style-type: "🢂 ";
+	padding-left: 1em;
+}
+
+ul.whyList li::marker {
+	color: orange;
+}
+
+video {
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 1em;
+}
+
+#cardList {
+	text-align: center;
+}
+
+#cardList h2 {
+	margin-left: 0em;
+}
+
+.card {
+	text-align: left;
 	display: inline-block;
-	content: "";
-	width: 1em;
-	height: 1em;
-	background-image: url(./img/recentClock.svg);
-	background-size: cover;
-	margin: 0 0.25em;
-	vertical-align: -0.1em;
+	background-color: #ffefe1;
+	border: 1px solid black;
+	border-radius: 0.5em;
+	width: 11em;
+	vertical-align: top; 
+	padding: 1em;
+	margin: 0 1em;
 }
 
-#videoList,
-#recentVideoList {
-	display: flex; 
-	flex-wrap: wrap;
+.card h3 {
+	margin: 0;
+	margin-bottom: 0.5em;
+	font-size: inherit;
 }
 
-/* Channel videos style (needs style above also) */
-#channelVideoList {
-	display: flex; 
-	flex-wrap: wrap;
+.cardSignature {
+	margin-top: 1em;
+	text-align: right;
+	font-size: 80%; 
+	font-style: italic;
+	color: #4a4a4a;
+}
+
+.cardSignature:before {
+	content: "--"
+}
+
+#otherLinksSection {
+	text-align: center;
+}
+
+#otherLinksSection h2 {
+	margin-left: 0em;
+}
+
+.otherLink {
+	display: inline-block;
+	border: 1px solid black;
+	border-radius: 15px;
+	background-color: #90e16a;
+	padding: 0.5em;
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
+.otherLink:hover {
+	background-color: #50bf1c;
+}
+
+footer {
+	margin: 0; 
+	padding: 0 1em 1em 1em;
+	font-size: 80%;
+}
+
+footer p {
+	margin: 1em 0 0 0;
 }

@@ -8,12 +8,6 @@
 	<link rel="stylesheet" href="forms.css" />
 </head>
 <body>
-<div id="pageBar">
-	<img width="50" src="videomiam.svg">
-	<a id="videoPageButton" href="index.html">Videos</a>
-	<a id="subscriptionPageButton" href="channels.html" title="Subscriptions">Subs</a>
-	<a id="animesPageButton" href="anime.html" >Anime</a>
-</div>
 <div id="loginPage" class="page">
 	<form id="loginForm" action="users/login" method="post">
 		<h1>Login</h1>
@@ -42,8 +36,8 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         });
 
         if (response.status == 200) {
-            // Redirect to index.html on success
-            window.location.href = 'index.html';
+            // Redirect to videos.html on success
+            window.location.href = 'videos.html';
         } else {
             // Display error message
             errorElement.textContent = 'Email/Password incorrect';
