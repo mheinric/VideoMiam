@@ -18,6 +18,7 @@ export const baseUrl = config["base_url"];
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.set('trust proxy', '127.0.0.1') // Trust redirection on the local machine. Necessary when secure_cookies is true and the website is behind a proxy linke nginx.
 app.use(session({
     secret: config["passwords"]["cookies_secret"],
     resave: false,
