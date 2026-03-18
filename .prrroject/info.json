@@ -617,7 +617,15 @@
             "done": true,
             "createdAt": "2026-03-18T21:10:07.978425+00:00",
             "finishedAt": "2026-03-18T21:17:10.861711+00:00"
+        },
+        "76": {
+            "id": "76",
+            "title": "screenshot image for the landing page",
+            "description": "Add a screenshot image",
+            "done": false,
+            "createdAt": "2026-03-18T21:52:17.257739+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "76"
 }
