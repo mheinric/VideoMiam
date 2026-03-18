@@ -614,10 +614,10 @@
             "id": "75",
             "title": "Fix stylesheet for the login/register pages",
             "description": "There are some deprecated pages there",
-            "done": false,
+            "done": true,
             "createdAt": "2026-03-18T21:10:07.978425+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-03-18T21:17:10.861711+00:00"
         }
     },
-    "current_task": "75"
+    "current_task": null
 }
