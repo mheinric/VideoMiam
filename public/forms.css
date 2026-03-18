@@ -5,10 +5,12 @@
 form {
     margin: 1em auto; 
     max-width: 25em;
-    background-color: #7ecf8e;
+    background-color: #e8e8e8;
+    border: 1px solid black;
     border-radius: 2em; 
     padding: 1em 2em;
     text-align: center;
+    box-shadow: 0.5em 0.5em #00000077;
 }
 
 form label {
@@ -28,14 +30,14 @@ form input[type="submit"] {
     margin: 1em auto;
     font-size: 150%; 
     font-weight: bold; 
-    background-color: #4aa35d;;
-    border: none; 
+    background-color: #2bf456;
+    border: 1px solid black; 
     border-radius: 1em;
     padding: 1em;
     cursor: pointer;
 }
 
 form input[type="submit"]:hover {
-    background-color: rgb(37, 119, 55);
+    filter: brightness(80%);
 }
 
