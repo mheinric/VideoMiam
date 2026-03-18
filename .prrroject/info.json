@@ -601,6 +601,14 @@
             "done": false,
             "createdAt": "2026-03-18T20:47:54.979975+00:00",
             "finishedAt": null
+        },
+        "74": {
+            "id": "74",
+            "title": "Fix links in landing page",
+            "description": "There are broken links on the landing page",
+            "done": false,
+            "createdAt": "2026-03-18T21:04:46.583723+00:00",
+            "finishedAt": null
         }
     },
     "current_task": "73"
