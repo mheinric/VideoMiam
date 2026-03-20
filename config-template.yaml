@@ -1,27 +1,32 @@
-port: 8741
-base_url: /
+# REQUIRED: the google API key necessary to retrieve data using the Youtube Data API.
 youtube_api_key: "<PUT YOUR KEY HERE>"
 
-# Optional, if you want to activate the anime part of the website:
-anime: 
-  enable: false
-  mal_client_id: null
+# Which port should the website be served on
+port: 8741
+# What base path should the website be served on (leave it to "" unless you have other websites on the same domain).
+base_url: ""
 
-# If you want to get sms notifications when retrieval fails
+users: 
+  # Set it to true if you want to support multiple users on the website.
+  # If false the page will be accessible to anyone with the correct url (no username/password).
+  enable: false
+
+# Some configuration relative to password storage (only useful when users.enable is true)
+passwords: 
+  # Number of rounds of the bcrypt algorithm to run for password hashing (higher is better, but takes more time)
+  bcrypt_rounds: 12
+  # Can be set to true (only https), false, or 'auto' (adapts to connection types)
+  secure_cookies: 'auto'
+  # This value is used to sign the session cookies (preventing users from forging fakes).
+  cookies_secret: "PUT_SECRET_HERE"
+
+# If you want to get sms notifications when retrieval fails (only support for Free mobile carrier for now)
 sms_notifs: 
   enable: false
   id: null
   password: null
 
-users: 
+# Optional, if you want to activate the anime part of the website (not really maintained)
+anime: 
   enable: false
-
-# Some configuration relative to password storage
-passwords: 
-  # Number of rounds of the bcrypt algorithm to run for password hashing
-  bcrypt_rounds: 12
-  # Can be set to true (only https), false, or 'auto' (adapts to connection types)
-  secure_cookies: 'auto'
-  # This value is used to sign the session cookies (preventing users from forging
-  # fakes).
-  cookies_secret: "PUT_SECRET_HERE"
+  mal_client_id: null

@@ -1,46 +1,58 @@
-MyTube
-=====
+# VideoMiam
 
-The goal is to create a website with all the videos that we could be interested in viewing, in a better format than what is proposed by Youtube. 
-The first step is just to see if it is possible to retrieve the required information from youtube by making api requests. So that's what I am doing at first. Messing around with the youtube API, and check what can be done with it.
+VideoMiam is a simple website showing you videos from the youtube channels you follow.
+You can think of it as the 'Subscription' page on youtube, except that:
 
-Okay, so I can list the videos on a channel. Now what do I need?
-A database to store:
-   - [X] channels I am subscribed to
-   - [X] playlists I am subscribed to
-   - [X] all videos retrieved from youtube with: 
-       - [X] title, description, thumbnail, postDate, url, viewed/notViewed, associated subscription.
-A script that every day lists all the suff I am subscribed to, and retrieve the list of recent videos
-Add videos to this list when they are not already present in the database
-Create a webpage that show the list of all the videos I could be interested in.
+- there is no short
+- the videos are sorted by date
+- the videos you've already seen are filtered out
+- you can specify some channels as 'preferred' to show their videos before the others
+- you can subscribe to individual playlists instead of a whole channel
+- you can view all the videos from a given channel, with an indication of which videos you've alreay seen and which you haven't
 
-Okay, before this project dies of feature creep, let me define the MVP (minimum viable product) to guide the future developments: 
+This project stems from the author's frustration with Youtube's interface and his inability (or unwillingness) to remember which videos he had already already watched.
+You can use the website for free by creating an account [here](https://videomiam.fr), or follow the instructions below if you want to host it yourself.
 
-   - [X] I can add channels from their id
-   - [X] I can see a list of all the videos from the channel that I haven't seen yet.
-   - [X] Clicking on one of the videos opens the youtube page for the video, and marks the video as 'seen', removing it from the list.
-   - [X] Automatically fetch the new videos for the channels I am subscribed to
+# Screenshot
 
-I have the MVP I think. Now to add some features which would be nice: 
+![screenshot](./public/img/screenshot.svg?raw=true "Screenshot")
 
-   - [X] Sorting the visible video by upload date (easy)
-   - [X] Fetch all the videos from a channel (and not just the most recent)
-   - [X] Create an initial DB with all our common subscriptions
-   - [X] Search bar that searches in channels and titles
-   - [X] Being able to see all the videos from a specific channel (including those already seen)
-   - [X] Being able to easily mark as seen/unseen the videos from a channel
-   - [X] Have a style for videos which have already been seen
-   - [X] Display the duration of each video
-   - [X] Remove shorts
-   - [X] Nicer buttons
-   - [X] Implement a preference system to move up videos from channels we look at more frequently
-   - [X] Support for playlists
-   - [X] Make it easy to deploy
-   - [X] Mark the video as viewed in the UI when we click on the icon to view it.
-   - [X] Make links for moving between the different pages instead of modifying the DOM directly.
-   - [ ] Show feedback when adding a new subscription
-   - [X] Filter short/long videos 
-   - [X] Display the icon of the channel above each video
-   - [ ] Button to indicate that you are not interested by a video
-   - [ ] Button to show already viewed videos (not sure that is necessary)
-   - [ ] Ability to have several separate lists (not for this version)
+# Technical remarks
+
+- New videos are fetched from Youtube (using the Youtube Data API) once a day, so you might observe a bit of delay between the moment the video is published on youtube, and the moment the video appears on the website.
+
+# Installation
+
+Follow these instructions if you want to self-host VideoMiam.
+
+You need to have [NodeJs](https://nodejs.org) installed on your machine (tested with node 18.20).
+You will need an API key for the [Youtube Data API](https://developers.google.com/youtube/v3/getting-started).
+Then, clone the repository: 
+```bash
+git clone https://github.com/mheinric/VideoMiam.git
+cd VideoMiam
+```
+
+Create a `config.yaml` file, you can use the template file as a basis:
+```bash
+cp config-template.yaml config.yaml
+```
+Edit this config file, you will need at least to put your Google API key there, check out the other settings depending on your use case.
+
+Install the necessary dependencies:
+```bash
+npm install
+```
+
+Finally, the website can be run with:
+```bash
+node main.js
+```
+
+# Contributing
+
+Feel free to open an issue for suggestions, questions, or any other remarks.
+
+# License
+
+This project is released under the MIT license.
