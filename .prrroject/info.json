@@ -633,7 +633,15 @@
             "done": false,
             "createdAt": "2026-03-18T21:52:58.074676+00:00",
             "finishedAt": null
+        },
+        "78": {
+            "id": "78",
+            "title": "Better readme",
+            "description": "",
+            "done": false,
+            "createdAt": "2026-03-20T14:46:42.686758+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "78"
 }
