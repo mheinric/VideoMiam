@@ -13,15 +13,15 @@ You can think of it as the 'Subscription' page on youtube, except that:
 This project stems from the author's frustration with Youtube's interface and his inability (or unwillingness) to remember which videos he had already already watched.
 You can use the website for free by creating an account [here](https://videomiam.fr), or follow the instructions below if you want to host it yourself.
 
-# Screenshot
+## Screenshot
 
 ![screenshot](./public/img/screenshot.svg?raw=true "Screenshot")
 
-# Technical remarks
+## Technical remarks
 
 - New videos are fetched from Youtube (using the Youtube Data API) once a day, so you might observe a bit of delay between the moment the video is published on youtube, and the moment the video appears on the website.
 
-# Installation
+## Installation
 
 Follow these instructions if you want to self-host VideoMiam.
 
@@ -49,10 +49,10 @@ Finally, the website can be run with:
 node main.js
 ```
 
-# Contributing
+## Contributing
 
 Feel free to open an issue for suggestions, questions, or any other remarks.
 
-# License
+## License
 
 This project is released under the MIT license.
