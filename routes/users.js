@@ -1,4 +1,5 @@
 import express from 'express'; 
+import { baseUrl } from '../app.js';
 import { ok, error } from '../middlewares.js';
 import db from '../services/db.js';
 
@@ -20,6 +21,7 @@ router.post("/register",
 )
 
 router.post("/login", 
+    //TODO input validation
     async (req, res) => { 
         const email = req.body.email; 
         const password = req.body.password; 
@@ -30,6 +32,13 @@ router.post("/login",
         }
         req.session.userId = userId;
         ok(res, "Sucessfully connected");
+    }
+);
+
+router.get("/logout.html", 
+    async (req, res) => { 
+        req.session.userId = null;
+        res.redirect(baseUrl + "/index.html");
     }
 );
 

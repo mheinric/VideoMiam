@@ -18,7 +18,7 @@ export const baseUrl = config["base_url"];
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.set('trust proxy', '127.0.0.1') // Trust redirection on the local machine. Necessary when secure_cookies is true and the website is behind a proxy linke nginx.
+app.set('trust proxy', '127.0.0.1') // Trust redirection on the local machine. Necessary when secure_cookies is true and the website is behind a proxy like nginx.
 app.use(session({
     secret: config["passwords"]["cookies_secret"],
     resave: false,
@@ -47,7 +47,7 @@ app.get(baseUrl + "/index.html", (req, res) => {
 });
 
 app.post(baseUrl + "/features", (req, res) => {
-    ok(res, { anime: config["anime"]["enable"] });
+    ok(res, { anime: config["anime"]["enable"], users: config["users"]["enable"] });
 })
 
 app.use(baseUrl, express.static(path.resolve(config["dirname"], 'public')));

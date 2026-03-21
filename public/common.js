@@ -128,14 +128,17 @@ async function insertVideo(targetDiv, video) {
 	targetDiv.appendChild(videoDiv);
 }
 
-async function showAnimeButton() {
+async function updateEnabledFeatures() {
 	let res = await sendRequest("features", {});
 	if (res.data.anime) {
 		document.getElementById("animesPageButton").style.display = "initial";
 	}
+	if (!res.data.users) {
+		document.getElementById("settingsButton").style.display = "none";
+	}
 }
 
-showAnimeButton();
+updateEnabledFeatures();
 
 async function initChannelList() {
 
@@ -175,3 +178,15 @@ document.getElementById("addChannelAddButton").onclick = async () => {
 document.getElementById("addChannelCancelButton").onclick = () => {
 	document.getElementById("addChannelOverlay").style.display = "none";
 };
+
+let settingsButton = document.getElementById("settingsButton");
+settingsButton.onclick = () => {
+	let settingsMenu = document.getElementById("settingsMenu"); 
+	if (settingsMenu.style.display == "none") {
+		settingsMenu.style.display = "block"; 
+		settingsButton.style.borderRadius = "0";
+	} else {
+		settingsMenu.style.display = "none"; 
+		settingsButton.style.borderRadius = null;
+	}
+}

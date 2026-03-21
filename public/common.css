@@ -106,9 +106,9 @@ html, body {
 
 #addChannelButton {
 	position: absolute;
-	top: -0.5em;
+	top: 0em;
 	right: calc(max(5em, 25%));
-	padding: 0.5em;
+	padding: 0.2em;
 	border: none; 
 	background-color: transparent;
 	cursor: pointer;
@@ -189,8 +189,7 @@ html, body {
 }
 
 #addChannelAddButton:before,
-#addChannelCancelButton:before
- {
+#addChannelCancelButton:before {
 	content: "";
 	display: inline-block;
 	margin-right: 0.5em;
@@ -210,11 +209,58 @@ html, body {
 	background-image: url(img/cancel.svg);
 }
 
+#settingsButton {
+	position: absolute;
+	top: 0em;
+	height: 2.5em;
+	right: calc(max(5em, 25%) - 3em);
+	padding: 0.5em;
+	border: 1px solid black;
+	border-top: none; 
+	background-color: #ffc457;
+	border-radius: 0 0 0.5em 0.5em;
+	cursor: pointer;
+	font-size: 115%;
+	font-weight: bold;
+}
+
+#settingsButton:hover {
+	background-color: #cc9d46;
+}
+
+#settingsMenu {
+	position: absolute; 
+	top: 100%;
+	right: -1px;
+	background-color: #ffc457;
+	width: 8em;
+	border: 1px solid black;
+	border-radius: 0.5em 0 0.5em 0.5em;
+}
+
+#settingsMenu a {
+	display: block; 
+	padding: 0.4em 0 0.4em 0.7em;
+	text-align: left;
+	color: black; 
+	text-decoration: none;
+	font-weight: normal;
+	border-radius: 0.5em;
+}
+
+#settingsMenu a:first-child {
+	border-top-right-radius: 0em;
+}
+
+#settingsMenu a:hover {
+	filter: brightness(80%);
+	background-color: #ffc457;
+}
 
 .page {
 	position: relative;
 	margin-left: 15em;
-	padding: 0em 1em;
+	padding: 0.01em 1em; /* The small padding is to make sure the div contains its children margins*/
 	font-family: Arial, Helvetica, sans-serif;
 	min-width: 30em;
 }
