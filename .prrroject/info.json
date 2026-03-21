@@ -630,9 +630,9 @@
             "id": "77",
             "title": "Add a logout button",
             "description": "Allow logging out",
-            "done": false,
+            "done": true,
             "createdAt": "2026-03-18T21:52:58.074676+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-03-21T16:50:15.747388+00:00"
         },
         "78": {
             "id": "78",
@@ -643,5 +643,5 @@
             "finishedAt": "2026-03-20T14:46:53.741667+00:00"
         }
     },
-    "current_task": "77"
+    "current_task": null
 }
