@@ -33,6 +33,20 @@ describe('User management', () => {
       .expect('Content-Type', /json/)
       .expect(401);
   });
+
+  test('Invalid input login', async () => {
+    await request(app)
+      .post(`${baseUrl}/users/login`)
+      .send({ email: "test", password: "test"}) //email is not a valid, 
+      .expect(400);
+  });
+
+  test('Invalid input register', async () => {
+    await request(app)
+      .post(`${baseUrl}/users/register`)
+      .send({ email: "test@test.fr" }) //Password field is missing
+      .expect(400);
+  });
 });
 
 describe('Channels management', () => {
@@ -67,6 +81,14 @@ describe('Channels management', () => {
       Title: "The Clueless Artist",
       YoutubeId: "UCEDnuAYbW27MhDJQKqIUKlg",
     }]);
+  });
+
+  test('Invalid input adding channel', async () => {
+    await agent
+      .post(`${baseUrl}/subscriptions/add`)
+      .send({ invalidField: "https://www.youtube.com/@TheCluelessArtist/videos" })
+      .expect('Content-Type', /json/)
+      .expect(400);
   });
 
   test('Listing all channels', async () => {
@@ -132,6 +154,46 @@ describe('Channels management', () => {
       .expect('Content-Type', /json/)
       .expect(200);
     expect(res.body.data[0].Favorite).toStrictEqual(1);
+  });
+
+  test('Invalid input when marking as favorite', async () => {
+    await agent
+      .post(`${baseUrl}/subscriptions/add`)
+      .send({ channelURL: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    await agent
+      .post(`${baseUrl}/subscriptions/markFavorite`)
+      .send({ channelId: 1, favorite: "true" }) // favorite is incorrect
+      .expect('Content-Type', /json/)
+      .expect(400);
+
+    await agent
+      .post(`${baseUrl}/subscriptions/markFavorite`)
+      .send({ channelId: 100, favorite: true }) // channelId is invalid
+      .expect('Content-Type', /json/)
+      .expect(404);
+  });
+
+  test('Invalid input when fetching details', async () => {
+    await agent
+      .post(`${baseUrl}/subscriptions/add`)
+      .send({ channelURL: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    await agent
+      .post(`${baseUrl}/subscriptions/details`)
+      .send({ channel: 1 }) // channel should be channelId
+      .expect('Content-Type', /json/)
+      .expect(400);
+
+    await agent
+      .post(`${baseUrl}/subscriptions/details`)
+      .send({ channelId: 100 }) // channelId is invalid
+      .expect('Content-Type', /json/)
+      .expect(404);
   });
 
 });
@@ -218,6 +280,41 @@ describe('Videos Management', () => {
       .expect(200);
     expect(res.body.data).toStrictEqual([video1]);
   });
+
+  test('Invalid input listing videos', async () => {
+    await agent
+        .post(`${baseUrl}/videos/listRecent`)
+        .send({ favorites: false, limit: "10" }) //limit should be an int
+        .expect('Content-Type', /json/)
+        .expect(400);
+
+    await agent
+      .post(`${baseUrl}/videos/listForSubscription`)
+      .send({ chan: 1, newVideosOnly: true }) // chan should be channelId
+      .expect('Content-Type', /json/)
+      .expect(400);
+
+    await agent
+      .post(`${baseUrl}/videos/listForSubscription`)
+      .send({ channelId: 1000, newVideosOnly: true }) // value for channelId is incorrect
+      .expect('Content-Type', /json/)
+      .expect(404);
+  });
+
+  test('Invalid input marking video as viewed', async () => {
+    await agent
+      .post(`${baseUrl}/videos/markViewed`)
+      .send({ videoId: 1, viewDate : null }) // missing viewed field
+      .expect('Content-Type', /json/)
+      .expect(400);
+
+    await agent
+      .post(`${baseUrl}/videos/markViewed`)
+      .send({ videoId: 1000, viewed: false, viewDate : null }) // Invalid videoId
+      .expect('Content-Type', /json/)
+      .expect(404);
+  });
+
 });
 
 describe('Animes management', () => {
@@ -311,6 +408,39 @@ describe('Animes management', () => {
       .expect('Content-Type', /json/)
       .expect(200);
     expect(res.body.data).toStrictEqual([]);
+
+  });
+
+  test('Invalid input animes management', async () => {
+    await agent
+      .post(`${baseUrl}/animes/add`)
+      .send({ mal: "5997"}) //Invalid field (mal instead of malId)
+      .expect('Content-Type', /json/)
+      .expect(400);
+
+    await agent
+      .post(`${baseUrl}/animes/markWatched`)
+      .send({ anime: 1 }) //Invalid field anime instead of animeId
+      .expect('Content-Type', /json/)
+      .expect(400);
+
+    await agent
+      .post(`${baseUrl}/animes/markWatched`)
+      .send({ animeId: 100}) //Invalid anime Id
+      .expect('Content-Type', /json/)
+      .expect(404);
+
+    await agent
+      .post(`${baseUrl}/animes/markNotInterested`)
+      .send({ anime: 1 }) //Invalid field anime instead of animeId
+      .expect('Content-Type', /json/)
+      .expect(400);
+
+    await agent
+      .post(`${baseUrl}/animes/markNotInterested`)
+      .send({ animeId: 100}) //Invalid anime Id
+      .expect('Content-Type', /json/)
+      .expect(404);
 
   });
 });

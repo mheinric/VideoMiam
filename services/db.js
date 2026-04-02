@@ -133,6 +133,10 @@ export async function hasVideo(youtubeId) {
     return prepare("SELECT COUNT(*) AS Result FROM Videos WHERE YoutubeId = ?").get(youtubeId).Result != 0;
 }
 
+export async function getVideo(videoId) {
+    return prepare("SELECT * FROM Videos WHERE Id = ?").get(videoId);
+}
+
 export async function addVideo(youtubeId, title, durationSec, details, uploadDate, thumbnailURL, subscriptionId) {
     let res =  prepare(`
         INSERT INTO Videos (YoutubeId, Title, DurationSec, Details, UploadDate, ThumbnailURL) 
@@ -171,6 +175,10 @@ export async function addAnime(malId, title, nbEpisodes, genres, thumbnailURL, c
         INSERT INTO Animes(MalId, Title, NbEpisodes, Genres, ThumbnailURL, CurrentStatus, Synopsis) VALUES (?,?,?,?,?,?,?)
     `).run(malId, title, nbEpisodes, genres.join(","), thumbnailURL, currentStatus, synopsis)
     .lastInsertRowid;
+}
+
+export async function getAnime(animeId) {
+    return prepare("SELECT * FROM Animes WHERE Id = ?").get(animeId);
 }
 
 export async function markAnimeViewed(userId, animeId, viewed, viewDate) {
@@ -260,8 +268,10 @@ export default {
     addVideo, 
     setViewed,
     setChannelFavorite,
+    getVideo,
 
     addAnime,
+    getAnime,
     markAnimeViewed,
     markAnimeInterest,
     listViewedAnimes,
