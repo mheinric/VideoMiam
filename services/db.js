@@ -147,18 +147,21 @@ export async function addVideo(youtubeId, title, durationSec, details, uploadDat
     return res;
 }
 
-export async function setViewed(userId, videoId, viewed, viewDate) {
-    if (viewed) {
-        prepare(`
-            INSERT INTO VideoStatus(UserId, VideoId, ViewedStatus, ViewDate)
-            VALUES (?, ?, 'Viewed', ?)
-        `).run(userId, videoId, viewDate != null ? viewDate.toISOString() : null);
-    } 
-    else {
-        prepare(`
-            DELETE FROM VideoStatus
-            WHERE UserId = ? AND VideoId = ?
-        `).run(userId, videoId);
+export async function setViewed(userId, videoIds, viewed, viewDate) {
+    for (let videoId of videoIds)
+    {
+        if (viewed) {
+            prepare(`
+                INSERT INTO VideoStatus(UserId, VideoId, ViewedStatus, ViewDate)
+                VALUES (?, ?, 'Viewed', ?)
+            `).run(userId, videoId, viewDate != null ? viewDate.toISOString() : null);
+        } 
+        else {
+            prepare(`
+                DELETE FROM VideoStatus
+                WHERE UserId = ? AND VideoId = ?
+            `).run(userId, videoId);
+        }
     }
 }
 

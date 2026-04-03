@@ -30,17 +30,21 @@ router.post("/listForSubscription",
 
 router.post("/markViewed", 
     assertAuth,
-    body("videoId").custom(isStrictInt), 
+    body("videoIds").isArray().notEmpty(),
+    body("videoIds.*").custom(isStrictInt), 
     body("viewed").isBoolean({ strict: true }),
     body("viewDate").isISO8601().optional({ values: 'null' }),
     assertInput,
     async (req, res) => { 
-        if (!await db.getVideo(req.body.videoId))
+        for (let videoId of req.body.videoIds)
         {
-            error(res, 404, "Video not found");
-            return;
+            if (!await db.getVideo(videoId))
+            {
+                error(res, 404, "Video not found");
+                return;
+            }
         }
-        await db.setViewed(req.session.userId, req.body.videoId, req.body.viewed, req.body.viewDate != null ? new Date(req.body.viewDate) : null); 
+        await db.setViewed(req.session.userId, req.body.videoIds, req.body.viewed, req.body.viewDate != null ? new Date(req.body.viewDate) : null); 
         ok(res); 
     }
 );

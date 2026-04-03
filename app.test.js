@@ -249,7 +249,7 @@ describe('Videos Management', () => {
 
     await agent
       .post(`${baseUrl}/videos/markViewed`)
-      .send({ videoId: 1, viewed: true, viewDate : new Date("2025-01-01").toISOString() })
+      .send({ videoIds: [ 1 ], viewed: true, viewDate : new Date("2025-01-01").toISOString() })
       .expect('Content-Type', /json/)
       .expect(200);
 
@@ -269,7 +269,7 @@ describe('Videos Management', () => {
 
     await agent
       .post(`${baseUrl}/videos/markViewed`)
-      .send({ videoId: 1, viewed: false, viewDate : null })
+      .send({ videoIds: [ 1 ], viewed: false, viewDate : null })
       .expect('Content-Type', /json/)
       .expect(200);
 
@@ -304,13 +304,13 @@ describe('Videos Management', () => {
   test('Invalid input marking video as viewed', async () => {
     await agent
       .post(`${baseUrl}/videos/markViewed`)
-      .send({ videoId: 1, viewDate : null }) // missing viewed field
+      .send({ videoIds: [ 1 ], viewDate : null }) // missing viewed field
       .expect('Content-Type', /json/)
       .expect(400);
 
     await agent
       .post(`${baseUrl}/videos/markViewed`)
-      .send({ videoId: 1000, viewed: false, viewDate : null }) // Invalid videoId
+      .send({ videoIds: [ 1000 ], viewed: false, viewDate : null }) // Invalid videoId
       .expect('Content-Type', /json/)
       .expect(404);
   });

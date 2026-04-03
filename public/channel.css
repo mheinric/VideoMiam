@@ -19,3 +19,24 @@ h1 img {
 	display: flex; 
 	flex-wrap: wrap;
 }
+
+#channelButtons {
+	display: flex;
+	margin-bottom: 1em;
+	justify-content: center;
+	align-items: center;
+}
+
+#markAllButton {
+	position: relative;
+	border: 1px solid #333;
+	border-radius: 1em; 
+	background: #ddd;
+	padding: 0.5em;
+	margin-left: 2em;
+	cursor: pointer;
+}
+
+#markAllButton:hover {
+	background: #aaa;
+}

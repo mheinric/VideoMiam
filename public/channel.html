@@ -23,7 +23,15 @@
 	</div>
 	</button>
 	<h1></h1>
-	<input id="channelDisplayNewOnly" type="checkbox" autocomplete="off"></input><label for="channelDisplayNewOnly">New videos only</label>
+	<div id="channelButtons">
+		<input id="channelDisplayNewOnly" type="checkbox" autocomplete="off"><label for="channelDisplayNewOnly">New videos only</label>
+		<select id="markAllButton" autocomplete="off" >
+			<option value="0" selected disabled hidden>Mark all as...</option>
+			<option id="markAllWatched">Watched</option>
+			<option id="markAllNotWatched">Not watched</option>
+		</select>
+
+	</div>
 	<div id="channelVideoList">
 	</div>
 </div>
