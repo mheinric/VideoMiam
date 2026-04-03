@@ -371,7 +371,7 @@ html, body {
 }
 
 .toggleSeen {
-	background-image: url(img/seen.svg);
+	background-image: url(img/seen-unchecked.svg);
 	position: absolute;
 	top: 8.7em;
 	left: 0.7em;
@@ -385,6 +385,7 @@ html, body {
 	height: 2em;
 	width: 2em;
 	margin: 0 auto;
+	filter: grayscale(0%) contrast(100%) brightness(100%);
 	opacity: 0;
 }
 
@@ -394,13 +395,14 @@ html, body {
 }
 
 .vid:hover .toggleSeen {
-	opacity: 0.5;
+	opacity: 1;
 }
 
 .vid .toggleSeen:hover {
-	opacity: 0.75;
+	background-image: url(img/seen-checked.svg);
 }
 
 .vid.vidSeen .toggleSeen {
+	background-image: url(img/seen-checked.svg);
 	opacity: 1;
 }
