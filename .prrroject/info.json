@@ -662,10 +662,10 @@
             "id": "81",
             "title": "Better ui for checkmark button",
             "description": "It is not clear enough that the checkmark is clickable (or even visible) when we hover a video.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-04-03T13:47:27.906254+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-04-03T14:17:48.046326+00:00"
         }
     },
-    "current_task": "81"
+    "current_task": null
 }
