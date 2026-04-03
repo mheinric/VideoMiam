@@ -32,7 +32,7 @@ router.post("/markViewed",
     assertAuth,
     body("videoId").custom(isStrictInt), 
     body("viewed").isBoolean({ strict: true }),
-    body("viewDate").isDate().optional({ values: 'null' }),
+    body("viewDate").isISO8601().optional({ values: 'null' }),
     assertInput,
     async (req, res) => { 
         if (!await db.getVideo(req.body.videoId))
