@@ -17,7 +17,7 @@ async function listRecentVideos(favorites, limit) {
 }
 
 async function main() {
-	await insertAllVideos(videoList, await listRecentVideos(true, 100)); 
+	await insertAllVideos(videoList, await listRecentVideos(true, 15)); 
 	await insertAllVideos(recentVideoList, await listRecentVideos(false, 10));
 }
 
