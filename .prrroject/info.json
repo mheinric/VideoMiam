@@ -689,6 +689,14 @@
             "done": false,
             "createdAt": "2026-04-03T15:55:16.271375+00:00",
             "finishedAt": null
+        },
+        "85": {
+            "id": "85",
+            "title": "Add button for adding/removing from favorites",
+            "description": "In the channel page (that lists all the videos from a specific channel, we should have a button to add/remove the channel from the favorites. We should also make it clearer when a channel is a favorite.",
+            "done": false,
+            "createdAt": "2026-04-03T15:56:41.436741+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
