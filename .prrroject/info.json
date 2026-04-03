@@ -649,7 +649,15 @@
             "done": true,
             "createdAt": "2026-04-03T13:11:04.097615+00:00",
             "finishedAt": "2026-04-03T13:33:11.341404+00:00"
+        },
+        "80": {
+            "id": "80",
+            "title": "Settings menu overlapping with icons",
+            "description": "The settings menu is behind the channel icons. It needs to be put at the front.",
+            "done": false,
+            "createdAt": "2026-04-03T13:45:11.335138+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "80"
 }
