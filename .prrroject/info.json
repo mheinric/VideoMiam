@@ -673,6 +673,14 @@
             "done": true,
             "createdAt": "2026-04-03T14:40:20.727429+00:00",
             "finishedAt": "2026-04-03T15:51:15.593929+00:00"
+        },
+        "83": {
+            "id": "83",
+            "title": "Support for marking as 'not interested'",
+            "description": "Add support for marking videos as 'not interested'",
+            "done": false,
+            "createdAt": "2026-04-03T15:53:23.226400+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
