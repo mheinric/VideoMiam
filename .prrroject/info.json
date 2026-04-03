@@ -654,10 +654,10 @@
             "id": "80",
             "title": "Settings menu overlapping with icons",
             "description": "The settings menu is behind the channel icons. It needs to be put at the front.",
-            "done": false,
+            "done": true,
             "createdAt": "2026-04-03T13:45:11.335138+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-04-03T13:46:39.058454+00:00"
         }
     },
-    "current_task": "80"
+    "current_task": null
 }
