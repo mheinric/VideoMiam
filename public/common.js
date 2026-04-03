@@ -161,12 +161,15 @@ async function initChannelList() {
 
 initChannelList();
 
-document.getElementById("addChannelButton").onclick = () => { document.getElementById("addChannelOverlay").style.display = "block"; };
-document.getElementById("addChannelOverlay").onclick = (e) => { 
-	if (e.target.id == "addChannelOverlay") {
-		document.getElementById("addChannelOverlay").style.display = "none";
-	} 
-};
+const addChannelButton = document.getElementById("addChannelButton");
+if (addChannelButton) {
+	addChannelButton.onclick = () => { document.getElementById("addChannelOverlay").style.display = "block"; };
+	document.getElementById("addChannelOverlay").onclick = (e) => { 
+		if (e.target.id == "addChannelOverlay") {
+			document.getElementById("addChannelOverlay").style.display = "none";
+		} 
+	};
+}
 
 document.getElementById("addChannelAddButton").onclick = async () => {
 	await sendRequest("subscriptions/add", {
