@@ -657,7 +657,15 @@
             "done": true,
             "createdAt": "2026-04-03T13:45:11.335138+00:00",
             "finishedAt": "2026-04-03T13:46:39.058454+00:00"
+        },
+        "81": {
+            "id": "81",
+            "title": "Better ui for checkmark button",
+            "description": "It is not clear enough that the checkmark is clickable (or even visible) when we hover a video.",
+            "done": false,
+            "createdAt": "2026-04-03T13:47:27.906254+00:00",
+            "finishedAt": null
         }
     },
-    "current_task": null
+    "current_task": "81"
 }
