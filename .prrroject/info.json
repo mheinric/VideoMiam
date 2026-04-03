@@ -670,10 +670,10 @@
             "id": "82",
             "title": "Button for marking all the videos as seen",
             "description": "Add a button in the channel page to mark all videos as seen",
-            "done": false,
+            "done": true,
             "createdAt": "2026-04-03T14:40:20.727429+00:00",
-            "finishedAt": null
+            "finishedAt": "2026-04-03T15:51:15.593929+00:00"
         }
     },
-    "current_task": "82"
+    "current_task": null
 }
