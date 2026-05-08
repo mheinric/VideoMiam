@@ -4,6 +4,7 @@ import db from './services/db.js';
 import yt from './services/yt.js';
 import mal from './services/mal.js';
 import { sendSMS } from './services/notifications.js';
+import config from './config.js';
 
 import { addAnimeToDatabase } from './services/animes.js'
 
@@ -50,7 +51,9 @@ export async function retrieveYoutubeData() {
 schedule.scheduleJob('0 17 * * *', retrieveYoutubeData);
 
 export async function retrieveMALData() {
-    const animes = await db.listViewedAnimes();
+    //TODO This will work only in single-user mode
+    const userId = 0;
+    const animes = await db.listViewedAnimes(userId);
     for (var anime of animes) {
         try {
             console.log(`Updating data for ${anime.Title}`);
@@ -60,7 +63,7 @@ export async function retrieveMALData() {
             for (var relatedAnimeData of animeData["related_anime"]) {
                 const animeInDb = await db.malAnimeIsPresent(relatedAnimeData["node"]["id"]);
                 if (!animeInDb) {
-                    await addAnimeToDatabase(relatedAnimeData["node"]["id"]);
+                    await addAnimeToDatabase(userId, relatedAnimeData["node"]["id"]);
                 }
             }
         } catch(e) {
@@ -74,5 +77,8 @@ export async function retrieveMALData() {
     }
 }
 
-//schedule ever first of the month at midnight
-schedule.scheduleJob('0 0 1 * *', retrieveMALData);
+if (config.anime.enable)
+{
+    //schedule ever first of the month at midnight
+    schedule.scheduleJob('0 0 1 * *', retrieveMALData);
+}
