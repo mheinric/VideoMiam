@@ -169,18 +169,17 @@ if (addChannelButton) {
 			document.getElementById("addChannelOverlay").style.display = "none";
 		} 
 	};
+	document.getElementById("addChannelAddButton").onclick = async () => {
+		await sendRequest("subscriptions/add", {
+			channelURL : document.getElementById("addChannelURL").value,
+		});
+		//TODO: feedback if the request fails
+		window.location.reload();
+	};
+	document.getElementById("addChannelCancelButton").onclick = () => {
+		document.getElementById("addChannelOverlay").style.display = "none";
+	};
 }
-
-document.getElementById("addChannelAddButton").onclick = async () => {
-	await sendRequest("subscriptions/add", {
-		channelURL : document.getElementById("addChannelURL").value,
-	});
-	//TODO: feedback if the request fails
-	window.location.reload();
-};
-document.getElementById("addChannelCancelButton").onclick = () => {
-	document.getElementById("addChannelOverlay").style.display = "none";
-};
 
 let settingsButton = document.getElementById("settingsButton");
 settingsButton.onclick = () => {
