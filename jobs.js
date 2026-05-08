@@ -51,6 +51,7 @@ export async function retrieveYoutubeData() {
 schedule.scheduleJob('0 17 * * *', retrieveYoutubeData);
 
 export async function retrieveMALData() {
+    console.log("Updating anime data");
     //TODO This will work only in single-user mode
     const userId = 0;
     const animes = await db.listViewedAnimes(userId);
@@ -81,4 +82,9 @@ if (config.anime.enable)
 {
     //schedule ever first of the month at midnight
     schedule.scheduleJob('0 0 1 * *', retrieveMALData);
+}
+
+export default {
+    retrieveYoutubeData,
+    retrieveMALData,
 }

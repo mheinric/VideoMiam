@@ -2,11 +2,19 @@
 import { sendSMS } from './services/notifications.js';
 import config from './config.js';
 import { app, baseUrl } from './app.js';
-import './jobs.js'; //Setup the cron jobs to update the DB daily.
+import jobs from './jobs.js'; //Setup the cron jobs to update the DB daily.
 
 
 if (process.argv.indexOf("--test-sms") != -1) {
     sendSMS("This is a test");
+}
+else if (process.argv.indexOf("udpateYt") != -1)
+{
+    jobs.retrieveYoutubeData();
+}
+else if (process.argv.indexOf("updateMAL") != -1)
+{
+    jobs.retrieveMALData();
 }
 else 
 {
