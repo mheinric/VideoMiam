@@ -54,8 +54,25 @@ export async function retrieveMALData() {
     console.log("Updating anime data");
     //TODO This will work only in single-user mode
     const userId = 0;
-    const animes = await db.listViewedAnimes(userId);
-    for (var anime of animes) {
+
+    for (var anime of await db.listUpcomingAnimes(userId))
+    {
+        try {
+            console.log(`Updating data for ${anime.Title}`);
+            const animeData = await mal.getAnimeInfos(anime.MalId);
+            const newStatus = mal.convertAnimeStatus(animeData["status"]);
+            await db.updateAnimeStatus(anime.Id, newStatus);
+        } catch(e) {
+            console.log(`Failed to retrieve infos for Anime ${anime.Title}`); 
+            console.log(e);
+            if (enableSMSNotifs)
+            {
+                await sendSMS(`Failed to retrieve infos for Anime ${anime.Title}`);
+            }
+        }
+    }
+
+    for (var anime of await db.listViewedAnimes(userId)) {
         try {
             console.log(`Updating data for ${anime.Title}`);
             const animeData = await mal.getAnimeInfos(anime.MalId);
