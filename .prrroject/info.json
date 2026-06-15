@@ -697,6 +697,14 @@
             "done": false,
             "createdAt": "2026-04-03T15:56:41.436741+00:00",
             "finishedAt": null
+        },
+        "86": {
+            "id": "86",
+            "title": "Add unique constraints to DB",
+            "description": "In the database definition, a lot of tables should have unique constraints which are missing (for example the VideoStatus table should have a single entry for each (userId, videoId) pair). \nI need to add these constraints, create a migration script, (which should also remove duplicates)",
+            "done": false,
+            "createdAt": "2026-06-15T17:43:06.528326+00:00",
+            "finishedAt": null
         }
     },
     "current_task": null
