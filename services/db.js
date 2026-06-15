@@ -150,6 +150,14 @@ export async function addVideo(youtubeId, title, durationSec, details, uploadDat
 export async function setViewed(userId, videoIds, viewed, viewDate) {
     for (let videoId of videoIds)
     {
+        let currentEntries = prepare(
+            `SELECT * FROM VideoStatus WHERE UserId = ? AND VideoId = ?`).all(userId, videoId);
+        let dbViewed = currentEntries.length > 0; 
+        if (dbViewed == viewed)
+        {
+            continue;
+        }
+
         if (viewed) {
             prepare(`
                 INSERT INTO VideoStatus(UserId, VideoId, ViewedStatus, ViewDate)

@@ -253,6 +253,13 @@ describe('Videos Management', () => {
       .expect('Content-Type', /json/)
       .expect(200);
 
+    //Note calling the same method again here should do nothing
+    await agent
+      .post(`${baseUrl}/videos/markViewed`)
+      .send({ videoIds: [ 1 ], viewed: true, viewDate : new Date("2028-01-01").toISOString() })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
     res = await agent
       .post(`${baseUrl}/videos/listForSubscription`)
       .send({ channelId: 1, newVideosOnly: true })
