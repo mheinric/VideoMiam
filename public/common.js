@@ -34,10 +34,10 @@ export async function listChannels() {
 export function formatTime(timeSec) {
 	var result = "";
 	if (timeSec > 60 * 60) {
-		result += Math.round(timeSec / 60 / 60) + ":";
+		result += Math.floor(timeSec / 60 / 60) + ":";
 		timeSec = timeSec % (60 * 60);
 	}
-	result += String(Math.round(timeSec / 60)).padStart(2, '0') + ":" + String(timeSec % 60).padStart(2, '0');
+	result += String(Math.floor(timeSec / 60)).padStart(2, '0') + ":" + String(timeSec % 60).padStart(2, '0');
 	return result; 
 }
 
