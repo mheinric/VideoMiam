@@ -49,4 +49,25 @@ router.post("/markViewed",
     }
 );
 
+router.post("/markNotInterested", 
+    assertAuth,
+    body("videoIds").isArray().notEmpty(),
+    body("videoIds.*").custom(isStrictInt), 
+    body("interested").isBoolean({ strict: true }),
+    body("viewDate").isISO8601().optional({ values: 'null' }),
+    assertInput,
+    async (req, res) => { 
+        for (let videoId of req.body.videoIds)
+        {
+            if (!await db.getVideo(videoId))
+            {
+                error(res, 404, "Video not found");
+                return;
+            }
+        }
+        await db.setNotInterested(req.session.userId, req.body.videoIds, req.body.interested, req.body.viewDate != null ? new Date(req.body.viewDate) : null); 
+        ok(res); 
+    }
+);
+
 export default router;

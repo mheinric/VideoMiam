@@ -296,12 +296,28 @@ html, body {
 
 .vid.vidSeen .vidIcon,
 .vid.vidSeen h3 img {
-	filter: grayscale(70%) contrast(30%) brightness(125%);
+	filter: grayscale(70%) contrast(30%) brightness(125%) sepia(25%) hue-rotate(87deg);
 	border-color: #555;
 }
 
 .vid.vidSeen .timeLabel {
 	background-color: #555;
+}
+
+.vid.vidNotInterested h3,
+.vid.vidNotInterested h2
+ {
+	color: #888;
+}
+
+.vid.vidNotInterested .vidIcon,
+.vid.vidNotInterested h3 img {
+	filter: grayscale(100%) contrast(30%) brightness(160%) sepia(25%) hue-rotate(-87deg);
+	border-color: #888;
+}
+
+.vid.vidNotInterested .timeLabel {
+	background-color: #888;
 }
 
 .vid .vidIcon:hover {
@@ -404,5 +420,42 @@ html, body {
 
 .vid.vidSeen .toggleSeen {
 	background-image: url(img/seen-checked.svg);
+	opacity: 1;
+}
+
+.toggleNotInterested {
+	background-image: url(img/not-interested-unchecked.svg);
+	position: absolute;
+	top: 8.7em;
+	left: 2.7em;
+	font-size: smaller;
+	background-color: transparent;
+	background-position: center left;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border: none;
+	cursor: pointer;
+	height: 2em;
+	width: 2em;
+	margin: 0 auto;
+	filter: grayscale(0%) contrast(100%) brightness(100%);
+	opacity: 0;
+}
+
+#channelPage .toggleNotInterested {
+	top: 5.3em;
+	left: 2.7em;
+}
+
+.vid:hover .toggleNotInterested {
+	opacity: 1;
+}
+
+.vid .toggleNotInterested:hover {
+	background-image: url(img/not-interested-checked.svg);
+}
+
+.vid.vidNotInterested .toggleNotInterested {
+	background-image: url(img/not-interested-checked.svg);
 	opacity: 1;
 }

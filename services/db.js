@@ -147,30 +147,29 @@ export async function addVideo(youtubeId, title, durationSec, details, uploadDat
     return res;
 }
 
-export async function setViewed(userId, videoIds, viewed, viewDate) {
+async function setVideosStatus(userId, videoIds, status, statusDate) {
     for (let videoId of videoIds)
     {
-        let currentEntries = prepare(
-            `SELECT * FROM VideoStatus WHERE UserId = ? AND VideoId = ?`).all(userId, videoId);
-        let dbViewed = currentEntries.length > 0; 
-        if (dbViewed == viewed)
-        {
-            continue;
-        }
+        prepare(`
+            DELETE FROM VideoStatus
+            WHERE UserId = ? AND VideoId = ?
+        `).run(userId, videoId);
 
-        if (viewed) {
+        if (status != null) {
             prepare(`
                 INSERT INTO VideoStatus(UserId, VideoId, ViewedStatus, ViewDate)
-                VALUES (?, ?, 'Viewed', ?)
-            `).run(userId, videoId, viewDate != null ? viewDate.toISOString() : null);
+                VALUES (?, ?, ?, ?)
+            `).run(userId, videoId, status, statusDate != null ? statusDate.toISOString() : null);
         } 
-        else {
-            prepare(`
-                DELETE FROM VideoStatus
-                WHERE UserId = ? AND VideoId = ?
-            `).run(userId, videoId);
-        }
     }
+}
+
+export async function setViewed(userId, videoIds, viewed, viewDate) {
+    await setVideosStatus(userId, videoIds, viewed ? 'Viewed' : null, viewDate);
+}
+
+export async function setNotInterested(userId, videoIds, interested, viewDate) {
+    await setVideosStatus(userId, videoIds, interested ? null : 'NotInterested', viewDate);
 }
 
 export async function setChannelFavorite(userId, channelId, favorite) {
@@ -278,6 +277,7 @@ export default {
     hasVideo,
     addVideo, 
     setViewed,
+    setNotInterested,
     setChannelFavorite,
     getVideo,
 

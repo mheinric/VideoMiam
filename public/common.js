@@ -77,6 +77,9 @@ async function insertVideo(targetDiv, video) {
 	if (video.ViewedStatus == 'Viewed') {
 		videoDiv.classList.add("vidSeen");
 	}
+	if (video.ViewedStatus == 'NotInterested') {
+		videoDiv.classList.add("vidNotInterested")
+	}
 	const chanTitle = document.createElement("h3"); 
 	chanTitle.textContent = chanInfo.Title;
 	const channelIcon = document.createElement("img");
@@ -113,9 +116,25 @@ async function insertVideo(targetDiv, video) {
 			viewDate: null,
 		});
 		vidData.ViewedStatus = vidData.ViewedStatus == 'Viewed' ? null : 'Viewed'; 
+		videoDiv.classList.remove("vidNotInterested");
 		videoDiv.classList.toggle("vidSeen");
 	};
 	videoDiv.appendChild(toggleSeenButton);
+
+	const toggleNotInterestedButton = document.createElement("button");
+	toggleNotInterestedButton.title = "Mark as not interested";
+	toggleNotInterestedButton.classList.add("toggleNotInterested");
+	toggleNotInterestedButton.onclick = async () => {
+		await sendRequest("videos/markNotInterested", {
+			videoIds: [ vidData.Id ], 
+			interested: (vidData.ViewedStatus == 'NotInterested'),
+			viewDate: null,
+		});
+		vidData.ViewedStatus = vidData.ViewedStatus == "NotInterested" ? null : "NotInterested";
+		videoDiv.classList.remove("vidSeen");
+		videoDiv.classList.toggle("vidNotInterested");
+	};
+	videoDiv.appendChild(toggleNotInterestedButton);
 
 	const vidTitle = document.createElement("h2");
 	vidTitle.textContent = video.Title;

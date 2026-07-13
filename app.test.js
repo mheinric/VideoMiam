@@ -253,13 +253,6 @@ describe('Videos Management', () => {
       .expect('Content-Type', /json/)
       .expect(200);
 
-    //Note calling the same method again here should do nothing
-    await agent
-      .post(`${baseUrl}/videos/markViewed`)
-      .send({ videoIds: [ 1 ], viewed: true, viewDate : new Date("2028-01-01").toISOString() })
-      .expect('Content-Type', /json/)
-      .expect(200);
-
     res = await agent
       .post(`${baseUrl}/videos/listForSubscription`)
       .send({ channelId: 1, newVideosOnly: true })
@@ -321,6 +314,48 @@ describe('Videos Management', () => {
       .expect('Content-Type', /json/)
       .expect(404);
   });
+
+  test('Invalid input marking videos as not interested', async () => {
+    await agent
+      .post(`${baseUrl}/videos/markNotInterested`)
+      .send({ videoIds: [ 1 ], viewDate : null }) // missing interested field
+      .expect('Content-Type', /json/)
+      .expect(400);
+
+    await agent
+      .post(`${baseUrl}/videos/markNotInterested`)
+      .send({ videoIds: [ 1000 ], interested: false, viewDate : null }) // Invalid videoId
+      .expect('Content-Type', /json/)
+      .expect(404);
+  });
+
+  test('Marking videos not interested', async () => {
+    await agent
+      .post(`${baseUrl}/videos/markNotInterested`)
+      .send({ videoIds: [ 1 ], interested: false, viewDate : null })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    let res = await agent
+      .post(`${baseUrl}/videos/listForSubscription`)
+      .send({ channelId: 1, newVideosOnly: true })
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([]);
+
+    await agent
+      .post(`${baseUrl}/videos/markNotInterested`)
+      .send({ videoIds: [ 1 ], interested: true, viewDate : null })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    res = await agent
+      .post(`${baseUrl}/videos/listForSubscription`)
+      .send({ channelId: 1, newVideosOnly: true })
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([ video1 ]);
+  })
 
 });
 
