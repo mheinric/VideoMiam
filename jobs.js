@@ -39,7 +39,7 @@ export async function retrieveYoutubeData() {
         } catch (e) {
             console.log(`Failed to retrieve infos for subscription ${sub.Title}`); 
             console.log(e);
-            if (enableSMSNotifs)
+            if (config.sms.enable)
             {
                 await sendSMS(`Failed to retrieve infos for ${sub.Title}`);
             }
@@ -65,7 +65,7 @@ export async function retrieveMALData() {
         } catch(e) {
             console.log(`Failed to retrieve infos for Anime ${anime.Title}`); 
             console.log(e);
-            if (enableSMSNotifs)
+            if (config.sms.enable)
             {
                 await sendSMS(`Failed to retrieve infos for Anime ${anime.Title}`);
             }
@@ -87,7 +87,7 @@ export async function retrieveMALData() {
         } catch(e) {
             console.log(`Failed to retrieve infos for Anime ${anime.Title}`); 
             console.log(e);
-            if (enableSMSNotifs)
+            if (config.sms.enable)
             {
                 await sendSMS(`Failed to retrieve infos for Anime ${anime.Title}`);
             }
