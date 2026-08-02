@@ -41,18 +41,62 @@ async function loadSubscriptions() {
 
 		const markFavButton = document.createElement("button");
 		markFavButton.classList.add("markFav");
-		markFavButton.onclick = async () => {
+		subDiv.appendChild(markFavButton);
+
+		const editBtn = document.createElement("button");
+		editBtn.classList.add("editSubBtn");
+		subDiv.appendChild(editBtn);
+
+		const editMenu = document.createElement("div");
+		editMenu.classList.add("editMenu");
+
+		const item1 = document.createElement("button");
+		item1.classList.add("editMenuItem");
+		const updateFavItem = () => {
+			item1.textContent = subInfo.Favorite ? "Unset as favorite" : "Set as favorite";
+			item1.classList.toggle("favMenuItem", !subInfo.Favorite);
+			item1.classList.toggle("unfavMenuItem", subInfo.Favorite);
+		};
+		updateFavItem();
+		item1.onclick = async (e) => {
+			e.stopPropagation();
 			await sendRequest("subscriptions/markFavorite", {
-				channelId: subInfo.Id, 
+				channelId: subInfo.Id,
 				favorite: !subInfo.Favorite,
 			});
 			subInfo.Favorite = !subInfo.Favorite;
 			subDiv.classList.toggle("favSub");
-		}
-		subDiv.appendChild(markFavButton);
+			updateFavItem();
+			editMenu.classList.remove("show");
+		};
+		editMenu.appendChild(item1);
+
+		const item2 = document.createElement("button");
+		item2.classList.add("editMenuItem");
+		item2.textContent = "palceholder2";
+		editMenu.appendChild(item2);
+
+		subDiv.appendChild(editMenu);
+
+		editBtn.onclick = (e) => {
+			e.stopPropagation();
+			document.querySelectorAll(".editMenu.show").forEach(m => {
+				if (m !== editMenu) m.classList.remove("show");
+			});
+			editMenu.classList.toggle("show");
+		};
+
+		item2.onclick = (e) => {
+			e.stopPropagation();
+			editMenu.classList.remove("show");
+		};
 
 		subscriptionList.appendChild(subDiv);
 	}
 }
 
 loadSubscriptions();
+
+document.addEventListener("click", () => {
+	document.querySelectorAll(".editMenu.show").forEach(m => m.classList.remove("show"));
+});

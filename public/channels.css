@@ -11,16 +11,16 @@ h1:before {
 }
 
 #subscriptionList {
-	display: flex; 
+	display: flex;
 	flex-wrap: wrap;
 }
 
 .sub {
 	position: relative;
-	flex-grow: 0; 
+	flex-grow: 0;
 	flex-shrink: 0;
-	border-radius: 1em; 
-	padding: 1em; 
+	border-radius: 1em;
+	padding: 1em;
 	margin: 0em;
 	width: 9em;
 	text-align: center;
@@ -41,7 +41,7 @@ h1:before {
 }
 
 .listIcon {
-	display: none; 
+	display: none;
 	pointer-events: none;
 }
 
@@ -51,7 +51,7 @@ h1:before {
 	width: 7em;
 	height: 7em;
 	object-fit: cover;
-  	top: 0em;
+	top: 0em;
 	float: right;
 	background-color: #00000099;
 }
@@ -65,9 +65,9 @@ h1:before {
 .externalLink {
 	background-image: url(img/externalLink.svg);
 	background-position: center right;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	padding: 0.5em;
-  	margin-left: 0.25em;
+	margin-left: 0.25em;
 }
 
 .markFav {
@@ -77,13 +77,13 @@ h1:before {
 	height: 2em;
 	width: 2em;
 	background-position: center;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	background-size: 100%;
 	border: none;
 	position: absolute;
 	top: 1.5em;
 	right: 1em;
-	cursor: pointer;
+	pointer-events: none;
 }
 
 .sub.favSub .markFav {
@@ -91,25 +91,87 @@ h1:before {
 	background-image: url(img/starFilled.svg);
 }
 
-.sub:hover .markFav,
-.markFav:hover {
+
+
+.editSubBtn {
+	display: none;
+	background-image: url(img/edit.svg);
+	background-color: transparent;
+	height: 2.5em;
+	width: 2.5em;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 70%;
+	border: 1px solid #555;
+	border-radius: 50%;
+	position: absolute;
+	top: 3.8em;
+	right: 0em;
+	cursor: pointer;
+	z-index: 2;
+	background-color: white;
+}
+
+.sub:hover .editSubBtn {
 	display: block;
 }
 
-.sub .markFav:hover {
-	background-image: url(img/starHover.svg);
+.editSubBtn:hover {
+	filter: brightness(80%);
 }
 
-.sub .markFav:active {
-	background-image: url(img/starPressed.svg);
+.editMenu {
+	display: none;
+	position: absolute;
+	top: 5.5em;
+	right: 0.5em;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 0.5em;
+	box-shadow: 0.2em 0.2em #00000077;
+	z-index: 3;
+	width: 10em;
 }
 
-/* When clicking the button from selected to unselected, we swap the two images around */
-.sub.favSub .markFav:hover {
-	background-image: url(img/starPressed.svg);
+.editMenu.show {
+	display: block;
 }
 
+.editMenuItem {
+	display: block;
+	padding: 0.5em 1em 0.5em 2.2em;
+	color: black;
+	text-decoration: none;
+	font-size: small;
+	cursor: pointer;
+	border: none;
+	background: none;
+	width: 100%;
+	text-align: left;
+	border-radius: 0em;
+	border-bottom: 1px solid #ddd;
+	background-position: left 0.4em center;
+	background-repeat: no-repeat;
+	background-size: 1.2em;
+}
 
-.sub.favSub .markFav:active {
-	background-image: url(img/starHover.svg);
+.editMenuItem.favMenuItem {
+	background-image: url(img/starFilled.svg);
+}
+
+.editMenuItem.unfavMenuItem {
+	background-image: url(img/starFilledCrossed.svg);
+}
+
+.editMenuItem:first-child {
+	border-radius: 0.5em 0.5em 0em 0em;
+}
+
+.editMenuItem:last-child {
+	border-bottom: none;
+	border-radius: 0em 0em 0.5em 0.5em;
+}
+
+.editMenuItem:hover {
+	background-color: #eee;
 }
