@@ -176,6 +176,54 @@ describe('Channels management', () => {
       .expect(404);
   });
 
+  test('Removing a subscription', async () => {
+    await agent
+      .post(`${baseUrl}/subscriptions/add`)
+      .send({ channelURL: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    let res = await agent
+      .post(`${baseUrl}/subscriptions/list`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data.length).toStrictEqual(1);
+
+    await agent
+      .post(`${baseUrl}/subscriptions/remove`)
+      .send({ channelId: 1 })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    res = await agent
+      .post(`${baseUrl}/subscriptions/list`)
+      .send({})
+      .expect('Content-Type', /json/)
+      .expect(200);
+    expect(res.body.data).toStrictEqual([]);
+  });
+
+  test('Invalid input when removing subscription', async () => {
+    await agent
+      .post(`${baseUrl}/subscriptions/add`)
+      .send({ channelURL: "UCVX13EuI29nIdTjbNfpS7NA" })
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    await agent
+      .post(`${baseUrl}/subscriptions/remove`)
+      .send({ channel: 1 }) // channel should be channelId
+      .expect('Content-Type', /json/)
+      .expect(400);
+
+    await agent
+      .post(`${baseUrl}/subscriptions/remove`)
+      .send({ channelId: 100 }) // non-existent channel
+      .expect('Content-Type', /json/)
+      .expect(404);
+  });
+
   test('Invalid input when fetching details', async () => {
     await agent
       .post(`${baseUrl}/subscriptions/add`)
