@@ -50,9 +50,10 @@ h1:before {
 	position: absolute;
 	width: 7em;
 	height: 7em;
-	object-fit: cover;
+	padding: 1em;
+	object-fit: center;
 	top: 0em;
-	float: right;
+	left: 0em;
 	background-color: #00000099;
 }
 
