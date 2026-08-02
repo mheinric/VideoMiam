@@ -39,7 +39,7 @@ async function loadSubscriptions() {
 			window.location = `channel.html?id=${subInfo.Id}`;
 		}
 
-		const markFavButton = document.createElement("button");
+		const markFavButton = document.createElement("div");
 		markFavButton.classList.add("markFav");
 		subDiv.appendChild(markFavButton);
 
@@ -92,9 +92,7 @@ async function loadSubscriptions() {
 
 		editBtn.onclick = (e) => {
 			e.stopPropagation();
-			document.querySelectorAll(".editMenu.show").forEach(m => {
-				if (m !== editMenu) m.classList.remove("show");
-			});
+			closeAllEditMenus(editMenu);
 			editMenu.classList.toggle("show");
 		};
 
@@ -104,8 +102,14 @@ async function loadSubscriptions() {
 
 loadSubscriptions();
 
+function closeAllEditMenus(except) {
+	document.querySelectorAll(".editMenu.show").forEach(m => {
+		if (m !== except) m.classList.remove("show");
+	});
+}
+
 document.addEventListener("click", () => {
-	document.querySelectorAll(".editMenu.show").forEach(m => m.classList.remove("show"));
+	closeAllEditMenus();
 });
 
 const confirmOverlay = document.getElementById("confirmRemoveOverlay");
