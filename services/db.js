@@ -7,8 +7,7 @@ const dbExists = fs.existsSync('data.db');
 const db = new Database('data.db');
 if (!dbExists) {
     db.exec(fs.readFileSync('databaseSchema.sql', 'utf-8'));
-    if (!config["users"]["enable"]) 
-    {
+    if (!config["users"]["enable"]) {
         db.exec("INSERT INTO Users(Id, Email, PasswordHash) VALUES (0, '', '')");
     }
 }
@@ -74,12 +73,11 @@ export async function addSubscription(youtubeId, kind, title, iconURL) {
 }
 
 export async function updateSubscriptionIcon(youtubeId, iconUrl) {
-    prepare("UPDATE Subscriptions SET IconURL = ? WHERE YoutubeId = ?").run(iconUrl, youtubeId); 
+    prepare("UPDATE Subscriptions SET IconURL = ? WHERE YoutubeId = ?").run(iconUrl, youtubeId);
 }
 
-export async function removeSubscription(id) {
-    //Should also remove all videos associated with this subscription
-    //TODO: sql queries
+export async function removeSubscription(userId, id) {
+    prepare("DELETE FROM UserSubscriptions WHERE UserId = ? AND ChannelId = ?").run(userId, id);
 }
 
 export async function isSubscribedTo(youtubeId) {
@@ -138,18 +136,17 @@ export async function getVideo(videoId) {
 }
 
 export async function addVideo(youtubeId, title, durationSec, details, uploadDate, thumbnailURL, subscriptionId) {
-    let res =  prepare(`
+    let res = prepare(`
         INSERT INTO Videos (YoutubeId, Title, DurationSec, Details, UploadDate, ThumbnailURL) 
         VALUES (?, ?, ?, ?, ?, ?)
     `).run(youtubeId, title, durationSec, details, uploadDate.toISOString(), thumbnailURL)
-    .lastInsertRowid; 
+        .lastInsertRowid;
     prepare(`INSERT INTO ChannelVideos(VideoId, ChannelId) VALUES (?, ?)`).run(res, subscriptionId);
     return res;
 }
 
 async function setVideosStatus(userId, videoIds, status, statusDate) {
-    for (let videoId of videoIds)
-    {
+    for (let videoId of videoIds) {
         prepare(`
             DELETE FROM VideoStatus
             WHERE UserId = ? AND VideoId = ?
@@ -160,7 +157,7 @@ async function setVideosStatus(userId, videoIds, status, statusDate) {
                 INSERT INTO VideoStatus(UserId, VideoId, ViewedStatus, ViewDate)
                 VALUES (?, ?, ?, ?)
             `).run(userId, videoId, status, statusDate != null ? statusDate.toISOString() : null);
-        } 
+        }
     }
 }
 
@@ -184,7 +181,7 @@ export async function addAnime(malId, title, nbEpisodes, genres, thumbnailURL, c
     return prepare(`
         INSERT INTO Animes(MalId, Title, NbEpisodes, Genres, ThumbnailURL, CurrentStatus, Synopsis) VALUES (?,?,?,?,?,?,?)
     `).run(malId, title, nbEpisodes, genres.join(","), thumbnailURL, currentStatus, synopsis)
-    .lastInsertRowid;
+        .lastInsertRowid;
 }
 
 export async function getAnime(animeId) {
@@ -255,27 +252,28 @@ export async function userExists(email) {
 }
 
 export async function checkUserPassword(id, password) {
-    let entries = prepare("SELECT * FROM Users WHERE Email = ?").all(id); 
+    let entries = prepare("SELECT * FROM Users WHERE Email = ?").all(id);
     if (entries.length == 0 || !await bcrypt.compare(password, entries[0].PasswordHash)) {
-        return null; 
+        return null;
     }
     return entries[0].Id;
 }
 
 export default {
     clearDB,
-    addSubscription, 
+    addSubscription,
     updateSubscriptionIcon,
     getSubscription,
-    getAllSubscriptions, 
-    removeSubscription, 
-    isSubscribedTo, 
+    getSubscriptionByYoutubeId,
+    getAllSubscriptions,
+    removeSubscription,
+    isSubscribedTo,
     subscribeUserTo,
 
     listVideosForSubscription,
     listRecentVideos,
     hasVideo,
-    addVideo, 
+    addVideo,
     setViewed,
     setNotInterested,
     setChannelFavorite,
@@ -292,6 +290,6 @@ export default {
     malAnimeIsPresent,
 
     addUser,
-    userExists, 
+    userExists,
     checkUserPassword,
 }

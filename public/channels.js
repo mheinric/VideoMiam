@@ -72,8 +72,20 @@ async function loadSubscriptions() {
 		editMenu.appendChild(item1);
 
 		const item2 = document.createElement("button");
-		item2.classList.add("editMenuItem");
-		item2.textContent = "palceholder2";
+		item2.classList.add("editMenuItem", "removeMenuItem");
+		item2.textContent = "Remove";
+		item2.onclick = (e) => {
+			e.stopPropagation();
+			editMenu.classList.remove("show");
+			document.getElementById("confirmRemoveOverlay").style.display = "block";
+			document.getElementById("confirmRemoveYesButton").onclick = async () => {
+				await sendRequest("subscriptions/remove", {
+					channelId: subInfo.Id,
+				});
+				document.getElementById("confirmRemoveOverlay").style.display = "none";
+				subscriptionList.removeChild(subDiv);
+			};
+		};
 		editMenu.appendChild(item2);
 
 		subDiv.appendChild(editMenu);
@@ -86,11 +98,6 @@ async function loadSubscriptions() {
 			editMenu.classList.toggle("show");
 		};
 
-		item2.onclick = (e) => {
-			e.stopPropagation();
-			editMenu.classList.remove("show");
-		};
-
 		subscriptionList.appendChild(subDiv);
 	}
 }
@@ -100,3 +107,13 @@ loadSubscriptions();
 document.addEventListener("click", () => {
 	document.querySelectorAll(".editMenu.show").forEach(m => m.classList.remove("show"));
 });
+
+const confirmOverlay = document.getElementById("confirmRemoveOverlay");
+confirmOverlay.onclick = (e) => {
+	if (e.target.id == "confirmRemoveOverlay") {
+		confirmOverlay.style.display = "none";
+	}
+};
+document.getElementById("confirmRemoveNoButton").onclick = () => {
+	confirmOverlay.style.display = "none";
+};

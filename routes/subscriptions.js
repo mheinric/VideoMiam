@@ -50,4 +50,18 @@ router.post('/markFavorite',
     }
 );
 
+router.post('/remove', 
+    assertAuth,
+    body("channelId").custom(isStrictInt), 
+    assertInput,
+    async (req, res) => {
+        if (!await db.getSubscription(req.body.channelId, req.session.userId))
+        {
+            error(res, 404, 'Channel not found');
+            return;
+        }
+        await db.removeSubscription(req.session.userId, req.body.channelId); ok(res);
+    }
+);
+
 export default router;

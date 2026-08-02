@@ -164,6 +164,10 @@ h1:before {
 	background-image: url(img/starFilledCrossed.svg);
 }
 
+.editMenuItem.removeMenuItem {
+	background-image: url(img/removeCross.svg);
+}
+
 .editMenuItem:first-child {
 	border-radius: 0.5em 0.5em 0em 0em;
 }
@@ -175,4 +179,53 @@ h1:before {
 
 .editMenuItem:hover {
 	background-color: #eee;
+}
+
+#confirmRemoveOverlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 4;
+	background-color: #E1E1E175;
+}
+
+#confirmRemovePopup {
+	margin-top: calc(50vh - 7em);
+	margin-left: calc(50vw - 12em);
+	width: 24em;
+	border-radius: 1em;
+	padding: 1em;
+	box-shadow: 0.2em 0.2em #00000077;
+	border: 1px solid black;
+	background-color: white;
+	text-align: center;
+}
+
+#confirmRemoveYesButton,
+#confirmRemoveNoButton {
+	padding: 0.5em;
+	margin-top: 1em;
+	margin-right: 1.5em;
+	margin-left: 1.5em;
+	border: none;
+	border-radius: 1em;
+	cursor: pointer;
+	border: 1px solid black;
+	width: 7em;
+}
+
+#confirmRemoveYesButton {
+	background-color: #ff5e5e;
+}
+
+#confirmRemoveNoButton {
+	background-color: white;
+}
+
+#confirmRemoveYesButton:hover,
+#confirmRemoveNoButton:hover {
+	filter: brightness(80%);
 }

@@ -2,7 +2,7 @@ import db from '../services/db.js';
 import yt from '../services/yt.js';
 
 export async function subscribeUserTo(userId, channelURL) {
-    let youtubeId = channelURL; 
+    let youtubeId = channelURL;
     if (!channelURL.startsWith("UC") && !channelURL.startsWith("PL")) {
         //The input is probably an url to a youtube page. Try to fetch the id for this page
         const urlObj = new URL(channelURL);
@@ -28,7 +28,7 @@ export async function subscribeUserTo(userId, channelURL) {
         subId = await addSubscription(youtubeId);
     }
     else {
-        subId = await db.getSubscriptionByYoutubeId(youtubeId).Id;
+        subId = (await db.getSubscriptionByYoutubeId(youtubeId)).Id;
     }
     await db.subscribeUserTo(userId, subId);
 }
@@ -43,7 +43,7 @@ export async function addSubscription(youtubeId) {
     if (youtubeId.startsWith("UC")) {
         console.log(`Adding subscription to channel ${youtubeId}`);
         const channelInfo = await yt.getChannelInfos(youtubeId);
-        subId = await db.addSubscription(youtubeId, "Channel", channelInfo.snippet.title, 
+        subId = await db.addSubscription(youtubeId, "Channel", channelInfo.snippet.title,
             channelInfo.snippet.thumbnails.medium.url);
         playlistId = channelInfo.contentDetails.relatedPlaylists.uploads;
     } else if (youtubeId.startsWith("PL")) {
@@ -62,10 +62,10 @@ export async function addSubscription(youtubeId) {
             //Skip short videos
             continue;
         }
-        await db.addVideo(videoInfo.contentDetails.videoId, videoInfo.snippet.title, videoInfo.additionalDetails.duration, 
-            videoInfo.snippet.description, videoInfo.snippet.publishedAt, videoInfo.snippet.thumbnails.medium.url, 
+        await db.addVideo(videoInfo.contentDetails.videoId, videoInfo.snippet.title, videoInfo.additionalDetails.duration,
+            videoInfo.snippet.description, videoInfo.snippet.publishedAt, videoInfo.snippet.thumbnails.medium.url,
             subId);
-        console.log(`Adding video ${videoInfo.snippet.title}`); 
+        console.log(`Adding video ${videoInfo.snippet.title}`);
     }
     return subId;
 }
