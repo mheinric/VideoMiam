@@ -2,9 +2,22 @@ import { getChannelInfos, insertAllVideos, sendRequest} from "./common.js"
 
 const channelVideoList = document.getElementById("channelVideoList");
 const channelDisplayNewOnly = document.getElementById("channelDisplayNewOnly");
+const channelFilterInput = document.getElementById("channelFilterInput");
 const currentChannelId = parseInt(new URLSearchParams(window.location.search).get("id"));
 
 var allVideos = []
+
+function filterVideos(videos) {
+	let filterText = channelFilterInput.value.trim().toLowerCase();
+	if (!filterText) {
+		return videos;
+	}
+	return videos.filter(v => v.Title.toLowerCase().includes(filterText));
+}
+
+async function displayVideos() {
+	await insertAllVideos(channelVideoList, filterVideos(allVideos));
+}
 
 async function fetchVideos() {
 	let newVideosOnly = channelDisplayNewOnly.checked;
@@ -51,7 +64,12 @@ async function updateChannelInfos()
 }
 
 channelDisplayNewOnly.onclick = async function() {
-	await insertAllVideos(channelVideoList, await fetchVideos());
+	await fetchVideos();
+	await displayVideos();
+}
+
+channelFilterInput.oninput = () => {
+	displayVideos();
 }
 
 async function markAllWatched(watched) {
@@ -90,5 +108,6 @@ main();
 
 async function main() {
 	await updateChannelInfos();
-	await insertAllVideos(channelVideoList, await fetchVideos());
+	await fetchVideos();
+	await displayVideos();
 }

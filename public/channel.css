@@ -1,7 +1,6 @@
-
 h1 {
 	text-align: center;
-	position: relative; 
+	position: relative;
 	left: -10%;
 }
 
@@ -16,7 +15,7 @@ h1 img {
 }
 
 #channelVideoList {
-	display: flex; 
+	display: flex;
 	flex-wrap: wrap;
 }
 
@@ -25,6 +24,14 @@ h1 img {
 	margin-bottom: 1em;
 	justify-content: space-between;
 	align-items: center;
+}
+
+#channelFilterInput {
+	border: 1px solid #333;
+	border-radius: 1em;
+	background: white;
+	padding: 0.5em;
+	margin-right: 0.5em;
 }
 
 #channelLeftButtons {
@@ -55,7 +62,7 @@ h1 img {
 #markAllButton {
 	position: relative;
 	border: 1px solid #333;
-	border-radius: 1em; 
+	border-radius: 1em;
 	background: #ddd;
 	padding: 0.5em;
 	margin-left: 2em;
