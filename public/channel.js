@@ -30,6 +30,24 @@ async function updateChannelInfos()
 	let icon = document.createElement("img");
 	icon.src = details.IconURL;
 	titleElt.insertBefore(icon, titleElt.firstChild);
+
+	let favButton = document.getElementById("channelFavoriteButton");
+	let favIcon = document.getElementById("channelFavoriteIcon");
+	let favLabel = document.getElementById("channelFavoriteLabel");
+	const updateFavButton = () => {
+		favIcon.src = details.Favorite ? "img/starFilledCrossed.svg" : "img/starFilled.svg";
+		favLabel.textContent = details.Favorite ? "Remove from favorites" : "Set as favorite";
+		favButton.title = details.Favorite ? "Unset as favorite" : "Set as favorite";
+	};
+	updateFavButton();
+	favButton.onclick = async () => {
+		details.Favorite = !details.Favorite;
+		updateFavButton();
+		await sendRequest("subscriptions/markFavorite", {
+			channelId: currentChannelId,
+			favorite: details.Favorite,
+		});
+	};
 }
 
 channelDisplayNewOnly.onclick = async function() {

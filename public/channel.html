@@ -24,13 +24,18 @@
 	</button>
 	<h1></h1>
 	<div id="channelButtons">
-		<input id="channelDisplayNewOnly" type="checkbox" autocomplete="off"><label for="channelDisplayNewOnly">New videos only</label>
-		<select id="markAllButton" autocomplete="off" >
-			<option value="0" selected disabled hidden>Mark all as...</option>
-			<option id="markAllWatched">Watched</option>
-			<option id="markAllNotWatched">Not watched</option>
-		</select>
-
+		<div id="channelLeftButtons">
+			<input id="channelDisplayNewOnly" type="checkbox" autocomplete="off"><label for="channelDisplayNewOnly">New videos only</label>
+			<select id="markAllButton" autocomplete="off" >
+				<option value="0" selected disabled hidden>Mark all as...</option>
+				<option id="markAllWatched">Watched</option>
+				<option id="markAllNotWatched">Not watched</option>
+			</select>
+		</div>
+		<button id="channelFavoriteButton" class="channelMarkFav" title="Set as favorite">
+			<img id="channelFavoriteIcon" src="img/starFilled.svg">
+			<span id="channelFavoriteLabel">Set as favorite</span>
+		</button>
 	</div>
 	<div id="channelVideoList">
 	</div>

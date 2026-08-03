@@ -23,8 +23,33 @@ h1 img {
 #channelButtons {
 	display: flex;
 	margin-bottom: 1em;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+}
+
+#channelLeftButtons {
+	display: flex;
+	align-items: center;
+}
+
+.channelMarkFav {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	border: 1px solid #333;
+	border-radius: 1em;
+	background: #ddd;
+	padding: 0.5em;
+	cursor: pointer;
+}
+
+.channelMarkFav:hover {
+	background: #aaa;
+}
+
+.channelMarkFav img {
+	height: 1.5em;
+	width: 1.5em;
 }
 
 #markAllButton {
