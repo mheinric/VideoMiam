@@ -171,6 +171,7 @@ async function initChannelList() {
 	{
 		const channelIcon = document.createElement("img");
 		channelIcon.src = chanInfo.IconURL;
+		channelIcon.title = chanInfo.Title;
 		const link = document.createElement("a");
 		link.href = `channel.html?id=${chanInfo.Id}`;
 		link.appendChild(channelIcon);
