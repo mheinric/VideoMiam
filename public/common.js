@@ -20,8 +20,7 @@ export async function getChannelInfos(channelId) {
 export async function listChannels() {
 	let res = await sendRequest("subscriptions/list", {});
 	if (res.status == "OK") {
-		for (let item of res.data) 
-		{
+		for (let item of res.data) {
 			channelInfoCache.set(item.Id, item);
 		}
 		return res.data;
@@ -38,7 +37,7 @@ export function formatTime(timeSec) {
 		timeSec = timeSec % (60 * 60);
 	}
 	result += String(Math.floor(timeSec / 60)).padStart(2, '0') + ":" + String(timeSec % 60).padStart(2, '0');
-	return result; 
+	return result;
 }
 
 export async function sendRequest(path, params) {
@@ -72,7 +71,7 @@ async function insertVideo(targetDiv, video) {
 		video.UploadDate = new Date(video.UploadDate);
 	}
 	const chanInfo = await getChannelInfos(video.ChannelId);
-	const videoDiv = document.createElement("div"); 
+	const videoDiv = document.createElement("div");
 	videoDiv.classList.add("vid");
 	if (video.ViewedStatus == 'Viewed') {
 		videoDiv.classList.add("vidSeen");
@@ -80,44 +79,49 @@ async function insertVideo(targetDiv, video) {
 	if (video.ViewedStatus == 'NotInterested') {
 		videoDiv.classList.add("vidNotInterested")
 	}
-	const chanTitle = document.createElement("h3"); 
+	const chanTitle = document.createElement("h3");
 	chanTitle.textContent = chanInfo.Title;
 	const channelIcon = document.createElement("img");
 	channelIcon.src = chanInfo.IconURL;
 	chanTitle.insertBefore(channelIcon, chanTitle.firstChild);
 	videoDiv.appendChild(chanTitle);
 
-	const vidImg = document.createElement("img"); 
+	const vidImg = document.createElement("img");
 	vidImg.classList.add("vidIcon");
 	vidImg.src = video.ThumbnailURL;
 	vidImg.onclick = async () => {
 		window.open("https://youtube.com/watch?v=" + vidData.YoutubeId, '_blank').focus();
 		await sendRequest("videos/markViewed", {
-			videoIds: [ vidData.Id ], 
+			videoIds: [vidData.Id],
 			viewed: true,
 			viewDate: new Date().toISOString(),
 		});
 		videoDiv.classList.add("vidSeen");
+		vidData.ViewedStatus = 'Viewed';
 	}
 	videoDiv.appendChild(vidImg);
 
-	const timeLabel = document.createElement("span"); 
+	const timeLabel = document.createElement("span");
 	timeLabel.classList.add("timeLabel");
 	timeLabel.textContent = formatTime(video.DurationSec);
 	videoDiv.appendChild(timeLabel);
 
 	const toggleSeenButton = document.createElement("button");
 	toggleSeenButton.title = "Mark as Seen/Unseen";
-	toggleSeenButton.classList.add("toggleSeen"); 
+	toggleSeenButton.classList.add("toggleSeen");
 	toggleSeenButton.onclick = async () => {
 		await sendRequest("videos/markViewed", {
-			videoIds: [ vidData.Id ], 
+			videoIds: [vidData.Id],
 			viewed: !(vidData.ViewedStatus == 'Viewed'),
 			viewDate: null,
 		});
-		vidData.ViewedStatus = vidData.ViewedStatus == 'Viewed' ? null : 'Viewed'; 
+		vidData.ViewedStatus = vidData.ViewedStatus == 'Viewed' ? null : 'Viewed';
 		videoDiv.classList.remove("vidNotInterested");
-		videoDiv.classList.toggle("vidSeen");
+		if (vidData.ViewedStatus == 'Viewed') {
+			videoDiv.classList.add("vidSeen");
+		} else {
+			videoDiv.classList.remove("vidSeen");
+		}
 	};
 	videoDiv.appendChild(toggleSeenButton);
 
@@ -126,13 +130,17 @@ async function insertVideo(targetDiv, video) {
 	toggleNotInterestedButton.classList.add("toggleNotInterested");
 	toggleNotInterestedButton.onclick = async () => {
 		await sendRequest("videos/markNotInterested", {
-			videoIds: [ vidData.Id ], 
+			videoIds: [vidData.Id],
 			interested: (vidData.ViewedStatus == 'NotInterested'),
 			viewDate: null,
 		});
 		vidData.ViewedStatus = vidData.ViewedStatus == "NotInterested" ? null : "NotInterested";
 		videoDiv.classList.remove("vidSeen");
-		videoDiv.classList.toggle("vidNotInterested");
+		if (vidData.ViewedStatus == 'NotInterested') {
+			videoDiv.classList.add("vidNotInterested");
+		} else {
+			videoDiv.classList.remove("vidNotInterested");
+		}
 	};
 	videoDiv.appendChild(toggleNotInterestedButton);
 
@@ -140,7 +148,7 @@ async function insertVideo(targetDiv, video) {
 	vidTitle.textContent = video.Title;
 	vidTitle.title = video.Title;
 	videoDiv.appendChild(vidTitle);
-	const vidData = video; 
+	const vidData = video;
 
 	videoDiv.setAttribute("videoId", video.Id);
 	videoDiv.setAttribute("videoTitle", video.Title);
@@ -161,14 +169,12 @@ updateEnabledFeatures();
 
 async function initChannelList() {
 
-	const chanDiv = document.getElementById("channelShortcuts"); 
-	if (!chanDiv)
-	{
+	const chanDiv = document.getElementById("channelShortcuts");
+	if (!chanDiv) {
 		return;
 	}
-	let channels = await listChannels(); 
-	for (let chanInfo of channels) 
-	{
+	let channels = await listChannels();
+	for (let chanInfo of channels) {
 		const channelIcon = document.createElement("img");
 		channelIcon.src = chanInfo.IconURL;
 		channelIcon.title = chanInfo.Title;
@@ -184,14 +190,14 @@ initChannelList();
 const addChannelButton = document.getElementById("addChannelButton");
 if (addChannelButton) {
 	addChannelButton.onclick = () => { document.getElementById("addChannelOverlay").style.display = "block"; };
-	document.getElementById("addChannelOverlay").onclick = (e) => { 
+	document.getElementById("addChannelOverlay").onclick = (e) => {
 		if (e.target.id == "addChannelOverlay") {
 			document.getElementById("addChannelOverlay").style.display = "none";
-		} 
+		}
 	};
 	document.getElementById("addChannelAddButton").onclick = async () => {
 		await sendRequest("subscriptions/add", {
-			channelURL : document.getElementById("addChannelURL").value,
+			channelURL: document.getElementById("addChannelURL").value,
 		});
 		//TODO: feedback if the request fails
 		window.location.reload();
@@ -203,12 +209,12 @@ if (addChannelButton) {
 
 let settingsButton = document.getElementById("settingsButton");
 settingsButton.onclick = () => {
-	let settingsMenu = document.getElementById("settingsMenu"); 
+	let settingsMenu = document.getElementById("settingsMenu");
 	if (settingsMenu.style.display == "none") {
-		settingsMenu.style.display = "block"; 
+		settingsMenu.style.display = "block";
 		settingsButton.style.borderRadius = "0";
 	} else {
-		settingsMenu.style.display = "none"; 
+		settingsMenu.style.display = "none";
 		settingsButton.style.borderRadius = null;
 	}
 }
