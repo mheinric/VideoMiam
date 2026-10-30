@@ -2,20 +2,21 @@
 	box-sizing: border-box;
 }
 
-html, body {
-	padding: 0; 
+html,
+body {
+	padding: 0;
 	margin: 0;
 }
 
 #pageBar {
-	position: fixed; 
-	top: 0; 
-	left: 0; 
-	width: 15em; 
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 15em;
 	height: 100vh;
 	padding-top: 0.5em;
 	border-right: 1px solid #333;
-	display: flex; 
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: white;
@@ -38,7 +39,7 @@ html, body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	text-decoration: none;
-	border: none; 
+	border: none;
 	text-align: center;
 	padding: 0.5em;
 }
@@ -70,7 +71,7 @@ html, body {
 }
 
 #pageBar #channelShortcuts {
-	width: 100%; 
+	width: 100%;
 	height: 15em;
 	padding: 0 1.5em;
 	text-align: center;
@@ -109,7 +110,7 @@ html, body {
 	top: 0em;
 	right: calc(max(5em, 25%));
 	padding: 0.2em;
-	border: none; 
+	border: none;
 	background-color: transparent;
 	cursor: pointer;
 	text-decoration: underline;
@@ -136,11 +137,11 @@ html, body {
 
 #addChannelOverlay {
 	display: none;
-	position: fixed; 
-	top: 0; 
+	position: fixed;
+	top: 0;
 	left: 0;
-	width: 100vw; 
-	height: 100vh; 
+	width: 100vw;
+	height: 100vh;
 	z-index: 2;
 	background-color: #E1E1E175;
 }
@@ -148,11 +149,11 @@ html, body {
 #addChannelPopup {
 	margin-top: calc(50vh - 10em);
 	margin-left: calc(50vw - 10em);
-	width: 20em; 
-	height: 10em; 
+	width: 20em;
+	height: 10em;
 	border-radius: 1em;
 	padding: 1em;
-	box-shadow: 0.2em 0.2em #00000077; 
+	box-shadow: 0.2em 0.2em #00000077;
 	border: 1px solid black;
 	background-color: white;
 	text-align: center;
@@ -164,11 +165,11 @@ html, body {
 
 #addChannelAddButton,
 #addChannelCancelButton {
-	padding: 0.5em; 
-	margin-top:1em;
+	padding: 0.5em;
+	margin-top: 1em;
 	margin-right: 1.5em;
 	margin-left: 1.5em;
-	border: none; 
+	border: none;
 	border-radius: 1em;
 	cursor: pointer;
 	border: 1px solid black;
@@ -216,7 +217,7 @@ html, body {
 	right: calc(max(5em, 25%) - 3em);
 	padding: 0.5em;
 	border: 1px solid black;
-	border-top: none; 
+	border-top: none;
 	background-color: #ffc457;
 	border-radius: 0 0 0.5em 0.5em;
 	cursor: pointer;
@@ -229,7 +230,7 @@ html, body {
 }
 
 #settingsMenu {
-	position: absolute; 
+	position: absolute;
 	top: 100%;
 	right: -1px;
 	background-color: #ffc457;
@@ -240,10 +241,10 @@ html, body {
 }
 
 #settingsMenu a {
-	display: block; 
+	display: block;
 	padding: 0.4em 0 0.4em 0.7em;
 	text-align: left;
-	color: black; 
+	color: black;
 	text-decoration: none;
 	font-weight: normal;
 	border-radius: 0.5em;
@@ -261,7 +262,8 @@ html, body {
 .page {
 	position: relative;
 	margin-left: 15em;
-	padding: 0.01em 1em; /* The small padding is to make sure the div contains its children margins*/
+	padding: 0.01em 1em;
+	/* The small padding is to make sure the div contains its children margins*/
 	font-family: Arial, Helvetica, sans-serif;
 	min-width: 30em;
 }
@@ -270,9 +272,9 @@ html, body {
 
 .vid {
 	position: relative;
-	flex-grow: 0; 
+	flex-grow: 0;
 	flex-shrink: 0;
-	padding: 0em 1em 1em 1em; 
+	padding: 0em 1em 1em 1em;
 	margin: 0 0.5em;
 	width: 12em;
 }
@@ -289,8 +291,7 @@ html, body {
 }
 
 .vid.vidSeen h3,
-.vid.vidSeen h2
- {
+.vid.vidSeen h2 {
 	color: #555;
 }
 
@@ -305,8 +306,7 @@ html, body {
 }
 
 .vid.vidNotInterested h3,
-.vid.vidNotInterested h2
- {
+.vid.vidNotInterested h2 {
 	color: #888;
 }
 
@@ -333,7 +333,7 @@ html, body {
 	-webkit-line-clamp: 3;
 	line-clamp: 3;
 	width: 100%;
-	margin: 0; 
+	margin: 0;
 }
 
 #channelPage .vid h3 {
@@ -345,12 +345,12 @@ html, body {
 .vid h3 {
 	font-size: smaller;
 	margin-bottom: 0;
-	position: relative; 
+	position: relative;
 	padding-left: 2em;
 	height: 2.5em;
-  	line-height: 1.25em;
+	line-height: 1.25em;
 	display: flex;
-  	align-items: center;
+	align-items: center;
 }
 
 .vid h3 img {
@@ -369,13 +369,13 @@ html, body {
 }
 
 .timeLabel {
-	color: white; 
+	color: white;
 	font-size: small;
 	font-family: monospace;
 	background-color: black;
 	float: right;
-	position: relative; 
-	top:-1.9em;
+	position: relative;
+	top: -1.9em;
 	padding: 0.1em 0.25em;
 	margin-bottom: -1.9em;
 	border-bottom-right-radius: 0.5em;

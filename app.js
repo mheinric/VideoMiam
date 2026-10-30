@@ -23,9 +23,9 @@ app.use(session({
     secret: config["passwords"]["cookies_secret"],
     resave: false,
     saveUninitialized: false,
-    cookie: { 
-        secure: config["passwords"]["secure_cookies"], 
-        sameSite: true 
+    cookie: {
+        secure: config["passwords"]["secure_cookies"],
+        sameSite: true
     },
     store: new MemoryStoreInstance({
         checkPeriod: 86400 // Prune expired entries every 24h (in seconds)
@@ -43,6 +43,20 @@ app.get(baseUrl + "/index.html", (req, res) => {
         res.redirect(baseUrl + "/videos.html");
     } else {
         res.send(fs.readFileSync(path.resolve(config["dirname"], 'public', 'index.html'), 'utf-8'))
+    }
+});
+
+function isHalloween() {
+    let date = new Date();
+    return (date.getMonth() == 10 && date.getDate() <= 15) || (date.getMonth() == 9 && date.getDate() >= 15);
+}
+
+app.get(baseUrl + "/seasonal/common.js", (req, res) => {
+    if (isHalloween() && config.seasonal.enable) {
+        res.redirect(baseUrl + "/seasonal/halloween/common.js");
+    }
+    else {
+        res.send("");
     }
 });
 

@@ -1,0 +1,73 @@
+@font-face {
+    font-family: halloween;
+    src: url(./October\ Crow.ttf);
+}
+
+.halloween {
+    color: white;
+    background-color: black;
+}
+
+.halloween h1,
+.halloween #pageBar .mainMenuItem {
+    font-family: halloween;
+}
+
+.halloween h1 {
+    border-bottom: 1px solid #8f2b2b;
+}
+
+.halloween #pageBar {
+    background-color: black;
+    color: white;
+    border-right: 1px solid #8f2b2b;
+}
+
+.halloween #pageBar .mainMenuItem {
+    color: white;
+}
+
+.halloween #pageBar .mainMenuItem:hover {
+    color: #d21919;
+    background-color: #000;
+}
+
+
+.halloween #pageBar #channelShortcuts {
+    scrollbar-color: #555 black;
+    background: linear-gradient(black 33%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), black 66%) 0 100%, linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .2)) 0 100%;
+    background-color: rgba(0, 0, 0, 0);
+    background-color: black;
+}
+
+.halloween .vid .vidIcon {
+    border: 1px solid #8f2b2b;
+}
+
+.halloween .vid.vidSeen h3,
+.halloween .vid.vidSeen h2 {
+    color: #8f2b2b;
+}
+
+.halloween .vid h3 img,
+.halloween .sub img {
+    border: 1px solid #8f2b2b;
+    box-shadow: 0.2em 0.2em #8f2b2b77;
+}
+
+.halloween #favoritesTitle:before,
+.halloween #favoritesTitle:after {
+    background-image: url(./img/favTitleStar.svg);
+}
+
+.halloween #recentTitle:before {
+    background-image: url(./img/recentClock.svg);
+}
+
+.halloween #addChannelButton {
+    color: white;
+}
+
+.halloween #channelPage h1 img {
+    border: 2px solid #8f2b2b;
+}

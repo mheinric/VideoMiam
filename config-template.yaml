@@ -30,3 +30,8 @@ sms_notifs:
 anime: 
   enable: false
   mal_client_id: null
+
+# Optional if you want to enable seasonal styles for the website (.css and image files used 
+# only on special periods of the year).
+seasonal: 
+  enable: false
